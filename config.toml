@@ -26,11 +26,11 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   weight = 10
   identifier = "home"
   url = "/"
-# [[menu.main]]
-#   name = "Archives"
-#   weight = 20
-#   identifier = "archives"
-#   url = "/post/"
+[[menu.main]]
+  name = "Archives"
+  weight = 20
+  identifier = "archives"
+  url = "/post/"
 # [[menu.main]]
 #   name = "Tags"
 #   weight = 30
@@ -46,7 +46,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   version = "3.x"           # Used to give a friendly message when you have an incompatible update
   debug = false             # If true, load `eruda.min.js`. See https://github.com/liriliri/eruda
 
-  since = "2017"            # Site creation time          # 站点建立时间
+  since = "2018"            # Site creation time          # 站点建立时间
 
   # site info (optional)                                  # 站点信息（可选，不需要的可以直接注释掉）
   logoTitle = "Codology"        # default: the title value    # 默认值: 上面设置的title值

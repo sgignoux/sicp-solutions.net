@@ -204,9 +204,24 @@ What happens when Alyssa attempts to use this to compute square roots? Explain.
 
 **Solution:**
 
-Since `new-if` is a function, each parameters subexpressions will be evaluated _before_ the procedure is applied.
+Since `new-if` is a function, each parameters subexpressions will be evaluated _before_ the procedure is applied. It means that when evaluating:
 
-This will lead to an infinite loop because even when `(good-enough? guess x)` returns `#t` the `(sqrt-iter (improve guess x) x)))` will be evaluated, before `new-if` is evaluated.
+```scheme
+(new-if (good-enough? guess x)
+      guess
+      (sqrt-iter (improve guess x) x))
+```
+
+The system will evaluate all this expression, in this order, before trying to apply the function `new-if`:
+
+- `new-if`: which is the procedure defined above
+- `(good-enough? guess x)`: which return `#t` or `#f`
+- `guess`: which is the value parameter
+- `(sqrt-iter (improve guess x) x)`: which will call the current procedure recursively.
+
+Whatever the expression `(good-enough? guess x)` is evaluating to, the `(sqrt-iter (improve guess x) x)))` will be evaluated. The stop condition for the loop is not taken into consideration.
+
+With a normal `if` as a special form, first `(good-enough? guess x)` is evaluated and then one and only one of the alternative will be evaluated.
 
 ### Exercise 1.7
 

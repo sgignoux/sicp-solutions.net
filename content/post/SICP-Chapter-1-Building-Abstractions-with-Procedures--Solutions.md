@@ -1,10 +1,8 @@
 ---
-title: "SICP - Chapter 1: Building Abstractions With Procedures"
+title: "SICP - Chapter 1: Building Abstractions With Procedures [Solutions]"
 date: 2018-09-27T21:03:58+02:00
 draft: false
 ---
-
-## 1.1 The Elements of Programming
 
 ### Exercise 1.1
 
@@ -170,3 +168,48 @@ Since `(= 0 0)` evaluates to `#t` in the `if`, there will be no attempt to evalu
 ```scheme
 0
 ```
+
+### Exercise 1.6
+
+Alyssa P. Hacker doesn’t see why if needs to be provided as a special form. “Why can’t I just define it as an ordinary procedure in terms of cond?” she asks. Alyssa’s friend Eva Lu Ator claims this can indeed be done, and she defines a new version of if:
+
+```scheme
+(define (new-if predicate
+                then-clause
+                else-clause)
+  (cond (predicate then-clause)
+        (else else-clause)))
+```
+
+Eva demonstrates the program for Alyssa:
+
+```scheme
+(new-if (= 2 3) 0 5)
+5
+
+(new-if (= 1 1) 0 5)
+0
+```
+
+Delighted, Alyssa uses new-if to rewrite the square-root program:
+
+```scheme
+(define (sqrt-iter guess x)
+  (new-if (good-enough? guess x)
+          guess
+          (sqrt-iter (improve guess x) x)))
+```
+
+What happens when Alyssa attempts to use this to compute square roots? Explain.
+
+**Solution:**
+
+Since `new-if` is a function, each parameters subexpressions will be evaluated _before_ the procedure is applied.
+
+This will lead to an infinite loop because even when `(good-enough? guess x)` returns `#t` the `(sqrt-iter (improve guess x) x)))` will be evaluated, before `new-if` is evaluated.
+
+### Exercise 1.7
+
+The good-enough? test used in computing square roots will not be very effective for finding the square roots of very small numbers. Also, in real computers, arithmetic operations are almost always performed with limited precision. This makes our test inadequate for very large numbers. Explain these statements, with examples showing how the test fails for small and large numbers. An alternative strategy for implementing good-enough? is to watch how guess changes from one iteration to the next and to stop when the change is a very small fraction of the guess. Design a square-root procedure that uses this kind of end test. Does this work better for small and large numbers?
+
+**Solution:**

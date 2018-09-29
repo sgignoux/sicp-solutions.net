@@ -229,6 +229,111 @@ The good-enough? test used in computing square roots will not be very effective 
 
 **Solution:**
 
+Number in computer can be encoded in different ways. Integer can be represented exactly up to a certain point, but real number and very large integer are usually represented in a format call "floating point".
+
+Key points about floating points numbers:
+
+- because each number is encoded on a finite number of bit, the number of floating point number that can be represented in a computer is finite.
+- most of the time, are an approximation of the real number. This causes rounding issues.
+- as the number represented increases, the size of the "gap" between two consecutive number will grow by step.
+
 > Squeezing infinitely many real numbers into a finite number of bits requires an approximate representation. Although there are infinitely many integers, in most programs the result of integer computations can be stored in 32 bits. In contrast, given any fixed number of bits, most calculations with real numbers will produce quantities that cannot be exactly represented using that many bits. Therefore the result of a floating-point calculation must often be rounded in order to fit back into its finite representation. This rounding error is the characteristic feature of floating-point computation.
 >
 > -- [What Every Computer Scientist Should Know About Floating-Point Arithmetic](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
+
+#### Large numbers
+
+For number above a certain number of digits, the computation of the square root will never complete. For example, on my system and using DrRacket, `(sqrt 12345678901234)` does not complete.
+
+Question: do all number above a certain size create an infinite loop or are they "exact number" than can be computed?
+
+Case where `(improve guess x)` can't improve the guess as it ran "out of precision".
+
+The issue comes directly from how a floating point number is represented. This is because the "space" between number is larger than the space of the precision we ask. The improve guess procedure will not be able to generate a new guess, as it runs out of precision.
+
+A quick way to test this is by adding a small number to a large number and see that, from the point of the computer, the large number and the large number added to the small number are identical:
+
+```scheme
+(define a-large-number 123456789012345)
+(= a-large-number (+ a-large-number 0.001))
+> #t
+```
+
+Once both the guess become close to the result and the result is on a size where two consecutive number are space by more than `0.001`, the assertion `good-enough?` will never become true.
+
+The substraction of this two number will always give a number larger than `0.001`. Even if you increase the precision to `0.00000001`, it will change nothing.
+
+```
+sqrt(123456789012345) => never complete
+```
+
+But other number can complete, like:
+
+```
+sqrt(12345678901234000) = 111111110.61110856 - Error: 0.0
+```
+
+#### Small numbers
+
+Can't have precision if the number is smaller than the precision of `0.001`.
+
+```
+sqrt(0.00000000123456) = 0.0312500131557789 - Error: 0.0009765620876763541
+```
+
+#### Alternative strategy
+
+The first step is to redefine the good-enough?` based on the definition in the problem statement:
+
+```scheme
+(define (good-enough? previous-guess guess)
+  (< (abs (/ (- guess previous-guess) guess)) 0.00000000001))
+```
+
+The number `0.00000000001` is based on a few trial and error for the upcoming tests. Then just need to adapt the function `` to provide the correct arguement:
+
+```scheme
+(define (sqrt-iter guess x nth)
+  (if (or (good-enough? guess (improve guess x)) (> nth 32))
+      guess
+      (sqrt-iter (improve guess x) x (+ nth 1))))
+```
+
+Although we could improve the code to avoid computing `(improve guess x)` twice, this was not learned becore this exercice.
+
+The complete solution will look like:
+
+```scheme
+(define (square x) (* x x))
+
+(define (good-enough? previous-guess guess)
+  (< (abs (/ (- guess previous-guess) guess)) 0.00000000001))
+
+(define (sqrt-iter guess x nth)
+  (if (or (good-enough? guess (improve guess x)) (> nth 32))
+      guess
+      (sqrt-iter (improve guess x) x (+ nth 1))))
+
+(define (improve guess x)
+  (average guess (/ x guess)))
+
+(define (average x y)
+  (/ (+ x y) 2))
+
+(define (sqrt x)
+  (sqrt-iter 1.0 x 0))
+```
+
+Now we can try large number:
+
+```
+sqrt(123456789012345) = 11111111.061111081 - Error: 0.015625
+```
+
+and small number:
+
+```
+sqrt(0.00000000123456) = 3.51363060095964e-05 - Error: 4.1359030627651384e-25
+```
+
+In both cases, the error is small relative to the size of the number computed.

@@ -17,16 +17,17 @@ I expect that by doing that I will:
 - become a better software engineer
 - aquire a deeper understanding of functional programming
 - have fun programming and building things
+- learn how to write clear explanation
 
 This is the current plan:
 
 - Read the book
 - Watch the video from the 1986 session
 - Write a short summary of each chapter and subchapter
-- Complete all the 356 exercises by myself, and publish my solution here
+- Complete all the 356 exercises by myself, and publish my solution here. Each solution should include clear explanations.
 - Review my solution and compare them to the [community schemewiki SICP-Solutions](http://community.schemewiki.org/?SICP-Solutions) or other solutions
 
-We will see how it goes
+We will see how it goes...
 
 ## Resources
 

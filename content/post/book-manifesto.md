@@ -5,6 +5,9 @@ draft: true
 ---
 
 - Very high quality code of he final results
+- Clean code architecture
+- Almost production ready
+- With documentation
 - Show also unclean code on the step to clean code
 - No dumbing down
 - Real runnable code
@@ -15,3 +18,4 @@ draft: true
 - Clarity of explanation
 - Show how it is build step by step, not just the result
 - Break through layers of abstraction
+- Identify incorrect assumptions

@@ -60,6 +60,10 @@ Below is a sequence of expressions. What is the result printed by the interprete
 
 ### Exercise 1.2
 
+Translate the following expression into prefix form:
+
+$${\frac{5+4+(2-(3-(6+\frac45)))}{3(6-2)(2-7)}.}$$
+
 **Solution:**
 
 ```scheme
@@ -107,7 +111,7 @@ Define a procedure that takes three numbers as arguments and returns the sum of 
 
 ### Exercise 1.4
 
-Use this observation to describe the behavior of the following procedure:
+Observe that our model of evaluation allows for combinations whose operators are compound expressions. Use this observation to describe the behavior of the following procedure:
 
 ```scheme
 (define (a-plus-abs-b a b)
@@ -116,9 +120,9 @@ Use this observation to describe the behavior of the following procedure:
 
 **Solution:**
 
-If `b` is strictly a positive number return `a+b`, else return `a-b`.
+If $b$ is strictly a positive number return $a+b$, else return $a-b$.
 
-In other word, return `a + |b|`
+In other word, this function compute ${a+\left|b\right|.}$
 
 ### Exercise 1.5
 
@@ -147,7 +151,7 @@ The key is to notice that `(define (p) (p))` defines a function that evaluate to
 
 With an interpreter that uses **applicative-order evaluation**, the interpreter will “evaluate the arguments and then apply”. If we apply the first rule for evaluating a combination to `(test 0 (p))` will start by evaluating `0` as `0`, then it will try to evaluate `(p)`.
 
-When `(p)` is evaluated, the system replace each formal parameters by the corresponding argument in the body of the procdure: since there is no formal parameter in this case, the body of the procedure will just be `(p)`. Then the evaluation of the body of the procedure will be done on `(p)`, which in turn will evaluate to the same things, thus making an infinite loop.
+When `(p)` is evaluated, the system replace each formal parameters by the corresponding argument in the body of the procedure: since there is no formal parameter in this case, the body of the procedure will just be `(p)`. Then the body of the procedure `(p)` will be done evaluated, which in turn start the evaluation all over again, thus making an infinite loop.
 
 With an interpreter that uses **normal-order evaluation**, the interpreter will “fully expand and then reduce”. In this model, we would not evaluate the operands until their values were needed. In that case `(test 0 (p))` will evaluate as follow:
 
@@ -212,16 +216,7 @@ Since `new-if` is a function, each parameters subexpressions will be evaluated _
       (sqrt-iter (improve guess x) x))
 ```
 
-The system will evaluate all this expression, in this order, before trying to apply the function `new-if`:
-
-- `new-if`: which is the procedure defined above
-- `(good-enough? guess x)`: which return `#t` or `#f`
-- `guess`: which is the value parameter
-- `(sqrt-iter (improve guess x) x)`: which will call the current procedure recursively.
-
-Whatever the expression `(good-enough? guess x)` is evaluating to, the `(sqrt-iter (improve guess x) x)))` will be evaluated. The stop condition for the loop is not taken into consideration.
-
-With a normal `if` as a special form, first `(good-enough? guess x)` is evaluated and then one and only one of the alternative will be evaluated.
+the condition and all the alternatives of the if will always be evaluated, whatever `(good-enough? guess x)` is true or false. Since the second alternative is calling the function itself recursively, the function will stuck in an infinite loop.
 
 ### Exercise 1.7
 
@@ -229,7 +224,31 @@ The good-enough? test used in computing square roots will not be very effective 
 
 **Solution:**
 
-Number in computer can be encoded in different ways. Integer can be represented exactly up to a certain point, but real number and very large integer are usually represented in a format call "floating point".
+First, lets experiment with a few cases:
+
+```scheme
+(sqrt 1234567890123)
+> 1111111.1061109055
+
+(sqrt 12345678901234)
+does not complete
+
+(sqrt 12345678901230)
+> 3513641.828819494
+
+(sqrt 0.00000000123)
+> 0.031250013107186406
+
+(square 0.031250013107186406)
+> 0.000976563319199322
+```
+
+From that experiments, we can see two problems:
+
+- With large numbers, sometime the computation doesn't complete
+- With small number, the result can be very inaccurate, by multiple order of magnitude
+
+In order to understand more what is happening, we need to look at how real numbers can be encoded in computers, more specifically "floating point" encoding in this case.
 
 Key points about floating points numbers:
 
@@ -243,63 +262,47 @@ Key points about floating points numbers:
 
 #### Large numbers
 
-For number above a certain number of digits, the computation of the square root will never complete. For example, on my system and using DrRacket, `(sqrt 12345678901234)` does not complete.
+For some numbers above a certain size of digits, the computation of the square root will never complete.
 
-Question: do all number above a certain size create an infinite loop or are they "exact number" than can be computed?
+When tracing the program step by step, we can see that this condition happens for large number, when the guess is getting very close to the actual result. Because of rounding errors, the function `(improve guess x)` can't improve the guess anymore as the difference between $guess^2$ and $x$ becomes so small that it is bellow the distance between two consecutive floating point numbers.
 
-Case where `(improve guess x)` can't improve the guess as it ran "out of precision".
-
-The issue comes directly from how a floating point number is represented. This is because the "space" between number is larger than the space of the precision we ask. The improve guess procedure will not be able to generate a new guess, as it runs out of precision.
-
-A quick way to test this is by adding a small number to a large number and see that, from the point of the computer, the large number and the large number added to the small number are identical:
+If we are lucky, the rounding errors gives that `(- (square guess) x)` is exactly `0.0` and stop the evaluation. If we are not lucky, and the gap between two consecutive number is more than `0.001`, the assertion `good-enough?` will never become true since `improve` has reached a fixed point due to the rounding error and will return always the same number that is larger than `0.001`. For example:
 
 ```scheme
-(define a-large-number 123456789012345)
-(= a-large-number (+ a-large-number 0.001))
-> #t
+(improve 3513641.8288200637 12345678901234) -> 3513641.8288200637
 ```
 
-Once both the guess become close to the result and the result is on a size where two consecutive number are space by more than `0.001`, the assertion `good-enough?` will never become true.
-
-The substraction of this two number will always give a number larger than `0.001`. Even if you increase the precision to `0.00000001`, it will change nothing.
-
-```
-sqrt(123456789012345) => never complete
-```
-
-But other number can complete, like:
-
-```
-sqrt(12345678901234000) = 111111110.61110856 - Error: 0.0
-```
+The substraction of this two number will always give a number larger than `0.001`. Even if you increase the precision to `0.00000001` since this is a limitation of the precision of the floating point number used.
 
 #### Small numbers
 
-Can't have precision if the number is smaller than the precision of `0.001`.
+We have hardcoded the number of digit of precision we want. Can't have precision if the number is smaller than the precision of `0.001`.
 
 ```
 sqrt(0.00000000123456) = 0.0312500131557789 - Error: 0.0009765620876763541
 ```
 
+It is like asking to measure the size of a coin, plus or minus one meter. The result can be technically correct, it is still not very usefull.
+
 #### Alternative strategy
 
-The first step is to redefine the good-enough?` based on the definition in the problem statement:
+The first step is to redefine `good-enough?` based on the definition in the problem statement:
 
 ```scheme
 (define (good-enough? previous-guess guess)
   (< (abs (/ (- guess previous-guess) guess)) 0.00000000001))
 ```
 
-The number `0.00000000001` is based on a few trial and error for the upcoming tests. Then just need to adapt the function `` to provide the correct arguement:
+The number `0.00000000001` is based on a few trial and error for the upcoming tests. Then we just need to adapt the function `sqrt-iter` to provide the correct arguement:
 
 ```scheme
-(define (sqrt-iter guess x nth)
-  (if (or (good-enough? guess (improve guess x)) (> nth 32))
+(define (sqrt-iter guess x)
+  (if (good-enough? guess (improve guess x))
       guess
-      (sqrt-iter (improve guess x) x (+ nth 1))))
+      (sqrt-iter (improve guess x) x)))
 ```
 
-Although we could improve the code to avoid computing `(improve guess x)` twice, this was not learned becore this exercice.
+Although we could improve the code to avoid computing `(improve guess x)` twice, the method to do this was not learned for before this exercice.
 
 The complete solution will look like:
 
@@ -309,10 +312,10 @@ The complete solution will look like:
 (define (good-enough? previous-guess guess)
   (< (abs (/ (- guess previous-guess) guess)) 0.00000000001))
 
-(define (sqrt-iter guess x nth)
-  (if (or (good-enough? guess (improve guess x)) (> nth 32))
+(define (sqrt-iter guess x)
+  (if (good-enough? guess (improve guess x))
       guess
-      (sqrt-iter (improve guess x) x (+ nth 1))))
+      (sqrt-iter (improve guess x) x)))
 
 (define (improve guess x)
   (average guess (/ x guess)))
@@ -321,8 +324,10 @@ The complete solution will look like:
   (/ (+ x y) 2))
 
 (define (sqrt x)
-  (sqrt-iter 1.0 x 0))
+  (sqrt-iter 1.0 x))
 ```
+
+It is interesting to note that the new `good-enough?` does not depend on `x` anymore.
 
 Now we can try large number:
 
@@ -336,4 +341,35 @@ and small number:
 sqrt(0.00000000123456) = 3.51363060095964e-05 - Error: 4.1359030627651384e-25
 ```
 
-In both cases, the error is small relative to the size of the number computed.
+In both cases, the error is small _relative_ to the size of the number computed.
+
+### Exercise 1.8
+
+Newton’s method for cube roots is based on the fact that if $y$ is an approximation to the cube root of $x$, then a better approximation is given by the value
+
+$${\frac{{x/y^2}+2y}3.}$$
+
+Use this formula to implement a cube-root procedure analogous to the square-root procedure. (In 1.3.4 we will see how to implement Newton’s method in general as an abstraction of these square-root and cube-root procedures.)
+
+**Solution:**
+
+Using the same improvement for large and small number from exercice 1.7:
+
+```scheme
+(define (cube x) (* x x x))
+
+(define (good-enough? previous-guess guess)
+  (< (abs (/ (- guess previous-guess) guess)) 0.00000000001))
+
+(define (cube-root-iter guess x)
+  (if (good-enough? (improve guess x) guess)
+      guess
+      (cube-root-iter (improve guess x) x)))
+
+(define (improve guess x)
+  (/ (+ (/ x (* guess guess)) (* 2 guess)) 3))
+
+
+(define (cube-root x)
+  (cube-root-iter 1.0 x))
+```

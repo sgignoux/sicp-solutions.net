@@ -50,8 +50,6 @@ We will see how it goes...
 
 ### Chapter 1: Building Abstractions with Procedures
 
-[My Notes on Chapter 1]({{< ref "/post/SICP-Chapter-1-Building-Abstractions-with-Procedures--Notes.md" >}})
-
 #### 1.1 The Elements of Programming
 
 [1.1]({{< ref "/post/SICP-Solution-Exercise-1-1.md" >}}),

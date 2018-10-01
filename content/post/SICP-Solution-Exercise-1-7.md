@@ -48,7 +48,7 @@ Key points about floating points numbers:
 
 For some numbers above a certain size of digits, the computation of the square root will never complete.
 
-When tracing the program step by step, we can see that this condition happens for large number, when the guess is getting very close to the actual result. Because of rounding errors, the function `(improve guess x)` can't improve the guess anymore as the difference between $guess^2$ and $x$ becomes so small that it is bellow the distance between two consecutive floating point numbers.
+When tracing the program step by step, we can see that this condition happens for large number, when the guess is getting very close to the actual result. Because of rounding errors, the function `(improve guess x)` can't improve the guess anymore as the difference between $guess^2$ and $x$ becomes small cannot go bellow `0.001`, because the distance between two consecutive floating point numbers is larger than `0.001`.
 
 For example, here is the trace for `(sqrt 12345678901234)`:
 

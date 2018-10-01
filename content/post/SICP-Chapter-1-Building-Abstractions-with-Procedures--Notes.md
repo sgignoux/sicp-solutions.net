@@ -1,6 +1,6 @@
 ---
 title: "SICP - Chapter 1: Building Abstractions With Procedures [Notes]"
-date: 2018-09-28T21:03:58+02:00
+date: 2018-09-22T21:03:58+02:00
 draft: false
 ---
 

@@ -87,7 +87,7 @@ For example, here is the trace for `(sqrt 12345678901234)`:
 
 If we are lucky, the rounding errors gives that `(- (square guess) x)` is exactly `0.0` and stop the evaluation. 
 
-If we are not lucky, and the gap between two consecutive number of the size of `(square guess)` is more than `0.001`, then the assertion `good-enough?` will never become true since `improve` has reached a fixed point due to the rounding error, and will always return the same number that is larger than `0.001`. For example:
+If we are not lucky, the gap between two consecutive number around `(square guess)` is more than `0.001`, then the assertion `good-enough?` will never become true since `improve` has reached a fixed point due to the rounding error, and will always return the same number that is larger than `0.001`. For example:
 
 ```scheme
 (improve 3513641.8288200637 12345678901234) -> 3513641.8288200637

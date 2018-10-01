@@ -25,13 +25,16 @@ What behavior will Ben observe with an interpreter that uses applicative-order e
 
 **Solution:**
 
-The key is to notice that `(define (p) (p))` defines a function that evaluate to itself.
+The key is to notice that `(define (p) (p))` defines a function that evaluates to itself.
 
-With an interpreter that uses **applicative-order evaluation**, the interpreter will “evaluate the arguments and then apply”. If we apply the first rule for evaluating a combination to `(test 0 (p))` will start by evaluating `0` as `0`, then it will try to evaluate `(p)`.
+An interpreter that uses **applicative-order evaluation** will “evaluate the arguments and then apply”. When the interpreter evaluates the expression `(test 0 (p))`, it will start by evaluating `0` as `0`, then it will try to evaluate `(p)`.
 
-When `(p)` is evaluated, the system replace each formal parameters by the corresponding argument in the body of the procedure: since there is no formal parameter in this case, the body of the procedure will just be `(p)`. Then the body of the procedure `(p)` will be done evaluated, which in turn start the evaluation all over again, thus making an infinite loop.
+When `(p)` is evaluated, the interpreter:
 
-With an interpreter that uses **normal-order evaluation**, the interpreter will “fully expand and then reduce”. In this model, we would not evaluate the operands until their values were needed. In that case `(test 0 (p))` will evaluate as follow:
+1. replace each formal parameters by the corresponding argument in the body of the procedure: since there is no formal parameter in this case, the body of the procedure will just be `(p)`.
+2. Then the body of the procedure `(p)` will be evaluated, which in turn starts the evaluation all over again, thus making an infinite loop.
+
+With an interpreter that uses **normal-order evaluation**, the interpreter will “fully expand and then reduce”. In this model, the interpreter will not evaluate the operands until their values were needed. In that case `(test 0 (p))` will evaluate as follow:
 
 ```scheme
 (test 0 (p))
@@ -42,10 +45,10 @@ will expand to:
 ```scheme
 (if (= 0 0)
     0
-    (p)
+    (p))
 ```
 
-Since `(= 0 0)` evaluates to `#t` in the `if`, there will be no attempt to evaluate `(p)` and the result will be:
+Since the predicate `(= 0 0)` evaluates to `#t` in the `if`, there will be no attempt to evaluate `(p)` and the result will be:
 
 ```scheme
 0

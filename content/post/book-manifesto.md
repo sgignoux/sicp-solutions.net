@@ -19,3 +19,5 @@ draft: true
 - Show how it is build step by step, not just the result
 - Break through layers of abstraction
 - Identify incorrect assumptions
+- complex programs are constructed by building, step by step, computational objects of increasing complexity
+- incremental development and testing

@@ -11,12 +11,13 @@ Define a procedure that takes three numbers as arguments and returns the sum of 
 ```scheme
 ; Solution
 (define (square x) (* x x))
+
 (define (sum-square x y) (+ (square x) (square y)))
 
 (define (fun x y z)
   (cond ((and (<= x y) (<= x z)) (sum-square y z))
         ((and (<= y x) (<= y z)) (sum-square x z))
-        ((and (<= z x) (<= z y)) (sum-square x y))))
+        (else                    (sum-square x y))))
 
 ; Checks
 (= (fun 10 10 10) (sum-square 10 10))

@@ -8,7 +8,7 @@ The good-enough? test used in computing square roots will not be very effective 
 
 **Solution:**
 
-First, lets experiment with a few cases:
+First, lets experiment with a few cases in the interpreter:
 
 ```scheme
 (sqrt 1234567890123)
@@ -27,18 +27,18 @@ does not complete
 > 0.000976563319199322
 ```
 
-From that experiments, we can see two problems:
+From that experience, we can see two problems:
 
-- With large numbers, sometime the computation doesn't complete
+- With large numbers, most of the time the computation doesn't finish
 - With small number, the result can be very inaccurate, by multiple order of magnitude
 
-In order to understand more what is happening, we need to look at how real numbers can be encoded in computers, more specifically "floating point" encoding in this case.
+In order to understand what is happening, we need to look at how real numbers are encoded in computers, more specifically "floating point" encoding in this case.
 
 Key points about floating points numbers:
 
 - because each number is encoded on a finite number of bit, the number of floating point number that can be represented in a computer is finite.
-- most of the time, are an approximation of the real number. This causes rounding issues.
-- as the number represented increases, the size of the "gap" between two consecutive number will grow by step.
+- most of the time, the floating point number is an approximation of the real number. This causes rounding issues.
+- as the size of the number represented increases, the size of the "gap" between two consecutive number will grow by step.
 
 > Squeezing infinitely many real numbers into a finite number of bits requires an approximate representation. Although there are infinitely many integers, in most programs the result of integer computations can be stored in 32 bits. In contrast, given any fixed number of bits, most calculations with real numbers will produce quantities that cannot be exactly represented using that many bits. Therefore the result of a floating-point calculation must often be rounded in order to fit back into its finite representation. This rounding error is the characteristic feature of floating-point computation.
 >
@@ -46,9 +46,9 @@ Key points about floating points numbers:
 
 #### Large numbers
 
-For some numbers above a certain size of digits, the computation of the square root will never complete.
+For most numbers above a certain size of digits, the computation of the square root will never complete.
 
-When tracing the program step by step, we can see that this condition happens for large number, when the guess is getting very close to the actual result. Because of rounding errors, the function `(improve guess x)` can't improve the guess anymore as the difference between $guess^2$ and $x$ becomes small cannot go bellow `0.001`, because the distance between two consecutive floating point numbers is larger than `0.001`.
+When tracing the program step by step, we can see that this condition happens for large number, when the guess is getting very close to the actual result. Because of rounding errors, the function `(improve guess x)` can't improve the guess anymore as the smallest possible difference between $guess^2$ and $x$ is larger than `0.001`, because the distance between two consecutive floating point numbers.
 
 For example, here is the trace for `(sqrt 12345678901234)`:
 
@@ -85,17 +85,17 @@ For example, here is the trace for `(sqrt 12345678901234)`:
 | 28        | 3513641.8288200637 | 3513641.8288200637 | 0.001953125            |
 
 
-If we are lucky, the rounding errors gives that `(- (square guess) x)` is exactly `0.0` and stop the evaluation. If we are not lucky, and the gap between two consecutive number is more than `0.001`, the assertion `good-enough?` will never become true since `improve` has reached a fixed point due to the rounding error and will return always the same number that is larger than `0.001`. For example:
+If we are lucky, the rounding errors gives that `(- (square guess) x)` is exactly `0.0` and stop the evaluation. If we are not lucky, and the gap between two consecutive number is more than `0.001`, the assertion `good-enough?` will never become true since `improve` has reached a fixed point, due to the rounding error, and will always return the same number that is larger than `0.001`. For example:
 
 ```scheme
 (improve 3513641.8288200637 12345678901234) -> 3513641.8288200637
 ```
 
-The substraction of this two number will always give a number larger than `0.001`. Even if you increase the precision to `0.00000001` since this is a limitation of the precision of the floating point number used.
+Increasing the precision to `0.00000001` will even makes things worth, as it will it trigger issues with even smaller number for x.
 
 #### Small numbers
 
-We have hardcoded the number of digit of precision we want. Can't have precision if the number is smaller than the precision of `0.001`.
+We have hardcoded the number of digit of precision we want. It means that we can't have an accurate answer if the x is smaller than the precision of `0.001`.
 
 ```
 (sqrt 0.00000000123456) = 0.0312500131557789 - Error: 0.0009765620876763541
@@ -132,7 +132,7 @@ The number `0.00000000001` is based on a few trial and error for the upcoming te
       (sqrt-iter (improve guess x) x)))
 ```
 
-Although we could improve the code to avoid computing `(improve guess x)` twice, the method to do this was not learned for before this exercice.
+Although we could improve the code to avoid computing `(improve guess x)` twice, the method to do this is not learned yet learned at this time in the book.
 
 The complete solution will look like:
 

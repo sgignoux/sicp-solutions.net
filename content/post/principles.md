@@ -9,3 +9,7 @@ draft: true
 - Model over code
 - DDD
 - Testing
+- Refactoring: Code-level micro refactorings, Refactoring to patterns, refactoring to a deeper model
+- Isolating domain logic
+- Boundaries
+- breaks up naturally into a number of subproblems

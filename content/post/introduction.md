@@ -52,20 +52,37 @@ We will see how it goes...
 
 #### 1.1 The Elements of Programming
 
-[1.1]({{< ref "/post/SICP-Solution-Exercise-1-1.md" >}}),
-[1.2]({{< ref "/post/SICP-Solution-Exercise-1-2.md" >}}),
-[1.3]({{< ref "/post/SICP-Solution-Exercise-1-3.md" >}}),
-[1.4]({{< ref "/post/SICP-Solution-Exercise-1-4.md" >}}),
-[1.5]({{< ref "/post/SICP-Solution-Exercise-1-5.md" >}}),
-[1.6]({{< ref "/post/SICP-Solution-Exercise-1-6.md" >}}),
-[1.7]({{< ref "/post/SICP-Solution-Exercise-1-7.md" >}}),
-[1.8]({{< ref "/post/SICP-Solution-Exercise-1-8.md" >}}),
+- [1.1]({{< ref "/post/SICP-Solution-Exercise-1-1.md" >}}) ✓
+- [1.2]({{< ref "/post/SICP-Solution-Exercise-1-2.md" >}}) ✓
+- [1.3]({{< ref "/post/SICP-Solution-Exercise-1-3.md" >}}) ✓
+- [1.4]({{< ref "/post/SICP-Solution-Exercise-1-4.md" >}}) ✓
+- [1.5]({{< ref "/post/SICP-Solution-Exercise-1-5.md" >}}) ✓
+- [1.6]({{< ref "/post/SICP-Solution-Exercise-1-6.md" >}}) ✓
+- [1.7]({{< ref "/post/SICP-Solution-Exercise-1-7.md" >}}) ✓
+- [1.8]({{< ref "/post/SICP-Solution-Exercise-1-8.md" >}}) ✓
 
 #### 1.2 Procedures and the Processes They Generate
 
-[1.9]({{< ref "/post/SICP-Solution-Exercise-1-9.md" >}}),
-[1.10]({{< ref "/post/SICP-Solution-Exercise-1-10.md" >}}),
-1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18, 1.19, 1.20, 1.21, 1.22, 1.23, 1.24, 1.25, 1.26, 1.27, 1.28
+- [1.9]({{< ref "/post/SICP-Solution-Exercise-1-9.md" >}}) ✓
+- [1.10]({{< ref "/post/SICP-Solution-Exercise-1-10.md" >}}) ✓
+- [1.11]({{< ref "/post/SICP-Solution-Exercise-1-11.md" >}}) [Draft]
+- [1.12]({{< ref "/post/SICP-Solution-Exercise-1-12.md" >}}) [Draft]
+- [1.13]({{< ref "/post/SICP-Solution-Exercise-1-13.md" >}}) [Draft]
+- 1.14
+- 1.15
+- 1.16
+- 1.17
+- 1.18
+- 1.19
+- 1.20
+- 1.21
+- 1.22
+- 1.23
+- 1.24
+- 1.25
+- 1.26
+- 1.27
+- 1.28
 
 #### 1.3 Formulating Abstractions with Higher-Order Procedures
 

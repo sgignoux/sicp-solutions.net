@@ -4,6 +4,10 @@ date: 2018-09-20T21:03:14+02:00
 draft: false
 ---
 
+> SICP was revolutionary in many different ways. Most importantly, it dramatically raised the bar for the intellectual content of introductory computer science. Before SICP, the first CS course was almost always entirely filled with learning the details of some programming language. SICP is about standing back from the details to learn big-picture ways to think about the programming process. It focused attention on the central idea of abstraction -- finding general patterns from specific problems and building software tools that embody each pattern. It made heavy use of the idea of functions as data, an idea that's hard to learn initially, but immensely powerful once learned.
+>
+> -- [Why Structure and Interpretation of Computer Programs matters](http://people.eecs.berkeley.edu/~bh/sicp.html)
+
 I have read the Structure and Interpretation of Computer Programs nearly 20 years ago and I still remember it. Going through this book was intense and enlightening. It had a deep impact on how I would think about programming.
 
 After 20 years, my work has moved me farther and farther from software engineering: managing teams, managing products, doing consulting works, etc. In the last few years, I had the opportunity to see complex software being built, and I was disappointed at the lack of quality and the level of bugs in the code base.
@@ -86,7 +90,24 @@ We will see how it goes...
 
 #### 1.3 Formulating Abstractions with Higher-Order Procedures
 
-1.29, 1.30, 1.31, 1.32, 1.33, 1.34, 1.35, 1.36, 1.37, 1.38, 1.39, 1.40, 1.41, 1.42, 1.43, 1.44, 1.45, 1.46
+- 1.29
+- 1.30
+- 1.31
+- 1.32
+- 1.33
+- 1.34
+- 1.35
+- 1.36
+- 1.37
+- 1.38
+- 1.39
+- 1.40
+- 1.41
+- 1.42
+- 1.43
+- 1.44
+- 1.45
+- 1.46
 
 ### Chapter 2: Building Abstractions with Data
 

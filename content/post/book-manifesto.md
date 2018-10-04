@@ -21,3 +21,20 @@ draft: true
 - Identify incorrect assumptions
 - complex programs are constructed by building, step by step, computational objects of increasing complexity
 - incremental development and testing
+
+OS
+Compiler
+interpreter
+JIT
+Database
+SQL
+NoSQL
+Columnar
+Analytics
+Text Editor
+Hardware: CPU/Computer
+Network
+Log based database
+Streaming
+Event based
+Business Oriented (CRM, with invoicing, like gumroad)

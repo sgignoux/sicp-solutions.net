@@ -64,7 +64,7 @@ We will see how it goes...
 #### 1.2 Procedures and the Processes They Generate
 
 [1.9]({{< ref "/post/SICP-Solution-Exercise-1-9.md" >}}),
-[1.10]({{< ref "/post/SICP-Solution-Exercise-1-10.md" >}}),,
+[1.10]({{< ref "/post/SICP-Solution-Exercise-1-10.md" >}}),
 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18, 1.19, 1.20, 1.21, 1.22, 1.23, 1.24, 1.25, 1.26, 1.27, 1.28
 
 #### 1.3 Formulating Abstractions with Higher-Order Procedures

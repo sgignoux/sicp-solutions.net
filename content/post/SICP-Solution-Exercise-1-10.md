@@ -1,7 +1,7 @@
 ---
 title: "SICP - Solution: Exercise 1.10"
 date: 2018-10-01T21:06:58+02:00
-draft: false
+draft: draft
 ---
 
 The following procedure computes a mathematical function called Ackermann’s function.
@@ -164,3 +164,19 @@ Give concise mathematical definitions for the functions computed by the procedur
 (A 0 32768)
 65536
 ```
+
+${2^{16}} = 65536$
+
+```scheme
+(define (f n) (A 0 n))
+(define (g n) (A 1 n))
+(define (h n) (A 2 n))
+```
+
+$f(n) = 2n$
+
+$g(n) = 2^{n}$
+
+$h(n) = $
+
+This doesn't look like the "real" Ackerman function...

@@ -30,6 +30,8 @@ The solution is easier to see if you change slightly the tabulation:
        . . .
 ```
 
+Todo: use `row` and `col`
+
 ```scheme
 (define (pascal n i)
   (cond ((= n 1) 1)

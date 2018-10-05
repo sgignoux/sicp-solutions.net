@@ -58,10 +58,10 @@ $$0<\frac{\psi^n}{\sqrt5}<1$$
 
 So that:
 
-$$\text{Fib}(n)<\text{Fib}(n)+\frac{\psi^n}{\sqrt5}<1+\text{Fib}(n)$$
+$$\text{Fib}(n)<\text{Fib}(n)+\frac{\psi^n}{\sqrt5}<\text{Fib}(n)+1$$
 
 Wich means:
 
-$$\text{Fib}(n)<\frac{\varphi^n}{\sqrt5}<1+\text{Fib}(n)$$
+$$\text{Fib}(n)<\frac{\varphi^n}{\sqrt5}<\text{Fib}(n)+1$$
 
 This show that $\frac{\varphi^n}{\sqrt5}$ will never be further away from the value of $\text{Fib}(n)$ than 1. Thus proving that that ${\text{Fib}(n)}$ is the closest integer to ${\varphi^n/\sqrt5}$.

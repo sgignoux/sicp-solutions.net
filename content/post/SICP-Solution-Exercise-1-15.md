@@ -56,26 +56,26 @@ to reduce the size of the argument of sin. (For purposes of this exercise an ang
 
 (display "| ") (display "a         ") (display " | ") (display "number of steps              ") (display " |") (newline)
 (display "| ") (display "----------") (display " | ") (display "-----------------------------") (display " |") (newline)
-(display "| ") (display       12.15 ) (display " | ") (display (sine-count-step       12.15 1)) (display " |") (newline)
-(display "| ") (display      120.15 ) (display " | ") (display (sine-count-step      120.15 1)) (display " |") (newline)
-(display "| ") (display     1200.15 ) (display " | ") (display (sine-count-step     1200.15 1)) (display " |") (newline)
-(display "| ") (display    12000.15 ) (display " | ") (display (sine-count-step    12000.15 1)) (display " |") (newline)
-(display "| ") (display   120000.15 ) (display " | ") (display (sine-count-step   120000.15 1)) (display " |") (newline)
-(display "| ") (display  1200000.15 ) (display " | ") (display (sine-count-step  1200000.15 1)) (display " |") (newline)
-(display "| ") (display 12000000.15 ) (display " | ") (display (sine-count-step 12000000.15 1)) (display " |") (newline)
+(display "| ") (display       12 ) (display " | ") (display (sine-count-step       12 1)) (display " |") (newline)
+(display "| ") (display      120 ) (display " | ") (display (sine-count-step      120 1)) (display " |") (newline)
+(display "| ") (display     1200 ) (display " | ") (display (sine-count-step     1200 1)) (display " |") (newline)
+(display "| ") (display    12000 ) (display " | ") (display (sine-count-step    12000 1)) (display " |") (newline)
+(display "| ") (display   120000 ) (display " | ") (display (sine-count-step   120000 1)) (display " |") (newline)
+(display "| ") (display  1200000 ) (display " | ") (display (sine-count-step  1200000 1)) (display " |") (newline)
+(display "| ") (display 12000000 ) (display " | ") (display (sine-count-step 12000000 1)) (display " |") (newline)
 ```
 
-| a           | number of steps |
-| ----------- | --------------- |
-| 12.15       | 6               |
-| 120.15      | 8               |
-| 1200.15     | 10              |
-| 12000.15    | 12              |
-| 120000.15   | 14              |
-| 1200000.15  | 16              |
-| 12000000.15 | 18              |
+| a        | number of steps |
+| -------- | --------------- |
+| 12       | 6               |
+| 120      | 8               |
+| 1200     | 10              |
+| 12000    | 12              |
+| 120000   | 14              |
+| 1200000  | 16              |
+| 12000000 | 18              |
 
-for every iteration, `a` is divided by 3. So the iteration will stop when:
+It is easy to see the trend: every time a is multiplied by 10, the number of step increase by 2. It looks like a logarithm. I could also hve noticed that for every iteration, `a` is divided by 3. So the iteration will stop when:
 
 $$\frac a{3^n}<0.1$$
 

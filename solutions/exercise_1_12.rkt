@@ -1,15 +1,15 @@
 #lang r5rs
 
 
-(define (pascal n i)
-  (cond ((= n 1) 1)
-        ((or (= i 1) (= i n)) 1)
-        (else (+ (pascal (- n 1)  (- i 1))
-                 (pascal (- n 1) i)))))
+(define (pascal row col)
+  (cond ((= row 1) 1)
+        ((or (= col 1) (= col row)) 1)
+        (else (+ (pascal (- row 1)  (- col 1))
+                 (pascal (- row 1) col)))))
 
 (define (display-pascal-row n)
   (define (column-iter i)
-    (display (pascal n i)) (display " ")
+    (display (pascal n i)) (display "  ")
     (if (= i n)
         (newline)
         (column-iter (+ i 1))))

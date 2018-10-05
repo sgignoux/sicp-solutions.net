@@ -4,6 +4,8 @@ date: 2018-09-26T21:03:58+02:00
 draft: false
 ---
 
+**Exercise 1.4**
+
 Observe that our model of evaluation allows for combinations whose operators are compound expressions. Use this observation to describe the behavior of the following procedure:
 
 ```scheme
@@ -11,7 +13,7 @@ Observe that our model of evaluation allows for combinations whose operators are
   ((if (> b 0) + -) a b))
 ```
 
-**Solution:**
+**Solution**
 
 If $b$ is strictly a positive number return $a+b$, else return $a-b$.
 

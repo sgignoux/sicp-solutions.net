@@ -4,6 +4,8 @@ date: 2018-09-28T21:03:58+02:00
 draft: false
 ---
 
+**Exercise 1.6**
+
 Alyssa P. Hacker doesn’t see why if needs to be provided as a special form. “Why can’t I just define it as an ordinary procedure in terms of cond?” she asks. Alyssa’s friend Eva Lu Ator claims this can indeed be done, and she defines a new version of if:
 
 ```scheme
@@ -35,7 +37,7 @@ Delighted, Alyssa uses new-if to rewrite the square-root program:
 
 What happens when Alyssa attempts to use this to compute square roots? Explain.
 
-**Solution:**
+**Solution**
 
 Since `new-if` is a function, each parameters subexpressions will be evaluated _before_ the procedure is applied. It means that when evaluating:
 

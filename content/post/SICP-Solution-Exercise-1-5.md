@@ -4,6 +4,8 @@ date: 2018-09-27T21:03:58+02:00
 draft: false
 ---
 
+**Exercise 1.5**
+
 Ben Bitdiddle has invented a test to determine whether the interpreter he is faced with is using applicative-order evaluation or normal-order evaluation. He defines the following two procedures:
 
 ```scheme
@@ -23,7 +25,7 @@ Then he evaluates the expression
 
 What behavior will Ben observe with an interpreter that uses applicative-order evaluation? What behavior will he observe with an interpreter that uses normal-order evaluation? Explain your answer.
 
-**Solution:**
+**Solution**
 
 The key is to notice that `(define (p) (p))` defines a function that evaluates to itself.
 

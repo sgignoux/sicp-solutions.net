@@ -68,7 +68,7 @@ paginate = 20
 	share = ""
 
 	# 404 page
-	title404 = ""
+	title404 = "ooops"
 	subtitle404 = ""
 
 	# Choose a font for the social icons in the footer. Either "mono-social" or "font-awesome"

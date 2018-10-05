@@ -4,6 +4,8 @@ date: 2018-10-01T21:06:58+02:00
 draft: draft
 ---
 
+**Exercise 1.10**
+
 The following procedure computes a mathematical function called Ackermann’s function.
 
 ```scheme
@@ -34,7 +36,7 @@ Consider the following procedures, where A is the procedure defined above:
 
 Give concise mathematical definitions for the functions computed by the procedures `f`, `g`, and `h` for positive integer values of `n`. For example, `(k n)` computes $5n^2$.
 
-**Solution:**
+**Solution**
 
 ```scheme
 (A 1 10)

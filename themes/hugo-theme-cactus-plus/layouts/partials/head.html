@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html {{ with .Site.LanguageCode }}lang="{{ . }}"{{ end }}>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{{ if .Site.Params.enableTwitterCard }} 
+			{{ partial "twitter-cards.html" . }}
+		{{ end }}
+		{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+		{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+		{{ .Hugo.Generator }}
+		<title>{{ if .IsHome }}{{ .Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}</title>
+		<link rel="shortcut icon" href="{{ .Site.BaseURL }}images/favicon.ico">
+		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
+		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/highlight.css">
+
+		{{ if eq .Site.Params.iconFont "font-awesome" }}
+		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/font-awesome.min.css">
+		{{ else }}
+		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/monosocialiconsfont.css">
+		{{ end }}
+
+		{{ if .Site.Params.enableRSS }}
+		<link href="{{ .Site.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+		{{ end }}
+
+		{{ range .Site.Params.customCSS }}
+		<link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}">
+		{{ end }}
+	</head>

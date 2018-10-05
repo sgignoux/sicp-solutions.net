@@ -74,3 +74,19 @@ to reduce the size of the argument of sin. (For purposes of this exercise an ang
 | 120000.15   | 14              |
 | 1200000.15  | 16              |
 | 12000000.15 | 18              |
+
+for every iteration, `a` is divided by 3. So the iteration will stop when:
+
+$$\frac a{3^n}<0.1$$
+
+Which can be rewritten to take out the n as:
+
+$$\frac a{0.1}<3^n$$
+
+$$\log\left(\frac{\displaystyle a}{\displaystyle0.1}\right)<\log\left(3^n\right)$$
+
+$$\log(a)-\log(0.1)<n.\log\left(3\right)$$
+
+$$\frac{\log(a)-\log(0.1)}{\log\left(3\right)}<n$$
+
+Which means that the iteration are ${\mathrm\Theta(\log(a))}$

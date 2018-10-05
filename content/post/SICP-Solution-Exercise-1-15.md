@@ -24,4 +24,53 @@ to reduce the size of the argument of sin. (For purposes of this exercise an ang
 
 **Solution**
 
-TBD
+```scheme
+(define (cube x) (* x x x))
+
+(define (p x) (- (* 3 x) (* 4 (cube x))))
+
+(define (sine angle step)
+  (display step) (display ": ") (display angle) (newline)
+   (if (not (> (abs angle) 0.1))
+       angle
+       (p (sine (/ angle 3.0) (+ step 1)))))
+
+(display (sine 12.15 1))
+```
+
+```
+1: 12.15
+2: 4.05
+3: 1.3499999999999999
+4: 0.44999999999999996
+5: 0.15
+6: 0.049999999999999996
+-0.39980345741334
+```
+
+```scheme
+(define (sine-count-step angle step)
+  (if (not (> (abs angle) 0.1))
+      step
+      (sine-count-step (/ angle 3.0) (+ step 1))))
+
+(display "| ") (display "a         ") (display " | ") (display "number of steps              ") (display " |") (newline)
+(display "| ") (display "----------") (display " | ") (display "-----------------------------") (display " |") (newline)
+(display "| ") (display       12.15 ) (display " | ") (display (sine-count-step       12.15 1)) (display " |") (newline)
+(display "| ") (display      120.15 ) (display " | ") (display (sine-count-step      120.15 1)) (display " |") (newline)
+(display "| ") (display     1200.15 ) (display " | ") (display (sine-count-step     1200.15 1)) (display " |") (newline)
+(display "| ") (display    12000.15 ) (display " | ") (display (sine-count-step    12000.15 1)) (display " |") (newline)
+(display "| ") (display   120000.15 ) (display " | ") (display (sine-count-step   120000.15 1)) (display " |") (newline)
+(display "| ") (display  1200000.15 ) (display " | ") (display (sine-count-step  1200000.15 1)) (display " |") (newline)
+(display "| ") (display 12000000.15 ) (display " | ") (display (sine-count-step 12000000.15 1)) (display " |") (newline)
+```
+
+| a           | number of steps |
+| ----------- | --------------- |
+| 12.15       | 6               |
+| 120.15      | 8               |
+| 1200.15     | 10              |
+| 12000.15    | 12              |
+| 120000.15   | 14              |
+| 1200000.15  | 16              |
+| 12000000.15 | 18              |

@@ -13,3 +13,7 @@ draft: true
 - Isolating domain logic
 - Boundaries
 - breaks up naturally into a number of subproblems
+
+Declarative >>> Imperative. This is among the most important and broad guidelines to follow in system design.
+Thinking Matters. We cut the cost/time of this implementation by 90% or more, not by coding more quickly, but by thinking more clearly. I am a fan of TDD and incremental design, but you’re quite unlikely to ever make it from a handcoded solution to this simply-add-Prolog solution that way.
+The Right Tool for the Job. Learn a lot of them, don’t be the person who only has a hammer.

@@ -8,4 +8,86 @@ draft: false
 
 **Solution**
 
-TBD
+The solution I opted for is to update the code to output the trace in [GrapViz](https://www.graphviz.org/) DOT format and plot it. The call that match `(= amount 0)` are in darker grey.
+
+```viz-dot
+digraph G {
+node [color = gray95,style=filled];
+graph [ranksep=0.25];
+node [color = gray95,style=filled,fontsize=9,shape=box, margin=.08, width=0, height=0 ];
+edge [penwidth=.1, arrowsize=0.5];
+"[0] (cc 11 5)" [label="(cc 11 5)", ];
+"[0] (cc 11 5)" -> "[1] (cc 11 4)"; "[1] (cc 11 4)" [label="(cc 11 4)", ];
+"[1] (cc 11 4)" -> "[2] (cc 11 3)"; "[2] (cc 11 3)" [label="(cc 11 3)", ];
+"[2] (cc 11 3)" -> "[3] (cc 11 2)"; "[3] (cc 11 2)" [label="(cc 11 2)", ];
+"[3] (cc 11 2)" -> "[4] (cc 11 1)"; "[4] (cc 11 1)" [label="(cc 11 1)", ];
+"[4] (cc 11 1)" -> "[5] (cc 11 0)"; "[5] (cc 11 0)" [label="(cc 11 0)", ];
+"[4] (cc 11 1)" -> "[5] (cc 10 1)"; "[5] (cc 10 1)" [label="(cc 10 1)", ];
+"[5] (cc 10 1)" -> "[6] (cc 10 0)"; "[6] (cc 10 0)" [label="(cc 10 0)", ];
+"[5] (cc 10 1)" -> "[6] (cc 9 1)"; "[6] (cc 9 1)" [label="(cc 9 1)", ];
+"[6] (cc 9 1)" -> "[7] (cc 9 0)"; "[7] (cc 9 0)" [label="(cc 9 0)", ];
+"[6] (cc 9 1)" -> "[7] (cc 8 1)"; "[7] (cc 8 1)" [label="(cc 8 1)", ];
+"[7] (cc 8 1)" -> "[8] (cc 8 0)"; "[8] (cc 8 0)" [label="(cc 8 0)", ];
+"[7] (cc 8 1)" -> "[8] (cc 7 1)"; "[8] (cc 7 1)" [label="(cc 7 1)", ];
+"[8] (cc 7 1)" -> "[9] (cc 7 0)"; "[9] (cc 7 0)" [label="(cc 7 0)", ];
+"[8] (cc 7 1)" -> "[9] (cc 6 1)"; "[9] (cc 6 1)" [label="(cc 6 1)", ];
+"[9] (cc 6 1)" -> "[10] (cc 6 0)"; "[10] (cc 6 0)" [label="(cc 6 0)", ];
+"[9] (cc 6 1)" -> "[10] (cc 5 1)"; "[10] (cc 5 1)" [label="(cc 5 1)", ];
+"[10] (cc 5 1)" -> "[11] (cc 5 0)"; "[11] (cc 5 0)" [label="(cc 5 0)", ];
+"[10] (cc 5 1)" -> "[11] (cc 4 1)"; "[11] (cc 4 1)" [label="(cc 4 1)", ];
+"[11] (cc 4 1)" -> "[12] (cc 4 0)"; "[12] (cc 4 0)" [label="(cc 4 0)", ];
+"[11] (cc 4 1)" -> "[12] (cc 3 1)"; "[12] (cc 3 1)" [label="(cc 3 1)", ];
+"[12] (cc 3 1)" -> "[13] (cc 3 0)"; "[13] (cc 3 0)" [label="(cc 3 0)", ];
+"[12] (cc 3 1)" -> "[13] (cc 2 1)"; "[13] (cc 2 1)" [label="(cc 2 1)", ];
+"[13] (cc 2 1)" -> "[14] (cc 2 0)"; "[14] (cc 2 0)" [label="(cc 2 0)", ];
+"[13] (cc 2 1)" -> "[14] (cc 1 1)"; "[14] (cc 1 1)" [label="(cc 1 1)", ];
+"[14] (cc 1 1)" -> "[15] (cc 1 0)"; "[15] (cc 1 0)" [label="(cc 1 0)", ];
+"[14] (cc 1 1)" -> "[15] (cc 0 1)"; "[15] (cc 0 1)" [label="(cc 0 1)",color=gray80];
+"[3] (cc 11 2)" -> "[4] (cc 6 2)"; "[4] (cc 6 2)" [label="(cc 6 2)", ];
+"[4] (cc 6 2)" -> "[5] (cc 6 1)"; "[5] (cc 6 1)" [label="(cc 6 1)", ];
+"[5] (cc 6 1)" -> "[6] (cc 6 0)"; "[6] (cc 6 0)" [label="(cc 6 0)", ];
+"[5] (cc 6 1)" -> "[6] (cc 5 1)"; "[6] (cc 5 1)" [label="(cc 5 1)", ];
+"[6] (cc 5 1)" -> "[7] (cc 5 0)"; "[7] (cc 5 0)" [label="(cc 5 0)", ];
+"[6] (cc 5 1)" -> "[7] (cc 4 1)"; "[7] (cc 4 1)" [label="(cc 4 1)", ];
+"[7] (cc 4 1)" -> "[8] (cc 4 0)"; "[8] (cc 4 0)" [label="(cc 4 0)", ];
+"[7] (cc 4 1)" -> "[8] (cc 3 1)"; "[8] (cc 3 1)" [label="(cc 3 1)", ];
+"[8] (cc 3 1)" -> "[9] (cc 3 0)"; "[9] (cc 3 0)" [label="(cc 3 0)", ];
+"[8] (cc 3 1)" -> "[9] (cc 2 1)"; "[9] (cc 2 1)" [label="(cc 2 1)", ];
+"[9] (cc 2 1)" -> "[10] (cc 2 0)"; "[10] (cc 2 0)" [label="(cc 2 0)", ];
+"[9] (cc 2 1)" -> "[10] (cc 1 1)"; "[10] (cc 1 1)" [label="(cc 1 1)", ];
+"[10] (cc 1 1)" -> "[11] (cc 1 0)"; "[11] (cc 1 0)" [label="(cc 1 0)", ];
+"[10] (cc 1 1)" -> "[11] (cc 0 1)"; "[11] (cc 0 1)" [label="(cc 0 1)",color=gray80];
+"[4] (cc 6 2)" -> "[5] (cc 1 2)"; "[5] (cc 1 2)" [label="(cc 1 2)", ];
+"[5] (cc 1 2)" -> "[6] (cc 1 1)"; "[6] (cc 1 1)" [label="(cc 1 1)", ];
+"[6] (cc 1 1)" -> "[7] (cc 1 0)"; "[7] (cc 1 0)" [label="(cc 1 0)", ];
+"[6] (cc 1 1)" -> "[7] (cc 0 1)"; "[7] (cc 0 1)" [label="(cc 0 1)",color=gray80];
+"[5] (cc 1 2)" -> "[6] (cc -4 2)"; "[6] (cc -4 2)" [label="(cc -4 2)", ];
+"[2] (cc 11 3)" -> "[3] (cc 1 3)"; "[3] (cc 1 3)" [label="(cc 1 3)", ];
+"[3] (cc 1 3)" -> "[4] (cc 1 2)"; "[4] (cc 1 2)" [label="(cc 1 2)", ];
+"[4] (cc 1 2)" -> "[5] (cc 1 1)"; "[5] (cc 1 1)" [label="(cc 1 1)", ];
+"[5] (cc 1 1)" -> "[6] (cc 1 0)"; "[6] (cc 1 0)" [label="(cc 1 0)", ];
+"[5] (cc 1 1)" -> "[6] (cc 0 1)"; "[6] (cc 0 1)" [label="(cc 0 1)",color=gray80];
+"[4] (cc 1 2)" -> "[5] (cc -4 2)"; "[5] (cc -4 2)" [label="(cc -4 2)", ];
+"[3] (cc 1 3)" -> "[4] (cc -9 3)"; "[4] (cc -9 3)" [label="(cc -9 3)", ];
+"[1] (cc 11 4)" -> "[2] (cc -14 4)"; "[2] (cc -14 4)" [label="(cc -14 4)", ];
+"[0] (cc 11 5)" -> "[1] (cc -39 5)"; "[1] (cc -39 5)" [label="(cc -39 5)", ];
+}
+```
+
+What are the orders of growth of the space and number of steps used by this process as the amount to be changed increases?
+
+Let's try a few value to see how it behave:
+
+| amount | total steps | max depth |
+| ------ | ----------- | --------- |
+| 10     | 41          | 13        |
+| 20     | 151         | 23        |
+| 30     | 391         | 33        |
+| 40     | 837         | 43        |
+| 50     | 1571        | 53        |
+
+At first sight:
+
+* Add 10 to `amount` is roughly like doubling the total number of steps
+* The max depth seems like the `amount`+3
+

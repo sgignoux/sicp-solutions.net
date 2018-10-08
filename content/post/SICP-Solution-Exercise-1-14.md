@@ -91,3 +91,4 @@ At first sight:
 * Add 10 to `amount` is roughly like doubling the total number of steps
 * The max depth seems like the `amount`+3
 
+The total steps are ${\mathrm\Theta(2^a)}$

@@ -6,7 +6,7 @@
 (define (pad char n)
  (display char)
   (if (>= 0 n)
-      0 =it
+      0
       (pad char (- n 1))))
 
 (define (cc amount kinds-of-coins depth)

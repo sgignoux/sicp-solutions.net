@@ -40,5 +40,5 @@
 (display "graph [ranksep=0.3];") (newline)
 (display "node [color = gray95,style=filled,fontsize=9,shape=box, margin=.08, width=0, height=0 ];") (newline)
 (display "edge [penwidth=.1, arrowsize=0.5];") (newline)
-(count-change 20)
+(cc 25 2 0 "-")
 (display "}") (newline)

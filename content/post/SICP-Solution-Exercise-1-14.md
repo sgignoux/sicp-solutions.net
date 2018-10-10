@@ -80,9 +80,11 @@ What are the orders of growth of the space and number of steps used by this proc
 
 ### Orders of growth of number of steps
 
-Counting the number of call to cc
+Counting the number of call to cc.
 
-`(cc 6 1 0 "-")`:
+Let's start to look at simplified dimensions.
+
+`(cc 6 1)`:
 
 ```viz-dot
 digraph G {
@@ -106,7 +108,9 @@ edge [penwidth=.1, arrowsize=0.5];
 }
 ```
 
-`(cc 12 2 0 "-")`:
+This is easy to compute the number of steps in this case.
+
+`(cc 12 2)`:
 
 ```viz-dot
 digraph G {
@@ -184,7 +188,7 @@ $$T(n,2)\;=\frac n5+1+\frac{2n^2}5+\frac n5-10\frac{{\displaystyle\frac n5}\left
 
 $$T(n,2)\;=\frac{2n}5+\frac{2n^2}5-\frac{n^2}5+n+1$$
 
-$$T(n,2)\;=\frac{n^2}5+\frac{7n}5+1$$
+$$T(n,2)\;=\frac{n^2+7n}5+1$$
 
 $$T(n,2)\;=\mathrm\Theta(n^2)$$
 

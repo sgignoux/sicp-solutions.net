@@ -114,7 +114,7 @@ node [color = gray95,style=filled];
 graph [ranksep=0.3,size=7];
 node [color = gray95,style=filled,fontsize=9,shape=box, margin=.08, width=0, height=0 ];
 edge [penwidth=.1, arrowsize=0.5];
-"[0] (cc 12 2)" [label="(cc 12 2)",color=deepskyblue2];
+"[0] (cc 12 2)" [label="(cc 12 2)",color=deepskyblue];
 "[0] (cc 12 2)" -> "[1] (cc 12 1)"; "[1] (cc 12 1)" [label="(cc 12 1)",color=antiquewhite];
 "[1] (cc 12 1)" -> "[2] (cc 12 0)"; "[2] (cc 12 0)" [label="(cc 12 0)", ];
 "[1] (cc 12 1)" -> "[2] (cc 11 1)"; "[2] (cc 11 1)" [label="(cc 11 1)",color=antiquewhite];
@@ -140,7 +140,7 @@ edge [penwidth=.1, arrowsize=0.5];
 "[11] (cc 2 1)" -> "[12] (cc 1 1)"; "[12] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
 "[12] (cc 1 1)" -> "[13] (cc 1 0)"; "[13] (cc 1 0)" [label="(cc 1 0)", ];
 "[12] (cc 1 1)" -> "[13] (cc 0 1)"; "[13] (cc 0 1)" [label="(cc 0 1)",color=gray80];
-"[0] (cc 12 2)" -> "[1] (cc 7 2)"; "[1] (cc 7 2)" [label="(cc 7 2)",color=deepskyblue2];
+"[0] (cc 12 2)" -> "[1] (cc 7 2)"; "[1] (cc 7 2)" [label="(cc 7 2)",color=deepskyblue];
 "[1] (cc 7 2)" -> "[2] (cc 7 1)"; "[2] (cc 7 1)" [label="(cc 7 1)",color=antiquewhite];
 "[2] (cc 7 1)" -> "[3] (cc 7 0)"; "[3] (cc 7 0)" [label="(cc 7 0)", ];
 "[2] (cc 7 1)" -> "[3] (cc 6 1)"; "[3] (cc 6 1)" [label="(cc 6 1)",color=antiquewhite];
@@ -156,13 +156,13 @@ edge [penwidth=.1, arrowsize=0.5];
 "[7] (cc 2 1)" -> "[8] (cc 1 1)"; "[8] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
 "[8] (cc 1 1)" -> "[9] (cc 1 0)"; "[9] (cc 1 0)" [label="(cc 1 0)", ];
 "[8] (cc 1 1)" -> "[9] (cc 0 1)"; "[9] (cc 0 1)" [label="(cc 0 1)",color=gray80];
-"[1] (cc 7 2)" -> "[2] (cc 2 2)"; "[2] (cc 2 2)" [label="(cc 2 2)",color=deepskyblue2];
+"[1] (cc 7 2)" -> "[2] (cc 2 2)"; "[2] (cc 2 2)" [label="(cc 2 2)",color=deepskyblue];
 "[2] (cc 2 2)" -> "[3] (cc 2 1)"; "[3] (cc 2 1)" [label="(cc 2 1)",color=antiquewhite];
 "[3] (cc 2 1)" -> "[4] (cc 2 0)"; "[4] (cc 2 0)" [label="(cc 2 0)", ];
 "[3] (cc 2 1)" -> "[4] (cc 1 1)"; "[4] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
 "[4] (cc 1 1)" -> "[5] (cc 1 0)"; "[5] (cc 1 0)" [label="(cc 1 0)", ];
 "[4] (cc 1 1)" -> "[5] (cc 0 1)"; "[5] (cc 0 1)" [label="(cc 0 1)",color=gray80];
-"[2] (cc 2 2)" -> "[3] (cc -3 2)"; "[3] (cc -3 2)" [label="(cc -3 2)",color=deepskyblue2];
+"[2] (cc 2 2)" -> "[3] (cc -3 2)"; "[3] (cc -3 2)" [label="(cc -3 2)",color=deepskyblue];
 }
 ```
 
@@ -196,4 +196,6 @@ if you take the trouble to expand the equation, you will find that:
 
 $$T(n,3)\;=\mathrm\Theta(n^3)$$
 
-On the same principle $T(n,5)\;=\mathrm\Theta(n^5)$
+On the same principle:
+
+$$T(n,5)\;=\mathrm\Theta(n^5)$$

@@ -76,70 +76,13 @@ edge [penwidth=.5, arrowsize=0.5];
 
 What are the orders of growth of the space and number of steps used by this process as the amount to be changed increases?
 
-Orders of growth of the space
+### Orders of growth of the space
 
-Orders of growth of number of steps
+### Orders of growth of number of steps
 
-Since the estimation seems none obvious, we can start by plotting:
+Counting the number of call to cc
 
-| amount | # steps    |
-| ------ | ---------- |
-| 10     | 41         |
-| 100    | 15499      |
-| 200    | 229589     |
-| 300    | 1292591    |
-| 400    | 4642025    |
-| 500    | 12822611   |
-| 600    | 29806269   |
-| 700    | 61312119   |
-| 800    | 115126481  |
-| 900    | 201422875  |
-| 1000   | 333082021  |
-| 1100   | 526011839  |
-| 1200   | 799467449  |
-| 1300   | 1176371171 |
-| 1400   | 1683632525 |
-| 1500   | 2352468231 |
-
-Counting the number of call to  cc
-
-At first sight:
-
-* Add 10 to `amount` is roughly like doubling the total number of steps
-* The max depth seems like the `amount`+3
-
-The total steps are ${\mathrm\Theta(2^a)}$
-
-
-
-
-http://www.billthelizard.com/2009/12/sicp-exercise-114-counting-change.html
-
-`(cc 11 1 0 "-")`:
-
-```viz-dot
-digraph G {
-node [color = gray95,style=filled];
-graph [ranksep=0.3];
-node [color = gray95,style=filled,fontsize=9,shape=box, margin=.08, width=0, height=0 ];
-edge [penwidth=.1, arrowsize=0.5];
-"[0] (cc 6 1)" [label="(cc 6 1)", ];
-"[0] (cc 6 1)" -> "[1] (cc 6 0)"; "[1] (cc 6 0)" [label="(cc 6 0)", ];
-"[0] (cc 6 1)" -> "[1] (cc 5 1)"; "[1] (cc 5 1)" [label="(cc 5 1)", ];
-"[1] (cc 5 1)" -> "[2] (cc 5 0)"; "[2] (cc 5 0)" [label="(cc 5 0)", ];
-"[1] (cc 5 1)" -> "[2] (cc 4 1)"; "[2] (cc 4 1)" [label="(cc 4 1)", ];
-"[2] (cc 4 1)" -> "[3] (cc 4 0)"; "[3] (cc 4 0)" [label="(cc 4 0)", ];
-"[2] (cc 4 1)" -> "[3] (cc 3 1)"; "[3] (cc 3 1)" [label="(cc 3 1)", ];
-"[3] (cc 3 1)" -> "[4] (cc 3 0)"; "[4] (cc 3 0)" [label="(cc 3 0)", ];
-"[3] (cc 3 1)" -> "[4] (cc 2 1)"; "[4] (cc 2 1)" [label="(cc 2 1)", ];
-"[4] (cc 2 1)" -> "[5] (cc 2 0)"; "[5] (cc 2 0)" [label="(cc 2 0)", ];
-"[4] (cc 2 1)" -> "[5] (cc 1 1)"; "[5] (cc 1 1)" [label="(cc 1 1)", ];
-"[5] (cc 1 1)" -> "[6] (cc 1 0)"; "[6] (cc 1 0)" [label="(cc 1 0)", ];
-"[5] (cc 1 1)" -> "[6] (cc 0 1)"; "[6] (cc 0 1)" [label="(cc 0 1)",color=gray80];
-}
-```
-
-`(cc 25 2 0 "-")`:
+`(cc 6 1 0 "-")`:
 
 ```viz-dot
 digraph G {
@@ -147,239 +90,62 @@ node [color = gray95,style=filled];
 graph [ranksep=0.3,size=7];
 node [color = gray95,style=filled,fontsize=9,shape=box, margin=.08, width=0, height=0 ];
 edge [penwidth=.1, arrowsize=0.5];
-"[0] (cc 25 3)" [label="(cc 25 3)",color=chocolate1];
-"[0] (cc 25 3)" -> "[1] (cc 25 2)"; "[1] (cc 25 2)" [label="(cc 25 2)",color=deepskyblue2];
-"[1] (cc 25 2)" -> "[2] (cc 25 1)"; "[2] (cc 25 1)" [label="(cc 25 1)",color=antiquewhite];
-"[2] (cc 25 1)" -> "[3] (cc 25 0)"; "[3] (cc 25 0)" [label="(cc 25 0)", ];
-"[2] (cc 25 1)" -> "[3] (cc 24 1)"; "[3] (cc 24 1)" [label="(cc 24 1)",color=antiquewhite];
-"[3] (cc 24 1)" -> "[4] (cc 24 0)"; "[4] (cc 24 0)" [label="(cc 24 0)", ];
-"[3] (cc 24 1)" -> "[4] (cc 23 1)"; "[4] (cc 23 1)" [label="(cc 23 1)",color=antiquewhite];
-"[4] (cc 23 1)" -> "[5] (cc 23 0)"; "[5] (cc 23 0)" [label="(cc 23 0)", ];
-"[4] (cc 23 1)" -> "[5] (cc 22 1)"; "[5] (cc 22 1)" [label="(cc 22 1)",color=antiquewhite];
-"[5] (cc 22 1)" -> "[6] (cc 22 0)"; "[6] (cc 22 0)" [label="(cc 22 0)", ];
-"[5] (cc 22 1)" -> "[6] (cc 21 1)"; "[6] (cc 21 1)" [label="(cc 21 1)",color=antiquewhite];
-"[6] (cc 21 1)" -> "[7] (cc 21 0)"; "[7] (cc 21 0)" [label="(cc 21 0)", ];
-"[6] (cc 21 1)" -> "[7] (cc 20 1)"; "[7] (cc 20 1)" [label="(cc 20 1)",color=antiquewhite];
-"[7] (cc 20 1)" -> "[8] (cc 20 0)"; "[8] (cc 20 0)" [label="(cc 20 0)", ];
-"[7] (cc 20 1)" -> "[8] (cc 19 1)"; "[8] (cc 19 1)" [label="(cc 19 1)",color=antiquewhite];
-"[8] (cc 19 1)" -> "[9] (cc 19 0)"; "[9] (cc 19 0)" [label="(cc 19 0)", ];
-"[8] (cc 19 1)" -> "[9] (cc 18 1)"; "[9] (cc 18 1)" [label="(cc 18 1)",color=antiquewhite];
-"[9] (cc 18 1)" -> "[10] (cc 18 0)"; "[10] (cc 18 0)" [label="(cc 18 0)", ];
-"[9] (cc 18 1)" -> "[10] (cc 17 1)"; "[10] (cc 17 1)" [label="(cc 17 1)",color=antiquewhite];
-"[10] (cc 17 1)" -> "[11] (cc 17 0)"; "[11] (cc 17 0)" [label="(cc 17 0)", ];
-"[10] (cc 17 1)" -> "[11] (cc 16 1)"; "[11] (cc 16 1)" [label="(cc 16 1)",color=antiquewhite];
-"[11] (cc 16 1)" -> "[12] (cc 16 0)"; "[12] (cc 16 0)" [label="(cc 16 0)", ];
-"[11] (cc 16 1)" -> "[12] (cc 15 1)"; "[12] (cc 15 1)" [label="(cc 15 1)",color=antiquewhite];
-"[12] (cc 15 1)" -> "[13] (cc 15 0)"; "[13] (cc 15 0)" [label="(cc 15 0)", ];
-"[12] (cc 15 1)" -> "[13] (cc 14 1)"; "[13] (cc 14 1)" [label="(cc 14 1)",color=antiquewhite];
-"[13] (cc 14 1)" -> "[14] (cc 14 0)"; "[14] (cc 14 0)" [label="(cc 14 0)", ];
-"[13] (cc 14 1)" -> "[14] (cc 13 1)"; "[14] (cc 13 1)" [label="(cc 13 1)",color=antiquewhite];
-"[14] (cc 13 1)" -> "[15] (cc 13 0)"; "[15] (cc 13 0)" [label="(cc 13 0)", ];
-"[14] (cc 13 1)" -> "[15] (cc 12 1)"; "[15] (cc 12 1)" [label="(cc 12 1)",color=antiquewhite];
-"[15] (cc 12 1)" -> "[16] (cc 12 0)"; "[16] (cc 12 0)" [label="(cc 12 0)", ];
-"[15] (cc 12 1)" -> "[16] (cc 11 1)"; "[16] (cc 11 1)" [label="(cc 11 1)",color=antiquewhite];
-"[16] (cc 11 1)" -> "[17] (cc 11 0)"; "[17] (cc 11 0)" [label="(cc 11 0)", ];
-"[16] (cc 11 1)" -> "[17] (cc 10 1)"; "[17] (cc 10 1)" [label="(cc 10 1)",color=antiquewhite];
-"[17] (cc 10 1)" -> "[18] (cc 10 0)"; "[18] (cc 10 0)" [label="(cc 10 0)", ];
-"[17] (cc 10 1)" -> "[18] (cc 9 1)"; "[18] (cc 9 1)" [label="(cc 9 1)",color=antiquewhite];
-"[18] (cc 9 1)" -> "[19] (cc 9 0)"; "[19] (cc 9 0)" [label="(cc 9 0)", ];
-"[18] (cc 9 1)" -> "[19] (cc 8 1)"; "[19] (cc 8 1)" [label="(cc 8 1)",color=antiquewhite];
-"[19] (cc 8 1)" -> "[20] (cc 8 0)"; "[20] (cc 8 0)" [label="(cc 8 0)", ];
-"[19] (cc 8 1)" -> "[20] (cc 7 1)"; "[20] (cc 7 1)" [label="(cc 7 1)",color=antiquewhite];
-"[20] (cc 7 1)" -> "[21] (cc 7 0)"; "[21] (cc 7 0)" [label="(cc 7 0)", ];
-"[20] (cc 7 1)" -> "[21] (cc 6 1)"; "[21] (cc 6 1)" [label="(cc 6 1)",color=antiquewhite];
-"[21] (cc 6 1)" -> "[22] (cc 6 0)"; "[22] (cc 6 0)" [label="(cc 6 0)", ];
-"[21] (cc 6 1)" -> "[22] (cc 5 1)"; "[22] (cc 5 1)" [label="(cc 5 1)",color=antiquewhite];
-"[22] (cc 5 1)" -> "[23] (cc 5 0)"; "[23] (cc 5 0)" [label="(cc 5 0)", ];
-"[22] (cc 5 1)" -> "[23] (cc 4 1)"; "[23] (cc 4 1)" [label="(cc 4 1)",color=antiquewhite];
-"[23] (cc 4 1)" -> "[24] (cc 4 0)"; "[24] (cc 4 0)" [label="(cc 4 0)", ];
-"[23] (cc 4 1)" -> "[24] (cc 3 1)"; "[24] (cc 3 1)" [label="(cc 3 1)",color=antiquewhite];
-"[24] (cc 3 1)" -> "[25] (cc 3 0)"; "[25] (cc 3 0)" [label="(cc 3 0)", ];
-"[24] (cc 3 1)" -> "[25] (cc 2 1)"; "[25] (cc 2 1)" [label="(cc 2 1)",color=antiquewhite];
-"[25] (cc 2 1)" -> "[26] (cc 2 0)"; "[26] (cc 2 0)" [label="(cc 2 0)", ];
-"[25] (cc 2 1)" -> "[26] (cc 1 1)"; "[26] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
-"[26] (cc 1 1)" -> "[27] (cc 1 0)"; "[27] (cc 1 0)" [label="(cc 1 0)", ];
-"[26] (cc 1 1)" -> "[27] (cc 0 1)"; "[27] (cc 0 1)" [label="(cc 0 1)",color=gray80];
-"[1] (cc 25 2)" -> "[2] (cc 20 2)"; "[2] (cc 20 2)" [label="(cc 20 2)",color=deepskyblue2];
-"[2] (cc 20 2)" -> "[3] (cc 20 1)"; "[3] (cc 20 1)" [label="(cc 20 1)",color=antiquewhite];
-"[3] (cc 20 1)" -> "[4] (cc 20 0)"; "[4] (cc 20 0)" [label="(cc 20 0)", ];
-"[3] (cc 20 1)" -> "[4] (cc 19 1)"; "[4] (cc 19 1)" [label="(cc 19 1)",color=antiquewhite];
-"[4] (cc 19 1)" -> "[5] (cc 19 0)"; "[5] (cc 19 0)" [label="(cc 19 0)", ];
-"[4] (cc 19 1)" -> "[5] (cc 18 1)"; "[5] (cc 18 1)" [label="(cc 18 1)",color=antiquewhite];
-"[5] (cc 18 1)" -> "[6] (cc 18 0)"; "[6] (cc 18 0)" [label="(cc 18 0)", ];
-"[5] (cc 18 1)" -> "[6] (cc 17 1)"; "[6] (cc 17 1)" [label="(cc 17 1)",color=antiquewhite];
-"[6] (cc 17 1)" -> "[7] (cc 17 0)"; "[7] (cc 17 0)" [label="(cc 17 0)", ];
-"[6] (cc 17 1)" -> "[7] (cc 16 1)"; "[7] (cc 16 1)" [label="(cc 16 1)",color=antiquewhite];
-"[7] (cc 16 1)" -> "[8] (cc 16 0)"; "[8] (cc 16 0)" [label="(cc 16 0)", ];
-"[7] (cc 16 1)" -> "[8] (cc 15 1)"; "[8] (cc 15 1)" [label="(cc 15 1)",color=antiquewhite];
-"[8] (cc 15 1)" -> "[9] (cc 15 0)"; "[9] (cc 15 0)" [label="(cc 15 0)", ];
-"[8] (cc 15 1)" -> "[9] (cc 14 1)"; "[9] (cc 14 1)" [label="(cc 14 1)",color=antiquewhite];
-"[9] (cc 14 1)" -> "[10] (cc 14 0)"; "[10] (cc 14 0)" [label="(cc 14 0)", ];
-"[9] (cc 14 1)" -> "[10] (cc 13 1)"; "[10] (cc 13 1)" [label="(cc 13 1)",color=antiquewhite];
-"[10] (cc 13 1)" -> "[11] (cc 13 0)"; "[11] (cc 13 0)" [label="(cc 13 0)", ];
-"[10] (cc 13 1)" -> "[11] (cc 12 1)"; "[11] (cc 12 1)" [label="(cc 12 1)",color=antiquewhite];
-"[11] (cc 12 1)" -> "[12] (cc 12 0)"; "[12] (cc 12 0)" [label="(cc 12 0)", ];
-"[11] (cc 12 1)" -> "[12] (cc 11 1)"; "[12] (cc 11 1)" [label="(cc 11 1)",color=antiquewhite];
-"[12] (cc 11 1)" -> "[13] (cc 11 0)"; "[13] (cc 11 0)" [label="(cc 11 0)", ];
-"[12] (cc 11 1)" -> "[13] (cc 10 1)"; "[13] (cc 10 1)" [label="(cc 10 1)",color=antiquewhite];
-"[13] (cc 10 1)" -> "[14] (cc 10 0)"; "[14] (cc 10 0)" [label="(cc 10 0)", ];
-"[13] (cc 10 1)" -> "[14] (cc 9 1)"; "[14] (cc 9 1)" [label="(cc 9 1)",color=antiquewhite];
-"[14] (cc 9 1)" -> "[15] (cc 9 0)"; "[15] (cc 9 0)" [label="(cc 9 0)", ];
-"[14] (cc 9 1)" -> "[15] (cc 8 1)"; "[15] (cc 8 1)" [label="(cc 8 1)",color=antiquewhite];
-"[15] (cc 8 1)" -> "[16] (cc 8 0)"; "[16] (cc 8 0)" [label="(cc 8 0)", ];
-"[15] (cc 8 1)" -> "[16] (cc 7 1)"; "[16] (cc 7 1)" [label="(cc 7 1)",color=antiquewhite];
-"[16] (cc 7 1)" -> "[17] (cc 7 0)"; "[17] (cc 7 0)" [label="(cc 7 0)", ];
-"[16] (cc 7 1)" -> "[17] (cc 6 1)"; "[17] (cc 6 1)" [label="(cc 6 1)",color=antiquewhite];
-"[17] (cc 6 1)" -> "[18] (cc 6 0)"; "[18] (cc 6 0)" [label="(cc 6 0)", ];
-"[17] (cc 6 1)" -> "[18] (cc 5 1)"; "[18] (cc 5 1)" [label="(cc 5 1)",color=antiquewhite];
-"[18] (cc 5 1)" -> "[19] (cc 5 0)"; "[19] (cc 5 0)" [label="(cc 5 0)", ];
-"[18] (cc 5 1)" -> "[19] (cc 4 1)"; "[19] (cc 4 1)" [label="(cc 4 1)",color=antiquewhite];
-"[19] (cc 4 1)" -> "[20] (cc 4 0)"; "[20] (cc 4 0)" [label="(cc 4 0)", ];
-"[19] (cc 4 1)" -> "[20] (cc 3 1)"; "[20] (cc 3 1)" [label="(cc 3 1)",color=antiquewhite];
-"[20] (cc 3 1)" -> "[21] (cc 3 0)"; "[21] (cc 3 0)" [label="(cc 3 0)", ];
-"[20] (cc 3 1)" -> "[21] (cc 2 1)"; "[21] (cc 2 1)" [label="(cc 2 1)",color=antiquewhite];
-"[21] (cc 2 1)" -> "[22] (cc 2 0)"; "[22] (cc 2 0)" [label="(cc 2 0)", ];
-"[21] (cc 2 1)" -> "[22] (cc 1 1)"; "[22] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
-"[22] (cc 1 1)" -> "[23] (cc 1 0)"; "[23] (cc 1 0)" [label="(cc 1 0)", ];
-"[22] (cc 1 1)" -> "[23] (cc 0 1)"; "[23] (cc 0 1)" [label="(cc 0 1)",color=gray80];
-"[2] (cc 20 2)" -> "[3] (cc 15 2)"; "[3] (cc 15 2)" [label="(cc 15 2)",color=deepskyblue2];
-"[3] (cc 15 2)" -> "[4] (cc 15 1)"; "[4] (cc 15 1)" [label="(cc 15 1)",color=antiquewhite];
-"[4] (cc 15 1)" -> "[5] (cc 15 0)"; "[5] (cc 15 0)" [label="(cc 15 0)", ];
-"[4] (cc 15 1)" -> "[5] (cc 14 1)"; "[5] (cc 14 1)" [label="(cc 14 1)",color=antiquewhite];
-"[5] (cc 14 1)" -> "[6] (cc 14 0)"; "[6] (cc 14 0)" [label="(cc 14 0)", ];
-"[5] (cc 14 1)" -> "[6] (cc 13 1)"; "[6] (cc 13 1)" [label="(cc 13 1)",color=antiquewhite];
-"[6] (cc 13 1)" -> "[7] (cc 13 0)"; "[7] (cc 13 0)" [label="(cc 13 0)", ];
-"[6] (cc 13 1)" -> "[7] (cc 12 1)"; "[7] (cc 12 1)" [label="(cc 12 1)",color=antiquewhite];
-"[7] (cc 12 1)" -> "[8] (cc 12 0)"; "[8] (cc 12 0)" [label="(cc 12 0)", ];
-"[7] (cc 12 1)" -> "[8] (cc 11 1)"; "[8] (cc 11 1)" [label="(cc 11 1)",color=antiquewhite];
-"[8] (cc 11 1)" -> "[9] (cc 11 0)"; "[9] (cc 11 0)" [label="(cc 11 0)", ];
-"[8] (cc 11 1)" -> "[9] (cc 10 1)"; "[9] (cc 10 1)" [label="(cc 10 1)",color=antiquewhite];
-"[9] (cc 10 1)" -> "[10] (cc 10 0)"; "[10] (cc 10 0)" [label="(cc 10 0)", ];
-"[9] (cc 10 1)" -> "[10] (cc 9 1)"; "[10] (cc 9 1)" [label="(cc 9 1)",color=antiquewhite];
-"[10] (cc 9 1)" -> "[11] (cc 9 0)"; "[11] (cc 9 0)" [label="(cc 9 0)", ];
-"[10] (cc 9 1)" -> "[11] (cc 8 1)"; "[11] (cc 8 1)" [label="(cc 8 1)",color=antiquewhite];
-"[11] (cc 8 1)" -> "[12] (cc 8 0)"; "[12] (cc 8 0)" [label="(cc 8 0)", ];
-"[11] (cc 8 1)" -> "[12] (cc 7 1)"; "[12] (cc 7 1)" [label="(cc 7 1)",color=antiquewhite];
-"[12] (cc 7 1)" -> "[13] (cc 7 0)"; "[13] (cc 7 0)" [label="(cc 7 0)", ];
-"[12] (cc 7 1)" -> "[13] (cc 6 1)"; "[13] (cc 6 1)" [label="(cc 6 1)",color=antiquewhite];
-"[13] (cc 6 1)" -> "[14] (cc 6 0)"; "[14] (cc 6 0)" [label="(cc 6 0)", ];
-"[13] (cc 6 1)" -> "[14] (cc 5 1)"; "[14] (cc 5 1)" [label="(cc 5 1)",color=antiquewhite];
-"[14] (cc 5 1)" -> "[15] (cc 5 0)"; "[15] (cc 5 0)" [label="(cc 5 0)", ];
-"[14] (cc 5 1)" -> "[15] (cc 4 1)"; "[15] (cc 4 1)" [label="(cc 4 1)",color=antiquewhite];
-"[15] (cc 4 1)" -> "[16] (cc 4 0)"; "[16] (cc 4 0)" [label="(cc 4 0)", ];
-"[15] (cc 4 1)" -> "[16] (cc 3 1)"; "[16] (cc 3 1)" [label="(cc 3 1)",color=antiquewhite];
-"[16] (cc 3 1)" -> "[17] (cc 3 0)"; "[17] (cc 3 0)" [label="(cc 3 0)", ];
-"[16] (cc 3 1)" -> "[17] (cc 2 1)"; "[17] (cc 2 1)" [label="(cc 2 1)",color=antiquewhite];
-"[17] (cc 2 1)" -> "[18] (cc 2 0)"; "[18] (cc 2 0)" [label="(cc 2 0)", ];
-"[17] (cc 2 1)" -> "[18] (cc 1 1)"; "[18] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
-"[18] (cc 1 1)" -> "[19] (cc 1 0)"; "[19] (cc 1 0)" [label="(cc 1 0)", ];
-"[18] (cc 1 1)" -> "[19] (cc 0 1)"; "[19] (cc 0 1)" [label="(cc 0 1)",color=gray80];
-"[3] (cc 15 2)" -> "[4] (cc 10 2)"; "[4] (cc 10 2)" [label="(cc 10 2)",color=deepskyblue2];
-"[4] (cc 10 2)" -> "[5] (cc 10 1)"; "[5] (cc 10 1)" [label="(cc 10 1)",color=antiquewhite];
-"[5] (cc 10 1)" -> "[6] (cc 10 0)"; "[6] (cc 10 0)" [label="(cc 10 0)", ];
-"[5] (cc 10 1)" -> "[6] (cc 9 1)"; "[6] (cc 9 1)" [label="(cc 9 1)",color=antiquewhite];
-"[6] (cc 9 1)" -> "[7] (cc 9 0)"; "[7] (cc 9 0)" [label="(cc 9 0)", ];
-"[6] (cc 9 1)" -> "[7] (cc 8 1)"; "[7] (cc 8 1)" [label="(cc 8 1)",color=antiquewhite];
-"[7] (cc 8 1)" -> "[8] (cc 8 0)"; "[8] (cc 8 0)" [label="(cc 8 0)", ];
-"[7] (cc 8 1)" -> "[8] (cc 7 1)"; "[8] (cc 7 1)" [label="(cc 7 1)",color=antiquewhite];
-"[8] (cc 7 1)" -> "[9] (cc 7 0)"; "[9] (cc 7 0)" [label="(cc 7 0)", ];
-"[8] (cc 7 1)" -> "[9] (cc 6 1)"; "[9] (cc 6 1)" [label="(cc 6 1)",color=antiquewhite];
-"[9] (cc 6 1)" -> "[10] (cc 6 0)"; "[10] (cc 6 0)" [label="(cc 6 0)", ];
-"[9] (cc 6 1)" -> "[10] (cc 5 1)"; "[10] (cc 5 1)" [label="(cc 5 1)",color=antiquewhite];
-"[10] (cc 5 1)" -> "[11] (cc 5 0)"; "[11] (cc 5 0)" [label="(cc 5 0)", ];
-"[10] (cc 5 1)" -> "[11] (cc 4 1)"; "[11] (cc 4 1)" [label="(cc 4 1)",color=antiquewhite];
-"[11] (cc 4 1)" -> "[12] (cc 4 0)"; "[12] (cc 4 0)" [label="(cc 4 0)", ];
-"[11] (cc 4 1)" -> "[12] (cc 3 1)"; "[12] (cc 3 1)" [label="(cc 3 1)",color=antiquewhite];
-"[12] (cc 3 1)" -> "[13] (cc 3 0)"; "[13] (cc 3 0)" [label="(cc 3 0)", ];
-"[12] (cc 3 1)" -> "[13] (cc 2 1)"; "[13] (cc 2 1)" [label="(cc 2 1)",color=antiquewhite];
-"[13] (cc 2 1)" -> "[14] (cc 2 0)"; "[14] (cc 2 0)" [label="(cc 2 0)", ];
-"[13] (cc 2 1)" -> "[14] (cc 1 1)"; "[14] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
-"[14] (cc 1 1)" -> "[15] (cc 1 0)"; "[15] (cc 1 0)" [label="(cc 1 0)", ];
-"[14] (cc 1 1)" -> "[15] (cc 0 1)"; "[15] (cc 0 1)" [label="(cc 0 1)",color=gray80];
-"[4] (cc 10 2)" -> "[5] (cc 5 2)"; "[5] (cc 5 2)" [label="(cc 5 2)",color=deepskyblue2];
-"[5] (cc 5 2)" -> "[6] (cc 5 1)"; "[6] (cc 5 1)" [label="(cc 5 1)",color=antiquewhite];
-"[6] (cc 5 1)" -> "[7] (cc 5 0)"; "[7] (cc 5 0)" [label="(cc 5 0)", ];
-"[6] (cc 5 1)" -> "[7] (cc 4 1)"; "[7] (cc 4 1)" [label="(cc 4 1)",color=antiquewhite];
-"[7] (cc 4 1)" -> "[8] (cc 4 0)"; "[8] (cc 4 0)" [label="(cc 4 0)", ];
-"[7] (cc 4 1)" -> "[8] (cc 3 1)"; "[8] (cc 3 1)" [label="(cc 3 1)",color=antiquewhite];
-"[8] (cc 3 1)" -> "[9] (cc 3 0)"; "[9] (cc 3 0)" [label="(cc 3 0)", ];
-"[8] (cc 3 1)" -> "[9] (cc 2 1)"; "[9] (cc 2 1)" [label="(cc 2 1)",color=antiquewhite];
-"[9] (cc 2 1)" -> "[10] (cc 2 0)"; "[10] (cc 2 0)" [label="(cc 2 0)", ];
-"[9] (cc 2 1)" -> "[10] (cc 1 1)"; "[10] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
-"[10] (cc 1 1)" -> "[11] (cc 1 0)"; "[11] (cc 1 0)" [label="(cc 1 0)", ];
-"[10] (cc 1 1)" -> "[11] (cc 0 1)"; "[11] (cc 0 1)" [label="(cc 0 1)",color=gray80];
-"[5] (cc 5 2)" -> "[6] (cc 0 2)"; "[6] (cc 0 2)" [label="(cc 0 2)",color=gray80];
-"[0] (cc 25 3)" -> "[1] (cc 15 3)"; "[1] (cc 15 3)" [label="(cc 15 3)",color=chocolate1];
-"[1] (cc 15 3)" -> "[2] (cc 15 2)"; "[2] (cc 15 2)" [label="(cc 15 2)",color=deepskyblue2];
-"[2] (cc 15 2)" -> "[3] (cc 15 1)"; "[3] (cc 15 1)" [label="(cc 15 1)",color=antiquewhite];
-"[3] (cc 15 1)" -> "[4] (cc 15 0)"; "[4] (cc 15 0)" [label="(cc 15 0)", ];
-"[3] (cc 15 1)" -> "[4] (cc 14 1)"; "[4] (cc 14 1)" [label="(cc 14 1)",color=antiquewhite];
-"[4] (cc 14 1)" -> "[5] (cc 14 0)"; "[5] (cc 14 0)" [label="(cc 14 0)", ];
-"[4] (cc 14 1)" -> "[5] (cc 13 1)"; "[5] (cc 13 1)" [label="(cc 13 1)",color=antiquewhite];
-"[5] (cc 13 1)" -> "[6] (cc 13 0)"; "[6] (cc 13 0)" [label="(cc 13 0)", ];
-"[5] (cc 13 1)" -> "[6] (cc 12 1)"; "[6] (cc 12 1)" [label="(cc 12 1)",color=antiquewhite];
-"[6] (cc 12 1)" -> "[7] (cc 12 0)"; "[7] (cc 12 0)" [label="(cc 12 0)", ];
-"[6] (cc 12 1)" -> "[7] (cc 11 1)"; "[7] (cc 11 1)" [label="(cc 11 1)",color=antiquewhite];
-"[7] (cc 11 1)" -> "[8] (cc 11 0)"; "[8] (cc 11 0)" [label="(cc 11 0)", ];
-"[7] (cc 11 1)" -> "[8] (cc 10 1)"; "[8] (cc 10 1)" [label="(cc 10 1)",color=antiquewhite];
-"[8] (cc 10 1)" -> "[9] (cc 10 0)"; "[9] (cc 10 0)" [label="(cc 10 0)", ];
-"[8] (cc 10 1)" -> "[9] (cc 9 1)"; "[9] (cc 9 1)" [label="(cc 9 1)",color=antiquewhite];
-"[9] (cc 9 1)" -> "[10] (cc 9 0)"; "[10] (cc 9 0)" [label="(cc 9 0)", ];
-"[9] (cc 9 1)" -> "[10] (cc 8 1)"; "[10] (cc 8 1)" [label="(cc 8 1)",color=antiquewhite];
-"[10] (cc 8 1)" -> "[11] (cc 8 0)"; "[11] (cc 8 0)" [label="(cc 8 0)", ];
-"[10] (cc 8 1)" -> "[11] (cc 7 1)"; "[11] (cc 7 1)" [label="(cc 7 1)",color=antiquewhite];
-"[11] (cc 7 1)" -> "[12] (cc 7 0)"; "[12] (cc 7 0)" [label="(cc 7 0)", ];
-"[11] (cc 7 1)" -> "[12] (cc 6 1)"; "[12] (cc 6 1)" [label="(cc 6 1)",color=antiquewhite];
-"[12] (cc 6 1)" -> "[13] (cc 6 0)"; "[13] (cc 6 0)" [label="(cc 6 0)", ];
-"[12] (cc 6 1)" -> "[13] (cc 5 1)"; "[13] (cc 5 1)" [label="(cc 5 1)",color=antiquewhite];
-"[13] (cc 5 1)" -> "[14] (cc 5 0)"; "[14] (cc 5 0)" [label="(cc 5 0)", ];
-"[13] (cc 5 1)" -> "[14] (cc 4 1)"; "[14] (cc 4 1)" [label="(cc 4 1)",color=antiquewhite];
-"[14] (cc 4 1)" -> "[15] (cc 4 0)"; "[15] (cc 4 0)" [label="(cc 4 0)", ];
-"[14] (cc 4 1)" -> "[15] (cc 3 1)"; "[15] (cc 3 1)" [label="(cc 3 1)",color=antiquewhite];
-"[15] (cc 3 1)" -> "[16] (cc 3 0)"; "[16] (cc 3 0)" [label="(cc 3 0)", ];
-"[15] (cc 3 1)" -> "[16] (cc 2 1)"; "[16] (cc 2 1)" [label="(cc 2 1)",color=antiquewhite];
-"[16] (cc 2 1)" -> "[17] (cc 2 0)"; "[17] (cc 2 0)" [label="(cc 2 0)", ];
-"[16] (cc 2 1)" -> "[17] (cc 1 1)"; "[17] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
-"[17] (cc 1 1)" -> "[18] (cc 1 0)"; "[18] (cc 1 0)" [label="(cc 1 0)", ];
-"[17] (cc 1 1)" -> "[18] (cc 0 1)"; "[18] (cc 0 1)" [label="(cc 0 1)",color=gray80];
-"[2] (cc 15 2)" -> "[3] (cc 10 2)"; "[3] (cc 10 2)" [label="(cc 10 2)",color=deepskyblue2];
-"[3] (cc 10 2)" -> "[4] (cc 10 1)"; "[4] (cc 10 1)" [label="(cc 10 1)",color=antiquewhite];
-"[4] (cc 10 1)" -> "[5] (cc 10 0)"; "[5] (cc 10 0)" [label="(cc 10 0)", ];
-"[4] (cc 10 1)" -> "[5] (cc 9 1)"; "[5] (cc 9 1)" [label="(cc 9 1)",color=antiquewhite];
-"[5] (cc 9 1)" -> "[6] (cc 9 0)"; "[6] (cc 9 0)" [label="(cc 9 0)", ];
-"[5] (cc 9 1)" -> "[6] (cc 8 1)"; "[6] (cc 8 1)" [label="(cc 8 1)",color=antiquewhite];
-"[6] (cc 8 1)" -> "[7] (cc 8 0)"; "[7] (cc 8 0)" [label="(cc 8 0)", ];
-"[6] (cc 8 1)" -> "[7] (cc 7 1)"; "[7] (cc 7 1)" [label="(cc 7 1)",color=antiquewhite];
-"[7] (cc 7 1)" -> "[8] (cc 7 0)"; "[8] (cc 7 0)" [label="(cc 7 0)", ];
-"[7] (cc 7 1)" -> "[8] (cc 6 1)"; "[8] (cc 6 1)" [label="(cc 6 1)",color=antiquewhite];
-"[8] (cc 6 1)" -> "[9] (cc 6 0)"; "[9] (cc 6 0)" [label="(cc 6 0)", ];
-"[8] (cc 6 1)" -> "[9] (cc 5 1)"; "[9] (cc 5 1)" [label="(cc 5 1)",color=antiquewhite];
-"[9] (cc 5 1)" -> "[10] (cc 5 0)"; "[10] (cc 5 0)" [label="(cc 5 0)", ];
-"[9] (cc 5 1)" -> "[10] (cc 4 1)"; "[10] (cc 4 1)" [label="(cc 4 1)",color=antiquewhite];
-"[10] (cc 4 1)" -> "[11] (cc 4 0)"; "[11] (cc 4 0)" [label="(cc 4 0)", ];
-"[10] (cc 4 1)" -> "[11] (cc 3 1)"; "[11] (cc 3 1)" [label="(cc 3 1)",color=antiquewhite];
-"[11] (cc 3 1)" -> "[12] (cc 3 0)"; "[12] (cc 3 0)" [label="(cc 3 0)", ];
-"[11] (cc 3 1)" -> "[12] (cc 2 1)"; "[12] (cc 2 1)" [label="(cc 2 1)",color=antiquewhite];
-"[12] (cc 2 1)" -> "[13] (cc 2 0)"; "[13] (cc 2 0)" [label="(cc 2 0)", ];
-"[12] (cc 2 1)" -> "[13] (cc 1 1)"; "[13] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
-"[13] (cc 1 1)" -> "[14] (cc 1 0)"; "[14] (cc 1 0)" [label="(cc 1 0)", ];
-"[13] (cc 1 1)" -> "[14] (cc 0 1)"; "[14] (cc 0 1)" [label="(cc 0 1)",color=gray80];
-"[3] (cc 10 2)" -> "[4] (cc 5 2)"; "[4] (cc 5 2)" [label="(cc 5 2)",color=deepskyblue2];
-"[4] (cc 5 2)" -> "[5] (cc 5 1)"; "[5] (cc 5 1)" [label="(cc 5 1)",color=antiquewhite];
-"[5] (cc 5 1)" -> "[6] (cc 5 0)"; "[6] (cc 5 0)" [label="(cc 5 0)", ];
-"[5] (cc 5 1)" -> "[6] (cc 4 1)"; "[6] (cc 4 1)" [label="(cc 4 1)",color=antiquewhite];
-"[6] (cc 4 1)" -> "[7] (cc 4 0)"; "[7] (cc 4 0)" [label="(cc 4 0)", ];
-"[6] (cc 4 1)" -> "[7] (cc 3 1)"; "[7] (cc 3 1)" [label="(cc 3 1)",color=antiquewhite];
-"[7] (cc 3 1)" -> "[8] (cc 3 0)"; "[8] (cc 3 0)" [label="(cc 3 0)", ];
-"[7] (cc 3 1)" -> "[8] (cc 2 1)"; "[8] (cc 2 1)" [label="(cc 2 1)",color=antiquewhite];
-"[8] (cc 2 1)" -> "[9] (cc 2 0)"; "[9] (cc 2 0)" [label="(cc 2 0)", ];
-"[8] (cc 2 1)" -> "[9] (cc 1 1)"; "[9] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
-"[9] (cc 1 1)" -> "[10] (cc 1 0)"; "[10] (cc 1 0)" [label="(cc 1 0)", ];
-"[9] (cc 1 1)" -> "[10] (cc 0 1)"; "[10] (cc 0 1)" [label="(cc 0 1)",color=gray80];
-"[4] (cc 5 2)" -> "[5] (cc 0 2)"; "[5] (cc 0 2)" [label="(cc 0 2)",color=gray80];
-"[1] (cc 15 3)" -> "[2] (cc 5 3)"; "[2] (cc 5 3)" [label="(cc 5 3)",color=chocolate1];
-"[2] (cc 5 3)" -> "[3] (cc 5 2)"; "[3] (cc 5 2)" [label="(cc 5 2)",color=deepskyblue2];
-"[3] (cc 5 2)" -> "[4] (cc 5 1)"; "[4] (cc 5 1)" [label="(cc 5 1)",color=antiquewhite];
+"[0] (cc 6 1)" [label="(cc 6 1)",color=antiquewhite];
+"[0] (cc 6 1)" -> "[1] (cc 6 0)"; "[1] (cc 6 0)" [label="(cc 6 0)", ];
+"[0] (cc 6 1)" -> "[1] (cc 5 1)"; "[1] (cc 5 1)" [label="(cc 5 1)",color=antiquewhite];
+"[1] (cc 5 1)" -> "[2] (cc 5 0)"; "[2] (cc 5 0)" [label="(cc 5 0)", ];
+"[1] (cc 5 1)" -> "[2] (cc 4 1)"; "[2] (cc 4 1)" [label="(cc 4 1)",color=antiquewhite];
+"[2] (cc 4 1)" -> "[3] (cc 4 0)"; "[3] (cc 4 0)" [label="(cc 4 0)", ];
+"[2] (cc 4 1)" -> "[3] (cc 3 1)"; "[3] (cc 3 1)" [label="(cc 3 1)",color=antiquewhite];
+"[3] (cc 3 1)" -> "[4] (cc 3 0)"; "[4] (cc 3 0)" [label="(cc 3 0)", ];
+"[3] (cc 3 1)" -> "[4] (cc 2 1)"; "[4] (cc 2 1)" [label="(cc 2 1)",color=antiquewhite];
+"[4] (cc 2 1)" -> "[5] (cc 2 0)"; "[5] (cc 2 0)" [label="(cc 2 0)", ];
+"[4] (cc 2 1)" -> "[5] (cc 1 1)"; "[5] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
+"[5] (cc 1 1)" -> "[6] (cc 1 0)"; "[6] (cc 1 0)" [label="(cc 1 0)", ];
+"[5] (cc 1 1)" -> "[6] (cc 0 1)"; "[6] (cc 0 1)" [label="(cc 0 1)",color=gray80];
+}
+```
+
+`(cc 12 2 0 "-")`:
+
+```viz-dot
+digraph G {
+node [color = gray95,style=filled];
+graph [ranksep=0.3,size=7];
+node [color = gray95,style=filled,fontsize=9,shape=box, margin=.08, width=0, height=0 ];
+edge [penwidth=.1, arrowsize=0.5];
+"[0] (cc 12 2)" [label="(cc 12 2)",color=deepskyblue2];
+"[0] (cc 12 2)" -> "[1] (cc 12 1)"; "[1] (cc 12 1)" [label="(cc 12 1)",color=antiquewhite];
+"[1] (cc 12 1)" -> "[2] (cc 12 0)"; "[2] (cc 12 0)" [label="(cc 12 0)", ];
+"[1] (cc 12 1)" -> "[2] (cc 11 1)"; "[2] (cc 11 1)" [label="(cc 11 1)",color=antiquewhite];
+"[2] (cc 11 1)" -> "[3] (cc 11 0)"; "[3] (cc 11 0)" [label="(cc 11 0)", ];
+"[2] (cc 11 1)" -> "[3] (cc 10 1)"; "[3] (cc 10 1)" [label="(cc 10 1)",color=antiquewhite];
+"[3] (cc 10 1)" -> "[4] (cc 10 0)"; "[4] (cc 10 0)" [label="(cc 10 0)", ];
+"[3] (cc 10 1)" -> "[4] (cc 9 1)"; "[4] (cc 9 1)" [label="(cc 9 1)",color=antiquewhite];
+"[4] (cc 9 1)" -> "[5] (cc 9 0)"; "[5] (cc 9 0)" [label="(cc 9 0)", ];
+"[4] (cc 9 1)" -> "[5] (cc 8 1)"; "[5] (cc 8 1)" [label="(cc 8 1)",color=antiquewhite];
+"[5] (cc 8 1)" -> "[6] (cc 8 0)"; "[6] (cc 8 0)" [label="(cc 8 0)", ];
+"[5] (cc 8 1)" -> "[6] (cc 7 1)"; "[6] (cc 7 1)" [label="(cc 7 1)",color=antiquewhite];
+"[6] (cc 7 1)" -> "[7] (cc 7 0)"; "[7] (cc 7 0)" [label="(cc 7 0)", ];
+"[6] (cc 7 1)" -> "[7] (cc 6 1)"; "[7] (cc 6 1)" [label="(cc 6 1)",color=antiquewhite];
+"[7] (cc 6 1)" -> "[8] (cc 6 0)"; "[8] (cc 6 0)" [label="(cc 6 0)", ];
+"[7] (cc 6 1)" -> "[8] (cc 5 1)"; "[8] (cc 5 1)" [label="(cc 5 1)",color=antiquewhite];
+"[8] (cc 5 1)" -> "[9] (cc 5 0)"; "[9] (cc 5 0)" [label="(cc 5 0)", ];
+"[8] (cc 5 1)" -> "[9] (cc 4 1)"; "[9] (cc 4 1)" [label="(cc 4 1)",color=antiquewhite];
+"[9] (cc 4 1)" -> "[10] (cc 4 0)"; "[10] (cc 4 0)" [label="(cc 4 0)", ];
+"[9] (cc 4 1)" -> "[10] (cc 3 1)"; "[10] (cc 3 1)" [label="(cc 3 1)",color=antiquewhite];
+"[10] (cc 3 1)" -> "[11] (cc 3 0)"; "[11] (cc 3 0)" [label="(cc 3 0)", ];
+"[10] (cc 3 1)" -> "[11] (cc 2 1)"; "[11] (cc 2 1)" [label="(cc 2 1)",color=antiquewhite];
+"[11] (cc 2 1)" -> "[12] (cc 2 0)"; "[12] (cc 2 0)" [label="(cc 2 0)", ];
+"[11] (cc 2 1)" -> "[12] (cc 1 1)"; "[12] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
+"[12] (cc 1 1)" -> "[13] (cc 1 0)"; "[13] (cc 1 0)" [label="(cc 1 0)", ];
+"[12] (cc 1 1)" -> "[13] (cc 0 1)"; "[13] (cc 0 1)" [label="(cc 0 1)",color=gray80];
+"[0] (cc 12 2)" -> "[1] (cc 7 2)"; "[1] (cc 7 2)" [label="(cc 7 2)",color=deepskyblue2];
+"[1] (cc 7 2)" -> "[2] (cc 7 1)"; "[2] (cc 7 1)" [label="(cc 7 1)",color=antiquewhite];
+"[2] (cc 7 1)" -> "[3] (cc 7 0)"; "[3] (cc 7 0)" [label="(cc 7 0)", ];
+"[2] (cc 7 1)" -> "[3] (cc 6 1)"; "[3] (cc 6 1)" [label="(cc 6 1)",color=antiquewhite];
+"[3] (cc 6 1)" -> "[4] (cc 6 0)"; "[4] (cc 6 0)" [label="(cc 6 0)", ];
+"[3] (cc 6 1)" -> "[4] (cc 5 1)"; "[4] (cc 5 1)" [label="(cc 5 1)",color=antiquewhite];
 "[4] (cc 5 1)" -> "[5] (cc 5 0)"; "[5] (cc 5 0)" [label="(cc 5 0)", ];
 "[4] (cc 5 1)" -> "[5] (cc 4 1)"; "[5] (cc 4 1)" [label="(cc 4 1)",color=antiquewhite];
 "[5] (cc 4 1)" -> "[6] (cc 4 0)"; "[6] (cc 4 0)" [label="(cc 4 0)", ];
@@ -390,7 +156,44 @@ edge [penwidth=.1, arrowsize=0.5];
 "[7] (cc 2 1)" -> "[8] (cc 1 1)"; "[8] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
 "[8] (cc 1 1)" -> "[9] (cc 1 0)"; "[9] (cc 1 0)" [label="(cc 1 0)", ];
 "[8] (cc 1 1)" -> "[9] (cc 0 1)"; "[9] (cc 0 1)" [label="(cc 0 1)",color=gray80];
-"[3] (cc 5 2)" -> "[4] (cc 0 2)"; "[4] (cc 0 2)" [label="(cc 0 2)",color=gray80];
-"[2] (cc 5 3)" -> "[3] (cc -5 3)"; "[3] (cc -5 3)" [label="(cc -5 3)",color=chocolate1];
+"[1] (cc 7 2)" -> "[2] (cc 2 2)"; "[2] (cc 2 2)" [label="(cc 2 2)",color=deepskyblue2];
+"[2] (cc 2 2)" -> "[3] (cc 2 1)"; "[3] (cc 2 1)" [label="(cc 2 1)",color=antiquewhite];
+"[3] (cc 2 1)" -> "[4] (cc 2 0)"; "[4] (cc 2 0)" [label="(cc 2 0)", ];
+"[3] (cc 2 1)" -> "[4] (cc 1 1)"; "[4] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
+"[4] (cc 1 1)" -> "[5] (cc 1 0)"; "[5] (cc 1 0)" [label="(cc 1 0)", ];
+"[4] (cc 1 1)" -> "[5] (cc 0 1)"; "[5] (cc 0 1)" [label="(cc 0 1)",color=gray80];
+"[2] (cc 2 2)" -> "[3] (cc -3 2)"; "[3] (cc -3 2)" [label="(cc -3 2)",color=deepskyblue2];
 }
 ```
+
+Limiting the dimension of complexity to explore a simpler solution and get an intuition.
+
+http://www.billthelizard.com/2009/12/sicp-exercise-114-counting-change.html
+
+Very interestingly, it is possible to define a function that will give the exact number of steps for a given number $n$.
+
+$${T(n,1)\;=\;2n+1}$$
+
+$$T(n,2)\;=\frac n5+1+\;\sum\_{i=0}^{n/5}T(n-5i,1)$$
+
+$$T(n,2)\;=\frac n5+1+\;\sum\_{i=0}^{n/5}(2n-10i+1)$$
+
+$$T(n,2)\;=\frac n5+1+\frac{2n^2}5+\frac n5-10\;\sum\_{i=0}^{n/5}i$$
+
+$$T(n,2)\;=\frac n5+1+\frac{2n^2}5+\frac n5-10\frac{{\displaystyle\frac n5}\left({\displaystyle\frac n5}+1\right)}2$$
+
+$$T(n,2)\;=\frac{2n}5+\frac{2n^2}5-\frac{n^2}5+n+1$$
+
+$$T(n,2)\;=\frac{n^2}5+\frac{7n}5+1$$
+
+$$T(n,2)\;=\mathrm\Theta(n^2)$$
+
+For $T(n,3)$:
+
+$$T(n,3)\;=\frac n{10}+1+\;\sum\_{i=0}^{n/10}T(n-10i,2)$$
+
+if you take the trouble to expand the equation, you will find that:
+
+$$T(n,3)\;=\mathrm\Theta(n^3)$$
+
+On the same principle $T(n,5)\;=\mathrm\Theta(n^5)$

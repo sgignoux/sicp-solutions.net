@@ -195,7 +195,7 @@ Let's break it down:
 - there is 4 green node for `(c x 2)` corresponding to how many time you can substrack a dime from 12, plus one.
 - then for each of the green node, there is the option of using only dime, which is the case that we looked at first.
 
-For an amount $n$, there is at most $Floor\left(\frac n5\right)$ times you can substract nickels from it. By simplyfing a little and ignoring the floor that won't impact a lot the result when the number grow larger, we can split the number of call to `cc` and compute $T(n,2)$:
+For an amount $n$, there is at most $Floor\left(\frac n5\right)+1$ times you can substract nickels from it before reaching zero or a negative value. By simplyfing a little and ignoring the floor that won't impact a lot the result when the number grow larger, we can split the number of call to `cc` and compute $T(n,2)$:
 
 - there is $\frac n5+1$ green node
 - for each green node, there is a node for pennies that start from the value $n$

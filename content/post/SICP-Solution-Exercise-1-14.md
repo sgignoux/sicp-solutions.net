@@ -1,6 +1,6 @@
 ---
 title: "SICP - Solution: Exercise 1.14"
-date: 2018-10-05T21:06:58+02:00
+date: 2018-10-09T21:06:58+02:00
 draft: false
 ---
 
@@ -8,7 +8,7 @@ draft: false
 
 **Solution**
 
-The solution I opted for is to update the code to output the trace in [GrapViz](https://www.graphviz.org/) DOT format and plot it. The call that match `(= amount 0)` are in darker grey.
+By updating the call with `display`, it is possible to generate data in [GrapViz](https://www.graphviz.org/) DOT format and plot it. The call that match `(= amount 0)` are in darker grey.
 
 ```viz-dot
 digraph G {
@@ -74,17 +74,19 @@ edge [penwidth=.5, arrowsize=0.5];
 }
 ```
 
-What are the orders of growth of the space and number of steps used by this process as the amount to be changed increases?
-
 ### Orders of growth of the space
+
+Since this is a recursive process, the orders of growth of the space will be proportional to the depth of the calls.
+
+It is easy to see that the longest series of call will be for doing the change of the amount `n` using only pennies. The order of growth of space for `cc` will be $\mathrm\Theta(n)$
 
 ### Orders of growth of number of steps
 
-Counting the number of call to cc.
+For estimating the orders of growth of number of steps, we will focus on counting the number of call to cc.
 
-Let's start to look at simplified dimensions.
+The solution presented here is directly insprired from [this blog post](http://www.billthelizard.com/2009/12/sicp-exercise-114-counting-change.html) by Bill the Lizard.
 
-`(cc 6 1)`:
+The first step is to get an intuitive understanding of the shape of the growth by exploring low dimension solutions that we can plot. Let's start with graphing the shape of the trees when using only pennies by charting the tree for `(cc 6 1)`.
 
 ```viz-dot
 digraph G {
@@ -92,91 +94,113 @@ node [color = gray95,style=filled];
 graph [ranksep=0.3,size=7];
 node [color = gray95,style=filled,fontsize=9,shape=box, margin=.08, width=0, height=0 ];
 edge [penwidth=.1, arrowsize=0.5];
-"[0] (cc 6 1)" [label="(cc 6 1)",color=antiquewhite];
+"[0] (cc 6 1)" [label="(cc 6 1)",color=lightblue];
 "[0] (cc 6 1)" -> "[1] (cc 6 0)"; "[1] (cc 6 0)" [label="(cc 6 0)", ];
-"[0] (cc 6 1)" -> "[1] (cc 5 1)"; "[1] (cc 5 1)" [label="(cc 5 1)",color=antiquewhite];
+"[0] (cc 6 1)" -> "[1] (cc 5 1)"; "[1] (cc 5 1)" [label="(cc 5 1)",color=lightblue];
 "[1] (cc 5 1)" -> "[2] (cc 5 0)"; "[2] (cc 5 0)" [label="(cc 5 0)", ];
-"[1] (cc 5 1)" -> "[2] (cc 4 1)"; "[2] (cc 4 1)" [label="(cc 4 1)",color=antiquewhite];
+"[1] (cc 5 1)" -> "[2] (cc 4 1)"; "[2] (cc 4 1)" [label="(cc 4 1)",color=lightblue];
 "[2] (cc 4 1)" -> "[3] (cc 4 0)"; "[3] (cc 4 0)" [label="(cc 4 0)", ];
-"[2] (cc 4 1)" -> "[3] (cc 3 1)"; "[3] (cc 3 1)" [label="(cc 3 1)",color=antiquewhite];
+"[2] (cc 4 1)" -> "[3] (cc 3 1)"; "[3] (cc 3 1)" [label="(cc 3 1)",color=lightblue];
 "[3] (cc 3 1)" -> "[4] (cc 3 0)"; "[4] (cc 3 0)" [label="(cc 3 0)", ];
-"[3] (cc 3 1)" -> "[4] (cc 2 1)"; "[4] (cc 2 1)" [label="(cc 2 1)",color=antiquewhite];
+"[3] (cc 3 1)" -> "[4] (cc 2 1)"; "[4] (cc 2 1)" [label="(cc 2 1)",color=lightblue];
 "[4] (cc 2 1)" -> "[5] (cc 2 0)"; "[5] (cc 2 0)" [label="(cc 2 0)", ];
-"[4] (cc 2 1)" -> "[5] (cc 1 1)"; "[5] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
+"[4] (cc 2 1)" -> "[5] (cc 1 1)"; "[5] (cc 1 1)" [label="(cc 1 1)",color=lightblue];
 "[5] (cc 1 1)" -> "[6] (cc 1 0)"; "[6] (cc 1 0)" [label="(cc 1 0)", ];
 "[5] (cc 1 1)" -> "[6] (cc 0 1)"; "[6] (cc 0 1)" [label="(cc 0 1)",color=gray80];
 }
 ```
 
-This is easy to compute the number of steps in this case.
+Colors indicates the number of `kinds-of-coins`.
 
-`(cc 12 2)`:
+The process here is linear: every node is splitting into two substep, but only the node with `(c x 1)` on the right will recurse deeper. All the `(c x 0)` are leaf of this tree since it indicate that there are no more type of coin to use.
 
-```viz-dot
+From this we notice that:
+
+- there is 6 blue node from `(c 6 1)` to `(c 1 1)`
+- there is 6 grey node from `(c 6 0)` to `(c 1 0)`
+- there is one dark grey node `(c 0 1)` with a mount of 0, indicating a solution
+
+If $T(n,m)$ is the number of call to `cc` for amount $n$ and $m$ type of coin, we can see that:
+
+$$T(6,1)=2\times6+1$$
+
+From there, we can generalize to any amount $m$ using only pennies:
+
+$$T(n,1)=2n+1$$
+
+Let's go one step by exploring how things work with 2 kind of coins. By drawing the tree for `(cc 12 2)` and arranging the nodes a little, we see that we have a neat 2 dimensional array:
+
+![Example image](/post/sicp-images/SICP-1_14-__cc_12_2__-_Google_Slides-2.png)
+
+<!-- ```viz-dot
 digraph G {
 node [color = gray95,style=filled];
 graph [ranksep=0.3,size=7];
 node [color = gray95,style=filled,fontsize=9,shape=box, margin=.08, width=0, height=0 ];
 edge [penwidth=.1, arrowsize=0.5];
-"[0] (cc 12 2)" [label="(cc 12 2)",color=deepskyblue];
-"[0] (cc 12 2)" -> "[1] (cc 12 1)"; "[1] (cc 12 1)" [label="(cc 12 1)",color=antiquewhite];
+"[0] (cc 12 2)" [label="(cc 12 2)",color=darkolivegreen2];
+"[0] (cc 12 2)" -> "[1] (cc 12 1)"; "[1] (cc 12 1)" [label="(cc 12 1)",color=lightblue];
 "[1] (cc 12 1)" -> "[2] (cc 12 0)"; "[2] (cc 12 0)" [label="(cc 12 0)", ];
-"[1] (cc 12 1)" -> "[2] (cc 11 1)"; "[2] (cc 11 1)" [label="(cc 11 1)",color=antiquewhite];
+"[1] (cc 12 1)" -> "[2] (cc 11 1)"; "[2] (cc 11 1)" [label="(cc 11 1)",color=lightblue];
 "[2] (cc 11 1)" -> "[3] (cc 11 0)"; "[3] (cc 11 0)" [label="(cc 11 0)", ];
-"[2] (cc 11 1)" -> "[3] (cc 10 1)"; "[3] (cc 10 1)" [label="(cc 10 1)",color=antiquewhite];
+"[2] (cc 11 1)" -> "[3] (cc 10 1)"; "[3] (cc 10 1)" [label="(cc 10 1)",color=lightblue];
 "[3] (cc 10 1)" -> "[4] (cc 10 0)"; "[4] (cc 10 0)" [label="(cc 10 0)", ];
-"[3] (cc 10 1)" -> "[4] (cc 9 1)"; "[4] (cc 9 1)" [label="(cc 9 1)",color=antiquewhite];
+"[3] (cc 10 1)" -> "[4] (cc 9 1)"; "[4] (cc 9 1)" [label="(cc 9 1)",color=lightblue];
 "[4] (cc 9 1)" -> "[5] (cc 9 0)"; "[5] (cc 9 0)" [label="(cc 9 0)", ];
-"[4] (cc 9 1)" -> "[5] (cc 8 1)"; "[5] (cc 8 1)" [label="(cc 8 1)",color=antiquewhite];
+"[4] (cc 9 1)" -> "[5] (cc 8 1)"; "[5] (cc 8 1)" [label="(cc 8 1)",color=lightblue];
 "[5] (cc 8 1)" -> "[6] (cc 8 0)"; "[6] (cc 8 0)" [label="(cc 8 0)", ];
-"[5] (cc 8 1)" -> "[6] (cc 7 1)"; "[6] (cc 7 1)" [label="(cc 7 1)",color=antiquewhite];
+"[5] (cc 8 1)" -> "[6] (cc 7 1)"; "[6] (cc 7 1)" [label="(cc 7 1)",color=lightblue];
 "[6] (cc 7 1)" -> "[7] (cc 7 0)"; "[7] (cc 7 0)" [label="(cc 7 0)", ];
-"[6] (cc 7 1)" -> "[7] (cc 6 1)"; "[7] (cc 6 1)" [label="(cc 6 1)",color=antiquewhite];
+"[6] (cc 7 1)" -> "[7] (cc 6 1)"; "[7] (cc 6 1)" [label="(cc 6 1)",color=lightblue];
 "[7] (cc 6 1)" -> "[8] (cc 6 0)"; "[8] (cc 6 0)" [label="(cc 6 0)", ];
-"[7] (cc 6 1)" -> "[8] (cc 5 1)"; "[8] (cc 5 1)" [label="(cc 5 1)",color=antiquewhite];
+"[7] (cc 6 1)" -> "[8] (cc 5 1)"; "[8] (cc 5 1)" [label="(cc 5 1)",color=lightblue];
 "[8] (cc 5 1)" -> "[9] (cc 5 0)"; "[9] (cc 5 0)" [label="(cc 5 0)", ];
-"[8] (cc 5 1)" -> "[9] (cc 4 1)"; "[9] (cc 4 1)" [label="(cc 4 1)",color=antiquewhite];
+"[8] (cc 5 1)" -> "[9] (cc 4 1)"; "[9] (cc 4 1)" [label="(cc 4 1)",color=lightblue];
 "[9] (cc 4 1)" -> "[10] (cc 4 0)"; "[10] (cc 4 0)" [label="(cc 4 0)", ];
-"[9] (cc 4 1)" -> "[10] (cc 3 1)"; "[10] (cc 3 1)" [label="(cc 3 1)",color=antiquewhite];
+"[9] (cc 4 1)" -> "[10] (cc 3 1)"; "[10] (cc 3 1)" [label="(cc 3 1)",color=lightblue];
 "[10] (cc 3 1)" -> "[11] (cc 3 0)"; "[11] (cc 3 0)" [label="(cc 3 0)", ];
-"[10] (cc 3 1)" -> "[11] (cc 2 1)"; "[11] (cc 2 1)" [label="(cc 2 1)",color=antiquewhite];
+"[10] (cc 3 1)" -> "[11] (cc 2 1)"; "[11] (cc 2 1)" [label="(cc 2 1)",color=lightblue];
 "[11] (cc 2 1)" -> "[12] (cc 2 0)"; "[12] (cc 2 0)" [label="(cc 2 0)", ];
-"[11] (cc 2 1)" -> "[12] (cc 1 1)"; "[12] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
+"[11] (cc 2 1)" -> "[12] (cc 1 1)"; "[12] (cc 1 1)" [label="(cc 1 1)",color=lightblue];
 "[12] (cc 1 1)" -> "[13] (cc 1 0)"; "[13] (cc 1 0)" [label="(cc 1 0)", ];
 "[12] (cc 1 1)" -> "[13] (cc 0 1)"; "[13] (cc 0 1)" [label="(cc 0 1)",color=gray80];
-"[0] (cc 12 2)" -> "[1] (cc 7 2)"; "[1] (cc 7 2)" [label="(cc 7 2)",color=deepskyblue];
-"[1] (cc 7 2)" -> "[2] (cc 7 1)"; "[2] (cc 7 1)" [label="(cc 7 1)",color=antiquewhite];
+"[0] (cc 12 2)" -> "[1] (cc 7 2)"; "[1] (cc 7 2)" [label="(cc 7 2)",color=darkolivegreen2];
+"[1] (cc 7 2)" -> "[2] (cc 7 1)"; "[2] (cc 7 1)" [label="(cc 7 1)",color=lightblue];
 "[2] (cc 7 1)" -> "[3] (cc 7 0)"; "[3] (cc 7 0)" [label="(cc 7 0)", ];
-"[2] (cc 7 1)" -> "[3] (cc 6 1)"; "[3] (cc 6 1)" [label="(cc 6 1)",color=antiquewhite];
+"[2] (cc 7 1)" -> "[3] (cc 6 1)"; "[3] (cc 6 1)" [label="(cc 6 1)",color=lightblue];
 "[3] (cc 6 1)" -> "[4] (cc 6 0)"; "[4] (cc 6 0)" [label="(cc 6 0)", ];
-"[3] (cc 6 1)" -> "[4] (cc 5 1)"; "[4] (cc 5 1)" [label="(cc 5 1)",color=antiquewhite];
+"[3] (cc 6 1)" -> "[4] (cc 5 1)"; "[4] (cc 5 1)" [label="(cc 5 1)",color=lightblue];
 "[4] (cc 5 1)" -> "[5] (cc 5 0)"; "[5] (cc 5 0)" [label="(cc 5 0)", ];
-"[4] (cc 5 1)" -> "[5] (cc 4 1)"; "[5] (cc 4 1)" [label="(cc 4 1)",color=antiquewhite];
+"[4] (cc 5 1)" -> "[5] (cc 4 1)"; "[5] (cc 4 1)" [label="(cc 4 1)",color=lightblue];
 "[5] (cc 4 1)" -> "[6] (cc 4 0)"; "[6] (cc 4 0)" [label="(cc 4 0)", ];
-"[5] (cc 4 1)" -> "[6] (cc 3 1)"; "[6] (cc 3 1)" [label="(cc 3 1)",color=antiquewhite];
+"[5] (cc 4 1)" -> "[6] (cc 3 1)"; "[6] (cc 3 1)" [label="(cc 3 1)",color=lightblue];
 "[6] (cc 3 1)" -> "[7] (cc 3 0)"; "[7] (cc 3 0)" [label="(cc 3 0)", ];
-"[6] (cc 3 1)" -> "[7] (cc 2 1)"; "[7] (cc 2 1)" [label="(cc 2 1)",color=antiquewhite];
+"[6] (cc 3 1)" -> "[7] (cc 2 1)"; "[7] (cc 2 1)" [label="(cc 2 1)",color=lightblue];
 "[7] (cc 2 1)" -> "[8] (cc 2 0)"; "[8] (cc 2 0)" [label="(cc 2 0)", ];
-"[7] (cc 2 1)" -> "[8] (cc 1 1)"; "[8] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
+"[7] (cc 2 1)" -> "[8] (cc 1 1)"; "[8] (cc 1 1)" [label="(cc 1 1)",color=lightblue];
 "[8] (cc 1 1)" -> "[9] (cc 1 0)"; "[9] (cc 1 0)" [label="(cc 1 0)", ];
 "[8] (cc 1 1)" -> "[9] (cc 0 1)"; "[9] (cc 0 1)" [label="(cc 0 1)",color=gray80];
-"[1] (cc 7 2)" -> "[2] (cc 2 2)"; "[2] (cc 2 2)" [label="(cc 2 2)",color=deepskyblue];
-"[2] (cc 2 2)" -> "[3] (cc 2 1)"; "[3] (cc 2 1)" [label="(cc 2 1)",color=antiquewhite];
+"[1] (cc 7 2)" -> "[2] (cc 2 2)"; "[2] (cc 2 2)" [label="(cc 2 2)",color=darkolivegreen2];
+"[2] (cc 2 2)" -> "[3] (cc 2 1)"; "[3] (cc 2 1)" [label="(cc 2 1)",color=lightblue];
 "[3] (cc 2 1)" -> "[4] (cc 2 0)"; "[4] (cc 2 0)" [label="(cc 2 0)", ];
-"[3] (cc 2 1)" -> "[4] (cc 1 1)"; "[4] (cc 1 1)" [label="(cc 1 1)",color=antiquewhite];
+"[3] (cc 2 1)" -> "[4] (cc 1 1)"; "[4] (cc 1 1)" [label="(cc 1 1)",color=lightblue];
 "[4] (cc 1 1)" -> "[5] (cc 1 0)"; "[5] (cc 1 0)" [label="(cc 1 0)", ];
 "[4] (cc 1 1)" -> "[5] (cc 0 1)"; "[5] (cc 0 1)" [label="(cc 0 1)",color=gray80];
-"[2] (cc 2 2)" -> "[3] (cc -3 2)"; "[3] (cc -3 2)" [label="(cc -3 2)",color=deepskyblue];
+"[2] (cc 2 2)" -> "[3] (cc -3 2)"; "[3] (cc -3 2)" [label="(cc -3 2)",color=darkolivegreen2];
 }
-```
+``` -->
 
-Limiting the dimension of complexity to explore a simpler solution and get an intuition.
+Let's break it down:
 
-http://www.billthelizard.com/2009/12/sicp-exercise-114-counting-change.html
+- there is 4 green node for `(c x 2)` corresponding to how many time you can substrack a dime from 12.
+- then for each of the green node, there is the option of using only dime, which is the case that we looked at first.
 
-Very interestingly, it is possible to define a function that will give the exact number of steps for a given number $n$.
+For an amount $n$, there is at most $Floor\left(\frac n5\right)$ times you can substract nickels from it. By simplyfing a little and ignoring the floor that won't impact a lot the result when the number grow larger, we can split the number of call to `cc` and compute $T(n,2)$:
 
-$${T(n,1)\;=\;2n+1}$$
+- there is $\frac n5+1$ green node
+- for each green node, there is a node for pennies that start from the value $n$
+
+We can rewrite this as an equation and simplify it:
 
 $$T(n,2)\;=\frac n5+1+\;\sum\_{i=0}^{n/5}T(n-5i,1)$$
 
@@ -188,7 +212,11 @@ $$T(n,2)\;=\frac n5+1+\frac{2n^2}5+\frac n5-10\frac{{\displaystyle\frac n5}\left
 
 $$T(n,2)\;=\frac{2n}5+\frac{2n^2}5-\frac{n^2}5+n+1$$
 
+Very interestingly, it is possible to define a function that will give the exact number of steps for a given number $n$:
+
 $$T(n,2)\;=\frac{n^2+7n}5+1$$
+
+Which means that for two type of coins, the orders of growth of number of steps is:
 
 $$T(n,2)\;=\mathrm\Theta(n^2)$$
 
@@ -200,6 +228,16 @@ if you take the trouble to expand the equation, you will find that:
 
 $$T(n,3)\;=\mathrm\Theta(n^3)$$
 
-On the same principle:
+by continuing to apply the formulas:
+
+$$T(n,3)\;=\frac n{10}+1+\;\sum\_{i=0}^{n/10}T(n-10i,1)$$
+
+$$T(n,4)\;=\frac n{25}+1+\;\sum\_{i=0}^{n/25}T(n-25i,1)$$
+
+$$T(n,5)\;=\frac n{50}+1+\;\sum\_{i=0}^{n/50}T(n-50i,1)$$
+
+By doing all the expansion you find that the orders of growth of number of steps is:
 
 $$T(n,5)\;=\mathrm\Theta(n^5)$$
+
+Overall, this is not only a very slow process, it is also a very inefficient way to implement because of the repetition. You can have a look at the solution for this exercice by Sarabander [here](https://github.com/sarabander/p2pu-sicp/blob/master/1.2/Ex1.14.scm) to see how to implement the solution in only $n^2$.

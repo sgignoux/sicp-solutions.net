@@ -32,7 +32,8 @@
   (+ (/ (+ (* n n) (* 7 n)) 5.0) 1))
 
 (display "| ") (display    "1") (display " | ") (display(cc-count-steps    1 2)) (display " | ") (display(T2     1)) (display " |") (newline)
-(display "| ") (display   "10") (display " | ") (display(cc-count-steps   10 2)) (display " | ") (display(T2    10)) (display " |") (newline)
+(display "| ") (display   "10") (display " | ") (display(cc-count-steps   21 2)) (display " | ") (display(T2    11)) (display " |") (newline)
+(display "| ") (display   "10") (display " | ") (display(cc-count-steps   21 3)) (display " | ") (display(T2    10)) (display " |") (newline)
 (display "| ") (display  "100") (display " | ") (display(cc-count-steps  100 2)) (display " | ") (display(T2   100)) (display " |") (newline)
 (display "| ") (display "1000") (display " | ") (display(cc-count-steps 1000 2)) (display " | ") (display(T2  1000)) (display " |") (newline)
 

@@ -75,11 +75,11 @@ to reduce the size of the argument of sin. (For purposes of this exercise an ang
 | 1200000  | 16              |
 | 12000000 | 18              |
 
-It is easy to see the trend: every time a is multiplied by 10, the number of step increase by 2. It looks like a logarithm. I could also hve noticed that for every iteration, `a` is divided by 3. So the iteration will stop when:
+It is easy to see the trend: every time $a$ is multiplied by 10, the number of step increase by 2. It looks like a logarithm. I could also hve noticed that for every iteration, $a$ is divided by 3. So the iteration will stop when:
 
 $$\frac a{3^n}<0.1$$
 
-Which can be rewritten to take out the n as:
+Which can be rewritten to take out the $n$ as:
 
 $$\frac a{0.1}<3^n$$
 

@@ -72,8 +72,8 @@ We will see how it goes...
 - [1.11]({{< ref "/post/SICP-Solution-Exercise-1-11.md" >}}) ✓
 - [1.12]({{< ref "/post/SICP-Solution-Exercise-1-12.md" >}}) ✓
 - [1.13]({{< ref "/post/SICP-Solution-Exercise-1-13.md" >}}) ✓
-- [1.14]({{< ref "/post/SICP-Solution-Exercise-1-14.md" >}}) [draft]
-- [1.15]({{< ref "/post/SICP-Solution-Exercise-1-15.md" >}}) [draft]
+- [1.14]({{< ref "/post/SICP-Solution-Exercise-1-14.md" >}}) ✓
+- [1.15]({{< ref "/post/SICP-Solution-Exercise-1-15.md" >}}) ✓
 - 1.14
 - 1.15
 - 1.16

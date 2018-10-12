@@ -1,5 +1,5 @@
 ---
-title: "SICP - Solution: Exercise 1.15"
+title: "SICP - Solution: Exercise 1.16"
 date: 2018-10-11T21:06:58+02:00
 draft: false
 ---
@@ -8,4 +8,76 @@ draft: false
 
 **Solution**
 
-TBD
+If n is even: $ab^n=a{(b^{n/2})^2}=a{(b^2)^{n/2}}$
+
+If n is odd: $ab^n=abb^{n-1}=(ab)b^{n-1}$
+
+```scheme
+(define (fast-expt-iter a b n)
+  (cond ((= n 0)
+         a)
+        ((even? n)
+         (fast-expt-iter a (* b b) (/ n 2)))
+        (else
+         (fast-expt-iter (* a b) b (- n 1)))))
+```
+
+We can check that this is tail recursive by using the [tracing function in DrRacket](https://docs.racket-lang.org/reference/debugging.html#%28mod-path._racket%2Ftrace%29):
+
+```scheme
+#lang racket/base
+(require racket/trace)
+...
+(trace fast-expt-iter)
+(fast-expt-iter 1 9 7)
+```
+
+Will evaluate to:
+
+```
+>(fast-expt-iter 1 9 7)
+>(fast-expt-iter 9 9 6)
+>(fast-expt-iter 9 81 3)
+>(fast-expt-iter 729 81 2)
+>(fast-expt-iter 729 6561 1)
+>(fast-expt-iter 4782969 6561 0)
+<4782969
+```
+
+The number of `>` is displaying the depth of the stack.
+
+That can be compared to the recursive version:
+
+```scheme
+#lang racket/base
+(require racket/trace)
+
+(define (expt-recurs b n)
+  (if (= n 0)
+      1
+      (* b (expt-recurs b (- n 1)))))
+
+(trace expt-recurs)
+(expt-recurs 9 7)
+```
+
+Which return:
+
+```
+>(expt2 9 7)
+> (expt2 9 6)
+> >(expt2 9 5)
+> > (expt2 9 4)
+> > >(expt2 9 3)
+> > > (expt2 9 2)
+> > > >(expt2 9 1)
+> > > > (expt2 9 0)
+< < < < 1
+< < < <9
+< < < 81
+< < <729
+< < 6561
+< <59049
+< 531441
+<4782969
+```

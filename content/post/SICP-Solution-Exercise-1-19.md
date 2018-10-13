@@ -1,6 +1,6 @@
 ---
 title: "SICP - Solution: Exercise 1.19"
-date: 2018-10-12T21:06:58+02:00
+date: 2018-10-13T21:03:58+02:00
 draft: false
 ---
 

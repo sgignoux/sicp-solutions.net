@@ -39,9 +39,9 @@ Which can be implemented like this:
 
 (define (fast-mult a b)
   (cond ((= b 0)
-         1)
+         0)
         ((even? b)
-         (fast-mult (double a) (halve b))
+         (fast-mult (double a) (halve b)))
         (else
          (+ a (fast-mult a (- b 1))))))
 

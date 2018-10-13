@@ -8,9 +8,23 @@ draft: false
 
 **Solution**
 
-If n is even: $ab^n=a{(b^{n/2})^2}=a{(b^2)^{n/2}}$
+When $n$ is even, we can rewrite the equation $ab^n$ as:
 
-If n is odd: $ab^n=abb^{n-1}=(ab)b^{n-1}$
+$$ab^n=a{(b^{n/2})^2}=a{(b^2)^{n/2}}=a'b'^{n'}$$
+
+- $a'=a$
+- $b'=b^2$
+- $n'=n/2$
+
+When $n$ is odd, we can rewrite the equation $ab^n$ as:
+
+$$ab^n=abb^{n-1}=(ab)b^{n-1}=a'b'^{n'}$$
+
+- $a'=ab$
+- $b'=b$
+- $n'=n-1$
+
+This can be implemented directly into:
 
 ```scheme
 (define (fast-expt-iter a b n)
@@ -21,6 +35,8 @@ If n is odd: $ab^n=abb^{n-1}=(ab)b^{n-1}$
         (else
          (fast-expt-iter (* a b) b (- n 1)))))
 ```
+
+Question: why is it tail recursive?
 
 We can check that this is tail recursive by using the [tracing function in DrRacket](https://docs.racket-lang.org/reference/debugging.html#%28mod-path._racket%2Ftrace%29):
 

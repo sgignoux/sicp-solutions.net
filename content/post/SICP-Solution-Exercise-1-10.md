@@ -179,6 +179,8 @@ $f(n) = 2n$
 
 $g(n) = 2^{n}$
 
-$h(n) = $
+$h(n) = 2^{h(n-1)}$
 
 This doesn't look like the "real" Ackerman function...
+
+On a side note, I did all the expansion by hand. Using the [tracing function in DrRacket](https://docs.racket-lang.org/reference/debugging.html#%28mod-path._racket%2Ftrace%29) would by more efficient, but not as fun.

@@ -12,17 +12,17 @@ When $n$ is even, we can rewrite the equation $ab^n$ as:
 
 $$ab^n=a{(b^{n/2})^2}=a{(b^2)^{n/2}}=a'b'^{n'}$$
 
-- $a'=a$
-- $b'=b^2$
-- $n'=n/2$
+$$a'=a$$
+$$b'=b^2$$
+$$n'=n/2$$
 
 When $n$ is odd, we can rewrite the equation $ab^n$ as:
 
 $$ab^n=abb^{n-1}=(ab)b^{n-1}=a'b'^{n'}$$
 
-- $a'=ab$
-- $b'=b$
-- $n'=n-1$
+$$a'=ab$$
+$$b'=b$$
+$$n'=n-1$$
 
 This can be implemented directly into:
 
@@ -36,7 +36,10 @@ This can be implemented directly into:
          (fast-expt-iter (* a b) b (- n 1)))))
 ```
 
-Question: why is it tail recursive?
+Question:
+
+- why is it tail recursive?
+- How to show the invariant more clearly?
 
 We can check that this is tail recursive by using the [tracing function in DrRacket](https://docs.racket-lang.org/reference/debugging.html#%28mod-path._racket%2Ftrace%29):
 

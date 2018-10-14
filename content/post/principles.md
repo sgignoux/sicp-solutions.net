@@ -13,7 +13,13 @@ draft: true
 - Isolating domain logic
 - Boundaries
 - breaks up naturally into a number of subproblems
+- Write things down https://news.ycombinator.com/item?id=18145205
+- Are the goals clearly stated and explained. Do we have buy in from the team?
+- Make sure that the problems we are trying to fix identified and are clearly explained
+- Identify area of blurriness and unclear
 
 Declarative >>> Imperative. This is among the most important and broad guidelines to follow in system design.
 Thinking Matters. We cut the cost/time of this implementation by 90% or more, not by coding more quickly, but by thinking more clearly. I am a fan of TDD and incremental design, but you’re quite unlikely to ever make it from a handcoded solution to this simply-add-Prolog solution that way.
 The Right Tool for the Job. Learn a lot of them, don’t be the person who only has a hammer.
+
+https://simonwillison.net/2018/Oct/4/datasette-ideas/#SQL_as_an_API_language

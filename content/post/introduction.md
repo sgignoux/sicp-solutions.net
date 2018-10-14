@@ -27,11 +27,10 @@ This is the current plan:
 
 - Read the book
 - Watch the video from the 1986 session
-- Write a short summary of each chapter and subchapter
 - Complete all the 356 exercises by myself, and publish my solution here. Each solution should include clear explanations.
 - Review my solution and compare them to the [community schemewiki SICP-Solutions](http://community.schemewiki.org/?SICP-Solutions) or other solutions
 
-We will see how it goes...
+This solution are here for reference only. The value of this book is in actually trying to solving each exercise. Please consider only checking solution after being stuck or after having solved the problem to compare your solution.
 
 ## Resources
 
@@ -78,7 +77,7 @@ We will see how it goes...
 - [1.17]({{< ref "/post/SICP-Solution-Exercise-1-17.md" >}}) ✓
 - [1.18]({{< ref "/post/SICP-Solution-Exercise-1-18.md" >}}) ✓
 - [1.19]({{< ref "/post/SICP-Solution-Exercise-1-19.md" >}}) ✓
-- 1.20
+- [1.20]({{< ref "/post/SICP-Solution-Exercise-1-20.md" >}})
 - 1.21
 - 1.22
 - 1.23
@@ -124,3 +123,16 @@ We will see how it goes...
 ### Chapter 5: Computing with Register Machines
 
 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 5.10, 5.11, 5.12, 5.13, 5.14, 5.15, 5.16, 5.17, 5.18, 5.19, 5.20, 5.21, 5.22, 5.23, 5.24, 5.25, 5.26, 5.27, 5.28, 5.29, 5.30, 5.31, 5.32, 5.33, 5.34, 5.35, 5.36, 5.37, 5.38, 5.39, 5.40, 5.41, 5.42, 5.43, 5.44, 5.45, 5.46, 5.47, 5.48, 5.49, 5.50, 5.51, 5.52
+
+## Other solutions
+
+Todo
+
+- https://github.com/zv/SICP-guile
+
+## Scheme implementations
+
+- DrRacket
+- https://www.gnu.org/software/mit-scheme/
+
+* https://github.com/zv/SICP-guile

@@ -10,6 +10,7 @@ draft: true
 - With documentation
 - Show also unclean code on the step to clean code
 - No dumbing down
+- Minimual theory
 - Real runnable code
 - From scratch, as little dependencies as possible
 - No skipping of anything!
@@ -23,20 +24,24 @@ draft: true
 - incremental development and testing
 
 Topics:
-* OS
-* Compiler
-* interpreter
-* Memory allocators
-* JIT
-* Database
-* SQL
-* NoSQL
-* Columnar
-* Analytics
-* Text Editor
-* Hardware: CPU/Computer
-* Network
-* Log based database
-* Streaming
-* Event based
-* Business Oriented (CRM, with invoicing, like gumroad)
+
+- OS
+- File System
+- Compiler
+- Write a version of the compiler in the language and have it compile itself
+- parser
+- interpreter
+- Memory allocators
+- JIT
+- Database
+- SQL
+- NoSQL
+- Columnar
+- Analytics
+- Text Editor
+- Hardware: CPU/Computer
+- Network
+- Log based database
+- Streaming
+- Event based
+- Business Oriented (CRM, with invoicing, like gumroad)

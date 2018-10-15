@@ -77,9 +77,9 @@ This solution are here for reference only. The value of this book is in actually
 - [1.17]({{< ref "/post/SICP-Solution-Exercise-1-17.md" >}}) ✓
 - [1.18]({{< ref "/post/SICP-Solution-Exercise-1-18.md" >}}) ✓
 - [1.19]({{< ref "/post/SICP-Solution-Exercise-1-19.md" >}}) ✓
-- [1.20]({{< ref "/post/SICP-Solution-Exercise-1-20.md" >}})
-- 1.21
-- 1.22
+- [1.20]({{< ref "/post/SICP-Solution-Exercise-1-20.md" >}}) ✓
+- [1.21]({{< ref "/post/SICP-Solution-Exercise-1-21.md" >}}) ✓
+- [1.22]({{< ref "/post/SICP-Solution-Exercise-1-22.md" >}})
 - 1.23
 - 1.24
 - 1.25

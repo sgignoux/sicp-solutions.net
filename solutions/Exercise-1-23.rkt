@@ -9,6 +9,11 @@
 (define (smallest-divisor n)
   (find-divisor n 2))
 
+(define (next n)
+  (if (= n 2)
+      3
+      (+ 2 n)))
+
 (define (find-divisor n test-divisor)
   (cond ((> (square test-divisor) n)
          n)
@@ -16,7 +21,7 @@
          test-divisor)
         (else (find-divisor
                n
-               (+ test-divisor 1)))))
+               (next test-divisor)))))
 
 (define (divides? a b)
   (= (remainder b a) 0))
@@ -49,6 +54,6 @@
                   (search-for-primes (+ 2 start-range) end-range)))))
 
 
-(trace find-divisor)
+;(trace prime?)
 
-(search-for-primes 1000 1010)
+(search-for-primes 10000000000 10000000090)

@@ -79,13 +79,13 @@ This solution are here for reference only. The value of this book is in actually
 - [1.19]({{< ref "/post/SICP-Solution-Exercise-1-19.md" >}}) ✓
 - [1.20]({{< ref "/post/SICP-Solution-Exercise-1-20.md" >}}) ✓
 - [1.21]({{< ref "/post/SICP-Solution-Exercise-1-21.md" >}}) ✓
-- [1.22]({{< ref "/post/SICP-Solution-Exercise-1-22.md" >}})
-- 1.23
-- 1.24
-- 1.25
-- 1.26
-- 1.27
-- 1.28
+- [1.22]({{< ref "/post/SICP-Solution-Exercise-1-22.md" >}}) ✓
+- [1.23]({{< ref "/post/SICP-Solution-Exercise-1-23.md" >}}) [Work in Progress]
+- [1.24]({{< ref "/post/SICP-Solution-Exercise-1-24.md" >}}) [Work in Progress]
+- [1.25]({{< ref "/post/SICP-Solution-Exercise-1-25.md" >}}) [Work in Progress]
+- [1.26]({{< ref "/post/SICP-Solution-Exercise-1-26.md" >}}) [Work in Progress]
+- [1.27]({{< ref "/post/SICP-Solution-Exercise-1-27.md" >}}) [Work in Progress]
+- [1.28]({{< ref "/post/SICP-Solution-Exercise-1-28.md" >}}) [Work in Progress]
 
 #### 1.3 Formulating Abstractions with Higher-Order Procedures
 

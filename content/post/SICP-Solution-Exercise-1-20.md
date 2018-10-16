@@ -15,7 +15,7 @@ draft: false
       (gcd b (remainder a b))))
 ```
 
-### normal-order evaluation
+### Normal-order evaluation
 
 With an interpreter that uses **normal-order evaluation**, the interpreter will “fully expand and then reduce”.
 
@@ -87,7 +87,7 @@ With an interpreter that uses **normal-order evaluation**, the interpreter will 
 
 Using **normal-order evaluation**, `remainder` is called 18 times.
 
-### applicative-order evaluation
+### Applicative-order evaluation
 
 An interpreter that uses **applicative-order evaluation** will “evaluate the arguments and then apply”.
 

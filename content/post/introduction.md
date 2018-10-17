@@ -133,6 +133,7 @@ Todo
 ## Scheme implementations
 
 - DrRacket
+- ChickenScheme: https://wiki.call-cc.org/platforms
 - https://www.gnu.org/software/mit-scheme/
 
 * https://github.com/zv/SICP-guile

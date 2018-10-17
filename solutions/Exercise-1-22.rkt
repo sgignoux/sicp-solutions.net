@@ -49,6 +49,6 @@
                   (search-for-primes (+ 2 start-range) end-range)))))
 
 
-(trace find-divisor)
+;(trace find-divisor)
 
-(search-for-primes 1000 1010)
+(search-for-primes 1000 1050)

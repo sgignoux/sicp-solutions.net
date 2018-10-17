@@ -11,9 +11,8 @@
           (square (expmod base (/ exp 2) m))
           m))
         (else
-         (remainder 
-          (* base (expmod base (- exp 1) m))
-          m))))
+         (remainder (* base (expmod base (- exp 1) m))
+                    m))))
 
 (define (fermat-test n)
   (define (try-it a)
@@ -72,6 +71,10 @@
                   (search-for-primes (+ 2 start-range) end-range)))))
 
 
-(trace find-divisor)
-
 (search-for-primes 1000 1100)
+
+
+
+
+
+

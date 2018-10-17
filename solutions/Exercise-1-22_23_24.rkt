@@ -1,5 +1,4 @@
 #lang racket/base
-(require racket/trace)
 (define (runtime) (current-inexact-milliseconds)) ; adapting to DrRacket
 
 ; --- fast-prime? ---

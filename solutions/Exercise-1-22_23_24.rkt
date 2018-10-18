@@ -71,6 +71,25 @@
 (define (prime-improved? n)
   (= n (smallest-divisor-improved n)))
 
+; --- prime-improved-inlined? ---
+
+(define (find-divisor-improved-inlined n test-divisor)
+  (cond ((> (square test-divisor) n)
+         n)
+        ((divides? test-divisor n)
+         test-divisor)
+        (else (find-divisor-improved-inlined
+               n
+               (if #f
+                   3
+                   (+ 2 test-divisor))))))
+
+(define (smallest-divisor-improved-inlined n)
+  (find-divisor-improved-inlined n 3))
+
+(define (prime-improved-inlined? n)
+  (= n (smallest-divisor-improved-inlined n)))
+
 ; --- Timing ---
 
 (define (timed-prime-test n method runs)
@@ -115,7 +134,7 @@
 (define runs 1000) ; microsecond
 
 (define (measure-time-for-primes l)
-  (display "| ")(display (car l)) (display " | ") (display (timed-prime-test (car l) prime? runs))  (display " | ") (display (timed-prime-test (car l) fast-prime?100 runs)) (display " |")(newline)
+  (display "| ")(display (car l)) (display " | ") (display (timed-prime-test (car l) prime? runs))  (display " | ") (display (timed-prime-test (car l) prime-improved-inlined? runs)) (display " |")(newline)
   (cond ((null? (cdr l))
          0)
         (else

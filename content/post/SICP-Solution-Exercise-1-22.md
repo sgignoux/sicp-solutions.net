@@ -24,7 +24,7 @@ Using this procedure, write a procedure `search-for-primes` that checks the prim
 
 **Solution**
 
-Since `runtime` is not part of DrRacket, you have to use [current-inexact-milliseconds](https://docs.racket-lang.org/reference/time.html#%28def._%28%28quote._~23~25kernel%29._current-inexact-milliseconds%29%29). The code, including the `search-for-primes` function is:
+Since `runtime` is not part of DrRacket, you can use [current-inexact-milliseconds](https://docs.racket-lang.org/reference/time.html#%28def._%28%28quote._~23~25kernel%29._current-inexact-milliseconds%29%29). The code, including the `search-for-primes` function is:
 
 ```scheme
 #lang racket/base
@@ -79,15 +79,11 @@ Since `runtime` is not part of DrRacket, you have to use [current-inexact-millis
 (search-for-primes 10000000000 10000000090)
 ```
 
-The current hardware are pretty fast and I extended the range of number to test:
+The funcion `current-inexact-milliseconds` provide data in the microseconds scale, but our current hardware are pretty fast and this is not precise enough. I extended the code for computing the time of 1000 runs.
 
-Initial results where very noisy
-
-time averaged for 1000 runs.
-
-Variability is still high.
 ### DrRacket has high variability
-Not so much for Chicken Scheme (compiled or not)
+
+The initial test where done with DrRacket:
 
 | log(prime) | prime          | time (µs) |
 | ---------- | -------------- | --------- |
@@ -134,6 +130,8 @@ The ratio is pretty close to $\sqrt {10} = 3.162$, although this is only average
 
 ### Not so much for Chicken Scheme (compiled)
 
+I wanted to compare to another implementation and managed to get the program compiled with [Chicken Scheme](https://www.call-cc.org/). The results are a little more consistante:
+
 | log(prime) | prime          | time (µs) |
 | ---------- | -------------- | --------- |
 | 3          | 1,009          | 4.0       |
@@ -161,6 +159,8 @@ The ratio is pretty close to $\sqrt {10} = 3.162$, although this is only average
 | 10         | 10,000,000,033 | 11193.0   |
 | 10         | 10,000,000,061 | 11224.0   |
 
+The table can be summarized as above:
+
 | log(prime) | average (µs) | ratio |
 | ---------- | ------------ | ----- |
 | 3          | 3,6          |       |
@@ -172,5 +172,6 @@ The ratio is pretty close to $\sqrt {10} = 3.162$, although this is only average
 | 9          | 3468         | 3,193 |
 | 10         | 11182        | 3,224 |
 
+The ratio here is also close to $\sqrt {10} = 3.162$, although this is only average of 3 run.
 
 

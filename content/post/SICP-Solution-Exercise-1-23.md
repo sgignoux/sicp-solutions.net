@@ -8,6 +8,8 @@ draft: false
 
 **Solution**
 
+The goal of this exercise is to try a first improvement in the prime check to see if we understand correctly how it will impact performance. The improvement is easy enough to write.
+
 ```scheme
 (define (next n)
   (if (= n 2)
@@ -15,11 +17,11 @@ draft: false
       (+ 2 n)))
 ```
 
-Running this and putting the timing in the "time next" column:
-
-Average over 1000 runs
+Here too, the initial tests with only one run where very inconsistante from run to run. I decieded to extend the program to run the computation for each prime 1000 times and mesure the result.
 
 ### DrRacket
+
+The raw data from DrRacket:
 
 | log(prime) | prime          | time (µs) | time improved (µs) |
 | ---------- | -------------- | --------- | ------------------ |
@@ -48,7 +50,7 @@ Average over 1000 runs
 | 10         | 10,000,000,033 | 8195.4    | 5341.0             |
 | 10         | 10,000,000,061 | 8150.0    | 5185.8             |
 
-That can be averaged and sumarized by averaging the time for each of the three prime in the same range of size:
+This data can be sumarized by averaging the time for each of the three prime in the same range of size:
 
 | log(prime) | average  (µs) | average improved (µs) | speedup |
 | ---------- | ------------- | --------------------- | ------- |
@@ -61,13 +63,11 @@ That can be averaged and sumarized by averaging the time for each of the three p
 | 9          | 2801,96       | 1703,16               | 164,5%  |
 | 10         | 8184,73       | 5219,44               | 156,8%  |
 
-Still noisy
-
-With larger number, and more accurate runtime number, it seems that we are slower than the expected 200%.
-
-Explanation...
+Looking at this table, we notice number ranging from 113,6% to 164,5%. Even if the data is noisy, it seems clear that are bellow the expected 200%.
 
 ### Chicken Scheme (compiled)
+
+In order to check the number, I compiled the program with Chicken Scheme on OS X and got this results:
 
 | log(prime) | prime          | time (µs) | time improved (µs) |
 | ---------- | -------------- | --------- | ------------------ |
@@ -109,6 +109,123 @@ That can be averaged and sumarized by averaging the time for each of the three p
 | 9          | 3573,3        | 2100,0                | 170,2%  |
 | 10         | 11289,7       | 6737,7                | 167,6%  |
 
-Much less noisy.
+This is much less noisy and it seems that the real speedup is indeed closer to 167% than the 200% expected.
 
-Still not 200%
+### Explanation of the performance
+
+By looking at the code of the two version, we can see a few differences that could explain the lack of expected speedup.
+
+```scheme
+(define (find-divisor n test-divisor)
+  (cond ((> (square test-divisor) n)
+         n)
+        ((divides? test-divisor n)
+         test-divisor)
+        (else (find-divisor
+               n
+               (+ test-divisor 1)))))
+```
+
+```scheme
+(define (next n)
+  (if (= n 2)
+      3
+      (+ 2 n)))
+
+(define (find-divisor-improved n test-divisor)
+  (cond ((> (square test-divisor) n)
+         n)
+        ((divides? test-divisor n)
+         test-divisor)
+        (else (find-divisor-improved
+               n
+               (next test-divisor)))))
+```
+
+The version for `find-divisor-improved` contains:
+* one more function call
+* an `if`
+* the predicate `(= n 2)` 
+
+To validate our hypothesys, let's try a few experiments.
+
+#### Experiment 1: inline `next` in `find-divisor-improved` so that we can estimate the cost of the function call
+
+```scheme
+(define (find-divisor-improved-inlined n test-divisor)
+  (cond ((> (square test-divisor) n)
+         n)
+        ((divides? test-divisor n)
+         test-divisor)
+        (else (find-divisor-improved-inlined
+               n
+               (if (= test-divisor 2)
+                   3
+                   (+ 2 test-divisor))))))
+```
+On DrRacket:
+
+| log(prime) | average  (µs) | average inlined improved (µs) | speedup |
+| ---------- | ------------- | ----------------------------- | ------- |
+| 3          | 2,77498       | 1,55135                       | 178,9%  |
+| 4          | 8,02994       | 4,32861                       | 185,5%  |
+| 5          | 25,9759       | 13,0106                       | 199,7%  |
+| 6          | 75,6673       | 47,2732                       | 160,1%  |
+| 7          | 258,644       | 147,951                       | 174,8%  |
+| 8          | 971,482       | 529,498                       | 183,5%  |
+| 9          | 2497,69       | 1414,67                       | 176,6%  |
+| 10         | 7896,57       | 4539,28                       | 174,0%  |
+
+We are now around 179% for speedup. Better, but not yet there.
+
+#### Experiment 2: using inlined `next` remove the `=` testing
+
+We need to cheat a little to do that, but since we are running this on prime number, we will just skip the test with 2 and start with 3.
+
+```scheme
+(define (find-divisor-improved-inlined n test-divisor)
+  (cond ((> (square test-divisor) n)
+         n)
+        ((divides? test-divisor n)
+         test-divisor)
+        (else (find-divisor-improved-inlined
+               n
+               (if #f
+                   3
+                   (+ 2 test-divisor))))))
+```
+
+On DrRacket:
+
+| log(prime) | average  (µs) | average inlined improved (µs) | speedup |
+| ---------- | ------------- | ----------------------------- | ------- |
+| 3          | 2,43196       | 1,24796                       | 194,9%  |
+| 4          | 7,53336       | 3,76611                       | 200,0%  |
+| 5          | 23,2299       | 11,6736                       | 199,0%  |
+| 6          | 79,3243       | 37,5333                       | 211,3%  |
+| 7          | 252,649       | 133,449                       | 189,3%  |
+| 8          | 787,866       | 382,167                       | 206,2%  |
+| 9          | 2429,22       | 1227,92                       | 197,8%  |
+| 10         | 7793,55       | 3915,27                       | 199,1%  |
+
+We have almost 200% here!
+
+The problem by doing that is that we probably triggered the optimization of [DrRacket JIT compiler](https://docs.racket-lang.org/guide/performance.html#%28tech._jit%29) for dead code optimization. It means that the `if` has probably be removed and our third hypothesis has been added here too.
+
+#### Conclusion
+
+The improved algorithm did cut down the number of steps by 2, but the reason that it didn't speedup the computation by 200% was because we added some new work for each steps:
+
+* one more function call
+* an `if`
+* the predicate `(= n 2)` 
+
+
+
+
+
+
+
+
+
+

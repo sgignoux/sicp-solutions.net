@@ -29,15 +29,12 @@ Just run the program, using `trace`:
   (= (remainder b a) 0))
 
 (trace find-divisor)
+```
 
+The thing to notice is the length and depth of the function trace to have a sense of the complexity in time and space of such functions.
+
+```
 (display (smallest-divisor 199))
-(display (smallest-divisor 1999))
-(display (smallest-divisor 19999))
-```
-
-Which outputs:
-
-```
 >(find-divisor 199 2)
 >(find-divisor 199 3)
 >(find-divisor 199 4)
@@ -57,6 +54,7 @@ Which outputs:
 ```
 
 ```
+(display (smallest-divisor 1999))
 >(find-divisor 1999 2)
 >(find-divisor 1999 3)
 >(find-divisor 1999 4)
@@ -106,6 +104,7 @@ Which outputs:
 ```
 
 ```
+(display (smallest-divisor 19999))
 >(find-divisor 19999 2)
 >(find-divisor 19999 3)
 >(find-divisor 19999 4)

@@ -1,6 +1,6 @@
 ---
 title: "SICP - Solution: Exercise 1.24"
-date: 2018-10-16T05:03:58+02:00
+date: 2018-10-17T05:03:58+02:00
 draft: false
 ---
 
@@ -32,7 +32,7 @@ draft: false
         (else #f)))
 ```
 
-Using 100, because of precision of time measure:
+I choosed to run each test on 100 random number, but this is somewhat a guessed value:
 
 ```
 (define (start-prime-test n start-time)
@@ -40,6 +40,10 @@ Using 100, because of precision of time measure:
       (report-prime (- (runtime) start-time))
       "nothing"))
 ```
+
+Here too, in order to increase precision, all computation are run 1000 times on each prime number for each of the algorithm.
+
+I ran in a few issue with the random number generator for the largest prime in my table. I just removed them as it don't change the conclusion.
 
 ### DrRacket
 
@@ -67,8 +71,6 @@ Using 100, because of precision of time measure:
 | 9          | 1,000,000,009 | 2728.9           | 425.29                |
 | 9          | 1,000,000,021 | 2848.4           | 455.42                |
 
-Using 100 run for fast-prime? 
-
 Which can be summarized:
 
 | log(prime) | average time `prime?` (µs) | delta for 10x (µs) | average time `fast-prime?` (µs) | delta for 10x (µs) |
@@ -81,24 +83,7 @@ Which can be summarized:
 | 8          | 886,62                     | 632,04             | 393,57                          | 28,4               |
 | 9          | 2722,1                     | 1835,5             | 439,88                          | 46,3               |
 
-
-how would you expect the time to test primes near 1,000,000 to compare with the time needed to test primes near 1000? Do your data bear this out? Can you explain any discrepancy you find?
-
-${\mathrm\Theta(\log\;n)}$ growth means that when the prime are ten times larger, the time will increase by a constant amount: ${\log(100)-\log(10)=1}$
-
-
-
-
-Issues with 10
-```
-1.           . random: contract violation
-  expected: (or/c (integer-in 1 4294967087) pseudo-random-generator?)
-  given: 10000000000
-```
-
-
 ### Chicken Scheme (compiled)
-
 
 | log(prime) | prime         | time prime? (µs) | time fast-prime? (µs) |
 | ---------- | ------------- | ---------------- | --------------------- |
@@ -124,9 +109,6 @@ Issues with 10
 | 9          | 1,000,000,009 | 3744.0           | 477.0                 |
 | 9          | 1,000,000,021 | 3641.0           | 499.0                 |
 
-
-Using 100 run for fast-prime? 
-
 Which can be summarized:
 
 | log(prime) | average time `prime?` (µs) | average time `fast-prime?` (µs) | delta for 10x (µs) | delta for 10x (µs) |
@@ -138,3 +120,11 @@ Which can be summarized:
 | 7          | 356,67                     | 373,33                          | 244,00             | 72,00              |
 | 8          | 1136,33                    | 443,00                          | 779,67             | 69,67              |
 | 9          | 3633,67                    | 479,33                          | 2497,33            | 36,33              |
+
+### Conclusion
+
+When the size of `prime` is 10 times larger, `prime?` require 3 times more computation.
+
+When the size of  `prime` is 10 times larger, `fast-prime?` require a constant increase of 50µs. ${\mathrm\Theta(\log\;n)}$ growth means that when the prime are ten times larger, the time will increase by a constant amount ${\log(100)-\log(10)=1}$. This is quite clear here.
+
+Although that for smaller number `prime?` is faster, `fast-prime?` become much faster with larger and larger prime.

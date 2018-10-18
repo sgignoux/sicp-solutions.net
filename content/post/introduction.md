@@ -80,8 +80,8 @@ This solution are here for reference only. The value of this book is in actually
 - [1.20]({{< ref "/post/SICP-Solution-Exercise-1-20.md" >}}) ✓
 - [1.21]({{< ref "/post/SICP-Solution-Exercise-1-21.md" >}}) ✓
 - [1.22]({{< ref "/post/SICP-Solution-Exercise-1-22.md" >}}) ✓
-- [1.23]({{< ref "/post/SICP-Solution-Exercise-1-23.md" >}}) [Work in Progress]
-- [1.24]({{< ref "/post/SICP-Solution-Exercise-1-24.md" >}}) [Work in Progress]
+- [1.23]({{< ref "/post/SICP-Solution-Exercise-1-23.md" >}}) ✓
+- [1.24]({{< ref "/post/SICP-Solution-Exercise-1-24.md" >}}) ✓
 - [1.25]({{< ref "/post/SICP-Solution-Exercise-1-25.md" >}}) [Work in Progress]
 - [1.26]({{< ref "/post/SICP-Solution-Exercise-1-26.md" >}}) [Work in Progress]
 - [1.27]({{< ref "/post/SICP-Solution-Exercise-1-27.md" >}}) [Work in Progress]

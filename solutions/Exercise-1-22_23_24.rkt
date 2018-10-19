@@ -1,4 +1,5 @@
 #lang racket/base
+(require racket/trace)
 (define (runtime) (current-inexact-milliseconds)) ; adapting to DrRacket
 
 ; --- fast-prime? ---
@@ -102,45 +103,45 @@
       (start-prime-test n start-time method (- runs 1))))
 
 (define primes-list '(1009
-                      1013
-                      1019
-                      10007
-                      10009
-                      10037
-                      100003
-                      100019
-                      100043
-                      1000003
-                      1000033
-                      1000037
-                      10000019
-                      10000079
-                      10000103
-                      100000007
-                      100000037
+                      ;1013
+                      ;1019
+                      ;10007
+                      ;10009
+                      ;10037
+                      ;100003
+                      ;100019
+                      ;100043
+                      ;1000003
+                      ;1000033
+                      ;1000037
+                      ;10000019
+                      ;10000079
+                      ;10000103
+                      ;100000007
+                      ;100000037
                       100000039
                       1000000007
                       1000000009
                       1000000021
-                      10000000019
-                      10000000033
-                      10000000061
+                      ;10000000019
+                      ;10000000033
+                      ;10000000061
                       ))
 
 ; 1.22: prime?
 ; 1.23: prime-improved?
 ; 1.24: fast-prime?
 
-(define runs 1000) ; microsecond
+(define runs 1) ; microsecond
 
 (define (measure-time-for-primes l)
-  (display "| ")(display (car l)) (display " | ") (display (timed-prime-test (car l) prime? runs))  (display " | ") (display (timed-prime-test (car l) prime-improved-inlined? runs)) (display " |")(newline)
+  (display "| ")(display (car l)) (display " | ") (display (timed-prime-test (car l) prime? runs))  (display " | ") (display (timed-prime-test (car l) fast-prime?100 runs)) (display " |")(newline)
   (cond ((null? (cdr l))
          0)
         (else
          (measure-time-for-primes (cdr l)))))
 
-; (trace display-list)
+(trace expmod)
 
 (measure-time-for-primes primes-list)
 

@@ -24,3 +24,5 @@ draft: false
 “I don’t see what difference that could make,” says Louis. “I do.” says Eva. “By writing the procedure like that, you have transformed the ${\mathrm\Theta(\log\;n)}$ process into a ${\mathrm\Theta(n)}$ process.” Explain.
 
 **Solution**
+
+TBD

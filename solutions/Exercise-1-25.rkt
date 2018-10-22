@@ -23,4 +23,4 @@
 ;(display (expmod 70309661 100000039 100000039))
 ;(display (fast-expt 550 108))(newline)
 (display (fast-expt 941 1009))(newline)
-(display (remainder (fast-expt 55 1008) 1009))(newline)
+(display (exact-integer? (fast-expt 941 1008)))(newline)

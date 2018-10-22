@@ -15,16 +15,9 @@ Is she correct? Would this procedure serve as well for our fast prime tester? Ex
 
 **Solution**
 
-- computing `(fast-expt base exp)` will generate huge intermediate number
+### Experimenting
 
-  - What size?
-  - Why is that a problem?
-    - Speed
-    - memory
-
-- computing with other method will give smaller number at everystep
-
-Even with small number, the result can be large:
+The first step in Alyssa P. Hacker version of `expmod` is the computation of `fast-expt`. If you display the result of a simple case, it will look something like this:
 
 ```
 (display (fast-expt 941 1009))
@@ -65,12 +58,38 @@ Even with small number, the result can be large:
 3904244575551765307837325917336250605592037221167237140433178672549280512171288511
 0087096970935733477653473611809585967403812349837877308334464921130107561749546564
 5215964878429006380976605000883169274765651774061
-1
 ```
 
-This number is 3001 digits long and this is just for the smallest prime number in the list. This is slow to compute, since you need a special representation to encode them, and it takes a lot of space in memory. By definition, the complexity in space and time are $\mathrm\Theta(2^{base\times exp})$ which will grow very fast.
+This number is 3001 digits long and this is just for the smallest prime number in the list. The [number of digits](http://mathforum.org/library/drmath/view/62942.html) for the result of `(fast-expt base exp)` will be $\log\_{10}\left(base^{exp}\right)+1=exp\times\log\_{10}\left(base\right)+1$ digits long.
 
-By contrast the algorithm used doesn't try to fully compute the number of exp, but break the problem with smaller number of roughly the same size:
+For example, looking at a much larger case, `(fast-expt 12345678 1000000007)` will yield a result with in a number with around 256 millions digits, which will take around 256MB of memory, depending on the representation.
+
+### Why should we care about the size of an intermediate result?
+
+We are lucky that DrRacket can work on such large numbers. In many language, operation like multiplication can work only on `fixnum` numbers. To quote DrRacker section on [Numbers](https://docs.racket-lang.org/reference/numbers.html):
+
+> The precision and size of exact numbers is limited only by available memory (and the
+> precision of operations that can produce irrational numbers). In particular, adding,
+> multiplying, subtracting, and dividing exact numbers always produces an exact result.
+>
+> A fixnum is an exact integer whose two’s complement representation fit into 31 bits
+> on a 32-bit platform or 63 bits on a 64-bit platform; furthermore, no allocation is
+> required when computing with fixnums.
+
+These large numbers are called
+[Arbitrary-precision arithmetic](https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic) or bignum arithmetic and on top of taking memory space, they are much slower to perform. To quote the above Wikipedia article:
+
+> Arbitrary-precision arithmetic is considerably slower than arithmetic using numbers
+> that fit entirely within processor registers, since the latter are usually implemented
+> in hardware arithmetic whereas the former must be implemented in software. Even if the
+> computer lacks hardware for certain operations (such as integer division, or all
+> floating-point operations) and software is provided instead, it will use number sizes
+> closely related to the available hardware registers: one or two words only and definitely
+> not N words.
+
+While on hardware, operations like multiplication and remainder on `fixnum` can be roughly seen as $O(1)$, on bignum they are around $O(N\;\log\left(N\right)\;\log\left(\log\left(N\right)\right)$, which is much slower.
+
+By contrast the original algorithm used doesn't try to fully compute the number of exp before computing the remainder, but break the problem with smaller number of roughly the same size:
 
 ```scheme
 (define (expmod base exp m)
@@ -85,4 +104,50 @@ By contrast the algorithm used doesn't try to fully compute the number of exp, b
           m))))
 ```
 
-D
+This can be checked by tracing it's execution on the same parameters:
+
+```
+>(expmod 941 1008 1009)
+> (expmod 941 504 1009)
+> >(expmod 941 252 1009)
+> > (expmod 941 126 1009)
+> > >(expmod 941 63 1009)
+> > > (expmod 941 62 1009)
+> > > >(expmod 941 31 1009)
+> > > > (expmod 941 30 1009)
+> > > > >(expmod 941 15 1009)
+> > > > > (expmod 941 14 1009)
+> > > > > > (expmod 941 7 1009)
+> > > > > > > (expmod 941 6 1009)
+> > > > > > > > (expmod 941 3 1009)
+> > > > > > > > > (expmod 941 2 1009)
+> > > > > > > > > > (expmod 941 1 1009)
+> > > > > > > > > > > (expmod 941 0 1009)
+< < < < < < < < < < < 1
+< < < < < < < < < < 941
+< < < < < < < < < 588
+< < < < < < < < 376
+< < < < < < < 116
+< < < < < < 184
+< < < < < 559
+< < < < <330
+< < < < 937
+< < < <860
+< < < 3
+< < <805
+< < 247
+< <469
+< 1008
+```
+
+### Conclusion
+
+Alyssa P. Hacker version of `expmod`:
+
+- Give much larger intermediate results, which could require more memory than available on the computer
+- This large intermediate results require the use of special algorithm for multiplication and remainder that are much slower than computation on smaller `fixnum` numbers
+
+### Open questions
+
+- Does DrRacket use automatically fixnum on our optimized verions?
+- How is remainder computed? What is the complexity?

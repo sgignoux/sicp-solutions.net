@@ -4,8 +4,6 @@ date: 2018-09-26T21:03:14+02:00
 draft: true
 ---
 
-http://www.pbr-book.org/
-
 - Very high quality code of he final results
 - Clean code architecture
 - Almost production ready
@@ -47,3 +45,8 @@ Topics:
 - Streaming
 - Event based
 - Business Oriented (CRM, with invoicing, like gumroad)
+
+Inspiration:
+
+- https://news.ycombinator.com/item?id=18274235
+- http://www.pbr-book.org/

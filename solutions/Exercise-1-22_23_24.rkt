@@ -20,7 +20,7 @@
   (try-it (+ 1 (random (- n 1)))))
 
 (define (fast-prime?100 n)
-  (fast-prime? n 100))
+  (fast-prime? n 2))
 
 (define (fast-prime? n times)
   (cond ((= times 0) #t)
@@ -119,10 +119,10 @@
                       ;10000103
                       ;100000007
                       ;100000037
-                      100000039
-                      1000000007
-                      1000000009
-                      1000000021
+                      ;100000039
+                      ;1000000007
+                      ;1000000009
+                      ;1000000021
                       ;10000000019
                       ;10000000033
                       ;10000000061
@@ -143,8 +143,9 @@
 
 (trace expmod)
 
-(measure-time-for-primes primes-list)
+; (measure-time-for-primes primes-list)
 
+(expmod 941 1008 1009)
 
 
 

@@ -1,20 +1,11 @@
----
-title: "SICP - Solution: Exercise 1.27"
-date: 2018-10-20T04:03:58+02:00
-draft: false
----
+#lang racket
 
-**Exercise 1.27:** Demonstrate that the Carmichael numbers listed in Footnote 47 really do fool the Fermat test. That is, write a procedure that takes an integer $n$ and tests whether an is congruent to $a$ modulo $n$ for every ${a<n}$, and try your procedure on the given Carmichael numbers.
-
-**Solution**
-
-```scheme
 (define (square x) (* x x))
 
 (define (expmod base exp m)
   (cond ((= exp 0) 1)
         ((even? exp)
-         (remainder
+         (remainder 
           (square (expmod base (/ exp 2) m))
           m))
         (else
@@ -34,13 +25,3 @@ draft: false
 (display (carmichael-number? 2465)) (newline)
 (display (carmichael-number? 2821)) (newline)
 (display (carmichael-number? 6601)) (newline)
-```
-
-```
-#t
-#t
-#t
-#t
-#t
-#t
-```

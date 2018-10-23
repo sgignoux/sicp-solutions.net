@@ -25,4 +25,8 @@ draft: false
 
 **Solution**
 
-TBD
+Louis Reasoner version of `expmod` doesn't user a `square` function, but use a `*`. This might not seem a lot, but the interpreter uses **applicative-order evaluation**, meaning it will “evaluate the arguments and then apply”.
+
+In case of `(square (expmod base (/ exp 2) m))`, the parameter of `square` will be evaluated once, then `square` will be applied.
+
+In the case of `(* (expmod base (/ exp 2) m) (expmod base (/ exp 2) m))` each of the two parameters of `*` will be fully evaluated before the `*` will be applied. Since both are recursive call, it will double the work to do whenever this branch is executed. The complexity becomes $\mathrm\Theta(\log\;2^n)=\mathrm\Theta(n\;\log\;2)=\mathrm\Theta(n)$.

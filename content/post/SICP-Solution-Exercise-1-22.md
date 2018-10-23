@@ -175,3 +175,4 @@ The table can be summarized as above:
 The ratio here is also close to $\sqrt {10} = 3.162$, although this is only average of 3 run.
 
 
+The variation in speed might be due to interaction with garbage collection. [This article](https://blog.janestreet.com/core_bench-micro-benchmarking-for-ocaml/) about micro-benchmarks could be a clue.

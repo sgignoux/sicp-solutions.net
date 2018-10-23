@@ -17,7 +17,7 @@ Is she correct? Would this procedure serve as well for our fast prime tester? Ex
 
 ### Experimenting
 
-The first step in Alyssa P. Hacker version of `expmod` is the computation of `fast-expt`. If you display the result of a simple case, it will look something like this:
+The first step in Alyssa P. Hacker version of `expmod` is the computation of `fast-expt`. Let's try a simple case and see what happens.
 
 ```
 (display (fast-expt 941 1009))
@@ -62,7 +62,7 @@ The first step in Alyssa P. Hacker version of `expmod` is the computation of `fa
 
 This number is 3001 digits long and this is just for the smallest prime number in the list. The [number of digits](http://mathforum.org/library/drmath/view/62942.html) for the result of `(fast-expt base exp)` will be $\log\_{10}\left(base^{exp}\right)+1=exp\times\log\_{10}\left(base\right)+1$ digits long.
 
-For example, looking at a much larger case, `(fast-expt 12345678 1000000007)` will yield a result with in a number with around 256 millions digits, which will take around 256MB of memory, depending on the representation.
+Trying to run a larger case like `(fast-expt 12345678 1000000007)` will yield a result with 256 millions digits. Depending of the encoding, it might take up to 256MB of memory just to store it.
 
 ### Why should we care about the size of an intermediate result?
 
@@ -77,7 +77,7 @@ We are lucky that DrRacket can work on such large numbers. In many language, ope
 > required when computing with fixnums.
 
 These large numbers are called
-[Arbitrary-precision arithmetic](https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic) or bignum arithmetic and on top of taking memory space, they are much slower to perform. To quote the above Wikipedia article:
+[Arbitrary-precision arithmetic](https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic) or bignum arithmetic. On top of taking large memory space, computation on `bignum` are much slower to perform than on `fixnum`. To quote the above Wikipedia article:
 
 > Arbitrary-precision arithmetic is considerably slower than arithmetic using numbers
 > that fit entirely within processor registers, since the latter are usually implemented
@@ -87,9 +87,9 @@ These large numbers are called
 > closely related to the available hardware registers: one or two words only and definitely
 > not N words.
 
-While on hardware, operations like multiplication and remainder on `fixnum` can be roughly seen as $O(1)$, on bignum they are around $O(N\;\log\left(N\right)\;\log\left(\log\left(N\right)\right)$, which is much slower.
+While on hardware, operations like multiplication and remainder on `fixnum` can be seen as $O(1)$, on bignum they have a much slower complexity of $O(N\;\log\left(N\right)\;\log\left(\log\left(N\right)\right)$, assuming algorithm like [Karatsuba algorithm](https://en.wikipedia.org/wiki/Karatsuba_algorithm) that is implemented in DrRacket.
 
-By contrast the original algorithm used doesn't try to fully compute the number of exp before computing the remainder, but break the problem with smaller number of roughly the same size:
+By contrast the original algorithm used doesn't try to fully compute the `exp` before computing the remainder, but break the problem with smaller number of roughly the same size:
 
 ```scheme
 (define (expmod base exp m)
@@ -144,7 +144,7 @@ This can be checked by tracing it's execution on the same parameters:
 
 Alyssa P. Hacker version of `expmod`:
 
-- Give much larger intermediate results, which could require more memory than available on the computer
+- Gives much larger intermediate results, which could require more memory than available on the computer
 - This large intermediate results require the use of special algorithm for multiplication and remainder that are much slower than computation on smaller `fixnum` numbers
 
 ### Open questions

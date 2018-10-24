@@ -30,6 +30,9 @@ draft: true
 - Simple is not easy (https://www.infoq.com/presentations/Simple-Made-Easy)
 
 Building an xxx in yyy from scratch
+Coding
+Programming
+Writing
 
 Topics:
 

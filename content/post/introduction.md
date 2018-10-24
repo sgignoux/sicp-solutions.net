@@ -85,7 +85,7 @@ This solution are here for reference only. The value of this book is in actually
 - [1.25]({{< ref "/post/SICP-Solution-Exercise-1-25.md" >}}) ✓
 - [1.26]({{< ref "/post/SICP-Solution-Exercise-1-26.md" >}}) ✓
 - [1.27]({{< ref "/post/SICP-Solution-Exercise-1-27.md" >}}) ✓
-- [1.28]({{< ref "/post/SICP-Solution-Exercise-1-28.md" >}}) [Work in Progress]
+- [1.28]({{< ref "/post/SICP-Solution-Exercise-1-28.md" >}}) ✓
 
 #### 1.3 Formulating Abstractions with Higher-Order Procedures
 

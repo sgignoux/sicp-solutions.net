@@ -22,6 +22,14 @@ draft: true
 - Identify incorrect assumptions
 - complex programs are constructed by building, step by step, computational objects of increasing complexity
 - incremental development and testing
+- a modern, non-naive implementation
+- reasonably fast
+- foundational
+- step by step, show challenges and tradeoff and decisions
+- Accuracy in words
+- Simple is not easy (https://www.infoq.com/presentations/Simple-Made-Easy)
+
+Building an xxx in yyy from scratch
 
 Topics:
 
@@ -51,4 +59,7 @@ Inspiration:
 - https://news.ycombinator.com/item?id=18274235
 - http://www.pbr-book.org/
 - https://news.ycombinator.com/item?id=18277450
--
+- https://blog.invisiblethings.org/2015/12/23/state_harmful.html (markdown to pdf)
+- https://news.ycombinator.com/item?id=18282324
+
+https://www.ybrikman.com/writing/2014/05/29/must-see-tech-talks-for-every-programmer/

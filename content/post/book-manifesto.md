@@ -66,3 +66,5 @@ Inspiration:
 - https://news.ycombinator.com/item?id=18282324
 
 https://www.ybrikman.com/writing/2014/05/29/must-see-tech-talks-for-every-programmer/
+
+improve writing clarity: use debating society?

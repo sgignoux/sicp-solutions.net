@@ -14,6 +14,7 @@ draft: true
 - Boundaries
 - breaks up naturally into a number of subproblems
 - Write things down https://news.ycombinator.com/item?id=18145205
+- Define clearly what is the problem and what are the constraints in the solution
 - Are the goals clearly stated and explained. Do we have buy in from the team?
 - Make sure that the problems we are trying to fix identified and are clearly explained
 - Identify area of blurriness and unclear

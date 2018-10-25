@@ -89,8 +89,8 @@ This solution are here for reference only. The value of this book is in actually
 
 #### 1.3 Formulating Abstractions with Higher-Order Procedures
 
-- [1.29]({{< ref "/post/SICP-Solution-Exercise-1-29.md" >}}) [work in progress]
-- 1.30
+- [1.29]({{< ref "/post/SICP-Solution-Exercise-1-29.md" >}}) ✓
+- [1.30]({{< ref "/post/SICP-Solution-Exercise-1-30.md" >}}) [work in progress]
 - 1.31
 - 1.32
 - 1.33

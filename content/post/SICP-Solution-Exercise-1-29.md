@@ -12,4 +12,53 @@ where ${h=(b-a)/n}$, for some even integer $n$, and $y_k={f(a+kh)}$. (Increasing
 
 **Solution**
 
-TBD
+The structure of the sum can be rewritten a little:
+
+$$\frac h3(y_0+4(y_1+y_3+y_5+\cdots+y\_{n-1})+2(y_2+y_4+y_6+\cdots+y\_{n-2})+y_n)$$
+
+Which allows us to reuse the `sum` function that was defined. The result is:
+
+```scheme
+(define (sum term a next b)
+  (if (> a b)
+      0
+      (+ (term a)
+         (sum term (next a) next b))))
+
+(define (integral f a b dx)
+  (define (add-dx x) (+ x dx))
+  (* (sum f (+ a (/ dx 2.0)) add-dx b)
+     dx))
+
+; assuming n is even
+(define (integral-simpson f a b n)
+  (define h (/ (- b a) n))
+  (define (add-2h x) (+ x h h))
+  (* (+ (f a)
+        (* 2 (sum f a       add-2h b))
+        (* 4 (sum f (+ a h) add-2h b))
+        (f b))
+     (/ h 3)))
+
+(define (cube x) (* x x x))
+```
+
+We can compare the difference between the original versions:
+
+```
+(display (integral cube 0 1 0.01)) (newline)
+(display (integral cube 0 1 0.001)) (newline)
+0.24998750000000042
+0.249999875000001
+```
+
+And `integral-simpson` version:
+
+```
+(display (integral-simpson cube 0 1.0 100)) (newline)
+(display (integral-simpson cube 0 1.0 1000)) (newline)
+0.25000000000000044
+0.25000000000000083
+```
+
+The `integral-simpson` gives much more accuracy for the same number of step.

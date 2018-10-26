@@ -34,6 +34,8 @@ Coding
 Programming
 Writing
 
+from the ground up
+
 Topics:
 
 - OS

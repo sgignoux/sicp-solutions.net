@@ -16,3 +16,14 @@ draft: false
 ```
 
 **Solution**
+
+The solution is:
+
+```scheme
+(define (sum-iter term a next b)
+  (define (iter a result)
+    (if (> a b)
+        result
+        (iter (next a) (+ result (term a)))))
+  (iter a 0))
+```

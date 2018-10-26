@@ -14,7 +14,7 @@ where ${h=(b-a)/n}$, for some even integer $n$, and $y_k={f(a+kh)}$. (Increasing
 
 The structure of the sum can be rewritten a little:
 
-$$\frac h3(y_0+4(y_1+y_3+y_5+\cdots+y\_{n-1})+2(y_2+y_4+y_6+\cdots+y\_{n-2})+y_n)$$
+$$\frac h3(y_0+4(\underbrace{y_1+y_3+y_5+\cdots+y_n-1}\_{odd\;terms})+2(\underbrace{y_2+y_4+y_6+\cdots+y\_{n-2}}\_{even\;terms})+y_n)$$
 
 Which allows us to reuse the `sum` function that was defined. The result is:
 

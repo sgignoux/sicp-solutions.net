@@ -25,7 +25,6 @@
          (fast-prime? n (- times 1)))
         (else #f)))
 
-
 (define (square x) (* x x))
 
 (define (smallest-divisor n)

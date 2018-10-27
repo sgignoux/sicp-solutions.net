@@ -4,7 +4,7 @@
   (if (> a b)
       null-value
       (combiner (term a)
-         (sum term (next a) next b))))
+         (accumulate combiner null-value term (next a) next b))))
 
 
 (define (accumulate-iter combiner null-value term a next b)
@@ -32,13 +32,10 @@
   (define h (/ (- b a) n))
   (define (add-2h x) (+ x h h))
   (* (+ (f a)
-        (* 2 (sum-iter f a       add-2h b))
-        (* 4 (sum-iter f (+ a h) add-2h b))
+        (* 2 (sum f a       add-2h b))
+        (* 4 (sum f (+ a h) add-2h b))
         (f b))
      (/ h 3)))
-
-
-
 
 
 (define (cube x) (* x x x))

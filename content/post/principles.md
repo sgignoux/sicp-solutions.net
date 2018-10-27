@@ -32,3 +32,4 @@ https://simonwillison.net/2018/Oct/4/datasette-ideas/#SQL_as_an_API_language
 - https://enterprisecraftsmanship.com/2016/06/15/pragmatic-unit-testing/
 - https://www.pluralsight.com/authors/vladimir-khorikov
 - https://enterprisecraftsmanship.com/2016/06/09/styles-of-unit-testing/
+- https://github.com/vkhorikov/Goos

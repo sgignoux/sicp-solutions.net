@@ -25,3 +25,10 @@ Thinking Matters. We cut the cost/time of this implementation by 90% or more, no
 The Right Tool for the Job. Learn a lot of them, don’t be the person who only has a hammer.
 
 https://simonwillison.net/2018/Oct/4/datasette-ideas/#SQL_as_an_API_language
+
+### DDD
+
+- https://enterprisecraftsmanship.com/2016/07/05/growing-object-oriented-software-guided-by-tests-without-mocks/
+- https://enterprisecraftsmanship.com/2016/06/15/pragmatic-unit-testing/
+- https://www.pluralsight.com/authors/vladimir-khorikov
+- https://enterprisecraftsmanship.com/2016/06/09/styles-of-unit-testing/

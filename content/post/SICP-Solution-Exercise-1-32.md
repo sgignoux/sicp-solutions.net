@@ -26,7 +26,7 @@ The code can be derived easily from the `sum` and `sum-iter` developed in the pr
   (if (> a b)
       null-value
       (combiner (term a)
-         (sum term (next a) next b))))
+         (accumulate combiner null-value term (next a) next b))))
 
 (define (accumulate-iter combiner null-value term a next b)
   (define (iter a result)

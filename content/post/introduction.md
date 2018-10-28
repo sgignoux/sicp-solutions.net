@@ -94,10 +94,10 @@ This solution are here for reference only. The value of this book is in actually
 - [1.31]({{< ref "/post/SICP-Solution-Exercise-1-31.md" >}}) ✓
 - [1.32]({{< ref "/post/SICP-Solution-Exercise-1-32.md" >}}) ✓
 - [1.33]({{< ref "/post/SICP-Solution-Exercise-1-33.md" >}}) ✓
-- [1.34]({{< ref "/post/SICP-Solution-Exercise-1-34.md" >}}) [work in progress]
-- 1.35
-- 1.36
-- 1.37
+- [1.34]({{< ref "/post/SICP-Solution-Exercise-1-34.md" >}}) ✓
+- [1.35]({{< ref "/post/SICP-Solution-Exercise-1-35.md" >}}) ✓
+- [1.36]({{< ref "/post/SICP-Solution-Exercise-1-36.md" >}}) ✓
+- [1.37]({{< ref "/post/SICP-Solution-Exercise-1-37.md" >}}) [work in progress]
 - 1.38
 - 1.39
 - 1.40

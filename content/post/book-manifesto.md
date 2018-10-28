@@ -31,6 +31,7 @@ draft: true
 - great introduction to the subject
 - no CS degree, highly interested in interpreters and compilers, but intimidated by the existing literature.
 - Showing the path and the why, not just the matured end resutl (ex of database)
+- "How do you know this is correct?"
 
 Building an xxx in yyy
 Coding
@@ -46,6 +47,10 @@ Topics:
 
 - OS
 - File System
+- Language
+  - Strongly or weakly typed?
+  - Garbage Collected?
+  - Functional, OO, "normal", logic
 - Compiler
   - http://web.stanford.edu/class/cs143/
 - Write a version of the compiler in the language and have it compile itself

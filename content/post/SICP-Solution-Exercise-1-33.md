@@ -11,11 +11,42 @@ draft: false
 
 **Solution**
 
+### `filtered-accumulate` implementation
+
 ```scheme
 (define (filtered-accumulate predicate? combiner null-value term a next b)
   (if (> a b)
       null-value
-      (if (predicate? a)
-          (combiner (term a)   (filtered-accumulate predicate? combiner null-value term (next a) next b))
-          (combiner null-value (filtered-accumulate predicate? combiner null-value term (next a) next b)))))
+      (combiner
+       (if (predicate? a) (term a) null-value)
+       (filtered-accumulate predicate? combiner null-value term (next a) next b))))
+```
+
+### sum of the squares of the prime numbers in the interval a to b
+
+```scheme
+(define (inc n) (+ n 1))
+
+(define (sum-of-squares-prime a b)
+  (filtered-accumulate prime? + 0 square a inc b))
+```
+
+### Product of all the positive integers less than n that are relatively prime to n
+
+The first step is defining the predicate to check for relative prime:
+
+```scheme
+  (define (relative-prime? i n)
+    (= (gcd i n) 1))
+```
+
+But our `predicate?` in `filtered-accumulate` takes only one argument. We need to specify the function inside `product-of-relative-prime` so that we can get access to `n`:
+
+```scheme
+(define (identity x) x)
+
+(define (product-of-relative-prime n)
+  (define (relative-prime? i)
+    (= (gcd i n) 1))
+  (filtered-accumulate relative-prime? * 1 identity 1 inc n))
 ```

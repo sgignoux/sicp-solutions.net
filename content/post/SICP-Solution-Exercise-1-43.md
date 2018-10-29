@@ -14,3 +14,28 @@ draft: false
 Hint: You may find it convenient to use compose from Exercise 1.42.
 
 **Solution**
+
+```scheme
+(require racket/trace)
+
+(define (square x) (* x x))
+
+(define (compose f g)
+  (lambda (x)
+    (f (g x))))
+
+(define (repeated f n)
+  (if (= n 1)
+      f
+      (compose f (repeated f (- n 1)))))
+
+
+(trace compose)
+(trace repeated)
+
+(display ((repeated square 2) 5)) (newline)
+```
+
+Note: `(- 1 n)` is not the same as `(- n 1)`
+
+I had to use the trace

@@ -11,3 +11,21 @@ draft: false
 ```
 
 **Solution**
+
+```scheme
+(define (double f)
+  (lambda (x)
+    (f (f x))))
+```
+
+Since `double` is a procedure that return a procedure that applies the original procedure twice, then `(double double)` is a procedure that return a procedure that applies the original procedure four times.
+
+Then `(double (double double))` will return a procedure that applies the original procedure height times.
+
+Which means that `(double (double double)) inc)` is a procedure that applis `inc` height times. Thus `(((double (double double)) inc) 5)` should evaluate to 13.
+
+```
+(double f) -> (f (f x))
+(double double) -> (double (double x))
+(double (double double)) -> ((double double) ((double double) x)) -> ((double double) (double (double x))) -> ((double (double (double (double x)))))
+```

@@ -39,3 +39,9 @@ In order to compute $\varphi$ by means of the `fixed-point`, you can just insert
 
 (display (fixed-point (lambda (x) (+ 1 (/ 1 x))) 1.0))
 ```
+
+Which evaluates to:
+
+```
+1.6180327868852458
+```

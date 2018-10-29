@@ -1,5 +1,7 @@
 #lang racket
 
+(require racket/trace)
+
 (define tolerance 0.00001)
 
 (define (average a b)

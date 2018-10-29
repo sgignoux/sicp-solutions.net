@@ -32,6 +32,7 @@ draft: true
 - no CS degree, highly interested in interpreters and compilers, but intimidated by the existing literature.
 - Showing the path and the why, not just the matured end resutl (ex of database)
 - "How do you know this is correct?"
+- Intuitive Understanding
 
 Building an xxx in yyy
 Coding

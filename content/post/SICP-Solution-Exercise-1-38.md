@@ -8,4 +8,92 @@ draft: false
 
 **Solution**
 
-TBD
+The key of the exercice is to write a function that will return successively 1, 2, 1, 1, 4, 1, 1, 6, 1, 1, 8, …. Let's build this function step by step. In order to facilitate our work, we can write a couple of function to display the first `n` elements of the serie:
+
+```scheme
+(define (d-euler i)
+  0)
+
+(define (display-serie f n)
+  (define (rec i)
+    (display (f i)) (display ", ")
+    (if (= i n)
+        (newline)
+        (rec (add1 i))))
+  (rec 1))
+
+(display-serie d-euler 12)
+```
+
+which evaluates to:
+
+```
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+```
+
+The regular grouping of 3 seems to indicate a `modulo` 3 something going on. Let's try to add it:
+
+```
+(define (d-euler i)
+  (if (= (modulo i 3) 2)
+      9
+      1))
+```
+
+Which evaluates to:
+
+```
+1, 9, 1, 1, 9, 1, 1, 9, 1, 1, 9, 1,
+```
+
+Now we need to compute the proper number instead of 9. It seems to be twice the number of the triplet in the series:
+
+```scheme
+(define (d-euler i)
+  (if (= (modulo i 3) 2)
+      (* 2(/ (+ i 1) 3))
+      1))
+```
+
+and we evaluate it:
+
+```
+1, 2, 1, 1, 4, 1, 1, 6, 1, 1, 8, 1,
+```
+
+Finally, we can put all that together and have an approximation for $e$:
+
+```scheme
+(define (cont-frac-iter n d k)
+  (define (iter i result)
+    (if (= 0 i)
+        result
+        (iter (sub1 i) (/ (n i) (+ result (d i))))))
+  (iter (sub1 k) (/ (n k) (d k))))
+
+(define (d-euler i)
+  (if (= (modulo i 3) 2)
+      (* 2(/ (+ i 1) 3))
+      1))
+
+(define (display-serie f n)
+  (define (rec i)
+    (display (f i)) (display ", ")
+    (if (= i n)
+        (newline)
+        (rec (add1 i))))
+  (rec 1))
+
+(display-serie d-euler 12)
+
+;  exact result is 2.718281828459
+(cont-frac-iter (lambda (i) 1.0)
+                 d-euler
+                 12) (newline)
+```
+
+Which gives:
+
+```
+0.7182818284590452
+```

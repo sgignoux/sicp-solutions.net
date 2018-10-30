@@ -33,6 +33,8 @@ draft: true
 - Showing the path and the why, not just the matured end resutl (ex of database)
 - "How do you know this is correct?"
 - Intuitive Understanding
+- design decisions history
+- untangle things
 
 Building an xxx in yyy
 Coding

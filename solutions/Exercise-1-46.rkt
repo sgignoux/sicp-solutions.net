@@ -24,11 +24,11 @@
   (/ (+ x y) 2))
 
 (define (sqrt x)
-  (define (improve-sqrt guess)
+  (define (improve guess)
     (average guess (/ x guess)))
-  (define (good-enough-sqrt? guess next)
+  (define (good-enough? next guess)
     (< (abs (- (square next) x)) 0.001))
-  ((iterative-improve good-enough-sqrt? improve-sqrt) 1.0))
+  ((iterative-improve good-enough? improve) 1.0))
 
 (display (sqrt 11))(newline)  
 

@@ -100,13 +100,13 @@ This solution are here for reference only. The value of this book is in actually
 - [1.37]({{< ref "/post/SICP-Solution-Exercise-1-37.md" >}}) ✓
 - [1.38]({{< ref "/post/SICP-Solution-Exercise-1-38.md" >}}) ✓
 - [1.39]({{< ref "/post/SICP-Solution-Exercise-1-39.md" >}}) ✓
-- [1.40]({{< ref "/post/SICP-Solution-Exercise-1-40.md" >}}) [work in progress]
-- [1.41]({{< ref "/post/SICP-Solution-Exercise-1-41.md" >}}) [work in progress]
-- [1.42]({{< ref "/post/SICP-Solution-Exercise-1-42.md" >}}) [work in progress]
-- [1.43]({{< ref "/post/SICP-Solution-Exercise-1-43.md" >}}) [work in progress]
-- [1.44]({{< ref "/post/SICP-Solution-Exercise-1-44.md" >}}) [work in progress]
-- [1.45]({{< ref "/post/SICP-Solution-Exercise-1-45.md" >}}) [work in progress]
-- [1.46]({{< ref "/post/SICP-Solution-Exercise-1-46.md" >}}) [work in progress]
+- [1.40]({{< ref "/post/SICP-Solution-Exercise-1-40.md" >}}) ✓
+- [1.41]({{< ref "/post/SICP-Solution-Exercise-1-41.md" >}}) ✓
+- [1.42]({{< ref "/post/SICP-Solution-Exercise-1-42.md" >}}) ✓
+- [1.43]({{< ref "/post/SICP-Solution-Exercise-1-43.md" >}}) ✓
+- [1.44]({{< ref "/post/SICP-Solution-Exercise-1-44.md" >}}) ✓
+- [1.45]({{< ref "/post/SICP-Solution-Exercise-1-45.md" >}}) ✓
+- [1.46]({{< ref "/post/SICP-Solution-Exercise-1-46.md" >}}) ✓
 
 ### Chapter 2: Building Abstractions with Data
 

@@ -8,11 +8,15 @@ draft: false
 
 **Solution**
 
+By definition, the `smooth` function is:
+
 ```scheme
 (define (smooth f)
   (lambda (x)
     (/ (+ (f (- x dx)) (f x) (f (+ x dx))) 3)))
 ```
+
+Then we can define `smooth-nth`:
 
 ```scheme
 (define (smooth-nth f n)

@@ -14,6 +14,8 @@ to approximate zeros of the cubic ${x^3+ax^2+bx+c}$.
 
 **Solution**
 
+This is direct application of what have been defined before:
+
 ```scheme
 (define tolerance 0.00001)
 
@@ -59,6 +61,8 @@ to approximate zeros of the cubic ${x^3+ax^2+bx+c}$.
 
 (display (newtons-method (cubic a b c) 1))
 ```
+
+The result will be:
 
 ```
 1

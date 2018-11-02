@@ -12,20 +12,29 @@ draft: false
 
 **Solution**
 
+The definition of `double` is a function that takes a function as parameter and apply it twice:
+
 ```scheme
 (define (double f)
   (lambda (x)
     (f (f x))))
 ```
 
-Since `double` is a procedure that return a procedure that applies the original procedure twice, then `(double double)` is a procedure that return a procedure that applies the original procedure four times.
-
-Then `(double (double double))` will return a procedure that applies the original procedure height times.
-
-Which means that `(double (double double)) inc)` is a procedure that applis `inc` height times. Thus `(((double (double double)) inc) 5)` should evaluate to 13.
+Now, lets break `(((double (double double)) inc) 5)` step by step. `(double double)` is a procedure that return a procedure that applies the original procedure four times:
 
 ```
-(double f) -> (f (f x))
-(double double) -> (double (double x))
-(double (double double)) -> ((double double) ((double double) x)) -> ((double double) (double (double x))) -> ((double (double (double (double x)))))
+((double f) x)→ (f (f x))
+(((double double) f) x) → ((double (double f)) x)
 ```
+
+Then `(double (double double))` will return a procedure that applies `(double double)` twice:
+
+```scheme
+(((double (double double)) f) x) → (((double double) ((double double) f)) x)
+                                 → (((double double) (double (double f))) x)
+                                 → (((double (double (double (double f))))) x)
+```
+
+This is a procedure that apply `f` $2\times2\times2\times2=16$ times.
+
+Which means that `(double (double double)) inc)` is a procedure that applies `inc` 16 times. Thus `(((double (double double)) inc) 5)` should evaluate to 21.

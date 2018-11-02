@@ -11,13 +11,13 @@ draft: false
 625
 ```
 
-Hint: You may find it convenient to use compose from Exercise 1.42.
+Hint: You may find it convenient to use `compose` from Exercise 1.42.
 
 **Solution**
 
-```scheme
-(require racket/trace)
+The solution took me some time to figure out. Manipulating higher-order function like this can be tough, especially without a clear type signatures for function. DrRacket `trace` function was must useful.
 
+```scheme
 (define (square x) (* x x))
 
 (define (compose f g)
@@ -29,13 +29,22 @@ Hint: You may find it convenient to use compose from Exercise 1.42.
       f
       (compose f (repeated f (- n 1)))))
 
-
-(trace compose)
-(trace repeated)
-
 (display ((repeated square 2) 5)) (newline)
 ```
 
-Note: `(- 1 n)` is not the same as `(- n 1)`
+### Note: `(- 1 n)` is not the same as `(- n 1)`
 
-I had to use the trace
+Small gotcha that I found while working on this exercise:
+
+```scheme
+(define x 10)
+(display (- 1 x)) (newline)
+(display (- x 1)) (newline)
+```
+
+Evaluates to:
+
+```
+-9
+9
+```

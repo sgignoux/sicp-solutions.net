@@ -34,7 +34,15 @@ draft: true
 - "How do you know this is correct?"
 - Intuitive Understanding
 - design decisions history
-- untangle things
+- untangle things : problem decomposition (how to teach that? is there no book or course focused only on that?)
+- Code simplicity (http://www.sromero.org/wiki/_media/programacion/tutoriales/code_simplicity_summary.pdf)
+- Clean code
+- Software design
+- designing boundaries
+- Make a bee line to your target and expand however you want (https://www.youtube.com/watch?time_continue=4&v=jviNpRGuCIU)
+- vizualisation of execution
+- formal spec https://www.hillelwayne.com/post/tla-messages/
+- how you might design one such version control system (VCS) and the reasoning behind those design choices
 
 Building an xxx in yyy
 Coding
@@ -56,22 +64,31 @@ Topics:
   - Functional, OO, "normal", logic
 - Compiler
   - http://web.stanford.edu/class/cs143/
+  - https://news.ycombinator.com/item?id=8558822
 - Write a version of the compiler in the language and have it compile itself
 - parser
 - interpreter
   - http://www.craftinginterpreters.com/
   - https://news.ycombinator.com/item?id=12553591
     - https://gpfault.net/posts/most-important-project.txt.html
+- Type system
+  - https://news.ycombinator.com/item?id=15034089
+  - http://cs.brown.edu/courses/cs173/2012/book/types.html
 - Memory allocators
 - JIT
+- REPL
 - Database
 - SQL
+  - https://news.ycombinator.com/item?id=15034285
+  - https://news.ycombinator.com/item?id=18363760
 - NoSQL
 - Columnar
 - Analytic oriented database
 - Text Editor
+- Shell
 - Hardware: CPU/Computer
 - Network
+- Game: roguelike (https://www.youtube.com/watch?time_continue=4&v=jviNpRGuCIU)
 - Log based database
 - Profiler
 - Debugger

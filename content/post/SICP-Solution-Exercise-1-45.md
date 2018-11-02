@@ -92,3 +92,7 @@ We can try the solution with large `nth` to check if it holds:
 (display (nth-root 2 258))
 > 1.0026902132630033
 ```
+
+### Open question
+
+* Where does this pattern of convergence for log base 2 comes from?

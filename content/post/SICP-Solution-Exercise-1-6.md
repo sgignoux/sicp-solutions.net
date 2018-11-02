@@ -39,7 +39,7 @@ What happens when Alyssa attempts to use this to compute square roots? Explain.
 
 **Solution**
 
-Since `new-if` is a function, each parameters subexpressions will be evaluated _before_ the procedure is applied. It means that when evaluating:
+Since `new-if` is a function, and not a special form, each parameters subexpressions will be evaluated _before_ the procedure is applied. It means that when evaluating:
 
 ```scheme
 (new-if (good-enough? guess x)
@@ -47,4 +47,4 @@ Since `new-if` is a function, each parameters subexpressions will be evaluated _
       (sqrt-iter (improve guess x) x))
 ```
 
-the predicate and all the alternatives will always be evaluated, whatever if `(good-enough? guess x)` is true or false. Since the second alternative is calling the function itself recursively, the function will stuck in an infinite loop.
+the predicate and the two alternatives will always be evaluated, whatever if `(good-enough? guess x)` is evaluated to. Since the second alternative is calling the function itself recursively, the function will stuck in an infinite loop.

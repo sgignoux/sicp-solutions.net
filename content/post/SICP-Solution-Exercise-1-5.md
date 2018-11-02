@@ -29,20 +29,20 @@ What behavior will Ben observe with an interpreter that uses applicative-order e
 
 The key is to notice that `(define (p) (p))` defines a function that evaluates to itself.
 
-An interpreter that uses **applicative-order evaluation** will “evaluate the arguments and then apply”. When the interpreter evaluates the expression `(test 0 (p))`, it will start by evaluating `0` as `0`, then it will try to evaluate `(p)`.
+An interpreter that uses **applicative-order evaluation** will “evaluate the arguments and then apply”. When this kind of interpreter evaluates the expression `(test 0 (p))`, it will start by evaluating `0`, then it will try to evaluate `(p)`.
 
-When `(p)` is evaluated, the interpreter:
+When `(p)` is evaluated, the interpreter will:
 
 1. replace each formal parameters by the corresponding argument in the body of the procedure: since there is no formal parameter in this case, the body of the procedure will just be `(p)`.
-2. Then the body of the procedure `(p)` will be evaluated, which in turn starts the evaluation all over again, thus making an infinite loop.
+2. evaluated the body of the procedure, which will be `(p)` in our case, which in turn starts the evaluation all over again, thus making an infinite loop.
 
-With an interpreter that uses **normal-order evaluation**, the interpreter will “fully expand and then reduce”. In this model, the interpreter will not evaluate the operands until their values were needed. In that case `(test 0 (p))` will evaluate as follow:
+With an interpreter that uses **normal-order evaluation**, the interpreter will “fully expand and then reduce”. In this model, the interpreter will not evaluate the operands until their values are actually needed. In that case `(test 0 (p))` will evaluate as follow:
 
 ```scheme
 (test 0 (p))
 ```
 
-will expand to:
+will be expanded to:
 
 ```scheme
 (if (= 0 0)
@@ -50,7 +50,7 @@ will expand to:
     (p))
 ```
 
-Since the predicate `(= 0 0)` evaluates to `#t` in the `if`, there will be no attempt to evaluate `(p)` and the result will be:
+Since the predicate `(= 0 0)` evaluates to `#t` in the `if`, there will be no need to evaluate `(p)` and the result will be:
 
 ```scheme
 0

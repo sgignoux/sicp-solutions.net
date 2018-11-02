@@ -15,6 +15,6 @@ Observe that our model of evaluation allows for combinations whose operators are
 
 **Solution**
 
-If $b$ is strictly a positive number return $a+b$, else return $a-b$.
+If $b$ is strictly a positive number, the function returns $a+b$, else it returns $a-b$.
 
-In other word, this function compute ${a+\left|b\right|.}$
+In other words, this function compute ${a+\left|b\right|.}$

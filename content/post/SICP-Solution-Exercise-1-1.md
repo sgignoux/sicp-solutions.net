@@ -8,6 +8,8 @@ draft: false
 
 **Solution**
 
+The result of the evaluation are after the `>` bellow:
+
 ```scheme
 10
 > 10

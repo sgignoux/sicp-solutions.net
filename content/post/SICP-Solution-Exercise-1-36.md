@@ -8,7 +8,7 @@ draft: false
 
 **Solution**
 
-We can update `fixed-point` in this way to show the sequence of approximation:
+We can update `fixed-point` to show the sequence of approximation:
 
 ```scheme
 (define (fixed-point f first-guess)
@@ -85,7 +85,7 @@ Without damping:
 3.5972808494622672
 ```
 
-With damping:
+With damping, the evaluation becomes:
 
 ```scheme
 (display (fixed-point (lambda (x) (average x (/ (log 100) (log x)))) 2)) (newline)
@@ -100,4 +100,4 @@ With damping:
 3.5972853041284294
 ```
 
-It takes 55 steps to converge without the dampig and 9 steps with the damping method. It seems clear that the damping make the convergence much faster in this case.
+It takes 55 steps to converge without damping, but only 9 steps with the damping method. It is clear that damping makes the convergence faster in this case.

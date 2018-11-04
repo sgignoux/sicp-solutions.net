@@ -12,7 +12,7 @@ where `x` is in radians. Define a procedure `(tan-cf x k)` that computes an appr
 
 **Solution**
 
-From what we have already done, the solution is done by directly use the function defined:
+From what is already done, the solution is:
 
 ```scheme
 (define (cont-frac-iter n d k)

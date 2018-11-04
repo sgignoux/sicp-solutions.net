@@ -35,7 +35,7 @@ The procedure:
       (inc (+ (dec a) b))))
 ```
 
-will have a **recursive** process:
+have a **recursive** process:
 
 ```
 (+ 4 5)
@@ -61,7 +61,7 @@ The procedure:
       (+ (dec a) (inc b))))
 ```
 
-will have an **iterative** process:
+have an **iterative** process:
 
 ```
 (+ 4 5)

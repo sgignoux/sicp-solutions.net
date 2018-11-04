@@ -36,7 +36,7 @@ When `(p)` is evaluated, the interpreter will:
 1. replace each formal parameters by the corresponding argument in the body of the procedure: since there is no formal parameter in this case, the body of the procedure will just be `(p)`.
 2. evaluated the body of the procedure, which will be `(p)` in our case, which in turn starts the evaluation all over again, thus making an infinite loop.
 
-With an interpreter that uses **normal-order evaluation**, the interpreter will “fully expand and then reduce”. In this model, the interpreter will not evaluate the operands until their values are actually needed. In that case `(test 0 (p))` will evaluate as follow:
+With an interpreter that uses **normal-order evaluation**, the interpreter will “fully expand and then reduce”. In this model, the interpreter will not evaluate the operands until their values are actually needed. In that case `(test 0 (p))` will evaluate as follows:
 
 ```scheme
 (test 0 (p))

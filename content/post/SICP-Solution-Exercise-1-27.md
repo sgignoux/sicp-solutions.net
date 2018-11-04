@@ -8,6 +8,8 @@ draft: false
 
 **Solution**
 
+Let's just run the number and see:
+
 ```scheme
 (define (square x) (* x x))
 
@@ -35,6 +37,8 @@ draft: false
 (display (carmichael-number? 2821)) (newline)
 (display (carmichael-number? 6601)) (newline)
 ```
+
+Evaluates to:
 
 ```
 #t

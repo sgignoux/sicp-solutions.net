@@ -43,7 +43,7 @@ Let's start with the recursive version, as it is the most straightforward from t
 
 ### Estimating ${1/\varphi}$
 
-By running the function with larger number `k`, we can have this result:
+By running the function with larger number `k`, we have this result:
 
 | k   | result             |
 | --- | ------------------ |

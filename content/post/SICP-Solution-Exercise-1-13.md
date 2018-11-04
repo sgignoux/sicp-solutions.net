@@ -12,7 +12,7 @@ The first step is to start from the definition of Fibonaci:
 
 $$\text{Fib}(n)\;=\;\text{Fib}(n-1)\;+\;\text{Fib}(n-2)$$
 
-And insert ${\text{Fib}(n)}={(\varphi^n-\psi^n)/\sqrt5}$ on both side:
+And insert the definition we want to prove, ${\text{Fib}(n)}={(\varphi^n-\psi^n)/\sqrt5}$, on both side:
 
 $$\frac{(\varphi^n-\psi^n)}{\sqrt5}\;=\frac{(\varphi^{n-1}-\psi^{n-1})}{\sqrt5}\;+\frac{(\varphi^{n-2}-\psi^{n-2})}{\sqrt5}$$
 
@@ -22,7 +22,7 @@ $$\varphi^n-\psi^n=\frac{\varphi^n}\varphi-\frac{\psi^n}\psi+\frac{\varphi^n}{\v
 
 $$\varphi^n-\psi^n=\varphi^n\left(\frac1\varphi+\frac1{\varphi^2}\right)-\psi^n\left(\frac1\psi+\frac1{\psi^2}\right)$$
 
-Now lets use the definition that $\varphi={(1+\sqrt5)/2}$ and $\psi={(1-\sqrt5)/2}$:
+Now let's use the definition that $\varphi={(1+\sqrt5)/2}$ and $\psi={(1-\sqrt5)/2}$:
 
 $$\varphi^n-\psi^n=\varphi^n\left(\frac1{(1+\sqrt5)/2}+\frac1{((1+\sqrt5)/2)^2}\right)-\psi^n\left(\frac1{(1-\sqrt5)/2}+\frac1{((1-\sqrt5)/2)^2}\right)$$
 

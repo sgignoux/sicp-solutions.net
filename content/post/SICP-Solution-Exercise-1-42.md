@@ -13,6 +13,8 @@ draft: false
 
 **Solution**
 
+From the definition, we can write:
+
 ```scheme
 (define (compose f g)
   (lambda (x)

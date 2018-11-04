@@ -8,7 +8,7 @@ draft: false
 
 **Solution**
 
-The key of the exercice is to write a function that will return successively 1, 2, 1, 1, 4, 1, 1, 6, 1, 1, 8, …. Let's build this function step by step. In order to facilitate our work, we can write a couple of function to display the first `n` elements of the serie:
+The key to this exercice is writing a function that will return successively 1, 2, 1, 1, 4, 1, 1, 6, 1, 1, 8, …. Let's build this function step by step. In order to facilitate our work, we can write a couple of functions to display the first `n` elements of any serie and use a dummy implementation of `d-euler`:
 
 ```scheme
 (define (d-euler i)
@@ -31,7 +31,7 @@ which evaluates to:
 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 ```
 
-The regular grouping of 3 seems to indicate a `modulo` 3 something going on. Let's try to add it:
+The regular grouping of 3 indicates a `modulo 3` going on. Let's try to add it:
 
 ```
 (define (d-euler i)
@@ -61,7 +61,7 @@ and we evaluate it:
 1, 2, 1, 1, 4, 1, 1, 6, 1, 1, 8, 1,
 ```
 
-Finally, we can put all that together and have an approximation for $e$:
+Finally, we can put all together and have an approximation for $e$:
 
 ```scheme
 (define (cont-frac-iter n d k)
@@ -86,10 +86,10 @@ Finally, we can put all that together and have an approximation for $e$:
 
 (display-serie d-euler 12)
 
-;  exact result is 2.718281828459
+;  exact result is 0.718281828459
 (cont-frac-iter (lambda (i) 1.0)
                  d-euler
-                 12) (newline)
+                 1)  (newline)
 ```
 
 Which gives:

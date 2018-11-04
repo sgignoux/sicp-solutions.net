@@ -62,7 +62,7 @@ Using this function, it is possible to write a couple more functions to display 
   (display-pascal-iter 1))
 ```
 
-`(display-pascal 10)`:
+To check our solution, we can evaluate `(display-pascal 10)`:
 
 ```
 1

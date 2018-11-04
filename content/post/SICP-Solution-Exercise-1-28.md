@@ -99,6 +99,6 @@ pass:  561 is not prime
 
 ### Open questions
 
-- Running it without `square-checked` (using normal `square`) didn't change the passing of the tests. How can we check that we have a correct implementation?
+- Running it without `square-checked` (using normal `square`) didn't change the passing of these specific tests. How can we check that we have a correct implementation?
 
 I worked this one thanks to [solution to 1.28 by billthelizard](http://www.billthelizard.com/2010/03/sicp-exercise-128-miller-rabin-test.html).

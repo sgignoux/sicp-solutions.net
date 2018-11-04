@@ -10,14 +10,16 @@ The good-enough? test used in computing square roots will not be very effective 
 
 **Solution**
 
-First, lets experiment with a few cases in the interpreter:
+This is a very interesting exercise because it forces to look at "behind the scenes" at how computer handle certain kinds of numbers. It also shows that you need to have this kind of knowledge in order to develop correct programs.
+
+First, let's experiment with a few cases in the interpreter:
 
 ```scheme
 (sqrt 1234567890123)
 > 1111111.1061109055
 
 (sqrt 12345678901234)
-does not complete
+does not finish
 
 (sqrt 12345678901230)
 > 3513641.828819494
@@ -28,7 +30,6 @@ does not complete
 (square (sqrt 0.00000000123))
 > 0.000976563319199322
 ```
-
 From this we can see two problems:
 
 - With large numbers, most of the time the computation doesn't finish
@@ -36,21 +37,21 @@ From this we can see two problems:
 
 In order to understand what is happening, we need to look at how real numbers are encoded in computers, more specifically "floating point" encoding in this case.
 
-Key points about floating points numbers:
+Key facts about floating point numbers:
 
-- because each number is encoded on a finite number of bit, the number of floating point numbers that can be represented in a computer is finite
-- most of the time, a floating point number is an approximation of a real number. This causes rounding issues
-- as the size of the number represented increases, the size of the "gap" between two consecutive numbers will increase step by step
-
+- because each number is encoded on a finite number of bits, the number of floating point numbers that can be represented in a computer is finite.
+- Most of the time, a floating point number is an approximation of a real number. This causes rounding issues.
+- As the size of the number represented increases, the size of the "gap" between two consecutive numbers will increase step by step.
+- 
 > Squeezing infinitely many real numbers into a finite number of bits requires an approximate representation. Although there are infinitely many integers, in most programs the result of integer computations can be stored in 32 bits. In contrast, given any fixed number of bits, most calculations with real numbers will produce quantities that cannot be exactly represented using that many bits. Therefore the result of a floating-point calculation must often be rounded in order to fit back into its finite representation. This rounding error is the characteristic feature of floating-point computation.
 >
 > -- [What Every Computer Scientist Should Know About Floating-Point Arithmetic](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
 
 #### Large numbers
 
-For most numbers above a certain size of digits, the computation of the square root will never complete.
+For most numbers above a certain size of digits, the computation of the square root will never finish.
 
-When tracing the program step by step, we can see that this condition happens for large numbers when the guess is getting very close to the actual result. Because of rounding errors, the function `(improve guess x)` can't improve the guess anymore as the smallest possible difference between $guess^2$ and $x$ is larger than `0.001`. This is because with number of this magnitude, the distance between two consecutive floating point numbers is larger than `0.001`.
+When tracing the program step by step, we can see that this condition happens for large numbers when the guess is getting very close to the actual result. Because of rounding errors, the function `(improve guess x)` can't improve the guess anymore as the smallest possible difference between $guess^2$ and $x$ is larger than `0.001`. This is because with numbers of this order magnitude, the distance between two consecutive floating point numbers is larger than `0.001`.
 
 For example, here is the trace for `(sqrt 12345678901234)`:
 
@@ -87,25 +88,25 @@ For example, here is the trace for `(sqrt 12345678901234)`:
 | 28        | 3513641.8288200637 | 3513641.8288200637 | 0.001953125            |
 
 
-If we are lucky, the rounding errors gives that `(- (square guess) x)` is evaluated to exactly `0.0` and the evaluation stops. 
+If we are lucky, the rounding errors give that `(- (square guess) x)` is evaluated to exactly `0.0` and the evaluation stops. 
 
-If we are not lucky, the gap between two consecutive number around `(square guess)` is more than `0.001` and the assertion `good-enough?` will never become true. `improve` has reached a fixed point due to the rounding error, and will always return the same number that is larger than `0.001`. For example:
+If we are not lucky, the gap between two consecutive numbers around `(square guess)` is more than `0.001` and the assertion `good-enough?` will never become true. `improve` has reached a fixed point due to the rounding error, and will always return the same number that is larger than `0.001`. For example:
 
 ```scheme
 (improve 3513641.8288200637 12345678901234) -> 3513641.8288200637
 ```
 
-Increasing the precision to `0.00000001` will even makes things worth, as it will it trigger issues with even smaller number for x.
+Increasing the precision to `0.00000001` will even makes things worse, as it triggers issues with even smaller number for x.
 
 #### Small numbers
 
-The problem is this case is different. We have hardcoded the number of digit of precision we want. It means that we can't have an accurate answer if x is smaller than the precision of `0.001`.
+The problem is this case is different. We have hardcoded the number of digits of precision we want. It means that we can't have an accurate answer if x is smaller than the precision of `0.001`.
 
 ```
 (sqrt 0.00000000123456) = 0.0312500131557789 - Error: 0.0009765620876763541
 ```
 
-Looking at the trace, we see that it stop iterating quickly, because the test to check the accuracy of the result think that this is good enough:
+Looking at the trace, we see that it stops iterating quickly, because the test to check the accuracy of the result think that this is good enough:
 
 | iteration | guess               | (improve guess x)    | (- (square guess) x)  |
 | --------- | ------------------- | -------------------- | --------------------- |
@@ -116,7 +117,7 @@ Looking at the trace, we see that it stop iterating quickly, because the test to
 | 4         | 0.06250000655859987 | 0.0312500131557789   | 0.0039062495852650275 |
 | 5         | 0.0312500131557789  | 0.015625026330841132 | 0.0009765620876763541 |
 
-It is like asking to measure the size of a coin, plus or minus one meter. The result can be technically correct, it is still not very usefull.
+It is like asking to measure the size of a coin, plus or minus one meter. The result can be technically correct, it is still not very useful.
 
 #### Alternative strategy
 
@@ -127,7 +128,7 @@ The first step is to redefine `good-enough?` based on the definition from the pr
   (< (abs (/ (- guess previous-guess) guess)) 0.00000000001))
 ```
 
-The number `0.00000000001` is based on a few trial and error for the upcoming tests. Then we just need to adapt the function `sqrt-iter` to provide the correct arguement:
+The number is somewhat arbitrary `0.00000000001` is based on a few trial and error for the upcoming tests. Then we just need to adapt the function `sqrt-iter` to provide the correct argument:
 
 ```scheme
 (define (sqrt-iter guess x)
@@ -163,13 +164,13 @@ The complete solution will look like:
 
 It is interesting to note that the new `good-enough?` does not depend on `x` anymore.
 
-Now we can try large number:
+Now we can try large numbers:
 
 ```
 (sqrt 123456789012345) = 11111111.061111081 - Error: 0.015625
 ```
 
-and small number:
+and small numbers:
 
 ```
 (sqrt 0.00000000123456) = 3.51363060095964e-05 - Error: 4.1359030627651384e-25

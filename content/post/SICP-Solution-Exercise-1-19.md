@@ -32,7 +32,7 @@ draft: false
 
 **Solution**
 
-To solve this problem, it is just necessary expand $T\_{pq}\left(T\_{pq}(a,b)\right)$ and see if we can refactor it:
+To solve this problem, it is necessary expand $T\_{pq}\left(T\_{pq}(a,b)\right)$ and see if we can refactor it:
 
 $$T\_{pq}(a,b)=(bq+aq+ap,\;bp+aq)$$
 

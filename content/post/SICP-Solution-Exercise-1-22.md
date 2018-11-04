@@ -79,7 +79,7 @@ Since `runtime` is not part of DrRacket, you can use [current-inexact-millisecon
 (search-for-primes 10000000000 10000000090)
 ```
 
-The funcion `current-inexact-milliseconds` provide data in the microseconds scale, but our current hardware are pretty fast and this is not precise enough. I extended the code for computing the time of 1000 runs.
+The funcion `current-inexact-milliseconds` provide data in the microseconds scale, but our current hardware are pretty fast and this is not precise enough. I extended the code for computing the averate time of 1000 runs.
 
 ### DrRacket has high variability
 
@@ -128,7 +128,7 @@ By averaging the run of the 3 first prime numbers and taking successive ratio, y
 The ratio is pretty close to $\sqrt {10} = 3.162$, although this is only average of 3 run.
 
 
-### Not so much for Chicken Scheme (compiled)
+### Chicken Scheme, with compiled code, is less variable
 
 I wanted to compare to another implementation and managed to get the program compiled with [Chicken Scheme](https://www.call-cc.org/). The results are a little more consistante:
 
@@ -173,6 +173,5 @@ The table can be summarized as above:
 | 10         | 11182        | 3,224 |
 
 The ratio here is also close to $\sqrt {10} = 3.162$, although this is only average of 3 run.
-
 
 The variation in speed might be due to interaction with garbage collection. [This article](https://blog.janestreet.com/core_bench-micro-benchmarking-for-ocaml/) about micro-benchmarks could be a clue.

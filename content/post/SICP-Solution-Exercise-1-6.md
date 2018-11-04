@@ -47,4 +47,4 @@ Since `new-if` is a function, and not a special form, each parameters subexpress
       (sqrt-iter (improve guess x) x))
 ```
 
-the predicate and the two alternatives will always be evaluated, whatever if `(good-enough? guess x)` is evaluated to. Since the second alternative is calling the function itself recursively, the function will stuck in an infinite loop.
+the predicate and the two alternatives will always be evaluated, whatever if `(good-enough? guess x)` is evaluated to. Since the second alternative is calling the function itself recursively, the function will be stuck in an infinite loop.

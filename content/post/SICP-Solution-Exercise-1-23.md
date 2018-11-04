@@ -8,7 +8,7 @@ draft: false
 
 **Solution**
 
-The goal of this exercise is to try a first improvement in the prime check to see if we understand correctly how it will impact performance. The improvement is easy enough to write.
+The goal of this exercise is to try an improvement in the prime check program and see if we understand correctly how it impacted performance. The improvement is easy enough to write.
 
 ```scheme
 (define (next n)

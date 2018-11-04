@@ -31,7 +31,7 @@ Just run the program, using `trace`:
 (trace find-divisor)
 ```
 
-The thing to notice is the length and depth of the function trace to have a sense of the complexity in time and space of such functions.
+Then we can run a the examples=
 
 ```
 (display (smallest-divisor 199))

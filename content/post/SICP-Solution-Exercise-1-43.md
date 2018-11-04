@@ -15,7 +15,7 @@ Hint: You may find it convenient to use `compose` from Exercise 1.42.
 
 **Solution**
 
-The solution took me some time to figure out. Manipulating higher-order function like this can be tough, especially without a clear type signatures for function. DrRacket `trace` function was must useful.
+The solution took me some time to figure out. Manipulating higher-order functions like this can be tough, especially without a clear type signatures for each function. DrRacket `trace` function was most useful.
 
 ```scheme
 (define (square x) (* x x))

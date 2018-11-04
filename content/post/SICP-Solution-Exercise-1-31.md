@@ -39,11 +39,11 @@ Again, this is quite straightforward:
 
 ### Implementing Wallis' product for π in terms of `product`
 
-The formula as presented in the text is not very clear, but a quick search on [wikipedia](https://en.wikipedia.org/wiki/Wallis_product) display a formula like this:
+The formula presented in the text is not very clear, but a quick search on [wikipedia](https://en.wikipedia.org/wiki/Wallis_product) gives a formula like this:
 
 $$\prod\_{n=1}^\infty\left(\frac{2n}{2n-1}\cdot\frac{2n}{2n+1}\right)$$
 
-This formulat can be implemented directly using the `product`:
+This formula can be implemented directly using the `product` function:
 
 ```scheme
 (define (wallis-product n)
@@ -55,11 +55,11 @@ This formulat can be implemented directly using the `product`:
   (product term 1.0 inc n))
 ```
 
-One can arg that this is not optimized as `(* 2 n)` is computed multiple times. On the other hand it make the code much easier to check.
+One can argument that this is not optimized, since `(* 2 n)` is computed multiple times. On the other hand it makes the code much easier to check.
 
 ### Implementing iterative `product`
 
-Nothing hard here:
+This can be done like this:
 
 ```scheme
 (define (product-iter term a next b)

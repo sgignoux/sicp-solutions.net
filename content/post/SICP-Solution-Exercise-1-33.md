@@ -40,7 +40,7 @@ The first step is defining the predicate to check for relative prime:
     (= (gcd i n) 1))
 ```
 
-But our `predicate?` in `filtered-accumulate` takes only one argument. We need to specify the function inside `product-of-relative-prime` so that we can get access to `n`:
+But `predicate?` in `filtered-accumulate` takes only one argument. We need to specify the function inside `product-of-relative-prime` so that we can get access to `n`:
 
 ```scheme
 (define (identity x) x)

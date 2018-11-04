@@ -32,7 +32,7 @@ draft: false
         (else #f)))
 ```
 
-I choosed to run each test on 100 random number, but this is somewhat a guessed value:
+I choosed to run each test on 100 random numbers, but this is somewhat a guessed value:
 
 ```
 (define (start-prime-test n start-time)
@@ -41,7 +41,7 @@ I choosed to run each test on 100 random number, but this is somewhat a guessed 
       "nothing"))
 ```
 
-Here too, in order to increase precision, all computation are run 1000 times on each prime number for each of the algorithm.
+Here too, in order to increase precision of the execution time measurement, all computation are run 1000 times on each prime number for each of the algorithm.
 
 I ran in a few issue with the random number generator for the largest prime in my table. I just removed them as it don't change the conclusion.
 

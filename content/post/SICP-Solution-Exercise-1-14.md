@@ -74,11 +74,11 @@ edge [penwidth=.5, arrowsize=0.5];
 }
 ```
 
-### Orders of growth of the space
+### Orders of growth of space
 
 Since this is a recursive process, the orders of growth of the space will be proportional to the depth of the calls.
 
-It is easy to see that the longest series of call will be for doing the change of the amount `n` using only pennies. The order of growth of space for `cc` will be $\mathrm\Theta(n)$
+It is easy to see that the longest series of calls will be when doing the change of the amount `n` using only pennies. The order of growth of space for `cc` will be $\mathrm\Theta(n)$
 
 ### Orders of growth of number of steps
 
@@ -110,14 +110,14 @@ edge [penwidth=.1, arrowsize=0.5];
 }
 ```
 
-Colors indicates the number of `kinds-of-coins`.
+Colors in this chart indicate the number of `kinds-of-coins`.
 
-The process here is linear: every node is splitting into two substep, but only the node with `(c x 1)` on the right will recurse deeper. All the `(c x 0)` are leaf of this tree since it indicate that there are no more type of coin to use.
+The process here is linear: every node is splitting into two substep, but only the node with `(c x 1)` on the right will recurse deeper. All the `(c x 0)` are leaves of this tree since it indicates that there are no more type of coins to use.
 
 From this we notice that:
 
-- there is 6 blue node from `(c 6 1)` to `(c 1 1)`
-- there is 6 grey node from `(c 6 0)` to `(c 1 0)`
+- there are 6 blue nodes from `(c 6 1)` to `(c 1 1)`
+- there are 6 grey nodes from `(c 6 0)` to `(c 1 0)`
 - there is one dark grey node `(c 0 1)` with a mount of 0, indicating a solution
 
 If $T(n,m)$ is the number of call to `cc` for amount $n$ and $m$ type of coin, we can see that:
@@ -128,7 +128,7 @@ From there, we can generalize to any amount $m$ using only pennies:
 
 $$T(n,1)=2n+1$$
 
-Let's go one step by exploring how things work with 2 kind of coins. By drawing the tree for `(cc 12 2)` and arranging the nodes a little, we see that we have a neat 2 dimensional array:
+Let's go one step further by exploring how things work with 2 kind of coins. By drawing the tree for `(cc 12 2)` and arranging the nodes a little, we see that we have a neat 2 dimensional array:
 
 ![Example image](/post/sicp-images/SICP-1_14-__cc_12_2__-_Google_Slides-2.png)
 
@@ -192,10 +192,10 @@ edge [penwidth=.1, arrowsize=0.5];
 
 Let's break it down:
 
-- there is 4 green node for `(c x 2)` corresponding to how many time you can substrack a dime from 12, plus one.
-- then for each of the green node, there is the option of using only dime, which is the case that we looked at first.
+- There are 4 green nodes for `(c x 2)` corresponding to how many time you can subtract a dime from 12, plus one.
+- Then for each of the green node, there is the option of using only dime, which is the case that we looked at first.
 
-For an amount $n$, there is at most $Floor\left(\frac n5\right)+1$ times you can substract nickels from it before reaching zero or a negative value. By simplyfing a little and ignoring the floor that won't impact a lot the result when the number grow larger, we can split the number of call to `cc` and compute $T(n,2)$:
+For an amount $n$, there is at most $Floor\left(\frac n5\right)+1$ times you can subtract nickels from it before reaching zero or a negative value. By simplifying a little and ignoring the floor that won't impact a lot the result when the number grows larger, we can split the number of calls to `cc` and compute $T(n,2)$:
 
 - there is $\frac n5+1$ green node
 - for each green node, there is a node for pennies that start from the value $n$
@@ -212,7 +212,7 @@ $$T(n,2)\;=\frac n5+1+\frac{2n^2}5+\frac n5-10\frac{{\displaystyle\frac n5}\left
 
 $$T(n,2)\;=\frac{2n}5+\frac{2n^2}5-\frac{n^2}5+n+1$$
 
-Very interestingly, it is possible to define a function that will give the exact number of steps for a given number $n$:
+Very interestingly, it is possible to define a function that gives the exact number of steps for a given number $n$:
 
 $$T(n,2)\;=\frac{n^2+7n}5+1$$
 
@@ -240,4 +240,4 @@ By doing all the expansion you find that the orders of growth of number of steps
 
 $$T(n,5)\;=\mathrm\Theta(n^5)$$
 
-Overall, this is not only a very slow process, it is also a very inefficient way to implement because of the repetition. You can have a look at the solution for this exercice by Sarabander [here](https://github.com/sarabander/p2pu-sicp/blob/master/1.2/Ex1.14.scm) to see how to implement the solution in only $n^2$.
+Overall, this is not only a very slow process, it is also a very inefficient way to implement this computation, because of all the repetitions. You can have a look at the solution for this exercice by Sarabander [here](https://github.com/sarabander/p2pu-sicp/blob/master/1.2/Ex1.14.scm) to see how to implement the solution in only $n^2$.

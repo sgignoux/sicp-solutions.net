@@ -65,7 +65,7 @@ The trace for this process will be:
 <323
 ```
 
-If you compare to the trace of the original version:
+If you compare to the trace of the original version you can clearly see the difference:
 
 ```
 >(mult 17 19)

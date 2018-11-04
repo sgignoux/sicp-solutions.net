@@ -43,6 +43,7 @@ draft: true
 - vizualisation of execution
 - formal spec https://www.hillelwayne.com/post/tla-messages/
 - how you might design one such version control system (VCS) and the reasoning behind those design choices
+- Zéro dependancy
 
 Building an xxx in yyy
 Coding

@@ -89,7 +89,7 @@ These large numbers are called
 
 While on hardware, operations like multiplication and remainder on `fixnum` can be seen as $O(1)$, on bignum they have a much slower complexity of $O(N\;\log\left(N\right)\;\log\left(\log\left(N\right)\right)$, assuming algorithm like [Karatsuba algorithm](https://en.wikipedia.org/wiki/Karatsuba_algorithm) that is implemented in DrRacket.
 
-By contrast the original algorithm used doesn't try to fully compute the `exp` before computing the remainder, but break the problem with smaller number of roughly the same size:
+By contrast the original algorithm doesn't try to fully compute the `exp` before computing the remainder, but break down the problem intod smaller numbers of roughly the same size:
 
 ```scheme
 (define (expmod base exp m)
@@ -144,8 +144,8 @@ This can be checked by tracing it's execution on the same parameters:
 
 Alyssa P. Hacker version of `expmod`:
 
-- Gives much larger intermediate results, which could require more memory than available on the computer
-- This large intermediate results require the use of special algorithm for multiplication and remainder that are much slower than computation on smaller `fixnum` numbers
+- Gives a much larger intermediate result, which could require more memory than available on the computer
+- This large intermediate result requires the use of special algorithm for multiplications and remainders that are much slower than computation on smaller `fixnum` numbers
 
 ### Open questions
 

@@ -38,6 +38,8 @@ Give concise mathematical definitions for the functions computed by the procedur
 
 **Solution**
 
+All the following expansion has been painstakingly made by hand.
+
 ```scheme
 (A 1 10)
 (A 0 (A 1 9))
@@ -181,6 +183,4 @@ $g(n) = 2^{n}$
 
 $h(n) = 2^{h(n-1)}$
 
-This doesn't look like the "real" Ackerman function...
-
-On a side note, I did all the expansion by hand. Using the [tracing function in DrRacket](https://docs.racket-lang.org/reference/debugging.html#%28mod-path._racket%2Ftrace%29) would by more efficient, but not as fun.
+Using the [tracing function in DrRacket](https://docs.racket-lang.org/reference/debugging.html#%28mod-path._racket%2Ftrace%29) would by more efficient than doing all by hand, but not as fun.

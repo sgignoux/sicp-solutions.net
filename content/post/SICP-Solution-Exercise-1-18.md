@@ -28,6 +28,8 @@ $$b'=(b-1)$$
 
 $$c'=c+a$$
 
+Putting that together in a program gives:
+
 ```scheme
 (define (even? n)
   (= (remainder n 2) 0))

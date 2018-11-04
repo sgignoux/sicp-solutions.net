@@ -36,11 +36,6 @@ This can be implemented directly into:
          (fast-expt-iter (* a b) b (- n 1)))))
 ```
 
-Question:
-
-- why is it tail recursive?
-- How to show the invariant more clearly?
-
 We can check that this is tail recursive by using the [tracing function in DrRacket](https://docs.racket-lang.org/reference/debugging.html#%28mod-path._racket%2Ftrace%29):
 
 ```scheme
@@ -63,7 +58,7 @@ Will evaluate to:
 <4782969
 ```
 
-The number of `>` is displaying the depth of the stack.
+The number of `>` is representing the depth of the stack.
 
 That can be compared to the recursive version:
 

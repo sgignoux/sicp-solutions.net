@@ -24,6 +24,8 @@ to reduce the size of the argument of sin. (For purposes of this exercise an ang
 
 **Solution**
 
+First, let's just run the program with a `display` in `sine` so that we can see the details of each steps:
+
 ```scheme
 (define (cube x) (* x x x))
 
@@ -38,6 +40,8 @@ to reduce the size of the argument of sin. (For purposes of this exercise an ang
 (display (sine 12.15 1))
 ```
 
+Which results in:
+
 ```
 1: 12.15
 2: 4.05
@@ -47,6 +51,8 @@ to reduce the size of the argument of sin. (For purposes of this exercise an ang
 6: 0.049999999999999996
 -0.39980345741334
 ```
+
+Based on that, we can just write a function that will display directly a table formatted in Markdown that I can just cut and paste:
 
 ```scheme
 (define (sine-count-step angle step)
@@ -75,7 +81,7 @@ to reduce the size of the argument of sin. (For purposes of this exercise an ang
 | 1200000  | 16              |
 | 12000000 | 18              |
 
-It is easy to see the trend: every time $a$ is multiplied by 10, the number of step increase by 2. It looks like a logarithm. I could also hve noticed that for every iteration, $a$ is divided by 3. So the iteration will stop when:
+It is easy to see the trend: every time $a$ is multiplied by 10, the number of steps increase by 2. It looks like a logarithm. I could also have noticed that for every iteration, $a$ is divided by 3. So the iteration will stop when:
 
 $$\frac a{3^n}<0.1$$
 

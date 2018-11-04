@@ -12,7 +12,7 @@ Use this formula to implement a cube-root procedure analogous to the square-root
 
 **Solution**
 
-Using the same improvement for large and small number from exercice 1.7:
+Using the same improvement for large and small number from exercise 1.7:
 
 ```scheme
 (define (cube x) (* x x x))

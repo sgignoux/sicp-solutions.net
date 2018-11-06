@@ -112,7 +112,7 @@ This solution are here for reference only. The value of this book is in actually
 
 #### 2.1 Introduction to Data Abstraction
 
-- 2.1
+- [2.1]({{< ref "/post/SICP-Solution-Exercise-2-1.md" >}}) ✓
 - 2.2
 - 2.3
 - 2.4

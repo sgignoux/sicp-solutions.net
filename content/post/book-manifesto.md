@@ -4,6 +4,10 @@ date: 2018-09-26T21:03:14+02:00
 draft: true
 ---
 
+Nobody should start to undertake a large project. You start with a small trivial project, and you should never expect it to get large. If you do, you’ll just overdesign and generally think it is more important than it likely is at that stage. Or worse, you might be scared away by the sheer size of the work you envision. So start small, and think about the details. Don’t think about some big picture and fancy design. If it doesn’t solve some fairly immediate need, it’s almost certainly over-designed. And don’t expect people to jump in and help you. That’s not how these things work. You need to get something half-way useful first, and then others will say “hey, that almost works for me”, and they’ll get involved in the project.
+
+        — Linus Torvalds
+
 - Very high quality code of he final results
 - Clean code architecture
 - Almost production ready
@@ -44,6 +48,7 @@ draft: true
 - formal spec https://www.hillelwayne.com/post/tla-messages/
 - how you might design one such version control system (VCS) and the reasoning behind those design choices
 - Zéro dependancy
+- This is not theory: it shows how a given compiler is build, it doesn't explain all the ways you can build a compiler. It explain some of the choices, but no all the variations.
 
 Building an xxx in yyy
 Coding
@@ -58,6 +63,8 @@ from the Bottom Up
 Topics:
 
 - OS
+  - multitask
+  - https://github.com/dspinellis/unix-history-repo
 - File System
 - Language
   - Strongly or weakly typed?
@@ -66,8 +73,10 @@ Topics:
 - Compiler
   - http://web.stanford.edu/class/cs143/
   - https://news.ycombinator.com/item?id=8558822
+  - Target ARM plateform?
 - Write a version of the compiler in the language and have it compile itself
 - parser
+  - https://news.ycombinator.com/item?id=18391128
 - interpreter
   - http://www.craftinginterpreters.com/
   - https://news.ycombinator.com/item?id=12553591
@@ -76,18 +85,26 @@ Topics:
   - https://news.ycombinator.com/item?id=15034089
   - http://cs.brown.edu/courses/cs173/2012/book/types.html
 - Memory allocators
+- Linkers and loader
+  - https://news.ycombinator.com/item?id=18424233 (Linkers and Loaders (1999))
 - JIT
 - REPL
 - Database
 - SQL
   - https://news.ycombinator.com/item?id=15034285
   - https://news.ycombinator.com/item?id=18363760
+  - https://www.cockroachlabs.com/blog/building-cost-based-sql-optimizer/
 - NoSQL
 - Columnar
 - Analytic oriented database
 - Text Editor
 - Shell
 - Hardware: CPU/Computer
+  - ARM?
+  - PIC?
+  - RISC V?
+  - MMU
+  - https://news.ycombinator.com/item?id=18413757 (How Many Computers Are in Your Computer?)
 - Network
 - Game: roguelike (https://www.youtube.com/watch?time_continue=4&v=jviNpRGuCIU)
 - Log based database

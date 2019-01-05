@@ -17,7 +17,7 @@ The goal of this exercise is to try an improvement in the prime check program an
       (+ 2 n)))
 ```
 
-Here too, the initial tests with only one run where very inconsistante from run to run. I decieded to extend the program to run the computation for each prime 1000 times and mesure the result.
+Here too, the initial tests with only one run where very inconsistante from run to run. I decided to extend the program to run the computation for each prime 1000 times and mesure the result.
 
 ### DrRacket
 

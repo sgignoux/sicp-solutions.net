@@ -22,9 +22,9 @@ Both of this functions rely on basic characteristics we can expect that any publ
 
 It is interesting to note that the problem doesn't require for the constructors to be part of the public interface. We won't try to make generic constructors that abstract the representation.
 
-From the definition of the exercice, we can't assume that the segments of the rectangle will be parallel to the axis, but this is a relatively minor point as the main goal here is to make us think about public interface and abstraction barrier.
+From the definition of the exercice, we can't assume that the segments of the rectangle will be parallel to the axis, but this is a relatively minor point as the main goal here is to make us think about public interfaces and abstraction barriers.
 
-Since both implementation will rely on points, we can share this code with a few helper functions:
+Since both implementations will rely on points, we can share this code with a few helper functions:
 
 ```scheme
 (define (make-point x y) (cons x y))

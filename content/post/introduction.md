@@ -1,6 +1,6 @@
 ---
 title: "MIT 6.001 - Structure and Interpretation of Computer Programs: Notes and solutions"
-date: 2018-09-20T21:03:14+02:00
+date: 2019-01-08T21:03:14+02:00
 draft: false
 ---
 
@@ -113,8 +113,8 @@ This solution are here for reference only. The value of this book is in actually
 #### 2.1 Introduction to Data Abstraction
 
 - [2.1]({{< ref "/post/SICP-Solution-Exercise-2-1.md" >}}) ✓
-- 2.2
-- 2.3
+- [2.2]({{< ref "/post/SICP-Solution-Exercise-2-2.md" >}}) ✓
+- [2.3]({{< ref "/post/SICP-Solution-Exercise-2-3.md" >}}) ✓
 - 2.4
 - 2.5
 - 2.6

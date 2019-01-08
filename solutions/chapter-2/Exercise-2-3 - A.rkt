@@ -19,9 +19,10 @@
   (distance-point (make-point 0 0) p))
 
 ; --- Rectangles: first version ---
-(define (make-rect origin height width angle) (cons (cons height width) (cons origin angle)))
-
 ; This gives a first level of abstraction barrier so that we don't have to care about HOW the data are stored, just WHAT is stored
+
+(define (make-rect origin height width angle)
+  (cons (cons height width) (cons origin angle)))
 
 (define (origin-rect r) (car (cdr r)))
 (define (angle-rect  r) (cdr (cdr r)))

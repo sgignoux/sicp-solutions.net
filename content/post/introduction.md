@@ -115,7 +115,7 @@ This solution are here for reference only. The value of this book is in actually
 - [2.1]({{< ref "/post/SICP-Solution-Exercise-2-1.md" >}}) ✓
 - [2.2]({{< ref "/post/SICP-Solution-Exercise-2-2.md" >}}) ✓
 - [2.3]({{< ref "/post/SICP-Solution-Exercise-2-3.md" >}}) ✓
-- 2.4
+- [2.4]({{< ref "/post/SICP-Solution-Exercise-2-4.md" >}}) ✓
 - 2.5
 - 2.6
 - 2.7

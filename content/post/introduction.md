@@ -1,6 +1,6 @@
 ---
 title: "MIT 6.001 - Structure and Interpretation of Computer Programs: Notes and solutions"
-date: 2019-01-08T21:03:14+02:00
+date: 2019-01-14T21:03:14+02:00
 draft: false
 ---
 
@@ -48,6 +48,8 @@ This solution are here for reference only. The value of this book is in actually
 
 - [Projects for MIT 6.001 on ocw.mit.edu](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/projects/)
 - [Lecture Notes for MIT 6.001 on ocw.mit.edu](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/lecture-notes/)
+
+https://news.ycombinator.com/item?id=18890417
 
 ## Table of Content
 
@@ -118,9 +120,9 @@ This solution are here for reference only. The value of this book is in actually
 - [2.4]({{< ref "/post/SICP-Solution-Exercise-2-4.md" >}}) ✓
 - [2.5]({{< ref "/post/SICP-Solution-Exercise-2-5.md" >}}) ✓
 - [2.6]({{< ref "/post/SICP-Solution-Exercise-2-6.md" >}}) ✓
-- 2.7
-- 2.8
-- 2.9
+- [2.7]({{< ref "/post/SICP-Solution-Exercise-2-7.md" >}}) ✓
+- [2.8]({{< ref "/post/SICP-Solution-Exercise-2-8.md" >}}) ✓
+- [2.9]({{< ref "/post/SICP-Solution-Exercise-2-9.md" >}}) ✓
 - 2.10
 - 2.11
 - 2.12

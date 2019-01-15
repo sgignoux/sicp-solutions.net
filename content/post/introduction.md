@@ -123,7 +123,7 @@ https://news.ycombinator.com/item?id=18890417
 - [2.7]({{< ref "/post/SICP-Solution-Exercise-2-7.md" >}}) ✓
 - [2.8]({{< ref "/post/SICP-Solution-Exercise-2-8.md" >}}) ✓
 - [2.9]({{< ref "/post/SICP-Solution-Exercise-2-9.md" >}}) ✓
-- 2.10
+- [2.10]({{< ref "/post/SICP-Solution-Exercise-2-10.md" >}}) ✓
 - 2.11
 - 2.12
 - 2.13

@@ -26,3 +26,27 @@ After debugging her program, Alyssa shows it to a potential user, who complains 
 Unfortunately, most of Alyssa’s users are engineers. Real engineering situations usually involve measurements with only a small uncertainty, measured as the ratio of the width of the interval to the midpoint of the interval. Engineers usually specify percentage tolerances on the parameters of devices, as in the resistor specifications given earlier.
 
 **Solution**
+
+x.lower < -1
+-1 < x.lower < 1
+1 < x.lower
+
+x.upper < -1
+-1 < x.upper < 1
+1 < x.upper
+
+
+y.lower < -1
+-1 < y.lower < 1
+1 < y.lower
+
+y.upper < -1
+-1 < y.upper < 1
+1 < y.upper
+
+xy.lower
+
+xy.upper = x.upper * y.upper (1 < x.upper and 1 < y.upper)
+xy.upper = x.upper * y.upper (1 > x.upper and 1 < y.upper)
+
+

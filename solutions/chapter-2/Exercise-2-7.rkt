@@ -62,6 +62,18 @@
                     (make-interval 
                      (/ 1.0 (upper-bound y)) 
                      (/ 1.0 (lower-bound y))))))
+
+; --- 2.11 ---
+
+; 1. write x1, x2 and x3 for each of the cases
+(define x1 (make-interval -2 -1))
+(define x2 (make-interval -1 1))
+(define x3 (make-interval 1 2))
+
+; 2. idem for y
+; 3. write a function to compare new implementation to old one for each test cases
+
+
 ; --  test --
 
 (define r1 (make-interval 6.12 7.48))

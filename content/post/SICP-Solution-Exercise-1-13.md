@@ -40,9 +40,13 @@ $$\varphi^n-\psi^n=\varphi^n-\psi^n$$
 
 Thus proving that ${\text{Fib}(n)}={(\varphi^n-\psi^n)/\sqrt5}$ is true.
 
-The next step is to notice that since $0<\psi<1$ then $0<\frac{\psi^n}{\sqrt5}<\frac1{\sqrt5}<1$.
+The next step is to notice that since $-1<\psi<0$ then $-1<\psi^n<1$.
 
-Now we can write as two part:
+And because $\sqrt5>2$ then we have:
+
+$$-\frac{1}{2}<-\frac{1}{\sqrt5}<\frac{\psi^n}{\sqrt5}<\frac{1}{\sqrt5}<\frac{1}{2}$$
+
+Now we can write ${\text{Fib}(n)}$ as two part:
 
 $${\text{Fib}(n)}=\frac{(\varphi^n-\psi^n)}{\sqrt5}=\frac{\varphi^n}{\sqrt5}-\frac{\psi^n}{\sqrt5}$$
 
@@ -52,14 +56,18 @@ $$\frac{\varphi^n}{\sqrt5}=\text{Fib}(n)+\frac{\psi^n}{\sqrt5}$$
 
 We can add ${\text{Fib}(n)}$ to each side of:
 
-$$0<\frac{\psi^n}{\sqrt5}<1$$
+$$-\frac{1}{2}<\frac{\psi^n}{\sqrt5}<\frac{1}{2}$$
 
 So that:
 
-$$\text{Fib}(n)<\text{Fib}(n)+\frac{\psi^n}{\sqrt5}<\text{Fib}(n)+1$$
+$$\text{Fib}(n)-\frac{1}{2}<\text{Fib}(n)+\frac{\psi^n}{\sqrt5}<\text{Fib}(n)+\frac{1}{2}$$
 
 Wich means:
 
-$$\text{Fib}(n)<\frac{\varphi^n}{\sqrt5}<\text{Fib}(n)+1$$
+$$\text{Fib}(n)-\frac{1}{2}<\frac{\varphi^n}{\sqrt5}<\text{Fib}(n)+\frac{1}{2}$$
 
 This show that $\frac{\varphi^n}{\sqrt5}$ will never be further away from the value of $\text{Fib}(n)$ than 1. Thus proving that that ${\text{Fib}(n)}$ is the closest integer to ${\varphi^n/\sqrt5}$.
+
+#### Update
+
+A big thanks to Oliver Tušla for pointing out that since $\psi<0$ the initial proof needed fixing.

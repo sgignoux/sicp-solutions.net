@@ -19,4 +19,12 @@
           (try next))))
   (try first-guess))
 
-(display (fixed-point (lambda (x) (average x (/ (log 100) (log x)))) 2)) (newline)
+; -- no damping --
+(display (fixed-point (lambda (x) (/ (log 1000) (log x))) 2)) (newline)
+
+; -- with damping --
+(display (fixed-point (lambda (x) (average x (/ (log 1000) (log x)))) 2)) (newline)
+
+; -- Check --
+(newline)
+(display (expt 4.555537551999825 4.555537551999825))

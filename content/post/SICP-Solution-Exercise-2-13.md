@@ -2,6 +2,7 @@
 title: "SICP - Solution: Exercise 2.13"
 date: 2019-01-06T07:09:58+02:00
 draft: true
+type: posts
 ---
 
 **Exercise 2.13:** Show that under the assumption of small percentage tolerances there is a simple formula for the approximate percentage tolerance of the product of two intervals in terms of the tolerances of the factors. You may simplify the problem by assuming that all numbers are positive.

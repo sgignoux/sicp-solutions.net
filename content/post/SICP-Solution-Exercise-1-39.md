@@ -2,6 +2,7 @@
 title: "SICP - Solution: Exercise 1.39"
 date: 2018-10-29T06:03:58+02:00
 draft: false
+type: posts
 ---
 
 **Exercise 1.39:** A continued fraction representation of the tangent function was published in 1770 by the German mathematician J.H. Lambert:

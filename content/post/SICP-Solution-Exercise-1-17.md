@@ -2,6 +2,7 @@
 title: "SICP - Solution: Exercise 1.17"
 date: 2018-10-12T21:06:58+02:00
 draft: false
+type: posts
 ---
 
 **Exercise 1.17:** The exponentiation algorithms in this section are based on performing exponentiation by means of repeated multiplication. In a similar way, one can perform integer multiplication by means of repeated addition. The following multiplication procedure (in which it is assumed that our language can only add, not multiply) is analogous to the `expt` procedure:

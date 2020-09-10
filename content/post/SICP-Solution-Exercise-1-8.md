@@ -2,6 +2,7 @@
 title: "SICP - Solution: Exercise 1.8"
 date: 2018-09-30T21:03:58+02:00
 draft: false
+type: posts
 ---
 
 **Exercise 1.8:** Newton’s method for cube roots is based on the fact that if $y$ is an approximation to the cube root of $x$, then a better approximation is given by the value

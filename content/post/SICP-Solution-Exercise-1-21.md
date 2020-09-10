@@ -2,6 +2,7 @@
 title: "SICP - Solution: Exercise 1.21"
 date: 2018-10-15T02:03:58+02:00
 draft: false
+type: posts
 ---
 
 **Exercise 1.21:** Use the `smallest-divisor` procedure to find the smallest divisor of each of the following numbers: 199, 1999, 19999.

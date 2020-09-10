@@ -2,6 +2,7 @@
 title: "SICP - Solution: Exercise 1.35"
 date: 2018-10-28T03:03:58+02:00
 draft: false
+type: posts
 ---
 
 **Exercise 1.35:** Show that the golden ratio $\varphi$ (1.2.2) is a fixed point of the transformation ${x\mapsto1+1/x}$, and use this fact to compute $\varphi$ by means of the `fixed-point` procedure.

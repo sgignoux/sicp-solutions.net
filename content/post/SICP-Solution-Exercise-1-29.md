@@ -2,6 +2,7 @@
 title: "SICP - Solution: Exercise 1.29"
 date: 2018-10-22T04:03:58+02:00
 draft: false
+type: posts
 ---
 
 **Exercise 1.29:** Simpson’s Rule is a more accurate method of numerical integration than the method illustrated above. Using Simpson’s Rule, the integral of a function $f$ between $a$ and $b$ is approximated as

@@ -2,6 +2,7 @@
 title: "SICP - Solution: Exercise 1.13"
 date: 2018-10-04T21:06:58+02:00
 draft: false
+type: posts
 ---
 
 **Exercise 1.13:** Prove that ${\text{Fib}(n)}$ is the closest integer to ${\varphi^n/\sqrt5}$, where $\varphi={(1+\sqrt5)/2}$. Hint: Let $\psi={(1-\sqrt5)/2}$. Use induction and the definition of the Fibonacci numbers (see 1.2.2) to prove that ${\text{Fib}(n)}={(\varphi^n-\psi^n)/\sqrt5}$.

@@ -2,6 +2,7 @@
 title: "SICP - Solution: Exercise 1.15"
 date: 2018-10-10T21:06:58+02:00
 draft: false
+type: posts
 ---
 
 **Exercise 1.15:** The sine of an angle (specified in radians) can be computed by making use of the approximation ${\sin x\approx x}$ if $x$ is sufficiently small, and the trigonometric identity

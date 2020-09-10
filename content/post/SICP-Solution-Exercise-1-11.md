@@ -2,6 +2,7 @@
 title: "SICP - Solution: Exercise 1.11"
 date: 2018-10-02T21:06:58+02:00
 draft: false
+type: posts
 ---
 
 **Exercise 1.11**

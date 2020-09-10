@@ -2,6 +2,7 @@
 title: "SICP - Solution: Exercise 1.22"
 date: 2018-10-15T04:03:58+02:00
 draft: false
+type: posts
 ---
 
 **Exercise 1.22:** Most Lisp implementations include a primitive called `runtime` that returns an integer that specifies the amount of time the system has been running (measured, for example, in microseconds). The following `timed-prime-test` procedure, when called with an integer $n$, prints $n$ and checks to see if $n$ is prime. If $n$ is prime, the procedure prints three asterisks followed by the amount of time used in performing the test.

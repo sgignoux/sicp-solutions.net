@@ -2,6 +2,7 @@
 title: "SICP - Solution: Exercise 1.40"
 date: 2018-10-29T06:03:59+02:00
 draft: false
+type: posts
 ---
 
 **Exercise 1.40:** Define a procedure `cubic` that can be used together with the `newtons-method` procedure in expressions of the form

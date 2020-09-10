@@ -14,9 +14,9 @@ bookToC: false
 
 I have read the Structure and Interpretation of Computer Programs nearly 20 years ago and I still remember it. Going through this book was intense and enlightening. It had a deep impact on how I would think about programming.
 
-After 20 years, my work has moved me farther and farther from software engineering: managing teams, managing products, doing consulting works, etc. In the last few years, I had the opportunity to see complex software being built, and I was disappointed at the lack of quality and the level of bugs in the code base.
+After 20 years, my work has moved me farther and farther from software engineering: managing teams, managing products, doing consulting works. In the last few years, I had the opportunity to see complex software being built, and I was disappointed at the lack of quality and the level of bugs in the code base.
 
-Many seems to think that building high quality software takes more time and can't be afforded. I can't accept that. My belief is that high quality software can be built not only faster, but cheaper than crappy software in the long run.
+Many seems to think that building high quality software takes more time and can't be afforded. I can't accept that. My belief is that quality software can be built not only faster, but cheaper than crappy software in the long run.
 
 But at some point, you have to stop arguing for it and put your money where your mouth is. Well, this is my starting point. I plan to read the Structure and Interpretation of Computer Programs again, this time doing all the exercise. This is a just warmup before attacking more ambitious things.
 

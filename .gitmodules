@@ -3,4 +3,4 @@
 	url = https://github.com/olOwOlo/hugo-theme-even
 [submodule "themes/book"]
 	path = themes/book
-	url = https://github.com/alex-shpak/hugo-book
+	url = https://github.com/sgignoux/hugo-book

@@ -35,6 +35,9 @@ menu:
     - name: "Hugo Themes"
       url: "https://themes.gohugo.io/hugo-book/"
       weight: 20
+    - name: "Author: Sébastien Gignoux"
+      url: "https://github.com/sgignoux"
+      weight: 30
 
 params:
   # (Optional, default true) Controls table of contents visibility on right side of pages.

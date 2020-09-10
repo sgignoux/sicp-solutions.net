@@ -2,7 +2,11 @@
 title: "MIT 6.001 - Structure and Interpretation of Computer Programs: Notes and solutions"
 date: 2019-01-14T21:03:14+02:00
 draft: false
+type: docs
+bookToC: false
 ---
+
+# MIT 6.001 - Structure and Interpretation of Computer Programs: Notes and solutions
 
 > SICP was revolutionary in many different ways. Most importantly, it dramatically raised the bar for the intellectual content of introductory computer science. Before SICP, the first CS course was almost always entirely filled with learning the details of some programming language. SICP is about standing back from the details to learn big-picture ways to think about the programming process. It focused attention on the central idea of abstraction -- finding general patterns from specific problems and building software tools that embody each pattern. It made heavy use of the idea of functions as data, an idea that's hard to learn initially, but immensely powerful once learned.
 >

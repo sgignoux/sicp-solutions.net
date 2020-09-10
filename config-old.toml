@@ -4,7 +4,16 @@ defaultContentLanguage = "en"                             # en / zh-cn / ... (Th
 title = "SICP Solutions"
 enableRobotsTXT = true
 enableEmoji = true
-theme = "hugo-theme-cactus-plus"
+theme = "book"
+
+
+
+
+
+
+
+
+
 
 googleAnalytics = "your_google_analytics_id"
 # Set the value to true if your site include CJK (Chinese, Japanese, and Korean languages) characters

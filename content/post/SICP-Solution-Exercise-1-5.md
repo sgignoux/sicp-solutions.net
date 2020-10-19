@@ -30,9 +30,18 @@ What behavior will Ben observe with an interpreter that uses applicative-order e
 
 The key is to notice that `(define (p) (p))` defines a function that evaluates to itself.
 
-An interpreter that uses **applicative-order evaluation** will “evaluate the arguments and then apply”. When this kind of interpreter evaluates the expression `(test 0 (p))`, it will start by evaluating `0`, then it will try to evaluate `(p)`.
+An interpreter that uses **applicative-order evaluation** will “evaluate the arguments and then apply”. When this kind of interpreter evaluates the expression `(test 0 (p))`, it will start by evaluating `0`, then it will try to evaluate `(p)` and finaly apply `test` to the values of the evaluation of the two parameters.
 
-When `(p)` is evaluated, the interpreter will:
+`test` will evaluate to the procedure defined.
+
+`0` will evaluate to the number O.
+
+`(p)` will evaluate to `(p)`, which will evaluate to `(p)`
+
+> To apply a compound procedure to arguments, evaluate the body of the procedure with each formal parameter replaced by the corresponding argument.
+
+
+When the interpreter try to evaluate the expression `(p)`, it will:
 
 1. replace each formal parameters by the corresponding argument in the body of the procedure: since there is no formal parameter in this case, the body of the procedure will just be `(p)`.
 2. evaluated the body of the procedure, which will be `(p)` in our case, which in turn starts the evaluation all over again, thus making an infinite loop.
@@ -51,7 +60,7 @@ will be expanded to:
     (p))
 ```
 
-Since the predicate `(= 0 0)` evaluates to `#t` in the `if`, there will be no need to evaluate `(p)` and the result will be:
+Since the predicate `(= 0 0)` evaluates to `#t` in the `if`,  then `(p)` will not be evaluated and the result will be:
 
 ```scheme
 0

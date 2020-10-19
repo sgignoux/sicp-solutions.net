@@ -16,6 +16,8 @@ Observe that our model of evaluation allows for combinations whose operators are
 
 **Solution**
 
-If $b$ is strictly a positive number, the function returns $a+b$, else it returns $a-b$.
+If $b$ is strictly a positive number, the operator expression `(if (> b 0) + -)` will evaluate to `+` the result will be $a+b$.
 
-In other words, this function compute ${a+\left|b\right|.}$
+If all other cases, the result will be $a-b$.
+
+In other words, this function compute $a+\left|b\right|$.

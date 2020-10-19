@@ -40,8 +40,8 @@ This solution are here for reference only. The value of this book is in actually
 
 **Book**
 
-- [Book in pdf and html](https://sicpebook.wordpress.com/)
-- [Original html from MIT press ](http://mitpress.mit.edu/sites/default/files/sicp/index.html)
+- [Original website from MIT with HTML version of the book](https://mitpress.mit.edu/sites/default/files/sicp/index.html)
+- [New version in PDF and HTML with updated layout](https://sicpebook.wordpress.com/)
 
 **Videos**
 
@@ -52,8 +52,7 @@ This solution are here for reference only. The value of this book is in actually
 
 - [Projects for MIT 6.001 on ocw.mit.edu](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/projects/)
 - [Lecture Notes for MIT 6.001 on ocw.mit.edu](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/lecture-notes/)
-
-https://news.ycombinator.com/item?id=18890417
+- [If not SICP, then what? Maybe HTDP? (stevenrosenberg.net) -- Thread on Hacker News](https://news.ycombinator.com/item?id=18890417)
 
 ## Table of Content
 
@@ -246,13 +245,21 @@ Todo
 
 - https://github.com/zv/SICP-guile
 
-## Scheme implementations
+## Tools used
 
 - DrRacket
 - ChickenScheme: https://wiki.call-cc.org/platforms
 - https://www.gnu.org/software/mit-scheme/
 
 * https://github.com/zv/SICP-guile
+
+* [MathType demo - For Developers](http://www.wiris.com/editor/demo/en/developers#mathml-latex) 
+
+### Misc links
+
+* [Episode 503: Robert Martin on Structure and Interpretation of Computer Programming](https://www.youtube.com/watch?v=Z0VpFmp_q4A)
+  * "It changed the way I look at the fundamental structure of programs. It is possible, and desirable, to write code without assignement statements as much as possible. To not mutate the states of variables. And it forces you to think about software in a very different way. [...] I assign now variable less frequently."
+  * "[functional programming] forces your to keep your data in much better order. There will always be times when you have to change the state of the system but you do so with a tremenous amout of discipline in this language. You treat the changing of data  in the system the way you would treat  a transaction on disk."
 
 ## What next?
 

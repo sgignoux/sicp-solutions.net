@@ -42,21 +42,18 @@ Again, this is quite straightforward:
 
 The formula presented in the text is not very clear, but a quick search on [wikipedia](https://en.wikipedia.org/wiki/Wallis_product) gives a formula like this:
 
-$$\prod\_{n=1}^\infty\left(\frac{2n}{2n-1}\cdot\frac{2n}{2n+1}\right)$$
+$$\frac{\pi}{2} = \prod\_{n=1}^\infty\left(\frac{2n}{2n-1}\cdot\frac{2n}{2n+1}\right)$$
 
 This formula can be implemented directly using the `product` function:
 
 ```scheme
 (define (wallis-product n)
-  (define (term n)
-    (* (/ (* 2 n)
-          (- (* 2 n) 1))
-       (/ (* 2 n)
-          (+ (* 2 n) 1))))
-  (product term 1.0 inc n))
+  (define (term n) 
+    (define 2n (* 2 n))
+    (* (/ 2n (- 2n 1))
+       (/ 2n (+ 2n 1))))
+  (/ (product term 1.0 inc n) 2))
 ```
-
-One can argument that this is not optimized, since `(* 2 n)` is computed multiple times. On the other hand it makes the code much easier to check.
 
 ### Implementing iterative `product`
 

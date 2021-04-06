@@ -9,7 +9,7 @@ type: posts
 
 **Solution**
 
-Per definition, a fixed point for ${x\mapsto1+1/x}$ is:
+The fixed point for ${x\mapsto1+1/x}$ is defined as:
 
 $$x=1+\frac1x$$
 

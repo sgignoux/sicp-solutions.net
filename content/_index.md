@@ -259,7 +259,7 @@ Todo
 
 * [Episode 503: Robert Martin on Structure and Interpretation of Computer Programming](https://www.youtube.com/watch?v=Z0VpFmp_q4A)
   * "It changed the way I look at the fundamental structure of programs. It is possible, and desirable, to write code without assignement statements as much as possible. To not mutate the states of variables. And it forces you to think about software in a very different way. [...] I assign now variable less frequently."
-  * "[functional programming] forces your to keep your data in much better order. There will always be times when you have to change the state of the system but you do so with a tremenous amout of discipline in this language. You treat the changing of data  in the system the way you would treat  a transaction on disk."
+  * "[functional programming] forces you to keep your data in much better order. There will always be times when you have to change the state of the system but you do so with a tremendous amount of discipline in this language. You treat the changing of data in the system the way you would treat a transaction on disk."
 
 ## What next?
 

@@ -42,17 +42,8 @@ Then you can rewrite `sqrt`:
 
 ### Rewriting `fixed-point` using `iterative-improve`
 
-The problem here is that the function to check if a guess is good enough requires the next value. The only option that I found was to rewrite `iterative-improve` so that it takes two arguments:
+The function to check if a guess is close enough requires the next value. `f` can be applied to this value for the next guess value and this approach can be used in the definition of `close-enough?`:
 
-```scheme
-(define (iterative-improve good-enough? improve-guess)
-  (define (iter guess)
-    (let ((next (improve-guess guess)))
-      (if (good-enough? guess next)
-          next
-          (iter next))))
-  (lambda (guess) (iter guess)))
-```
 
 ```scheme
 ; --- fixed-point ---
@@ -60,17 +51,11 @@ The problem here is that the function to check if a guess is good enough require
 (define tolerance 0.00001)
 
 (define (fixed-point f first-guess)
-  (define (close-enough? v1 v2)
-    (< (abs (- v1 v2))
-       tolerance))
-  (define (improve-guess guess)
+  (define (close-enough? guess)
+    (< (abs (- guess (f guess))) tolerance))
+  (define (improve guess)
     (f guess))
-  (define (try guess)
-    (let ((next (improve-guess guess)))
-      (if (close-enough? guess next)
-          next
-          (try next))))
-  (try first-guess))
+  ((iterative-improve close-enough? improve) first-guess))
 ```
 
 Then you can use `fixed-point` as the previous exercice:

@@ -5,7 +5,7 @@ draft: false
 type: posts
 ---
 
-**Exercise 1.24:** Modify the `timed-prime-test` procedure of Exercise 1.22 to use `fast-prime?` (the Fermat method), and test each of the 12 primes you found in that exercise. Since the Fermat test has ${\mathrm\Theta(\log\;n)}$ growth, how would you expect the time to test primes near 1,000,000 to compare with the time needed to test primes near 1000? Do your data bear this out? Can you explain any discrepancy you find?
+**Exercise 1.24:** Modify the `timed-prime-test` procedure of Exercise 1.22 to use `fast-prime?` (the Fermat method), and test each of the 12 primes you found in that exercise. Since the Fermat test has ${\mathrm\Theta(\log n)}$ growth, how would you expect the time to test primes near 1,000,000 to compare with the time needed to test primes near 1000? Do your data bear this out? Can you explain any discrepancy you find?
 
 **Solution**
 
@@ -126,6 +126,6 @@ Which can be summarized:
 
 When the size of `prime` is 10 times larger, `prime?` require 3 times more computation.
 
-When the size of  `prime` is 10 times larger, `fast-prime?` require a constant increase of 50µs. ${\mathrm\Theta(\log\;n)}$ growth means that when the prime are ten times larger, the time will increase by a constant amount ${\log(100)-\log(10)=1}$. This is quite clear here.
+When the size of  `prime` is 10 times larger, `fast-prime?` require a constant increase of 50µs. ${\mathrm\Theta(\log n)}$ growth means that when the prime are ten times larger, the time will increase by a constant amount ${\log(100)-\log(10)=1}$. This is quite clear here.
 
 Although that for smaller number `prime?` is faster, `fast-prime?` become much faster with larger and larger prime.

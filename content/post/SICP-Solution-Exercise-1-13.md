@@ -11,13 +11,13 @@ type: posts
 
 The first step is to start from the definition of Fibonaci:
 
-$$\text{Fib}(n)\;=\;\text{Fib}(n-1)\;+\;\text{Fib}(n-2)$$
+$$\text{Fib}(n) = \text{Fib}(n-1) + \text{Fib}(n-2)$$
 
 And insert the definition we want to prove, ${\text{Fib}(n)}={(\varphi^n-\psi^n)/\sqrt5}$, on both side:
 
-$$\frac{(\varphi^n-\psi^n)}{\sqrt5}\;=\frac{(\varphi^{n-1}-\psi^{n-1})}{\sqrt5}\;+\frac{(\varphi^{n-2}-\psi^{n-2})}{\sqrt5}$$
+$$\frac{(\varphi^n-\psi^n)}{\sqrt5} =\frac{(\varphi^{n-1}-\psi^{n-1})}{\sqrt5} +\frac{(\varphi^{n-2}-\psi^{n-2})}{\sqrt5}$$
 
-$$\varphi^n-\psi^n=\varphi^{n-1}-\psi^{n-1}\;+\varphi^{n-2}-\psi^{n-2}$$
+$$\varphi^n-\psi^n=\varphi^{n-1}-\psi^{n-1} +\varphi^{n-2}-\psi^{n-2}$$
 
 $$\varphi^n-\psi^n=\frac{\varphi^n}\varphi-\frac{\psi^n}\psi+\frac{\varphi^n}{\varphi^2}-\frac{\psi^n}{\psi^2}$$
 

@@ -88,7 +88,7 @@ These large numbers are called
 > closely related to the available hardware registers: one or two words only and definitely
 > not N words.
 
-While on hardware, operations like multiplication and remainder on `fixnum` can be seen as $O(1)$, on bignum they have a much slower complexity of $O(N\;\log\left(N\right)\;\log\left(\log\left(N\right)\right)$, assuming algorithm like [Karatsuba algorithm](https://en.wikipedia.org/wiki/Karatsuba_algorithm) that is implemented in DrRacket.
+While on hardware, operations like multiplication and remainder on `fixnum` can be seen as $O(1)$, on bignum they have a much slower complexity of $O(N \log\left(N\right) \log\left(\log\left(N\right)\right)$, assuming algorithm like [Karatsuba algorithm](https://en.wikipedia.org/wiki/Karatsuba_algorithm) that is implemented in DrRacket.
 
 By contrast the original algorithm doesn't try to fully compute the `exp` before computing the remainder, but break down the problem intod smaller numbers of roughly the same size:
 

@@ -203,42 +203,42 @@ For an amount $n$, there is at most $Floor\left(\frac n5\right)+1$ times you can
 
 We can rewrite this as an equation and simplify it:
 
-$$T(n,2)\;=\frac n5+1+\;\sum\_{i=0}^{n/5}T(n-5i,1)$$
+$$T(n,2) =\frac n5+1+ \sum\_{i=0}^{n/5}T(n-5i,1)$$
 
-$$T(n,2)\;=\frac n5+1+\;\sum\_{i=0}^{n/5}(2n-10i+1)$$
+$$T(n,2) =\frac n5+1+ \sum\_{i=0}^{n/5}(2n-10i+1)$$
 
-$$T(n,2)\;=\frac n5+1+\frac{2n^2}5+\frac n5-10\;\sum\_{i=0}^{n/5}i$$
+$$T(n,2) =\frac n5+1+\frac{2n^2}5+\frac n5-10 \sum\_{i=0}^{n/5}i$$
 
-$$T(n,2)\;=\frac n5+1+\frac{2n^2}5+\frac n5-10\frac{{\displaystyle\frac n5}\left({\displaystyle\frac n5}+1\right)}2$$
+$$T(n,2) =\frac n5+1+\frac{2n^2}5+\frac n5-10\frac{{\displaystyle\frac n5}\left({\displaystyle\frac n5}+1\right)}2$$
 
-$$T(n,2)\;=\frac{2n}5+\frac{2n^2}5-\frac{n^2}5+n+1$$
+$$T(n,2) =\frac{2n}5+\frac{2n^2}5-\frac{n^2}5+n+1$$
 
 Very interestingly, it is possible to define a function that gives the exact number of steps for a given number $n$:
 
-$$T(n,2)\;=\frac{n^2+7n}5+1$$
+$$T(n,2) =\frac{n^2+7n}5+1$$
 
 Which means that for two type of coins, the orders of growth of number of steps is:
 
-$$T(n,2)\;=\mathrm\Theta(n^2)$$
+$$T(n,2) =\mathrm\Theta(n^2)$$
 
 For $T(n,3)$:
 
-$$T(n,3)\;=\frac n{10}+1+\;\sum\_{i=0}^{n/10}T(n-10i,2)$$
+$$T(n,3) =\frac n{10}+1+ \sum\_{i=0}^{n/10}T(n-10i,2)$$
 
 if you take the trouble to expand the equation, you will find that:
 
-$$T(n,3)\;=\mathrm\Theta(n^3)$$
+$$T(n,3) =\mathrm\Theta(n^3)$$
 
 by continuing to apply the formulas:
 
-$$T(n,3)\;=\frac n{10}+1+\;\sum\_{i=0}^{n/10}T(n-10i,1)$$
+$$T(n,3) =\frac n{10}+1+ \sum\_{i=0}^{n/10}T(n-10i,1)$$
 
-$$T(n,4)\;=\frac n{25}+1+\;\sum\_{i=0}^{n/25}T(n-25i,1)$$
+$$T(n,4) =\frac n{25}+1+ \sum\_{i=0}^{n/25}T(n-25i,1)$$
 
-$$T(n,5)\;=\frac n{50}+1+\;\sum\_{i=0}^{n/50}T(n-50i,1)$$
+$$T(n,5) =\frac n{50}+1+ \sum\_{i=0}^{n/50}T(n-50i,1)$$
 
 By doing all the expansion you find that the orders of growth of number of steps is:
 
-$$T(n,5)\;=\mathrm\Theta(n^5)$$
+$$T(n,5) =\mathrm\Theta(n^5)$$
 
 Overall, this is not only a very slow process, it is also a very inefficient way to implement this computation, because of all the repetitions. You can have a look at the solution for this exercice by Sarabander [here](https://github.com/sarabander/p2pu-sicp/blob/master/1.2/Ex1.14.scm) to see how to implement the solution in only $n^2$.

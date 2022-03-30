@@ -193,8 +193,8 @@ edge [penwidth=.1, arrowsize=0.5];
 
 Let's break it down:
 
-- There are 4 green nodes for `(c x 2)` corresponding to how many time you can subtract a dime from 12, plus one.
-- Then for each of the green node, there is the option of using only dime, which is the case that we looked at first.
+- There are 4 green nodes for `(c x 2)` corresponding to how many time you can subtract a nickel from 12, plus one.
+- Then for each of the green node, there is the option of using only pennies, which is the case that we looked at first.
 
 For an amount $n$, there is at most $Floor\left(\frac n5\right)+1$ times you can subtract nickels from it before reaching zero or a negative value. By simplifying a little and ignoring the floor that won't impact a lot the result when the number grows larger, we can split the number of calls to `cc` and compute $T(n,2)$:
 

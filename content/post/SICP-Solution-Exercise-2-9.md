@@ -26,7 +26,7 @@ $$z\_{upper}=x\_{upper}+y\_{upper}$$
 
 Based on that, we can compute and simplify the width:
 
-$$2\\cdot z\_{width}=y\_{upper}-y\_{lower}=(x\_{upper}+y\_{upper})-(x\_{lower}+y\_{lower})$$
+$$2\\cdot z\_{width}=z\_{upper}-z\_{lower}=(x\_{upper}+y\_{upper})-(x\_{lower}+y\_{lower})$$
 $$2\\cdot z\_{width}=x\_{upper}-x\_{lower}+y\_{upper}-y\_{lower}$$
 $$2\\cdot z\_{width}=2\\cdot x\_{width}+2\\cdot y\_{width}$$
 $$z\_{width}=x\_{width}+y\_{width}$$
@@ -42,7 +42,7 @@ $$z\_{upper}=x\_{upper}-y\_{lower}$$
 
 Based on that, we can compute and simplify the width:
 
-$$2\\cdot z\_{width}=y\_{upper}-y\_{lower}=(x\_{upper}-y\_{lower})-(x\_{lower}-y\_{upper})$$
+$$2\\cdot z\_{width}=z\_{upper}-z\_{lower}=(x\_{upper}-y\_{lower})-(x\_{lower}-y\_{upper})$$
 $$2\\cdot z\_{width}=x\_{upper}-y\_{lower}-x\_{lower}+y\_{upper}$$
 $$2\\cdot z\_{width}=x\_{upper}-x\_{lower}+y\_{upper}-y\_{lower}$$
 $$z\_{width}=x\_{width}+y\_{width}$$
@@ -54,7 +54,7 @@ One possible case, if all number are > 1
 $$z\_{lower}=x\_{lower}*y\_{lower}$$
 $$z\_{upper}=x\_{upper}*y\_{upper}$$
 
-$$2\\cdot z\_{width}=y\_{upper}-y\_{lower}=(x\_{upper}*y\_{upper})-(x\_{lower}*y\_{lower})$$
+$$2\\cdot z\_{width}=z\_{upper}-z\_{lower}=(x\_{upper}*y\_{upper})-(x\_{lower}*y\_{lower})$$
 
 Example:
 

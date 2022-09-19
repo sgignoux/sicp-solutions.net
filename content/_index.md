@@ -31,7 +31,7 @@ This is the current plan:
 
 - Read the book
 - Watch the video from the 1986 session
-- Complete all the 356 exercises by myself, and publish my solution here. Each solution should include clear explanations.
+- Complete all the 356 exercises by myself, using [DrRacket](https://racket-lang.org/), and publish my solution here. Each solution should include clear explanations.
 - Review my solution and compare them to the [community schemewiki SICP-Solutions](http://community.schemewiki.org/?SICP-Solutions) or other solutions
 
 This solution are here for reference only. The value of this book is in actually trying to solving each exercise. Please consider only checking solution after being stuck or after having solved the problem to compare your solution.
@@ -241,19 +241,12 @@ This solution are here for reference only. The value of this book is in actually
 
 ## Other solutions
 
-Todo
-
-- https://github.com/zv/SICP-guile
+- [Structure and Interpretation of Computer Programs](https://github.com/zv/SICP-guile): "This repository includes answers to a bit more than 90% of the book’s 360-some exercises as well as material intended to help others get an idea of how to begin with the book, avoid many common pitfalls as they continue, and review interesting secondary material along the way."
 
 ## Tools used
 
-- DrRacket
-- ChickenScheme: https://wiki.call-cc.org/platforms
-- https://www.gnu.org/software/mit-scheme/
-
-* https://github.com/zv/SICP-guile
-
-* [MathType demo - For Developers](http://www.wiris.com/editor/demo/en/developers#mathml-latex) 
+- [DrRacket](https://racket-lang.org/): used to develop and run the code.
+- [MathType demo - For Developers](http://www.wiris.com/editor/demo/en/developers#mathml-latex): used to write and check the Latex.
 
 ### Misc links
 

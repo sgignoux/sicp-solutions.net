@@ -62,17 +62,17 @@ This solution are here for reference only. The value of this book is in actually
 
 ##### 1.1.6 Conditional Expressions and Predicates
 
-- [1.1]({{< ref "/post/SICP-Solution-Exercise-1-1.md" >}}) ✓
-- [1.2]({{< ref "/post/SICP-Solution-Exercise-1-2.md" >}}) ✓
-- [1.3]({{< ref "/post/SICP-Solution-Exercise-1-3.md" >}}) ✓
-- [1.4]({{< ref "/post/SICP-Solution-Exercise-1-4.md" >}}) ✓
-- [1.5]({{< ref "/post/SICP-Solution-Exercise-1-5.md" >}}) ✓
+- [Exercise 1.1]({{< ref "/post/SICP-Solution-Exercise-1-1.md" >}}) ✓
+- [Exercise 1.2]({{< ref "/post/SICP-Solution-Exercise-1-2.md" >}}) ✓
+- [Exercise 1.3]({{< ref "/post/SICP-Solution-Exercise-1-3.md" >}}) ✓
+- [Exercise 1.4]({{< ref "/post/SICP-Solution-Exercise-1-4.md" >}}) ✓
+- [Exercise 1.5]({{< ref "/post/SICP-Solution-Exercise-1-5.md" >}}) ✓
 
 ##### 1.1.7 Example: Square Roots by Newton's Method
 
-- [1.6]({{< ref "/post/SICP-Solution-Exercise-1-6.md" >}}) ✓
-- [1.7]({{< ref "/post/SICP-Solution-Exercise-1-7.md" >}}) ✓
-- [1.8]({{< ref "/post/SICP-Solution-Exercise-1-8.md" >}}) ✓
+- [Exercise 1.6]({{< ref "/post/SICP-Solution-Exercise-1-6.md" >}}) ✓
+- [Exercise 1.7]({{< ref "/post/SICP-Solution-Exercise-1-7.md" >}}) ✓
+- [Exercise 1.8]({{< ref "/post/SICP-Solution-Exercise-1-8.md" >}}) ✓
 
 ##### 1.1.8 Procedures as Black-Box Abstractions
 
@@ -82,64 +82,64 @@ This solution are here for reference only. The value of this book is in actually
 
 ##### 1.2.1 Linear Recursion and Iteration
 
-- [1.9]({{< ref "/post/SICP-Solution-Exercise-1-9.md" >}}) ✓
-- [1.10]({{< ref "/post/SICP-Solution-Exercise-1-10.md" >}}) ✓
+- [Exercise 1.9]({{< ref "/post/SICP-Solution-Exercise-1-9.md" >}}) ✓
+- [Exercise 1.10]({{< ref "/post/SICP-Solution-Exercise-1-10.md" >}}) ✓
 
 ##### 1.2.2 Tree Recursion
 
-- [1.11]({{< ref "/post/SICP-Solution-Exercise-1-11.md" >}}) ✓
-- [1.12]({{< ref "/post/SICP-Solution-Exercise-1-12.md" >}}) ✓
-- [1.13]({{< ref "/post/SICP-Solution-Exercise-1-13.md" >}}) ✓
+- [Exercise 1.11]({{< ref "/post/SICP-Solution-Exercise-1-11.md" >}}) ✓
+- [Exercise 1.12]({{< ref "/post/SICP-Solution-Exercise-1-12.md" >}}) ✓
+- [Exercise 1.13]({{< ref "/post/SICP-Solution-Exercise-1-13.md" >}}) ✓
 
 ##### 1.2.3 Orders of Growth
 
-- [1.14]({{< ref "/post/SICP-Solution-Exercise-1-14.md" >}}) ✓
-- [1.15]({{< ref "/post/SICP-Solution-Exercise-1-15.md" >}}) ✓
+- [Exercise 1.14]({{< ref "/post/SICP-Solution-Exercise-1-14.md" >}}) ✓
+- [Exercise 1.15]({{< ref "/post/SICP-Solution-Exercise-1-15.md" >}}) ✓
 
 ##### 1.2.4 Exponentiation
 
-- [1.16]({{< ref "/post/SICP-Solution-Exercise-1-16.md" >}}) ✓
-- [1.17]({{< ref "/post/SICP-Solution-Exercise-1-17.md" >}}) ✓
-- [1.18]({{< ref "/post/SICP-Solution-Exercise-1-18.md" >}}) ✓
-- [1.19]({{< ref "/post/SICP-Solution-Exercise-1-19.md" >}}) ✓
+- [Exercise 1.16]({{< ref "/post/SICP-Solution-Exercise-1-16.md" >}}) ✓
+- [Exercise 1.17]({{< ref "/post/SICP-Solution-Exercise-1-17.md" >}}) ✓
+- [Exercise 1.18]({{< ref "/post/SICP-Solution-Exercise-1-18.md" >}}) ✓
+- [Exercise 1.19]({{< ref "/post/SICP-Solution-Exercise-1-19.md" >}}) ✓
 
 ##### 1.2.5 Greatest Common Divisors
 
-- [1.20]({{< ref "/post/SICP-Solution-Exercise-1-20.md" >}}) ✓
+- [Exercise 1.20]({{< ref "/post/SICP-Solution-Exercise-1-20.md" >}}) ✓
 
 ##### 1.2.6 Example: Testing for Primality
 
-- [1.21]({{< ref "/post/SICP-Solution-Exercise-1-21.md" >}}) ✓
-- [1.22]({{< ref "/post/SICP-Solution-Exercise-1-22.md" >}}) ✓
-- [1.23]({{< ref "/post/SICP-Solution-Exercise-1-23.md" >}}) ✓
-- [1.24]({{< ref "/post/SICP-Solution-Exercise-1-24.md" >}}) ✓
-- [1.25]({{< ref "/post/SICP-Solution-Exercise-1-25.md" >}}) ✓
-- [1.26]({{< ref "/post/SICP-Solution-Exercise-1-26.md" >}}) ✓
-- [1.27]({{< ref "/post/SICP-Solution-Exercise-1-27.md" >}}) ✓
-- [1.28]({{< ref "/post/SICP-Solution-Exercise-1-28.md" >}}) ✓
+- [Exercise 1.21]({{< ref "/post/SICP-Solution-Exercise-1-21.md" >}}) ✓
+- [Exercise 1.22]({{< ref "/post/SICP-Solution-Exercise-1-22.md" >}}) ✓
+- [Exercise 1.23]({{< ref "/post/SICP-Solution-Exercise-1-23.md" >}}) ✓
+- [Exercise 1.24]({{< ref "/post/SICP-Solution-Exercise-1-24.md" >}}) ✓
+- [Exercise 1.25]({{< ref "/post/SICP-Solution-Exercise-1-25.md" >}}) ✓
+- [Exercise 1.26]({{< ref "/post/SICP-Solution-Exercise-1-26.md" >}}) ✓
+- [Exercise 1.27]({{< ref "/post/SICP-Solution-Exercise-1-27.md" >}}) ✓
+- [Exercise 1.28]({{< ref "/post/SICP-Solution-Exercise-1-28.md" >}}) ✓
 
 #### 1.3 Formulating Abstractions with Higher-Order Procedures
 
 📺 [Lecture 2A: Higher-order Procedures - YouTube](https://www.youtube.com/watch?v=eJeMOEiHv8c&list=PLE18841CABEA24090&index=3) 
 
-- [1.29]({{< ref "/post/SICP-Solution-Exercise-1-29.md" >}}) ✓
-- [1.30]({{< ref "/post/SICP-Solution-Exercise-1-30.md" >}}) ✓
-- [1.31]({{< ref "/post/SICP-Solution-Exercise-1-31.md" >}}) ✓
-- [1.32]({{< ref "/post/SICP-Solution-Exercise-1-32.md" >}}) ✓
-- [1.33]({{< ref "/post/SICP-Solution-Exercise-1-33.md" >}}) ✓
-- [1.34]({{< ref "/post/SICP-Solution-Exercise-1-34.md" >}}) ✓
-- [1.35]({{< ref "/post/SICP-Solution-Exercise-1-35.md" >}}) ✓
-- [1.36]({{< ref "/post/SICP-Solution-Exercise-1-36.md" >}}) ✓
-- [1.37]({{< ref "/post/SICP-Solution-Exercise-1-37.md" >}}) ✓
-- [1.38]({{< ref "/post/SICP-Solution-Exercise-1-38.md" >}}) ✓
-- [1.39]({{< ref "/post/SICP-Solution-Exercise-1-39.md" >}}) ✓
-- [1.40]({{< ref "/post/SICP-Solution-Exercise-1-40.md" >}}) ✓
-- [1.41]({{< ref "/post/SICP-Solution-Exercise-1-41.md" >}}) ✓
-- [1.42]({{< ref "/post/SICP-Solution-Exercise-1-42.md" >}}) ✓
-- [1.43]({{< ref "/post/SICP-Solution-Exercise-1-43.md" >}}) ✓
-- [1.44]({{< ref "/post/SICP-Solution-Exercise-1-44.md" >}}) ✓
-- [1.45]({{< ref "/post/SICP-Solution-Exercise-1-45.md" >}}) ✓
-- [1.46]({{< ref "/post/SICP-Solution-Exercise-1-46.md" >}}) ✓
+- [Exercise 1.29]({{< ref "/post/SICP-Solution-Exercise-1-29.md" >}}) ✓
+- [Exercise 1.30]({{< ref "/post/SICP-Solution-Exercise-1-30.md" >}}) ✓
+- [Exercise 1.31]({{< ref "/post/SICP-Solution-Exercise-1-31.md" >}}) ✓
+- [Exercise 1.32]({{< ref "/post/SICP-Solution-Exercise-1-32.md" >}}) ✓
+- [Exercise 1.33]({{< ref "/post/SICP-Solution-Exercise-1-33.md" >}}) ✓
+- [Exercise 1.34]({{< ref "/post/SICP-Solution-Exercise-1-34.md" >}}) ✓
+- [Exercise 1.35]({{< ref "/post/SICP-Solution-Exercise-1-35.md" >}}) ✓
+- [Exercise 1.36]({{< ref "/post/SICP-Solution-Exercise-1-36.md" >}}) ✓
+- [Exercise 1.37]({{< ref "/post/SICP-Solution-Exercise-1-37.md" >}}) ✓
+- [Exercise 1.38]({{< ref "/post/SICP-Solution-Exercise-1-38.md" >}}) ✓
+- [Exercise 1.39]({{< ref "/post/SICP-Solution-Exercise-1-39.md" >}}) ✓
+- [Exercise 1.40]({{< ref "/post/SICP-Solution-Exercise-1-40.md" >}}) ✓
+- [Exercise 1.41]({{< ref "/post/SICP-Solution-Exercise-1-41.md" >}}) ✓
+- [Exercise 1.42]({{< ref "/post/SICP-Solution-Exercise-1-42.md" >}}) ✓
+- [Exercise 1.43]({{< ref "/post/SICP-Solution-Exercise-1-43.md" >}}) ✓
+- [Exercise 1.44]({{< ref "/post/SICP-Solution-Exercise-1-44.md" >}}) ✓
+- [Exercise 1.45]({{< ref "/post/SICP-Solution-Exercise-1-45.md" >}}) ✓
+- [Exercise 1.46]({{< ref "/post/SICP-Solution-Exercise-1-46.md" >}}) ✓
 
 ### Chapter 2: Building Abstractions with Data
 
@@ -147,63 +147,63 @@ This solution are here for reference only. The value of this book is in actually
 
 📺 [Lecture 2B: Compound Data - YouTube](https://www.youtube.com/watch?v=DrFkf-T-6Co&list=PLE18841CABEA24090&index=4) 
 
-- [2.1]({{< ref "/post/SICP-Solution-Exercise-2-1.md" >}}) ✓
-- [2.2]({{< ref "/post/SICP-Solution-Exercise-2-2.md" >}}) ✓
-- [2.3]({{< ref "/post/SICP-Solution-Exercise-2-3.md" >}}) ✓
-- [2.4]({{< ref "/post/SICP-Solution-Exercise-2-4.md" >}}) ✓
-- [2.5]({{< ref "/post/SICP-Solution-Exercise-2-5.md" >}}) ✓
-- [2.6]({{< ref "/post/SICP-Solution-Exercise-2-6.md" >}}) ✓
-- [2.7]({{< ref "/post/SICP-Solution-Exercise-2-7.md" >}}) ✓
-- [2.8]({{< ref "/post/SICP-Solution-Exercise-2-8.md" >}}) ✓
-- [2.9]({{< ref "/post/SICP-Solution-Exercise-2-9.md" >}}) ✓
-- [2.10]({{< ref "/post/SICP-Solution-Exercise-2-10.md" >}}) ✓
-- 2.11
-- 2.12
-- 2.13
-- 2.14
-- 2.15
-- 2.16
+- [Exercise 2.1]({{< ref "/post/SICP-Solution-Exercise-2-1.md" >}}) ✓
+- [Exercise 2.2]({{< ref "/post/SICP-Solution-Exercise-2-2.md" >}}) ✓
+- [Exercise 2.3]({{< ref "/post/SICP-Solution-Exercise-2-3.md" >}}) ✓
+- [Exercise 2.4]({{< ref "/post/SICP-Solution-Exercise-2-4.md" >}}) ✓
+- [Exercise 2.5]({{< ref "/post/SICP-Solution-Exercise-2-5.md" >}}) ✓
+- [Exercise 2.6]({{< ref "/post/SICP-Solution-Exercise-2-6.md" >}}) ✓
+- [Exercise 2.7]({{< ref "/post/SICP-Solution-Exercise-2-7.md" >}}) ✓
+- [Exercise 2.8]({{< ref "/post/SICP-Solution-Exercise-2-8.md" >}}) ✓
+- [Exercise 2.9]({{< ref "/post/SICP-Solution-Exercise-2-9.md" >}}) ✓
+- [Exercise 2.10]({{< ref "/post/SICP-Solution-Exercise-2-10.md" >}}) ✓
+- Exercise 2.11
+- Exercise 2.12
+- Exercise 2.13
+- Exercise 2.14
+- Exercise 2.15
+- Exercise 2.16
 
 #### 2.2 Hierarchical Data and the Closure Property
 
 📺 [Lecture 3A: Henderson Escher Example - YouTube](https://www.youtube.com/watch?v=PEwZL3H2oKg&list=PLE18841CABEA24090&index=5) 
 
-- 2.17
-- 2.18
-- 2.19
-- 2.20
-- 2.21
-- 2.22
-- 2.23
-- 2.24
-- 2.25
-- 2.26
-- 2.27
-- 2.28
-- 2.29
-- 2.30
-- 2.31
-- 2.32
-- 2.33
-- 2.34
-- 2.35
-- 2.36
-- 2.37
-- 2.38
-- 2.39
-- 2.40
-- 2.41
-- 2.42
-- 2.43
-- 2.44
-- 2.45
-- 2.46
-- 2.47
-- 2.48
-- 2.49
-- 2.50
-- 2.51
-- 2.52
+- Exercise 2.17
+- Exercise 2.18
+- Exercise 2.19
+- Exercise 2.20
+- Exercise 2.21
+- Exercise 2.22
+- Exercise 2.23
+- Exercise 2.24
+- Exercise 2.25
+- Exercise 2.26
+- Exercise 2.27
+- Exercise 2.28
+- Exercise 2.29
+- Exercise 2.30
+- Exercise 2.31
+- Exercise 2.32
+- Exercise 2.33
+- Exercise 2.34
+- Exercise 2.35
+- Exercise 2.36
+- Exercise 2.37
+- Exercise 2.38
+- Exercise 2.39
+- Exercise 2.40
+- Exercise 2.41
+- Exercise 2.42
+- Exercise 2.43
+- Exercise 2.44
+- Exercise 2.45
+- Exercise 2.46
+- Exercise 2.47
+- Exercise 2.48
+- Exercise 2.49
+- Exercise 2.50
+- Exercise 2.51
+- Exercise 2.52
 
 #### 2.3 Symbolic Data
 
@@ -213,35 +213,35 @@ This solution are here for reference only. The value of this book is in actually
 
 ##### 2.3.1 Quotation
 
-- 2.53
-- 2.54
-- 2.55
+- Exercise 2.53
+- Exercise 2.54
+- Exercise 2.55
 
 ##### 2.3.2 Example: Symbolic Differentiation
 
-- 2.56
-- 2.57
-- 2.58
+- Exercise 2.56
+- Exercise 2.57
+- Exercise 2.58
 
 ##### 2.3.3 Example: Representing Sets
 
-- 2.59
-- 2.60
-- 2.61
-- 2.62
-- 2.63
-- 2.64
-- 2.65
-- 2.66
+- Exercise 2.59
+- Exercise 2.60
+- Exercise 2.61
+- Exercise 2.62
+- Exercise 2.63
+- Exercise 2.64
+- Exercise 2.65
+- Exercise 2.66
 
 ##### 2.3.4 Example: Huffman Encoding Trees
 
-- 2.67
-- 2.68
-- 2.69
-- 2.70
-- 2.71
-- 2.72
+- Exercise 2.67
+- Exercise 2.68
+- Exercise 2.69
+- Exercise 2.70
+- Exercise 2.71
+- Exercise 2.72
 
 #### 2.4 Multiple Representations for Abstract Data
 
@@ -253,42 +253,42 @@ This solution are here for reference only. The value of this book is in actually
 
 ##### 2.4.3 Data-Directed Programming and Additivity
 
-- 2.73
-- 2.74
-- 2.75
-- 2.76
-- 2.77
+- Exercise 2.73
+- Exercise 2.74
+- Exercise 2.75
+- Exercise 2.76
+- Exercise 2.77
 
 #### 2.5 Systems with Generic Operations
 
 ##### 2.5.1 Generic Arithmetic Operations
 
-- 2.78
-- 2.79
-- 2.80
+- Exercise 2.78
+- Exercise 2.79
+- Exercise 2.80
 
 ##### 2.5.2 Combining Data of Different Types
 
-- 2.81
-- 2.82
-- 2.83
-- 2.84
-- 2.85
-- 2.86
+- Exercise 2.81
+- Exercise 2.82
+- Exercise 2.83
+- Exercise 2.84
+- Exercise 2.85
+- Exercise 2.86
 
 ##### 2.5.3 Example: Symbolic Algebra
 
-- 2.87
-- 2.88
-- 2.89
-- 2.90
-- 2.91
-- 2.92
-- 2.93
-- 2.94
-- 2.95
-- 2.96
-- 2.97
+- Exercise 2.87
+- Exercise 2.88
+- Exercise 2.89
+- Exercise 2.90
+- Exercise 2.91
+- Exercise 2.92
+- Exercise 2.93
+- Exercise 2.94
+- Exercise 2.95
+- Exercise 2.96
+- Exercise 2.97
 
 ### Chapter 3: Modularity, Objects, and State
 
@@ -298,20 +298,20 @@ This solution are here for reference only. The value of this book is in actually
 
 ##### 3.1.1 Local State Variables
 
-- 3.1
-- 3.2
-- 3.3
-- 3.4
+- Exercise 3.1
+- Exercise 3.2
+- Exercise 3.3
+- Exercise 3.4
 
 ##### 3.1.2 The Benefits of Introducing Assignment
 
-- 3.5
-- 3.6
+- Exercise 3.5
+- Exercise 3.6
 
 ##### 3.1.3 The Costs of Introducing Assignment
 
-- 3.7
-- 3.8
+- Exercise 3.7
+- Exercise 3.8
 
 #### 3.2 The Environment Model of Evaluation
 
@@ -321,12 +321,12 @@ This solution are here for reference only. The value of this book is in actually
 
 ##### 3.2.3 Frames as the Repository of Local State
 
-- 3.9
-- 3.10
+- Exercise 3.9
+- Exercise 3.10
 
 ##### 3.2.4 Internal Definitions
 
-- 3.11
+- Exercise 3.11
 
 #### 3.3 Modeling with Mutable Data
 
@@ -334,64 +334,64 @@ This solution are here for reference only. The value of this book is in actually
 
 ##### 3.3.1 Mutable List Structure
 
-- 3.12
-- 3.13
-- 3.14
-- 3.15
-- 3.16
-- 3.17
-- 3.18
-- 3.19
-- 3.20
+- Exercise 3.12
+- Exercise 3.13
+- Exercise 3.14
+- Exercise 3.15
+- Exercise 3.16
+- Exercise 3.17
+- Exercise 3.18
+- Exercise 3.19
+- Exercise 3.20
 
 ##### 3.3.2 Representing Queues
 
-- 3.21
-- 3.22
-- 3.23
+- Exercise 3.21
+- Exercise 3.22
+- Exercise 3.23
 
 ##### 3.3.3 Representing Tables
 
-- 3.24
-- 3.25
-- 3.26
-- 3.27
+- Exercise 3.24
+- Exercise 3.25
+- Exercise 3.26
+- Exercise 3.27
 
 ##### 3.3.4 A Simulator for Digital Circuits
 
-- 3.28
-- 3.29
-- 3.30
-- 3.31
-- 3.32
+- Exercise 3.28
+- Exercise 3.29
+- Exercise 3.30
+- Exercise 3.31
+- Exercise 3.32
 
 ##### 3.3.5 Propagation of Constraints
 
-- 3.33
-- 3.34
-- 3.35
-- 3.36
-- 3.37
+- Exercise 3.33
+- Exercise 3.34
+- Exercise 3.35
+- Exercise 3.36
+- Exercise 3.37
 
 #### 3.4 Concurrency: Time Is of the Essence
 
 ##### 3.4.1 The Nature of Time in Concurrent Systems
 
-- 3.38
+- Exercise 3.38
 
 ##### 3.4.2 Mechanisms for Controlling Concurrency
 
-- 3.39
-- 3.40
-- 3.41
-- 3.42
-- 3.43
-- 3.44
-- 3.45
-- 3.46
-- 3.47
-- 3.48
-- 3.49
+- Exercise 3.39
+- Exercise 3.40
+- Exercise 3.41
+- Exercise 3.42
+- Exercise 3.43
+- Exercise 3.44
+- Exercise 3.45
+- Exercise 3.46
+- Exercise 3.47
+- Exercise 3.48
+- Exercise 3.49
 
 #### 3.5 Streams
 

@@ -12,6 +12,8 @@ bookToC: false
 >
 > -- [Why Structure and Interpretation of Computer Programs matters](http://people.eecs.berkeley.edu/~bh/sicp.html)
 
+<!-- todo: Review and cleanup -->
+
 I have read the Structure and Interpretation of Computer Programs nearly 20 years ago and I still remember it. Going through this book was intense and enlightening. It had a deep impact on how I would think about programming.
 
 After 20 years, my work has moved me farther and farther from software engineering: managing teams, managing products, doing consulting works. In the last few years, I had the opportunity to see complex software being built, and I was disappointed at the lack of quality and the level of bugs in the code base.
@@ -36,53 +38,77 @@ This is the current plan:
 
 This solution are here for reference only. The value of this book is in actually trying to solving each exercise. Please consider only checking solution after being stuck or after having solved the problem to compare your solution.
 
-## Resources
-
-**Book**
-
-- [Original website from MIT with HTML version of the book](https://mitpress.mit.edu/sites/default/files/sicp/index.html)
-- [New version in PDF and HTML with updated layout](https://sicpebook.wordpress.com/)
-
-**Videos**
-
-- [Playlist for MIT 6.001 Structure and Interpretation, 1986 on Youtube](https://www.youtube.com/playlist?list=PLE18841CABEA24090)
-- [Video lectures for MIT 6.001 on ocw.mit.edu](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/video-lectures/)
-
-**Other**
-
-- [Projects for MIT 6.001 on ocw.mit.edu](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/projects/)
-- [Lecture Notes for MIT 6.001 on ocw.mit.edu](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/lecture-notes/)
-- [If not SICP, then what? Maybe HTDP? (stevenrosenberg.net) -- Thread on Hacker News](https://news.ycombinator.com/item?id=18890417)
-
 ## Table of Content
+
+<!-- todo: Add link to video directly -->
+<!-- todo: Add symbol for detailed solution -->
+<!-- todo: Add for each chapter, what it is about, key takeaway-->
 
 ### Chapter 1: Building Abstractions with Procedures
 
 #### 1.1 The Elements of Programming
+
+📺 [Lecture 1A: Overview and Introduction to Lisp - YouTube](https://www.youtube.com/watch?v=-J_xL4IGhJA&list=PLE18841CABEA24090&index=1&t=36s) 
+
+##### 1.1.1 Expressions
+
+##### 1.1.2 Naming and the Environment
+
+##### 1.1.3 Evaluating Combinations
+
+##### 1.1.4 Compound Procedures
+
+##### 1.1.5 The Substitution Model for Procedure Application
+
+##### 1.1.6 Conditional Expressions and Predicates
 
 - [1.1]({{< ref "/post/SICP-Solution-Exercise-1-1.md" >}}) ✓
 - [1.2]({{< ref "/post/SICP-Solution-Exercise-1-2.md" >}}) ✓
 - [1.3]({{< ref "/post/SICP-Solution-Exercise-1-3.md" >}}) ✓
 - [1.4]({{< ref "/post/SICP-Solution-Exercise-1-4.md" >}}) ✓
 - [1.5]({{< ref "/post/SICP-Solution-Exercise-1-5.md" >}}) ✓
+
+##### 1.1.7 Example: Square Roots by Newton's Method
+
 - [1.6]({{< ref "/post/SICP-Solution-Exercise-1-6.md" >}}) ✓
 - [1.7]({{< ref "/post/SICP-Solution-Exercise-1-7.md" >}}) ✓
 - [1.8]({{< ref "/post/SICP-Solution-Exercise-1-8.md" >}}) ✓
 
+##### 1.1.8 Procedures as Black-Box Abstractions
+
 #### 1.2 Procedures and the Processes They Generate
+
+📺 [Lecture 1B: Procedures and Processes; Substitution Model - YouTube](https://www.youtube.com/watch?v=V_7mmwpgJHU&list=PLE18841CABEA24090&index=2) 
+
+##### 1.2.1 Linear Recursion and Iteration
 
 - [1.9]({{< ref "/post/SICP-Solution-Exercise-1-9.md" >}}) ✓
 - [1.10]({{< ref "/post/SICP-Solution-Exercise-1-10.md" >}}) ✓
+
+##### 1.2.2 Tree Recursion
+
 - [1.11]({{< ref "/post/SICP-Solution-Exercise-1-11.md" >}}) ✓
 - [1.12]({{< ref "/post/SICP-Solution-Exercise-1-12.md" >}}) ✓
 - [1.13]({{< ref "/post/SICP-Solution-Exercise-1-13.md" >}}) ✓
+
+##### 1.2.3 Orders of Growth
+
 - [1.14]({{< ref "/post/SICP-Solution-Exercise-1-14.md" >}}) ✓
 - [1.15]({{< ref "/post/SICP-Solution-Exercise-1-15.md" >}}) ✓
+
+##### 1.2.4 Exponentiation
+
 - [1.16]({{< ref "/post/SICP-Solution-Exercise-1-16.md" >}}) ✓
 - [1.17]({{< ref "/post/SICP-Solution-Exercise-1-17.md" >}}) ✓
 - [1.18]({{< ref "/post/SICP-Solution-Exercise-1-18.md" >}}) ✓
 - [1.19]({{< ref "/post/SICP-Solution-Exercise-1-19.md" >}}) ✓
+
+##### 1.2.5 Greatest Common Divisors
+
 - [1.20]({{< ref "/post/SICP-Solution-Exercise-1-20.md" >}}) ✓
+
+##### 1.2.6 Example: Testing for Primality
+
 - [1.21]({{< ref "/post/SICP-Solution-Exercise-1-21.md" >}}) ✓
 - [1.22]({{< ref "/post/SICP-Solution-Exercise-1-22.md" >}}) ✓
 - [1.23]({{< ref "/post/SICP-Solution-Exercise-1-23.md" >}}) ✓
@@ -93,6 +119,8 @@ This solution are here for reference only. The value of this book is in actually
 - [1.28]({{< ref "/post/SICP-Solution-Exercise-1-28.md" >}}) ✓
 
 #### 1.3 Formulating Abstractions with Higher-Order Procedures
+
+📺 [Lecture 2A: Higher-order Procedures - YouTube](https://www.youtube.com/watch?v=eJeMOEiHv8c&list=PLE18841CABEA24090&index=3) 
 
 - [1.29]({{< ref "/post/SICP-Solution-Exercise-1-29.md" >}}) ✓
 - [1.30]({{< ref "/post/SICP-Solution-Exercise-1-30.md" >}}) ✓
@@ -117,6 +145,8 @@ This solution are here for reference only. The value of this book is in actually
 
 #### 2.1 Introduction to Data Abstraction
 
+📺 [Lecture 2B: Compound Data - YouTube](https://www.youtube.com/watch?v=DrFkf-T-6Co&list=PLE18841CABEA24090&index=4) 
+
 - [2.1]({{< ref "/post/SICP-Solution-Exercise-2-1.md" >}}) ✓
 - [2.2]({{< ref "/post/SICP-Solution-Exercise-2-2.md" >}}) ✓
 - [2.3]({{< ref "/post/SICP-Solution-Exercise-2-3.md" >}}) ✓
@@ -135,6 +165,8 @@ This solution are here for reference only. The value of this book is in actually
 - 2.16
 
 #### 2.2 Hierarchical Data and the Closure Property
+
+📺 [Lecture 3A: Henderson Escher Example - YouTube](https://www.youtube.com/watch?v=PEwZL3H2oKg&list=PLE18841CABEA24090&index=5) 
 
 - 2.17
 - 2.18
@@ -175,12 +207,24 @@ This solution are here for reference only. The value of this book is in actually
 
 #### 2.3 Symbolic Data
 
+📺 [Lecture 3B: Symbolic Differentiation; Quotation - YouTube](https://www.youtube.com/watch?v=bV87UzKMRtE&list=PLE18841CABEA24090&index=6) 
+
+📺 [Lecture 4A: Pattern Matching and Rule-based Substitution - YouTube](https://www.youtube.com/watch?v=_fXQ1SwKjDg&list=PLE18841CABEA24090&index=7) 
+
+##### 2.3.1 Quotation
+
 - 2.53
 - 2.54
 - 2.55
+
+##### 2.3.2 Example: Symbolic Differentiation
+
 - 2.56
 - 2.57
 - 2.58
+
+##### 2.3.3 Example: Representing Sets
+
 - 2.59
 - 2.60
 - 2.61
@@ -189,6 +233,9 @@ This solution are here for reference only. The value of this book is in actually
 - 2.64
 - 2.65
 - 2.66
+
+##### 2.3.4 Example: Huffman Encoding Trees
+
 - 2.67
 - 2.68
 - 2.69
@@ -196,7 +243,15 @@ This solution are here for reference only. The value of this book is in actually
 - 2.71
 - 2.72
 
-#### 2.5 Systems with Generic Operations
+#### 2.4 Multiple Representations for Abstract Data
+
+📺 [Lecture 4B: Generic Operators - YouTube](https://www.youtube.com/watch?v=OscT4N2qq7o&list=PLE18841CABEA24090&index=8) 
+
+##### 2.4.1 Representations for Complex Numbers
+
+##### 2.4.2 Tagged data
+
+##### 2.4.3 Data-Directed Programming and Additivity
 
 - 2.73
 - 2.74
@@ -204,17 +259,25 @@ This solution are here for reference only. The value of this book is in actually
 - 2.76
 - 2.77
 
-#### 2.4 Multiple Representations for Abstract Data
+#### 2.5 Systems with Generic Operations
+
+##### 2.5.1 Generic Arithmetic Operations
 
 - 2.78
 - 2.79
 - 2.80
+
+##### 2.5.2 Combining Data of Different Types
+
 - 2.81
 - 2.82
 - 2.83
 - 2.84
 - 2.85
 - 2.86
+
+##### 2.5.3 Example: Symbolic Algebra
+
 - 2.87
 - 2.88
 - 2.89
@@ -229,7 +292,114 @@ This solution are here for reference only. The value of this book is in actually
 
 ### Chapter 3: Modularity, Objects, and State
 
-3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 3.10, 3.11, 3.12, 3.13, 3.14, 3.15, 3.16, 3.17, 3.18, 3.19, 3.20, 3.21, 3.22, 3.23, 3.24, 3.25, 3.26, 3.27, 3.28, 3.29, 3.30, 3.31, 3.32, 3.33, 3.34, 3.35, 3.36, 3.37, 3.38, 3.39, 3.40, 3.41, 3.42, 3.43, 3.44, 3.45, 3.46, 3.47, 3.48, 3.49, 3.50, 3.51, 3.52, 3.53, 3.54, 3.55, 3.56, 3.57, 3.58, 3.59, 3.60, 3.61, 3.62, 3.63, 3.64, 3.65, 3.66, 3.67, 3.68, 3.69, 3.70, 3.71, 3.72, 3.73, 3.74, 3.75, 3.76, 3.77, 3.78, 3.79, 3.80, 3.81, 3.82
+📺 [Lecture 5A: Assignment, State, and Side-effects - YouTube](https://www.youtube.com/watch?v=dO1aqPBJCPg&list=PLE18841CABEA24090&index=9) 
+
+#### 3.1 Assignment and Local State
+
+##### 3.1.1 Local State Variables
+
+- 3.1
+- 3.2
+- 3.3
+- 3.4
+
+##### 3.1.2 The Benefits of Introducing Assignment
+
+- 3.5
+- 3.6
+
+##### 3.1.3 The Costs of Introducing Assignment
+
+- 3.7
+- 3.8
+
+#### 3.2 The Environment Model of Evaluation
+
+##### 3.2.1 The Rules for Evaluation
+
+##### 3.2.2 Applying Simple Procedures
+
+##### 3.2.3 Frames as the Repository of Local State
+
+- 3.9
+- 3.10
+
+##### 3.2.4 Internal Definitions
+
+- 3.11
+
+#### 3.3 Modeling with Mutable Data
+
+📺 [Lecture 5B: Computational Objects - YouTube](https://www.youtube.com/watch?v=yedzRWhi-9E&list=PLE18841CABEA24090&index=10) 
+
+##### 3.3.1 Mutable List Structure
+
+- 3.12
+- 3.13
+- 3.14
+- 3.15
+- 3.16
+- 3.17
+- 3.18
+- 3.19
+- 3.20
+
+##### 3.3.2 Representing Queues
+
+- 3.21
+- 3.22
+- 3.23
+
+##### 3.3.3 Representing Tables
+
+- 3.24
+- 3.25
+- 3.26
+- 3.27
+
+##### 3.3.4 A Simulator for Digital Circuits
+
+- 3.28
+- 3.29
+- 3.30
+- 3.31
+- 3.32
+
+##### 3.3.5 Propagation of Constraints
+
+- 3.33
+- 3.34
+- 3.35
+- 3.36
+- 3.37
+
+#### 3.4 Concurrency: Time Is of the Essence
+
+##### 3.4.1 The Nature of Time in Concurrent Systems
+
+- 3.38
+
+##### 3.4.2 Mechanisms for Controlling Concurrency
+
+- 3.39
+- 3.40
+- 3.41
+- 3.42
+- 3.43
+- 3.44
+- 3.45
+- 3.46
+- 3.47
+- 3.48
+- 3.49
+
+#### 3.5 Streams
+
+📺 [Lecture 6A: Streams, Part 1 - YouTube](https://www.youtube.com/watch?v=JkGKLILLy0I&list=PLE18841CABEA24090&index=11) 
+
+
+
+3.50, 3.51, 3.52, 3.53, 3.54, 3.55, 3.56, 3.57, 3.58, 3.59, 3.60, 3.61, 3.62, 3.63, 3.64, 3.65, 3.66, 3.67, 3.68, 3.69, 3.70, 3.71, 3.72, 3.73, 3.74, 3.75, 3.76, 3.77, 3.78, 3.79, 3.80, 3.81, 3.82
 
 ### Chapter 4: Metalinguistic Abstraction
 
@@ -239,11 +409,30 @@ This solution are here for reference only. The value of this book is in actually
 
 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 5.10, 5.11, 5.12, 5.13, 5.14, 5.15, 5.16, 5.17, 5.18, 5.19, 5.20, 5.21, 5.22, 5.23, 5.24, 5.25, 5.26, 5.27, 5.28, 5.29, 5.30, 5.31, 5.32, 5.33, 5.34, 5.35, 5.36, 5.37, 5.38, 5.39, 5.40, 5.41, 5.42, 5.43, 5.44, 5.45, 5.46, 5.47, 5.48, 5.49, 5.50, 5.51, 5.52
 
-## Other solutions
+## Resources
+
+### Book
+
+- [Original website from MIT with HTML version of the book](https://mitpress.mit.edu/sites/default/files/sicp/index.html)
+- [New version in PDF and HTML with updated layout](https://sicpebook.wordpress.com/)
+
+### Videos
+
+- [Playlist for MIT 6.001 Structure and Interpretation, 1986 on Youtube](https://www.youtube.com/playlist?list=PLE18841CABEA24090)
+- [Video lectures for MIT 6.001 on ocw.mit.edu](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/video-lectures/)
+
+### Other
+
+- [Projects for MIT 6.001 on ocw.mit.edu](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/projects/)
+- [Lecture Notes for MIT 6.001 on ocw.mit.edu](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/lecture-notes/)
+- [If not SICP, then what? Maybe HTDP? (stevenrosenberg.net) -- Thread on Hacker News](https://news.ycombinator.com/item?id=18890417)
+
+
+### Other solutions
 
 - [Structure and Interpretation of Computer Programs](https://github.com/zv/SICP-guile): "This repository includes answers to a bit more than 90% of the book’s 360-some exercises as well as material intended to help others get an idea of how to begin with the book, avoid many common pitfalls as they continue, and review interesting secondary material along the way."
 
-## Tools used
+### Tools used
 
 - [DrRacket](https://racket-lang.org/): used to develop and run the code.
 - [MathType demo - For Developers](http://www.wiris.com/editor/demo/en/developers#mathml-latex): used to write and check the Latex.

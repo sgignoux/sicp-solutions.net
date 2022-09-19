@@ -5,6 +5,6 @@ draft: true
 type: posts
 ---
 
-**Exercise 2.19:**
+## Exercise 2.19
 
-**Solution**
+## Solution

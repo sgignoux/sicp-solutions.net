@@ -5,13 +5,15 @@ draft: false
 type: posts
 ---
 
-**Exercise 1.39:** A continued fraction representation of the tangent function was published in 1770 by the German mathematician J.H. Lambert:
+## Exercise 1.39
 
-$$\tan x=\frac x{1-{\displaystyle\frac{x^2}{3-{\displaystyle\frac{x^2}{5-\cdots}}}}}$$
+> A continued fraction representation of the tangent function was published in 1770 by the German mathematician J.H. Lambert:
+> 
+> $$\tan x=\frac x{1-{\displaystyle\frac{x^2}{3-{\displaystyle\frac{x^2}{5-\cdots}}}}}$$
+> 
+> where `x` is in radians. Define a procedure `(tan-cf x k)` that computes an approximation to the tangent function based on Lambert’s formula. `k` specifies the number of terms to compute, as in Exercise 1.37.
 
-where `x` is in radians. Define a procedure `(tan-cf x k)` that computes an approximation to the tangent function based on Lambert’s formula. `k` specifies the number of terms to compute, as in Exercise 1.37.
-
-**Solution**
+## Solution
 
 From what is already done, the solution is:
 

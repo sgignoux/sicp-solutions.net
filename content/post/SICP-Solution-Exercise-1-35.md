@@ -5,9 +5,11 @@ draft: false
 type: posts
 ---
 
-**Exercise 1.35:** Show that the golden ratio $\varphi$ (1.2.2) is a fixed point of the transformation ${x\mapsto1+1/x}$, and use this fact to compute $\varphi$ by means of the `fixed-point` procedure.
+## Exercise 1.35
 
-**Solution**
+> Show that the golden ratio $\varphi$ (1.2.2) is a fixed point of the transformation ${x\mapsto1+1/x}$, and use this fact to compute $\varphi$ by means of the `fixed-point` procedure.
+
+## Solution
 
 The fixed point for ${x\mapsto1+1/x}$ is defined as:
 

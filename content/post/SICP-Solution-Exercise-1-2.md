@@ -5,11 +5,13 @@ draft: false
 type: posts
 ---
 
-**Exercise 1.2:** Translate the following expression into prefix form:
+## Exercise 1.2
 
-$${\frac{5+4+(2-(3-(6+\frac45)))}{3(6-2)(2-7)}.}$$
+> Translate the following expression into prefix form:
+> 
+> $${\frac{5+4+(2-(3-(6+\frac45)))}{3(6-2)(2-7)}.}$$
 
-**Solution**
+## Solution
 
 ```scheme
 (/ (+ 5

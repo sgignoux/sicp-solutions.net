@@ -5,13 +5,13 @@ draft: false
 type: posts
 ---
 
-**Exercise 1.31:**
+## Exercise 1.31
 
-1. The sum procedure is only the simplest of a vast number of similar abstractions that can be captured as higher-order procedures. Write an analogous procedure called `product` that returns the product of the values of a function at points over a given range. Show how to define `factorial` in terms of product. Also use product to compute approximations to π using the formula
-   $$\frac\pi4=\frac{2\cdot4\cdot4\cdot6\cdot6\cdot8\cdot\cdots}{3\cdot3\cdot5\cdot5\cdot7\cdot7\cdot\cdots}$$
-2. If your product procedure generates a recursive process, write one that generates an iterative process. If it generates an iterative process, write one that generates a recursive process.
+> 1. The sum procedure is only the simplest of a vast number of similar abstractions that can be captured as higher-order procedures. Write an analogous procedure called `product` that returns the product of the values of a function at points over a given range. Show how to define `factorial` in terms of product. Also use product to compute approximations to π using the formula
+>    $$\frac\pi4=\frac{2\cdot4\cdot4\cdot6\cdot6\cdot8\cdot\cdots}{3\cdot3\cdot5\cdot5\cdot7\cdot7\cdot\cdots}$$
+> 2. If your product procedure generates a recursive process, write one that generates an iterative process. If it generates an iterative process, write one that generates a recursive process.
 
-**Solution**
+## Solution
 
 ### Implementing recursive `product`
 

@@ -5,9 +5,11 @@ draft: false
 type: posts
 ---
 
-**Exercise 2.8:** Using reasoning analogous to Alyssa’s, describe how the difference of two intervals may be computed. Define a corresponding subtraction procedure, called `sub-interval`.
+## Exercise 2.8
 
-**Solution**
+> Using reasoning analogous to Alyssa’s, describe how the difference of two intervals may be computed. Define a corresponding subtraction procedure, called `sub-interval`.
+
+## Solution
 
 ```scheme
 (define (sub-interval x y)

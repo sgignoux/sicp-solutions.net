@@ -7,7 +7,7 @@ type: posts
 
 **Exercise 1.15:** The sine of an angle (specified in radians) can be computed by making use of the approximation ${\sin x\approx x}$ if $x$ is sufficiently small, and the trigonometric identity
 
-$$\sin\;x\;=\;3\;\sin\frac x3-4\;\sin^3\frac x3$$
+$$\sin x = 3 \sin\frac x3-4 \sin^3\frac x3$$
 
 to reduce the size of the argument of sin. (For purposes of this exercise an angle is considered “sufficiently small” if its magnitude is not greater than 0.1 radians.) These ideas are incorporated in the following procedures:
 

@@ -35,15 +35,15 @@ type: posts
 
 To solve this problem, it is necessary expand $T\_{pq}\left(T\_{pq}(a,b)\right)$ and see if we can refactor it:
 
-$$T\_{pq}(a,b)=(bq+aq+ap,\;bp+aq)$$
+$$T\_{pq}(a,b)=(bq+aq+ap, bp+aq)$$
 
-$$T\_{pq}\left(T\_{pq}(a,b)\right)=(\left(bp+aq\right)q+\left(bq+aq+ap\right)q+\left(bq+aq+ap\right)p,\;\left(\;bp+aq\right)p+\left(bq+aq+ap\right)q)$$
+$$T\_{pq}\left(T\_{pq}(a,b)\right)=(\left(bp+aq\right)q+\left(bq+aq+ap\right)q+\left(bq+aq+ap\right)p, \left( bp+aq\right)p+\left(bq+aq+ap\right)q)$$
 
-$$T\_{pq}\left(T\_{pq}(a,b)\right)=(bpq+aq^2+bq^2+aq^2+aqp+bqp+aqp+ap^2,\;bp^2+aqp+bq^2+aq^2+aqp)$$
+$$T\_{pq}\left(T\_{pq}(a,b)\right)=(bpq+aq^2+bq^2+aq^2+aqp+bqp+aqp+ap^2, bp^2+aqp+bq^2+aq^2+aqp)$$
 
 Which can be rewritten as:
 
-$$T\_{pq}\left(T\_{pq}(a,b)\right)=(b(2qp+q^2)+a(q^2+p^2)+a(2qp+q^2),\;b(p^2+q^2)+a(2qp+q^2))=T\_{p'q'}$$
+$$T\_{pq}\left(T\_{pq}(a,b)\right)=(b(2qp+q^2)+a(q^2+p^2)+a(2qp+q^2), b(p^2+q^2)+a(2qp+q^2))=T\_{p'q'}$$
 
 $$p'=p^2+q^2$$
 

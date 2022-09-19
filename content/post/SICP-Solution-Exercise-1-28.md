@@ -15,7 +15,7 @@ Let's break it down in pieces.
 
 If we express this in term of [modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic), we have a congrence relation:
 
-$$a^{n-1}\equiv1\;(mod\;n)$$
+$$a^{n-1}\equiv1 (mod n)$$
 
 Which will be implemented by updating the function `fermat-test` into:
 

@@ -100,7 +100,7 @@ Area 20.0
 
 ## Second representation
 
-Another representation can be specifying three corners out of the four. This representation has 6 degrees of freedom (2 dimensions of each points). It means that it could also represent losange shape. We need to add a constraints so that the angle $\widehat{p1\;p2\;p3}$ is a right angle. Here is what it looks like:
+Another representation can be specifying three corners out of the four. This representation has 6 degrees of freedom (2 dimensions of each points). It means that it could also represent losange shape. We need to add a constraints so that the angle $\widehat{p1 p2 p3}$ is a right angle. Here is what it looks like:
 
 ![Example image](/post/sicp-images/SICP-2_3_-_Google_Slides-2.png)
 

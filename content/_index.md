@@ -122,17 +122,28 @@ This solution are here for reference only. The value of this book is in actually
 
 📺 [Lecture 2A: Higher-order Procedures - YouTube](https://www.youtube.com/watch?v=eJeMOEiHv8c&list=PLE18841CABEA24090&index=3) 
 
+##### 1.3.1 Procedures as Arguments
+
 - [Exercise 1.29]({{< ref "/post/SICP-Solution-Exercise-1-29.md" >}}) ✓
 - [Exercise 1.30]({{< ref "/post/SICP-Solution-Exercise-1-30.md" >}}) ✓
 - [Exercise 1.31]({{< ref "/post/SICP-Solution-Exercise-1-31.md" >}}) ✓
 - [Exercise 1.32]({{< ref "/post/SICP-Solution-Exercise-1-32.md" >}}) ✓
 - [Exercise 1.33]({{< ref "/post/SICP-Solution-Exercise-1-33.md" >}}) ✓
+
+##### 1.3.2 Constructing Procedures Using Lambda
+
 - [Exercise 1.34]({{< ref "/post/SICP-Solution-Exercise-1-34.md" >}}) ✓
+
+##### 1.3.3 Procedures as General Methods
+
 - [Exercise 1.35]({{< ref "/post/SICP-Solution-Exercise-1-35.md" >}}) ✓
 - [Exercise 1.36]({{< ref "/post/SICP-Solution-Exercise-1-36.md" >}}) ✓
 - [Exercise 1.37]({{< ref "/post/SICP-Solution-Exercise-1-37.md" >}}) ✓
 - [Exercise 1.38]({{< ref "/post/SICP-Solution-Exercise-1-38.md" >}}) ✓
 - [Exercise 1.39]({{< ref "/post/SICP-Solution-Exercise-1-39.md" >}}) ✓
+
+##### 1.3.4 Procedures as Returned Values
+
 - [Exercise 1.40]({{< ref "/post/SICP-Solution-Exercise-1-40.md" >}}) ✓
 - [Exercise 1.41]({{< ref "/post/SICP-Solution-Exercise-1-41.md" >}}) ✓
 - [Exercise 1.42]({{< ref "/post/SICP-Solution-Exercise-1-42.md" >}}) ✓
@@ -147,12 +158,23 @@ This solution are here for reference only. The value of this book is in actually
 
 📺 [Lecture 2B: Compound Data - YouTube](https://www.youtube.com/watch?v=DrFkf-T-6Co&list=PLE18841CABEA24090&index=4) 
 
+##### 2.1.1 Example: Arithmetic Operations for Rational Numbers
+
 - [Exercise 2.1]({{< ref "/post/SICP-Solution-Exercise-2-1.md" >}}) ✓
+
+##### 2.1.2 Abstraction Barriers
+
 - [Exercise 2.2]({{< ref "/post/SICP-Solution-Exercise-2-2.md" >}}) ✓
 - [Exercise 2.3]({{< ref "/post/SICP-Solution-Exercise-2-3.md" >}}) ✓
+
+##### 2.1.3 What Is Meant by Data?
+
 - [Exercise 2.4]({{< ref "/post/SICP-Solution-Exercise-2-4.md" >}}) ✓
 - [Exercise 2.5]({{< ref "/post/SICP-Solution-Exercise-2-5.md" >}}) ✓
 - [Exercise 2.6]({{< ref "/post/SICP-Solution-Exercise-2-6.md" >}}) ✓
+
+##### 2.1.4 Extended Exercise: Interval Arithmetic
+
 - [Exercise 2.7]({{< ref "/post/SICP-Solution-Exercise-2-7.md" >}}) ✓
 - [Exercise 2.8]({{< ref "/post/SICP-Solution-Exercise-2-8.md" >}}) ✓
 - [Exercise 2.9]({{< ref "/post/SICP-Solution-Exercise-2-9.md" >}}) ✓
@@ -168,6 +190,8 @@ This solution are here for reference only. The value of this book is in actually
 
 📺 [Lecture 3A: Henderson Escher Example - YouTube](https://www.youtube.com/watch?v=PEwZL3H2oKg&list=PLE18841CABEA24090&index=5) 
 
+##### 2.2.1 Representing Sequences
+
 - Exercise 2.17
 - Exercise 2.18
 - Exercise 2.19
@@ -175,6 +199,9 @@ This solution are here for reference only. The value of this book is in actually
 - Exercise 2.21
 - Exercise 2.22
 - Exercise 2.23
+
+##### 2.2.2 Hierarchical Structures
+
 - Exercise 2.24
 - Exercise 2.25
 - Exercise 2.26
@@ -184,6 +211,9 @@ This solution are here for reference only. The value of this book is in actually
 - Exercise 2.30
 - Exercise 2.31
 - Exercise 2.32
+
+##### 2.2.3 Sequences as Conventional Interfaces
+
 - Exercise 2.33
 - Exercise 2.34
 - Exercise 2.35
@@ -195,6 +225,9 @@ This solution are here for reference only. The value of this book is in actually
 - Exercise 2.41
 - Exercise 2.42
 - Exercise 2.43
+
+##### 2.2.4 Example: A Picture Language
+
 - Exercise 2.44
 - Exercise 2.45
 - Exercise 2.46
@@ -397,17 +430,331 @@ This solution are here for reference only. The value of this book is in actually
 
 📺 [Lecture 6A: Streams, Part 1 - YouTube](https://www.youtube.com/watch?v=JkGKLILLy0I&list=PLE18841CABEA24090&index=11) 
 
+📺 [Lecture 6B: Streams, Part 2 - YouTube](https://www.youtube.com/watch?v=qp05AtXbOP0&list=PLE18841CABEA24090&index=12) 
 
+##### 3.5.1 Streams Are Delayed Lists
 
-3.50, 3.51, 3.52, 3.53, 3.54, 3.55, 3.56, 3.57, 3.58, 3.59, 3.60, 3.61, 3.62, 3.63, 3.64, 3.65, 3.66, 3.67, 3.68, 3.69, 3.70, 3.71, 3.72, 3.73, 3.74, 3.75, 3.76, 3.77, 3.78, 3.79, 3.80, 3.81, 3.82
+- Exercise 3.50
+- Exercise 3.51
+- Exercise 3.52
+
+##### 3.5.2 Infinite Streams
+
+- Exercise 3.53
+- Exercise 3.54
+- Exercise 3.55
+- Exercise 3.56
+- Exercise 3.57
+- Exercise 3.58
+- Exercise 3.59
+- Exercise 3.60
+- Exercise 3.61
+- Exercise 3.62
+
+##### 3.5.3 Exploiting the Stream Paradigm
+
+- Exercise 3.63
+- Exercise 3.64
+- Exercise 3.65
+- Exercise 3.66
+- Exercise 3.67
+- Exercise 3.68
+- Exercise 3.69
+- Exercise 3.70
+- Exercise 3.71
+- Exercise 3.72
+- Exercise 3.73
+- Exercise 3.74
+- Exercise 3.75
+- Exercise 3.76
+
+##### 3.5.4 Streams and Delayed Evaluation
+
+- Exercise 3.77
+- Exercise 3.78
+- Exercise 3.79
+- Exercise 3.80
+- Exercise 3.81
+- Exercise 3.82
 
 ### Chapter 4: Metalinguistic Abstraction
 
-4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 4.10, 4.11, 4.12, 4.13, 4.14, 4.15, 4.16, 4.17, 4.18, 4.19, 4.20, 4.21, 4.22, 4.23, 4.24, 4.25, 4.26, 4.27, 4.28, 4.29, 4.30, 4.31, 4.32, 4.33, 4.34, 4.35, 4.36, 4.37, 4.38, 4.39, 4.40, 4.41, 4.42, 4.43, 4.44, 4.45, 4.46, 4.47, 4.48, 4.49, 4.50, 4.51, 4.52, 4.53, 4.54, 4.55, 4.56, 4.57, 4.58, 4.59, 4.60, 4.61, 4.62, 4.63, 4.64, 4.65, 4.66, 4.67, 4.68, 4.69, 4.70, 4.71, 4.72, 4.73, 4.74, 4.75, 4.76, 4.77, 4.78, 4.79
+#### 4.1 The Metacircular Evaluator
+
+📺 [Lecture 7A: Metacircular Evaluator, Part 1 - YouTube](https://www.youtube.com/watch?v=aAlR3cezPJg&list=PLE18841CABEA24090&index=13) 
+
+##### 4.1.1 The Core of the Evaluator
+
+- Exercise 4.1
+
+##### 4.1.2 Representing Expressions
+
+- Exercise 4.2
+- Exercise 4.3
+- Exercise 4.4
+- Exercise 4.5
+- Exercise 4.6
+- Exercise 4.7
+- Exercise 4.8
+- Exercise 4.9
+- Exercise 4.10
+
+##### 4.1.3 Evaluator Data Structures
+
+- Exercise 4.11
+- Exercise 4.12
+- Exercise 4.13
+
+##### 4.1.4 Running the Evaluator as a Program
+
+- Exercise 4.14
+
+##### 4.1.5 Data as Programs
+
+- Exercise 4.15
+
+##### 4.1.6 Internal Definitions
+
+- Exercise 4.16
+- Exercise 4.17
+- Exercise 4.18
+- Exercise 4.19
+- Exercise 4.20
+- Exercise 4.21
+
+##### 4.1.7 Separating Syntactic Analysis from Execution
+
+- Exercise 4.22
+- Exercise 4.23
+- Exercise 4.24
+
+#### 4.2 Variations on a Scheme-Lazy Evaluation
+
+📺 [Lecture 7B: Metacircular Evaluator, Part 2 - YouTube](https://www.youtube.com/watch?v=QVEOq5k6Xi0&list=PLE18841CABEA24090&index=14) 
+
+##### 4.2.1 Normal Order and Applicative Order
+
+- Exercise 4.25
+- Exercise 4.26
+
+##### 4.2.2 An Interpreter with Lazy Evaluation
+
+- Exercise 4.27
+- Exercise 4.28
+- Exercise 4.29
+- Exercise 4.30
+- Exercise 4.31
+
+##### 4.2.3 Streams as Lazy Lists
+
+- Exercise 4.32
+- Exercise 4.33
+- Exercise 4.34
+
+#### 4.3 Variations on a Scheme-Nondeterministic Computing
+
+##### 4.3.1 Amb and Search
+
+- Exercise 4.35
+- Exercise 4.36
+- Exercise 4.37
+
+##### 4.3.2 Examples of Nondeterministic Programs
+
+- Exercise 4.38
+- Exercise 4.39
+- Exercise 4.40
+- Exercise 4.41
+- Exercise 4.42
+- Exercise 4.43
+- Exercise 4.44
+- Exercise 4.45
+- Exercise 4.46
+- Exercise 4.47
+- Exercise 4.48
+- Exercise 4.49
+
+##### 4.3.3 Implementing the Amb Evaluator
+
+- Exercise 4.50
+- Exercise 4.51
+- Exercise 4.52
+- Exercise 4.53
+- Exercise 4.54
+
+#### 4.4 Logic Programming
+
+📺 [Lecture 8A: Logic Programming, Part 1 - YouTube](https://www.youtube.com/watch?v=rCqMiPk1BJE&list=PLE18841CABEA24090&index=15) 
+
+📺 [Lecture 8B: Logic Programming, Part 2 - YouTube](https://www.youtube.com/watch?v=GReBwkGFZcs&list=PLE18841CABEA24090&index=16) 
+
+##### 4.4.1 Deductive Information Retrieval
+
+- Exercise 4.55
+- Exercise 4.56
+- Exercise 4.57
+- Exercise 4.58
+- Exercise 4.59
+- Exercise 4.60
+- Exercise 4.61
+- Exercise 4.62
+- Exercise 4.63
+
+##### 4.4.2 How the Query System Works
+
+##### 4.4.3 Is Logic Programming Mathematical Logic?
+
+- Exercise 4.64
+- Exercise 4.65
+- Exercise 4.66
+- Exercise 4.67
+- Exercise 4.68
+- Exercise 4.69
+
+##### 4.4.4 Implementing the Query System
+
+- Exercise 4.70
+- Exercise 4.71
+- Exercise 4.72
+- Exercise 4.73
+- Exercise 4.74
+- Exercise 4.75
+- Exercise 4.76
+- Exercise 4.77
+- Exercise 4.78
+- Exercise 4.79
 
 ### Chapter 5: Computing with Register Machines
 
-5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 5.10, 5.11, 5.12, 5.13, 5.14, 5.15, 5.16, 5.17, 5.18, 5.19, 5.20, 5.21, 5.22, 5.23, 5.24, 5.25, 5.26, 5.27, 5.28, 5.29, 5.30, 5.31, 5.32, 5.33, 5.34, 5.35, 5.36, 5.37, 5.38, 5.39, 5.40, 5.41, 5.42, 5.43, 5.44, 5.45, 5.46, 5.47, 5.48, 5.49, 5.50, 5.51, 5.52
+#### 5.1 Designing Register Machines
+
+📺 [Lecture 9A: Register Machines - YouTube](https://www.youtube.com/watch?v=cIc8ZBMcqAc&list=PLE18841CABEA24090&index=17) 
+
+- Exercise 5.1
+
+##### 5.1.1 A Language for Describing Register Machines
+
+- Exercise 5.2
+
+##### 5.1.2 Abstraction in Machine Design
+
+- Exercise 5.3
+
+##### 5.1.3 Subroutines
+
+##### 5.1.4 Using a Stack to Implement Recursion
+
+- Exercise 5.4
+- Exercise 5.5
+- Exercise 5.6
+
+##### 5.1.5 Instruction Summary
+
+
+#### 5.2 A Register-Machine Simulator
+
+📺 [Lecture 9B: Explicit-control Evaluator - YouTube](https://www.youtube.com/watch?v=Z8-qWEEwTCk&list=PLE18841CABEA24090&index=18) 
+
+- Exercise 5.7
+
+##### 5.2.1 The Machine Model
+
+##### 5.2.2 The Assembler
+
+- Exercise 5.8
+
+##### 5.2.3 Generating Execution Procedures for Instructions
+
+- Exercise 5.9
+- Exercise 5.10
+- Exercise 5.11
+- Exercise 5.12
+- Exercise 5.13
+
+##### 5.2.4 Monitoring Machine Performance
+
+- Exercise 5.14
+- Exercise 5.15
+- Exercise 5.16
+- Exercise 5.17
+- Exercise 5.18
+- Exercise 5.19
+
+#### 5.3 Storage Allocation and Garbage Collection
+
+📺 [Lecture 10B: Storage Allocation and Garbage Collection - YouTube](https://www.youtube.com/watch?v=AbK4bZhUk48&list=PLE18841CABEA24090&index=20) 
+
+##### 5.3.1 Memory as Vectors
+
+- Exercise 5.20
+- Exercise 5.21
+- Exercise 5.22
+
+##### 5.3.2 Maintaining the Illusion of Infinite Memory
+
+#### 5.4 The Explicit-Control Evaluator
+
+##### 5.4.1 The Core of the Explicit-Control Evaluator
+
+##### 5.4.2 Sequence Evaluation and Tail Recursion
+
+##### 5.4.3 Conditionals, Assignments, and Definitions
+
+- Exercise 5.23
+- Exercise 5.24
+- Exercise 5.25
+
+##### 5.4.4 Running the Evaluator
+
+- Exercise 5.26
+- Exercise 5.27
+- Exercise 5.28
+- Exercise 5.29
+- Exercise 5.30
+
+#### 5.5 Compilation
+
+📺 [Lecture 10A: Compilation - YouTube](https://www.youtube.com/watch?v=TqO6V3qR9Ws&list=PLE18841CABEA24090&index=19) 
+
+##### 5.5.1 Structure of the Compiler
+
+- Exercise 5.31
+- Exercise 5.32
+
+##### 5.5.2 Compiling Expressions
+
+##### 5.5.3 Compiling Combinations
+
+##### 5.5.4 Combining Instruction Sequences
+
+##### 5.5.5 An Example of Compiled Code
+
+- Exercise 5.33
+- Exercise 5.34
+- Exercise 5.35
+- Exercise 5.36
+- Exercise 5.37
+- Exercise 5.38
+
+##### 5.5.6 Lexical Addressing
+
+- Exercise 5.39
+- Exercise 5.40
+- Exercise 5.41
+- Exercise 5.42
+- Exercise 5.43
+- Exercise 5.44
+
+##### 5.5.7 Interfacing Compiled Code to the Evaluator
+
+- Exercise 5.45
+- Exercise 5.46
+- Exercise 5.47
+- Exercise 5.48
+- Exercise 5.49
+- Exercise 5.50
+- Exercise 5.51
+- Exercise 5.52
 
 ## Resources
 

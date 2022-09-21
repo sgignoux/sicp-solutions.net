@@ -1,4 +1,6 @@
-# codology.net
+# sicp-solutions.net (used to be codology.net)
+
+I have renamed the site to reflect the fact that it seems now only about providing my solutions to the SICP books.
 
 Static site by: https://gohugo.io
 

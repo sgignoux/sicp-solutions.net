@@ -88,4 +88,4 @@ It takes 35 steps to converge without damping, but only 10 steps with the dampin
 
 #### Update
 
-Thanks to [albondad](https://github.com/albondad) for pointing out an [error](https://github.com/sgignoux/codology.net/issues/2).
+Thanks to [albondad](https://github.com/albondad) for pointing out an [error](https://github.com/sgignoux/sicp-solutions.net/issues/2).

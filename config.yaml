@@ -1,6 +1,6 @@
 # hugo server --minify --themesDir ... --baseURL=http://0.0.0.0:1313/theme/hugo-book/
 
-baseURL: "https://codology.net/"
+baseURL: "https://sicp-solutions.net/"
 title: "SICP Solutions"
 theme: book
 
@@ -30,7 +30,7 @@ menu:
   # before: []
   after:
     - name: "Github for this book"
-      url: "https://github.com/sgignoux/codology.net/"
+      url: "https://github.com/sgignoux/sicp-solutions.net/"
       weight: 10
     - name: "Hugo Themes"
       url: "https://themes.gohugo.io/hugo-book/"
@@ -60,7 +60,7 @@ params:
 
   # Set source repository location.
   # Used for 'Last Modified' and 'Edit this page' links.
-  BookRepo: https://github.com/sgignoux/codology.net
+  BookRepo: https://github.com/sgignoux/sicp-solutions.net
 
   # Enable "Edit this page" links for 'doc' page type.
   # Disabled by default. Uncomment to enable. Requires 'BookRepo' param.

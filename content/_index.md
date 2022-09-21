@@ -67,17 +67,17 @@ This solution are here for reference only. The value of this book is in actually
 
 ##### 1.1.6 Conditional Expressions and Predicates
 
-- [Exercise 1.1]({{< ref "/post/SICP-Solution-Exercise-1-1.md" >}}) ✓
-- [Exercise 1.2]({{< ref "/post/SICP-Solution-Exercise-1-2.md" >}}) ✓
-- [Exercise 1.3]({{< ref "/post/SICP-Solution-Exercise-1-3.md" >}}) ✓
-- [Exercise 1.4]({{< ref "/post/SICP-Solution-Exercise-1-4.md" >}}) ✓
-- [Exercise 1.5]({{< ref "/post/SICP-Solution-Exercise-1-5.md" >}}) ✓
+- [Exercise 1.1]({{< ref "/post/sicp-solution-exercise-1-1.md" >}}) ✓
+- [Exercise 1.2]({{< ref "/post/sicp-solution-exercise-1-2.md" >}}) ✓
+- [Exercise 1.3]({{< ref "/post/sicp-solution-exercise-1-3.md" >}}) ✓
+- [Exercise 1.4]({{< ref "/post/sicp-solution-exercise-1-4.md" >}}) ✓
+- [Exercise 1.5]({{< ref "/post/sicp-solution-exercise-1-5.md" >}}) ✓
 
 ##### 1.1.7 Example: Square Roots by Newton's Method
 
-- [Exercise 1.6]({{< ref "/post/SICP-Solution-Exercise-1-6.md" >}}) ✓
-- [Exercise 1.7]({{< ref "/post/SICP-Solution-Exercise-1-7.md" >}}) ✓
-- [Exercise 1.8]({{< ref "/post/SICP-Solution-Exercise-1-8.md" >}}) ✓
+- [Exercise 1.6]({{< ref "/post/sicp-solution-exercise-1-6.md" >}}) ✓
+- [Exercise 1.7]({{< ref "/post/sicp-solution-exercise-1-7.md" >}}) ✓
+- [Exercise 1.8]({{< ref "/post/sicp-solution-exercise-1-8.md" >}}) ✓
 
 ##### 1.1.8 Procedures as Black-Box Abstractions
 
@@ -87,41 +87,41 @@ This solution are here for reference only. The value of this book is in actually
 
 ##### 1.2.1 Linear Recursion and Iteration
 
-- [Exercise 1.9]({{< ref "/post/SICP-Solution-Exercise-1-9.md" >}}) ✓
-- [Exercise 1.10]({{< ref "/post/SICP-Solution-Exercise-1-10.md" >}}) ✓
+- [Exercise 1.9]({{< ref "/post/sicp-solution-exercise-1-9.md" >}}) ✓
+- [Exercise 1.10]({{< ref "/post/sicp-solution-exercise-1-10.md" >}}) ✓
 
 ##### 1.2.2 Tree Recursion
 
-- [Exercise 1.11]({{< ref "/post/SICP-Solution-Exercise-1-11.md" >}}) ✓
-- [Exercise 1.12]({{< ref "/post/SICP-Solution-Exercise-1-12.md" >}}) ✓
-- [Exercise 1.13]({{< ref "/post/SICP-Solution-Exercise-1-13.md" >}}) ✓
+- [Exercise 1.11]({{< ref "/post/sicp-solution-exercise-1-11.md" >}}) ✓
+- [Exercise 1.12]({{< ref "/post/sicp-solution-exercise-1-12.md" >}}) ✓
+- [Exercise 1.13]({{< ref "/post/sicp-solution-exercise-1-13.md" >}}) ✓
 
 ##### 1.2.3 Orders of Growth
 
-- [Exercise 1.14]({{< ref "/post/SICP-Solution-Exercise-1-14.md" >}}) ✓
-- [Exercise 1.15]({{< ref "/post/SICP-Solution-Exercise-1-15.md" >}}) ✓
+- [Exercise 1.14]({{< ref "/post/sicp-solution-exercise-1-14.md" >}}) ✓
+- [Exercise 1.15]({{< ref "/post/sicp-solution-exercise-1-15.md" >}}) ✓
 
 ##### 1.2.4 Exponentiation
 
-- [Exercise 1.16]({{< ref "/post/SICP-Solution-Exercise-1-16.md" >}}) ✓
-- [Exercise 1.17]({{< ref "/post/SICP-Solution-Exercise-1-17.md" >}}) ✓
-- [Exercise 1.18]({{< ref "/post/SICP-Solution-Exercise-1-18.md" >}}) ✓
-- [Exercise 1.19]({{< ref "/post/SICP-Solution-Exercise-1-19.md" >}}) ✓
+- [Exercise 1.16]({{< ref "/post/sicp-solution-exercise-1-16.md" >}}) ✓
+- [Exercise 1.17]({{< ref "/post/sicp-solution-exercise-1-17.md" >}}) ✓
+- [Exercise 1.18]({{< ref "/post/sicp-solution-exercise-1-18.md" >}}) ✓
+- [Exercise 1.19]({{< ref "/post/sicp-solution-exercise-1-19.md" >}}) ✓
 
 ##### 1.2.5 Greatest Common Divisors
 
-- [Exercise 1.20]({{< ref "/post/SICP-Solution-Exercise-1-20.md" >}}) ✓
+- [Exercise 1.20]({{< ref "/post/sicp-solution-exercise-1-20.md" >}}) ✓
 
 ##### 1.2.6 Example: Testing for Primality
 
-- [Exercise 1.21]({{< ref "/post/SICP-Solution-Exercise-1-21.md" >}}) ✓
-- [Exercise 1.22]({{< ref "/post/SICP-Solution-Exercise-1-22.md" >}}) ✓
-- [Exercise 1.23]({{< ref "/post/SICP-Solution-Exercise-1-23.md" >}}) ✓
-- [Exercise 1.24]({{< ref "/post/SICP-Solution-Exercise-1-24.md" >}}) ✓
-- [Exercise 1.25]({{< ref "/post/SICP-Solution-Exercise-1-25.md" >}}) ✓
-- [Exercise 1.26]({{< ref "/post/SICP-Solution-Exercise-1-26.md" >}}) ✓
-- [Exercise 1.27]({{< ref "/post/SICP-Solution-Exercise-1-27.md" >}}) ✓
-- [Exercise 1.28]({{< ref "/post/SICP-Solution-Exercise-1-28.md" >}}) ✓
+- [Exercise 1.21]({{< ref "/post/sicp-solution-exercise-1-21.md" >}}) ✓
+- [Exercise 1.22]({{< ref "/post/sicp-solution-exercise-1-22.md" >}}) ✓
+- [Exercise 1.23]({{< ref "/post/sicp-solution-exercise-1-23.md" >}}) ✓
+- [Exercise 1.24]({{< ref "/post/sicp-solution-exercise-1-24.md" >}}) ✓
+- [Exercise 1.25]({{< ref "/post/sicp-solution-exercise-1-25.md" >}}) ✓
+- [Exercise 1.26]({{< ref "/post/sicp-solution-exercise-1-26.md" >}}) ✓
+- [Exercise 1.27]({{< ref "/post/sicp-solution-exercise-1-27.md" >}}) ✓
+- [Exercise 1.28]({{< ref "/post/sicp-solution-exercise-1-28.md" >}}) ✓
 
 #### 1.3 Formulating Abstractions with Higher-Order Procedures
 
@@ -129,33 +129,33 @@ This solution are here for reference only. The value of this book is in actually
 
 ##### 1.3.1 Procedures as Arguments
 
-- [Exercise 1.29]({{< ref "/post/SICP-Solution-Exercise-1-29.md" >}}) ✓
-- [Exercise 1.30]({{< ref "/post/SICP-Solution-Exercise-1-30.md" >}}) ✓
-- [Exercise 1.31]({{< ref "/post/SICP-Solution-Exercise-1-31.md" >}}) ✓
-- [Exercise 1.32]({{< ref "/post/SICP-Solution-Exercise-1-32.md" >}}) ✓
-- [Exercise 1.33]({{< ref "/post/SICP-Solution-Exercise-1-33.md" >}}) ✓
+- [Exercise 1.29]({{< ref "/post/sicp-solution-exercise-1-29.md" >}}) ✓
+- [Exercise 1.30]({{< ref "/post/sicp-solution-exercise-1-30.md" >}}) ✓
+- [Exercise 1.31]({{< ref "/post/sicp-solution-exercise-1-31.md" >}}) ✓
+- [Exercise 1.32]({{< ref "/post/sicp-solution-exercise-1-32.md" >}}) ✓
+- [Exercise 1.33]({{< ref "/post/sicp-solution-exercise-1-33.md" >}}) ✓
 
 ##### 1.3.2 Constructing Procedures Using Lambda
 
-- [Exercise 1.34]({{< ref "/post/SICP-Solution-Exercise-1-34.md" >}}) ✓
+- [Exercise 1.34]({{< ref "/post/sicp-solution-exercise-1-34.md" >}}) ✓
 
 ##### 1.3.3 Procedures as General Methods
 
-- [Exercise 1.35]({{< ref "/post/SICP-Solution-Exercise-1-35.md" >}}) ✓
-- [Exercise 1.36]({{< ref "/post/SICP-Solution-Exercise-1-36.md" >}}) ✓
-- [Exercise 1.37]({{< ref "/post/SICP-Solution-Exercise-1-37.md" >}}) ✓
-- [Exercise 1.38]({{< ref "/post/SICP-Solution-Exercise-1-38.md" >}}) ✓
-- [Exercise 1.39]({{< ref "/post/SICP-Solution-Exercise-1-39.md" >}}) ✓
+- [Exercise 1.35]({{< ref "/post/sicp-solution-exercise-1-35.md" >}}) ✓
+- [Exercise 1.36]({{< ref "/post/sicp-solution-exercise-1-36.md" >}}) ✓
+- [Exercise 1.37]({{< ref "/post/sicp-solution-exercise-1-37.md" >}}) ✓
+- [Exercise 1.38]({{< ref "/post/sicp-solution-exercise-1-38.md" >}}) ✓
+- [Exercise 1.39]({{< ref "/post/sicp-solution-exercise-1-39.md" >}}) ✓
 
 ##### 1.3.4 Procedures as Returned Values
 
-- [Exercise 1.40]({{< ref "/post/SICP-Solution-Exercise-1-40.md" >}}) ✓
-- [Exercise 1.41]({{< ref "/post/SICP-Solution-Exercise-1-41.md" >}}) ✓
-- [Exercise 1.42]({{< ref "/post/SICP-Solution-Exercise-1-42.md" >}}) ✓
-- [Exercise 1.43]({{< ref "/post/SICP-Solution-Exercise-1-43.md" >}}) ✓
-- [Exercise 1.44]({{< ref "/post/SICP-Solution-Exercise-1-44.md" >}}) ✓
-- [Exercise 1.45]({{< ref "/post/SICP-Solution-Exercise-1-45.md" >}}) ✓
-- [Exercise 1.46]({{< ref "/post/SICP-Solution-Exercise-1-46.md" >}}) ✓
+- [Exercise 1.40]({{< ref "/post/sicp-solution-exercise-1-40.md" >}}) ✓
+- [Exercise 1.41]({{< ref "/post/sicp-solution-exercise-1-41.md" >}}) ✓
+- [Exercise 1.42]({{< ref "/post/sicp-solution-exercise-1-42.md" >}}) ✓
+- [Exercise 1.43]({{< ref "/post/sicp-solution-exercise-1-43.md" >}}) ✓
+- [Exercise 1.44]({{< ref "/post/sicp-solution-exercise-1-44.md" >}}) ✓
+- [Exercise 1.45]({{< ref "/post/sicp-solution-exercise-1-45.md" >}}) ✓
+- [Exercise 1.46]({{< ref "/post/sicp-solution-exercise-1-46.md" >}}) ✓
 
 ### Chapter 2: Building Abstractions with Data
 
@@ -165,25 +165,25 @@ This solution are here for reference only. The value of this book is in actually
 
 ##### 2.1.1 Example: Arithmetic Operations for Rational Numbers
 
-- [Exercise 2.1]({{< ref "/post/SICP-Solution-Exercise-2-1.md" >}}) ✓
+- [Exercise 2.1]({{< ref "/post/sicp-solution-exercise-2-1.md" >}}) ✓
 
 ##### 2.1.2 Abstraction Barriers
 
-- [Exercise 2.2]({{< ref "/post/SICP-Solution-Exercise-2-2.md" >}}) ✓
-- [Exercise 2.3]({{< ref "/post/SICP-Solution-Exercise-2-3.md" >}}) ✓
+- [Exercise 2.2]({{< ref "/post/sicp-solution-exercise-2-2.md" >}}) ✓
+- [Exercise 2.3]({{< ref "/post/sicp-solution-exercise-2-3.md" >}}) ✓
 
 ##### 2.1.3 What Is Meant by Data?
 
-- [Exercise 2.4]({{< ref "/post/SICP-Solution-Exercise-2-4.md" >}}) ✓
-- [Exercise 2.5]({{< ref "/post/SICP-Solution-Exercise-2-5.md" >}}) ✓
-- [Exercise 2.6]({{< ref "/post/SICP-Solution-Exercise-2-6.md" >}}) ✓
+- [Exercise 2.4]({{< ref "/post/sicp-solution-exercise-2-4.md" >}}) ✓
+- [Exercise 2.5]({{< ref "/post/sicp-solution-exercise-2-5.md" >}}) ✓
+- [Exercise 2.6]({{< ref "/post/sicp-solution-exercise-2-6.md" >}}) ✓
 
 ##### 2.1.4 Extended Exercise: Interval Arithmetic
 
-- [Exercise 2.7]({{< ref "/post/SICP-Solution-Exercise-2-7.md" >}}) ✓
-- [Exercise 2.8]({{< ref "/post/SICP-Solution-Exercise-2-8.md" >}}) ✓
-- [Exercise 2.9]({{< ref "/post/SICP-Solution-Exercise-2-9.md" >}}) ✓
-- [Exercise 2.10]({{< ref "/post/SICP-Solution-Exercise-2-10.md" >}}) ✓
+- [Exercise 2.7]({{< ref "/post/sicp-solution-exercise-2-7.md" >}}) ✓
+- [Exercise 2.8]({{< ref "/post/sicp-solution-exercise-2-8.md" >}}) ✓
+- [Exercise 2.9]({{< ref "/post/sicp-solution-exercise-2-9.md" >}}) ✓
+- [Exercise 2.10]({{< ref "/post/sicp-solution-exercise-2-10.md" >}}) ✓
 - Exercise 2.11
 - Exercise 2.12
 - Exercise 2.13

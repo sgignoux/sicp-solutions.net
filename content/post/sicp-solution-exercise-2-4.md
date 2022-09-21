@@ -33,17 +33,17 @@ will give:
 (car (lambda (m) (m x y)))
 ```
 
-It means that `car` will take as parameter the anonymous function `(lambda (m) (m x y))`. This function takes a function `m` as a parameter and this function `m` will receive `x` and `y` as parameters.
+It means that `car` will take as a parameter the anonymous function `(lambda (m) (m x y))`. This function takes a function `m` as a parameter and this function `m` will receive `x` and `y` as parameters.
 
-The definition of `car` takes a function as parameter and will evaluate this function by passing an anonymous function as argument: `(lambda (p q) p)`. This anonymous function takes two parameters and return the first one.
+The definition of `car` takes a function as parameters and will evaluate this function by passing an anonymous function as argument: `(lambda (p q) p)`. This anonymous function takes two parameters and return the first one.
 
-We can continue our substition by inserting the definition of `car`:
+We can continue our substitution by inserting the definition of `car`:
 
 ```
 ((lambda (m) (m x y)) (lambda (p q) p))
 ```
 
-This looks like a lot of parenthesis, but it means that the first function `(lambda (m) (m x y))` takes the anonymous function `(lambda (p q) p)` as a parameter. When substituting `m` for the parameter, we have:
+This looks like a lot of parentheses, but it means that the first function `(lambda (m) (m x y))` takes the anonymous function `(lambda (p q) p)` as a parameter. When substituting `m` for the parameter, we have:
 
 ```
 ((lambda (p q) p) x y)

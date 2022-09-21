@@ -40,7 +40,7 @@ type: posts
 
 ## Solution
 
-Since `new-if` is a function, and not a special form, each parameters subexpressions will be evaluated _before_ the procedure is applied. It means that when evaluating:
+Since `new-if` is a function, and not a special form, each parameter subexpression will be evaluated _before_ the procedure is applied. It means that when evaluating:
 
 ```scheme
 (new-if (good-enough? guess x)

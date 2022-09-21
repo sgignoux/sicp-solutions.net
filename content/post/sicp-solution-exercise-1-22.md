@@ -133,7 +133,7 @@ The ratio is pretty close to $\sqrt {10} = 3.162$, although this is only average
 
 ### Chicken Scheme, with compiled code, is less variable
 
-I wanted to compare to another implementation and managed to get the program compiled with [Chicken Scheme](https://www.call-cc.org/). The results are a little more consistante:
+I wanted to compare to another implementation and managed to get the program compiled with [Chicken Scheme](https://www.call-cc.org/). The results are somewhat more consistent:
 
 | log(prime) | prime          | time (µs) |
 | ---------- | -------------- | --------- |

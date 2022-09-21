@@ -25,7 +25,7 @@ Both of this functions rely on basic characteristics we can expect that any publ
 
 It is interesting to note that the problem doesn't require for the constructors to be part of the public interface. We won't try to make generic constructors that abstract the representation.
 
-From the definition of the exercice, we can't assume that the segments of the rectangle will be parallel to the axis, but this is a relatively minor point as the main goal here is to make us think about public interfaces and abstraction barriers.
+From the definition of the exercise, we can't assume that the segments of the rectangle will be parallel to the axis, but this is a relatively minor point as the main goal here is to make us think about public interfaces and abstraction barriers.
 
 Since both implementations will rely on points, we can share this code with a few helper functions:
 
@@ -55,7 +55,7 @@ Since both implementations will rely on points, we can share this code with a fe
 
 ## First representation
 
-We can imagine a first representation that specify: corner point, height, width and angle. This representation has 5 degree of freedom (2 dimensions for the corner points, then one the each dimensions) and is the minimal needed to specify the rectangle:
+We can imagine a first representation that specifies corner points, height, width and angle. This representation has 5 degree of freedom (2 dimensions for the corner points, then one for each dimension) and is the minimal needed to specify the rectangle:
 
 ![Example image](/post/sicp-images/SICP-2_3_-_Google_Slides-1.png)
 

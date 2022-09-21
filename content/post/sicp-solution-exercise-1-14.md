@@ -81,9 +81,9 @@ edge [penwidth=.5, arrowsize=0.5];
 
 Since this is a recursive process, the orders of growth of the space will be proportional to the depth of the calls.
 
-It is easy to see that the longest series of calls will be when doing the change of the amount `n` using only pennies. The order of growth of space for `cc` will be $\mathrm\Theta(n)$
+It is easy to see that the longest series of calls will be when making the change of the amount `n` using only pennies. The order of growth of space for `cc` will be $\mathrm\Theta(n)$
 
-### Orders of growth of number of steps
+### Orders of growth of the number of steps
 
 For estimating the orders of growth of number of steps, we will focus on counting the number of call to cc.
 
@@ -131,7 +131,7 @@ From there, we can generalize to any amount $m$ using only pennies:
 
 $$T(n,1)=2n+1$$
 
-Let's go one step further by exploring how things work with 2 kind of coins. By drawing the tree for `(cc 12 2)` and arranging the nodes a little, we see that we have a neat 2 dimensional array:
+Let's go one step further by exploring how things work with two kinds of coins. By drawing the tree for `(cc 12 2)` and arranging the nodes a little, we see that we have a neat 2 dimensional array:
 
 ![Example image](/post/sicp-images/SICP-1_14-__cc_12_2__-_Google_Slides-2.png)
 

@@ -11,7 +11,7 @@ type: posts
 
 ## Solution
 
-This method can work not just with 2 and 3, but any relative prime numbers. For exemple, using $a=2$ and $b=3$, we have:
+This method can work not just with 2 and 3, but any relative prime numbers. For example, using $a=2$ and $b=3$, we have:
 
 $$2^43^5=2\times2\times2\times2\times3\times3\times3\times3\times3=3888$$
 

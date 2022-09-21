@@ -28,7 +28,7 @@ type: posts
 
 ## Solution
 
-Louis Reasoner version of `expmod` doesn't user a `square` function, but use a `*`. This might not seems a lot, but the interpreter uses **applicative-order evaluation**, meaning it will “evaluate the arguments and then apply”.
+Louis Reasoner version of `expmod` doesn't user a `square` function, but use a `*`. This might not seem a lot, but the interpreter uses **applicative-order evaluation**, meaning it will “evaluate the arguments and then apply”.
 
 In case of `(square (expmod base (/ exp 2) m))`, the parameter of `square` will be evaluated once, then `square` will be applied.
 

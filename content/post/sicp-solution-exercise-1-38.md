@@ -11,7 +11,7 @@ type: posts
 
 ## Solution
 
-The key to this exercice is writing a function that will return successively 1, 2, 1, 1, 4, 1, 1, 6, 1, 1, 8, …. Let's build this function step by step. In order to facilitate our work, we can write a couple of functions to display the first `n` elements of any serie and use a dummy implementation of `d-euler`:
+The key to this exercise is writing a function that will return successively 1, 2, 1, 1, 4, 1, 1, 6, 1, 1, 8, …. Let's build this function step by step. In order to facilitate our work, we can write a couple of functions to display the first `n` elements of any series and use a dummy implementation of `d-euler`:
 
 ```scheme
 (define (d-euler i)

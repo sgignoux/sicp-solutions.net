@@ -46,7 +46,7 @@ I choosed to run each test on 100 random numbers, but this is somewhat a guessed
 
 Here too, in order to increase precision of the execution time measurement, all computation are run 1000 times on each prime number for each of the algorithm.
 
-I ran in a few issue with the random number generator for the largest prime in my table. I just removed them as it don't change the conclusion.
+I ran in a few issues with the random number generator for the largest prime in my table. I just removed them as it doesn't change the conclusion.
 
 ### DrRacket
 
@@ -114,7 +114,7 @@ Which can be summarized:
 
 Which can be summarized:
 
-| log(prime) | average time `prime?` (µs) | time multiplication for 10x | average time `fast-prime?` (µs) | time increase for 10x (µs) |
+| log(prime) | average time `prime?` (µs) | time multiplication for 10x | average time `fast-prime?` (µs) | time increases for 10x (µs) |
 | ---------- | -------------------------- | --------------------------- | ------------------------------- | -------------------------- |
 | 3          | 3,67                       |                             | 181,67                          |                            |
 | 4          | 11,33                      | 3,09                        | 221                             | 39,3                       |

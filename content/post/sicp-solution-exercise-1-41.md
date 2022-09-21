@@ -15,7 +15,7 @@ type: posts
 
 ## Solution
 
-The definition of `double` is a function that takes a function as parameter and returns a function that apply it twice:
+The definition of `double` is a function that takes a function as parameters and returns a function that apply it twice:
 
 ```scheme
 (define (double f)
@@ -23,7 +23,7 @@ The definition of `double` is a function that takes a function as parameter and 
     (f (f x))))
 ```
 
-Now, lets break `(((double (double double)) inc) 5)` step by step. `(double double)` is a procedure that return a procedure that applies its parameter four times:
+Now, let’s break `(((double (double double)) inc) 5)` step by step. `(double double)` is a procedure that returns a procedure that applies its parameter four times:
 
 ```
 ((double f) x)→ (f (f x))

@@ -20,7 +20,7 @@ The goal of this exercise is to try an improvement in the prime check program an
       (+ 2 n)))
 ```
 
-Here too, the initial tests with only one run where very inconsistante from run to run. I decided to extend the program to run the computation for each prime 1000 times and mesure the result.
+Here too, the initial tests with only one run were very inconsistent from run to run. I decided to extend the program to run the computation for each prime 1000 times and measure the result.
 
 ### DrRacket
 
@@ -66,11 +66,11 @@ This data can be sumarized by averaging the time for each of the three prime in 
 | 9          | 2801,96       | 1703,16               | 164,5%  |
 | 10         | 8184,73       | 5219,44               | 156,8%  |
 
-Looking at this table, we notice number ranging from 113,6% to 164,5%. Even if the data is noisy, it seems clear that are bellow the expected 200%.
+Looking at this table, we notice number ranging from 113,6% to 164,5%. Even if the data is noisy, it seems clear that this is below the expected 200%.
 
 ### Chicken Scheme (compiled)
 
-In order to check the number, I compiled the program with Chicken Scheme on OS X and got this results:
+In order to check the number, I compiled the program with Chicken Scheme on OS X and got these results:
 
 | log(prime) | prime          | time (µs) | time improved (µs) |
 | ---------- | -------------- | --------- | ------------------ |
@@ -217,7 +217,7 @@ The problem by doing that is that we probably triggered the optimization of [DrR
 
 #### Conclusion
 
-The improved algorithm did cut down the number of steps by 2, but the reason that it didn't speedup the computation by 200% was because we added some new work for each steps:
+The improved algorithm did cut down the number of steps by 2, but the reason that it didn't speedup the computation by 200% was because we added some new work for each step:
 
 * one more function call
 * an `if`

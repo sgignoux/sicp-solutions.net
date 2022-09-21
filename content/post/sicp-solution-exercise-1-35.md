@@ -20,7 +20,7 @@ Which can be rewritten as:
 $$x^2=x+1$$
 $$x^2-x-1=0$$
 
-This is a second order polynomial whose solution is:
+This is a second-order polynomial whose solution is:
 
 $$x=\frac{1+\sqrt5}2=\varphi$$
 

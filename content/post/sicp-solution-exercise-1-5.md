@@ -30,7 +30,7 @@ type: posts
 
 The key is to notice that `(define (p) (p))` defines a function that evaluates to itself.
 
-An interpreter that uses **applicative-order evaluation** will “evaluate the arguments and then apply”. When this kind of interpreter evaluates the expression `(test 0 (p))`, it will start by evaluating `0`, then it will try to evaluate `(p)` and finaly apply `test` to the values of the evaluation of the two parameters.
+An interpreter that uses **applicative-order evaluation** will “evaluate the arguments and then apply”. When this kind of interpreter evaluates the expression `(test 0 (p))`, it will start by evaluating `0`, then it will try to evaluate `(p)` and finally apply `test` to the values of the evaluation of the two parameters.
 
 `test` will evaluate to the procedure defined.
 
@@ -43,7 +43,7 @@ An interpreter that uses **applicative-order evaluation** will “evaluate the a
 
 When the interpreter try to evaluate the expression `(p)`, it will:
 
-1. replace each formal parameters by the corresponding argument in the body of the procedure: since there is no formal parameter in this case, the body of the procedure will just be `(p)`.
+1. replace each formal parameter by the corresponding argument in the body of the procedure: since there is no formal parameter in this case, the body of the procedure will just be `(p)`.
 2. evaluated the body of the procedure, which will be `(p)` in our case, which in turn starts the evaluation all over again, thus making an infinite loop.
 
 With an interpreter that uses **normal-order evaluation**, the interpreter will “fully expand and then reduce”. In this model, the interpreter will not evaluate the operands until their values are actually needed. In that case `(test 0 (p))` will evaluate as follows:

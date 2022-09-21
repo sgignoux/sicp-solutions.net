@@ -11,7 +11,7 @@ type: posts
 
 ## Solution
 
-We need to add a check to see if the upper and lower bound of x are with different sign and another one for y:
+We need to add a check to see if the upper and lower bound of x are with different signs and another one for y:
 
 ```scheme
 (define (div-interval2 x y)

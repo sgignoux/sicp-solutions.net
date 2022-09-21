@@ -11,11 +11,11 @@ type: posts
 
 ## Solution
 
-Let's break it down in pieces.
+Let's break it down into pieces.
 
 > This starts from an alternate form of Fermat’s Little Theorem, which states that if $n$ is a prime number and $a$ is any positive integer less than $n$, then $a$ raised to the $(n−1)$-st power is congruent to 1 modulo n. To test the primality of a number $n$ by the Miller-Rabin test, we pick a random number ${a<n}$ and raise a to the ${(n-1)}$-st power modulo $n$ using the `expmod` procedure.
 
-If we express this in term of [modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic), we have a congrence relation:
+If we express this in term of [modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic), we have a congruence relation:
 
 $$a^{n-1}\equiv1 (mod n)$$
 

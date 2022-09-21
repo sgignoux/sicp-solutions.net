@@ -65,7 +65,7 @@ The first step in Alyssa P. Hacker version of `expmod` is the computation of `fa
 
 This number is 3001 digits long and this is just for the smallest prime number in the list. The [number of digits](http://mathforum.org/library/drmath/view/62942.html) for the result of `(fast-expt base exp)` will be $\log\_{10}\left(base^{exp}\right)+1=exp\times\log\_{10}\left(base\right)+1$ digits long.
 
-Trying to run a larger case like `(fast-expt 12345678 1000000007)` will yield a result with 256 millions digits. Depending of the encoding, it might take up to 256MB of memory just to store it.
+Trying to run a larger case like `(fast-expt 12345678 1000000007)` will yield a result with 256 million digits. Depending of the encoding, it might take up to 256 MB of memory just to store it.
 
 ### Why should we care about the size of an intermediate result?
 
@@ -80,7 +80,7 @@ We are lucky that DrRacket can work on such large numbers. In many language, ope
 > required when computing with fixnums.
 
 These large numbers are called
-[Arbitrary-precision arithmetic](https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic) or bignum arithmetic. On top of taking large memory space, computation on `bignum` are much slower to perform than on `fixnum`. To quote the above Wikipedia article:
+[Arbitrary-precision arithmetic](https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic) or bignum arithmetic. On top of taking large memory space, computations on `bignum` is much slower to perform than on `fixnum`. To quote the above Wikipedia article:
 
 > Arbitrary-precision arithmetic is considerably slower than arithmetic using numbers
 > that fit entirely within processor registers, since the latter are usually implemented

@@ -11,7 +11,7 @@ type: posts
 
 ## Solution
 
-The result of the evaluation are after the `>` bellow:
+The result of the evaluation is after the `>` bellow:
 
 ```scheme
 10

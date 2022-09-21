@@ -66,7 +66,7 @@ By varying the parameters, we can see for $x=2$ the minimal number of damping ne
 | 63  | 5            |
 | 64  | 6            |
 
-The pattern where the number if minimal damp do converge looks to increase everytime the nth is reaching a power of 2. By searching the [documentation](https://docs.racket-lang.org/reference/generic-numbers.html), it seems that we can compute minimal damp using a base 2 logarithm and the `floor` function to provide an integer (needed for computing the power):
+The pattern where the number if minimal damp do converge looks to increase every time the nth is reaching a power of 2. By searching the [documentation](https://docs.racket-lang.org/reference/generic-numbers.html), it seems that we can compute minimal damp using a base 2 logarithms and the `floor` function to provide an integer (needed for computing the power):
 
 ```
 (floor (log 63 2))

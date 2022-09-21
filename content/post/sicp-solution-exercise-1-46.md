@@ -13,7 +13,7 @@ type: posts
 
 ### Rewriting `sqrt` using `iterative-improve`
 
-This exercice is not just about algorithm, but also how to handle abstraction. If you want to solve ｀ iterative-improve ｀ for only the first question, you arrive at something like this, where `good-enough?` takes only `guess` as parameter:
+This exercise is not just about algorithms, but also how to handle abstraction. If you want to solve ｀ iterative-improve ｀ for only the first question, you arrive at something like this, where `good-enough?` takes only `guess` as parameter:
 
 ```scheme
 (define (iterative-improve good-enough? improve)
@@ -75,7 +75,7 @@ The problem here is that the function to check if a guess is good enough require
   (try first-guess))
 ```
 
-Then you can use `fixed-point` as the previous exercice:
+Then you can use `fixed-point` as the previous exercise:
 
 ```scheme
 (define (average-damp f)

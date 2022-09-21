@@ -12,7 +12,6 @@ bookToC: false
 
 <!-- todo: Explain what this site is about -->
 
-
 > SICP was revolutionary in many different ways. Most importantly, it dramatically raised the bar for the intellectual content of introductory computer science. Before SICP, the first CS course was almost always entirely filled with learning the details of some programming language. SICP is about standing back from the details to learn big-picture ways to think about the programming process. It focused attention on the central idea of abstraction -- finding general patterns from specific problems and building software tools that embody each pattern. It made heavy use of the idea of functions as data, an idea that's hard to learn initially, but immensely powerful once learned.
 >
 > -- [Why Structure and Interpretation of Computer Programs matters](http://people.eecs.berkeley.edu/~bh/sicp.html)
@@ -23,7 +22,7 @@ I have read the Structure and Interpretation of Computer Programs nearly 20 year
 
 After 20 years, my work has moved me farther and farther from software engineering: managing teams, managing products, doing consulting works. In the last few years, I had the opportunity to see complex software being built, and I was disappointed at the lack of quality and the level of bugs in the code base.
 
-Many seems to think that building high quality software takes more time and can't be afforded. I can't accept that. My belief is that quality software can be built not only faster, but cheaper than crappy software in the long run.
+Many seem to think that building high quality software takes more time and can't be afforded. I can't accept that. My belief is that quality software can be built not only faster, but cheaper than crappy software in the long run.
 
 But at some point, you have to stop arguing for it and put your money where your mouth is. Well, this is my starting point. I plan to read the Structure and Interpretation of Computer Programs again, this time doing all the exercise. This is a just warmup before attacking more ambitious things.
 
@@ -41,7 +40,7 @@ This is the current plan:
 - Complete all the 356 exercises by myself, using [DrRacket](https://racket-lang.org/), and publish my solution here. Each solution should include clear explanations.
 - Review my solution and compare them to the [community schemewiki SICP-Solutions](http://community.schemewiki.org/?SICP-Solutions) or other solutions
 
-This solution are here for reference only. The value of this book is in actually trying to solving each exercise. Please consider only checking solution after being stuck or after having solved the problem to compare your solution.
+These solutions are for reference only. The value of this book is in trying to solving each exercise. Please consider only checking solution after being stuck or after having solved the problem comparing your solution.
 
 ## Table of Content
 

@@ -34,7 +34,7 @@ Just run the program, using `trace`:
 (trace find-divisor)
 ```
 
-Then we can run a the examples:
+Then we can run the examples:
 
 ```
 (display (smallest-divisor 199))

@@ -8,9 +8,7 @@ bookToC: false
 
 # MIT 6.001 - Structure and Interpretation of Computer Programs: Notes and solutions
 
-This site contains my answer to the exercices from the textbook Structure and Interpretation of Computer Programs, usually just named as "SICP". 
-
-The book has its origins in the popular course "MIT 6.001 introductory course in computer science" taught by Harold Abelson and Gerald Jay Sussman at the Massachusetts Institute of Technology.
+This site contains my answer to the exercices from the textbook Structure and Interpretation of Computer Programs, usually just named as "SICP". The book has its origins in the popular course "MIT 6.001 introductory course in computer science" taught by Harold Abelson and Gerald Jay Sussman at the Massachusetts Institute of Technology.
 
 The second edition (1996) of the book is now licensed under a Creative Commons License by the MIT Press and you can download it freely. The video of the original course have also kindly made public by MIT.
 
@@ -22,10 +20,7 @@ It might not be an easy book to follow all the way, but it introduce many fundam
 >
 > -- [Why Structure and Interpretation of Computer Programs matters](http://people.eecs.berkeley.edu/~bh/sicp.html)
 
-
-My first encouter with the book Structure and Interpretation of Computer Programs was nearly 20 years ago and I still remember it. Going through this book was intense, deep and enlightening. It had a deep impact on how I would think about programming.
-
-20 years later, I wanted to go back into some serious programming but also practice writing clear explanations. So I decided to read back the book and actually work on all the exercices.
+20 years after having read the book I wanted to go back into serious programming and also practice writing clear explanations. So I decided to read back to the book and actually solve all the exercices.
 
 The plan is for each chapter:
 

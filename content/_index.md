@@ -8,45 +8,39 @@ bookToC: false
 
 # MIT 6.001 - Structure and Interpretation of Computer Programs: Notes and solutions
 
-<!-- todo: Explain what is sicp, what it matters, where to find it -->
+This site contains my answer to the exercices from the textbook Structure and Interpretation of Computer Programs, usually just named as "SICP". 
 
-<!-- todo: Explain what this site is about -->
+The book has its origins in the popular course "MIT 6.001 introductory course in computer science" taught by Harold Abelson and Gerald Jay Sussman at the Massachusetts Institute of Technology.
+
+The second edition (1996) of the book is now licensed under a Creative Commons License by the MIT Press and you can download it freely. The video of the original course have also kindly made public by MIT.
+
+It might not be an easy book to follow all the way, but it introduce many fundamental topics in a very well organized way. Reading the book is a journey into many facets of computer science.
+
+<!-- todo: explain people how they can start -->
 
 > SICP was revolutionary in many different ways. Most importantly, it dramatically raised the bar for the intellectual content of introductory computer science. Before SICP, the first CS course was almost always entirely filled with learning the details of some programming language. SICP is about standing back from the details to learn big-picture ways to think about the programming process. It focused attention on the central idea of abstraction -- finding general patterns from specific problems and building software tools that embody each pattern. It made heavy use of the idea of functions as data, an idea that's hard to learn initially, but immensely powerful once learned.
 >
 > -- [Why Structure and Interpretation of Computer Programs matters](http://people.eecs.berkeley.edu/~bh/sicp.html)
 
-<!-- todo: Review and cleanup -->
 
-I have read the Structure and Interpretation of Computer Programs nearly 20 years ago and I still remember it. Going through this book was intense and enlightening. It had a deep impact on how I would think about programming.
+My first encouter with the book Structure and Interpretation of Computer Programs was nearly 20 years ago and I still remember it. Going through this book was intense, deep and enlightening. It had a deep impact on how I would think about programming.
 
-After 20 years, my work has moved me farther and farther from software engineering: managing teams, managing products, doing consulting works. In the last few years, I had the opportunity to see complex software being built, and I was disappointed at the lack of quality and the level of bugs in the code base.
+20 years later, I wanted to go back into some serious programming but also practice writing clear explanations. So I decided to read back the book and actually work on all the exercices.
 
-Many seem to think that building high quality software takes more time and can't be afforded. I can't accept that. My belief is that quality software can be built not only faster, but cheaper than crappy software in the long run.
+The plan is for each chapter:
 
-But at some point, you have to stop arguing for it and put your money where your mouth is. Well, this is my starting point. I plan to read the Structure and Interpretation of Computer Programs again, this time doing all the exercise. This is a just warmup before attacking more ambitious things.
-
-I expect that by doing that I will:
-
-- become a better software engineer
-- aquire a deeper understanding of functional programming
-- have fun programming and building things
-- learn how to write clear explanation
-
-This is the current plan:
-
-- Read the book
 - Watch the video from the 1986 session
+- Read the book
 - Complete all the 356 exercises by myself, using [DrRacket](https://racket-lang.org/), and publish my solution here. Each solution should include clear explanations.
 - Review my solution and compare them to the [community schemewiki SICP-Solutions](http://community.schemewiki.org/?SICP-Solutions) or other solutions
 
-These solutions are for reference only. The value of this book is in trying to solving each exercise. Please consider only checking solution after being stuck or after having solved the problem comparing your solution.
+These solutions are for reference only. The value of this book is in solving each exercise by oneself. Please consider only checking solution after being stuck or after having solved the problem comparing your solution.
 
 ## Table of Content
 
 <!-- todo: Add link to video directly -->
 <!-- todo: Add symbol for detailed solution -->
-<!-- todo: Add for each chapter, what it is about, key takeaway-->
+<!-- todo: Add for each chapter, what it is about, key takeaway -->
 
 ### Chapter 1: Building Abstractions with Procedures
 

@@ -24,7 +24,7 @@ Using the same improvement for large and small number from exercise 1.7:
   (< (abs (/ (- guess previous-guess) guess)) 0.00000000001))
 
 (define (cube-root-iter guess x)
-  (if (good-enough? (improve guess x) guess)
+  (if (good-enough? guess (improve guess x))
       guess
       (cube-root-iter (improve guess x) x)))
 

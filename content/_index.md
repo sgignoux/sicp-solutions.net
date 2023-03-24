@@ -1,47 +1,45 @@
 ---
-title: "MIT 6.001 - Structure and Interpretation of Computer Programs: Notes and solutions"
+title: "MIT 6.001 - SICP - Structure and Interpretation of Computer Programs: Notes and solutions"
 date: 2019-01-14T21:03:14+02:00
 draft: false
 type: docs
 bookToC: false
 ---
 
-# MIT 6.001 - Structure and Interpretation of Computer Programs: Notes and solutions
+# MIT 6.001 - SICP - Structure and Interpretation of Computer Programs: Notes and solutions
 
-This site contains my answer to the exercices from the textbook Structure and Interpretation of Computer Programs, usually just named as "SICP". The book has its origins in the popular course "MIT 6.001 introductory course in computer science" taught by Harold Abelson and Gerald Jay Sussman at the Massachusetts Institute of Technology.
+This site contains my notes and answers to the exercices of the textbook Structure and Interpretation of Computer Programs, usually just refered to as "SICP". The book has its origins in the popular MIT's entry-level com­puter science course "[MIT 6.001 introductory course in computer science](https://ocw.mit.edu/courses/6-001-structure-and-interpretation-of-computer-programs-spring-2005/)" taught by Harold Abelson and Gerald Jay Sussman at the Massachusetts Institute of Technology, starting in 1980.
 
-The second edition (1996) of the book is now licensed under a Creative Commons License by the MIT Press and you can download it freely. The video of the original course have also kindly made public by MIT.
+The second edition of the book, published in 1996, has been licensed under a Creative Commons License by MIT Press and can be download freely. The video of the original course have also kindly made public by MIT.
 
-It might not be an easy book to follow all the way, but it introduce many fundamental topics in a very well organized way. Reading the book is a journey into many facets of computer science.
-
-<!-- todo: explain people how they can start -->
+In my option, the strength of the book is in its ability to introduce many fundamental topics in computer science and engineering, in a very well organized way.
 
 > SICP was revolutionary in many different ways. Most importantly, it dramatically raised the bar for the intellectual content of introductory computer science. Before SICP, the first CS course was almost always entirely filled with learning the details of some programming language. SICP is about standing back from the details to learn big-picture ways to think about the programming process. It focused attention on the central idea of abstraction -- finding general patterns from specific problems and building software tools that embody each pattern. It made heavy use of the idea of functions as data, an idea that's hard to learn initially, but immensely powerful once learned.
 >
 > -- [Why Structure and Interpretation of Computer Programs matters](http://people.eecs.berkeley.edu/~bh/sicp.html)
 
-20 years after having read the book I wanted to go back into serious programming and also practice writing clear explanations. So I decided to read back to the book and actually solve all the exercices.
+<!-- Note: the book is using standard Scheme -->
 
-The plan is for each chapter:
-
-- Watch the video from the 1986 session
-- Read the book
-- Complete all the 356 exercises by myself, using [DrRacket](https://racket-lang.org/), and publish my solution here. Each solution should include clear explanations.
-- Review my solution and compare them to the [community schemewiki SICP-Solutions](http://community.schemewiki.org/?SICP-Solutions) or other solutions
+<!-- Todo: make a page for other explanations and annotated bibliography -->
 
 These solutions are for reference only. The value of this book is in solving each exercise by oneself. Please consider only checking solution after being stuck or after having solved the problem comparing your solution.
 
-## Table of Content
+<!-- todo: explain people how they can start -->
 
-<!-- todo: Add link to video directly -->
+## Table of Content (based on the book)
+
 <!-- todo: Add symbol for detailed solution -->
 <!-- todo: Add for each chapter, what it is about, key takeaway -->
 
 ### Chapter 1: Building Abstractions with Procedures
 
+🗒️ [My notes on chapter 1]({{< ref "/post/note-1.md" >}})
+
 #### 1.1 The Elements of Programming
 
-📺 [Lecture 1A: Overview and Introduction to Lisp - YouTube](https://www.youtube.com/watch?v=-J_xL4IGhJA&list=PLE18841CABEA24090&index=1&t=36s) 
+📺 [Lecture 1A: Overview and Introduction to Lisp - YouTube](https://www.youtube.com/watch?v=-J_xL4IGhJA&list=PLE18841CABEA24090&index=1) 
+
+<!-- todo: The video and the book don't exactly match in sequence, and maybe content. Focus on book order and connect video to it? Video seems from 1986 and book 1996 (second edition) -->
 
 ##### 1.1.1 Expressions
 
@@ -770,14 +768,18 @@ These solutions are for reference only. The value of this book is in solving eac
 
 ### Other solutions
 
+- [community schemewiki SICP-Solutions](http://community.schemewiki.org/?SICP-Solutions) or other solutions
 - [Structure and Interpretation of Computer Programs](https://github.com/zv/SICP-guile): "This repository includes answers to a bit more than 90% of the book’s 360-some exercises as well as material intended to help others get an idea of how to begin with the book, avoid many common pitfalls as they continue, and review interesting secondary material along the way."
 
 ### Tools used
 
 - [DrRacket](https://racket-lang.org/): used to develop and run the code.
 - [MathType demo - For Developers](http://www.wiris.com/editor/demo/en/developers#mathml-latex): used to write and check the Latex.
+- [Overleaf, Online LaTeX Editor](https://www.overleaf.com/) 
 
 ### Misc links
+
+* [SICP: the end of an era (2021) [video] | Hacker News](https://news.ycombinator.com/item?id=34657535)
 
 * [Episode 503: Robert Martin on Structure and Interpretation of Computer Programming](https://www.youtube.com/watch?v=Z0VpFmp_q4A)
   * "It changed the way I look at the fundamental structure of programs. It is possible, and desirable, to write code without assignement statements as much as possible. To not mutate the states of variables. And it forces you to think about software in a very different way. [...] I assign now variable less frequently."

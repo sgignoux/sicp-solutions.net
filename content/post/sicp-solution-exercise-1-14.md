@@ -243,4 +243,4 @@ By doing all the expansion you find that the orders of growth of number of steps
 
 $$T(n,5) =\mathrm\Theta(n^5)$$
 
-Overall, this is not only a very slow process, it is also a very inefficient way to implement this computation, because of all the repetitions. You can have a look at the solution for this exercice by Sarabander [here](https://github.com/sarabander/p2pu-sicp/blob/master/1.2/Ex1.14.scm) to see how to implement the solution in only $n^2$.
+Overall, this is not only a very slow process, it is also a very inefficient way to implement this computation, because of all the repetitions. You can have a look at the solution for this exercise by Sarabander [here](https://github.com/sarabander/p2pu-sicp/blob/master/1.2/Ex1.14.scm) to see how to implement the solution in only $n^2$.

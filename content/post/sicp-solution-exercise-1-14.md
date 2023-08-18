@@ -211,7 +211,7 @@ $$T(n,2) =\frac n5+1+ \sum\_{i=0}^{n/5}(2n-10i+1)$$
 
 $$T(n,2) =\frac n5+1+\frac{2n^2}5+\frac n5-10 \sum\_{i=0}^{n/5}i$$
 
-$$T(n,2) =\frac n5+1+\frac{2n^2}5+\frac n5-10\frac{{\displaystyle\frac n5}\left({\displaystyle\frac n5}+1\right)}2$$
+$$T(n,2) =\frac n5+1+\frac{2n^2}5+\frac n5-10\frac{{\displaystyle\frac n5}\left({\displaystyle\frac n5}-1\right)}2$$
 
 $$T(n,2) =\frac{2n}5+\frac{2n^2}5-\frac{n^2}5+n+1$$
 

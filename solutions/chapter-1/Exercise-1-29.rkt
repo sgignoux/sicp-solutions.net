@@ -30,3 +30,4 @@
 
 (display (integral-simpson cube 0 1.0 100)) (newline)
 (display (integral-simpson cube 0 1.0 1000)) (newline)
+

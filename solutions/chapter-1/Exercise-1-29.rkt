@@ -16,8 +16,8 @@
   (define h (/ (- b a) n))
   (define (add-2h x) (+ x h h))
   (* (+ (f a)
-        (* 2 (sum f a       add-2h b))
-        (* 4 (sum f (+ a h) add-2h b))
+        (* 2 (sum f (add-2h a) add-2h (- b h)))
+        (* 4 (sum f (+ a h)    add-2h b))
         (f b))
      (/ h 3)))
 

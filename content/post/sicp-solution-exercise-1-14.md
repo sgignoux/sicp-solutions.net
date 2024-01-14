@@ -233,11 +233,11 @@ $$T(n,3) =\mathrm\Theta(n^3)$$
 
 by continuing to apply the formulas:
 
-$$T(n,3) =\frac n{10}+1+ \sum\_{i=0}^{n/10}T(n-10i,1)$$
+$$T(n,3) =\frac n{10}+1+ \sum\_{i=0}^{n/10}T(n-10i,2)$$
 
-$$T(n,4) =\frac n{25}+1+ \sum\_{i=0}^{n/25}T(n-25i,1)$$
+$$T(n,4) =\frac n{25}+1+ \sum\_{i=0}^{n/25}T(n-25i,3)$$
 
-$$T(n,5) =\frac n{50}+1+ \sum\_{i=0}^{n/50}T(n-50i,1)$$
+$$T(n,5) =\frac n{50}+1+ \sum\_{i=0}^{n/50}T(n-50i,4)$$
 
 By doing all the expansion you find that the orders of growth of number of steps is:
 

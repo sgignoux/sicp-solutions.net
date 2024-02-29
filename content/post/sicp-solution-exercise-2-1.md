@@ -26,7 +26,7 @@ One solution is:
 ; --- Solution ---
 
 (define (make-rat n d)
-  (let ((g (gcd n d))
+  (let ((g (abs (gcd n d)))
         (denom-sign (if (> d 0) 1 (- 1))))
     (cons (* (/ n g) denom-sign)
           (* (/ d g) denom-sign))))
@@ -35,6 +35,7 @@ One solution is:
 
 (print-rat (make-rat  2 -4))
 (print-rat (make-rat -2  4))
+(print-rat (make-rat -2 -4))
 ```
 
 Which evaluates to:
@@ -42,4 +43,5 @@ Which evaluates to:
 ```
 -1/2
 -1/2
+1/2
 ```

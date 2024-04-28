@@ -1,6 +1,6 @@
 ---
 title: "SICP - Notes on Chapter 1"
-draft: true
+draft: false
 type: posts
 ---
 

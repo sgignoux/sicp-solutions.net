@@ -10,9 +10,9 @@ bookToC: false
 
 This site contains my notes and answers to the exercices of the textbook Structure and Interpretation of Computer Programs, usually just refered to as "SICP". The book has its origins in the popular MIT's entry-level com­puter science course "[MIT 6.001 introductory course in computer science](https://ocw.mit.edu/courses/6-001-structure-and-interpretation-of-computer-programs-spring-2005/)" taught by Harold Abelson and Gerald Jay Sussman at the Massachusetts Institute of Technology, starting in 1980.
 
-The second edition of the book, published in 1996, has been licensed under a Creative Commons License by MIT Press and can be download freely. The video of the original course have also kindly made public by MIT.
+The second edition of the book, published in 1996, has been licensed under a Creative Commons License by MIT Press and can be downloaded freely (see links at bottom of this page). The videos of the original course have also been made public by MIT. Since the videos are based on the first edition of the book, and I am following the second edition, some discrependency will occure if you follow along.
 
-In my option, the strength of the book is in its ability to introduce many fundamental topics in computer science and engineering, in a very well organized way.
+In my opinion, the strength of the book is in its ability to introduce many fundamental topics in computer science and engineering, in a well organized way.
 
 > SICP was revolutionary in many different ways. Most importantly, it dramatically raised the bar for the intellectual content of introductory computer science. Before SICP, the first CS course was almost always entirely filled with learning the details of some programming language. SICP is about standing back from the details to learn big-picture ways to think about the programming process. It focused attention on the central idea of abstraction -- finding general patterns from specific problems and building software tools that embody each pattern. It made heavy use of the idea of functions as data, an idea that's hard to learn initially, but immensely powerful once learned.
 >
@@ -22,11 +22,11 @@ In my option, the strength of the book is in its ability to introduce many funda
 
 <!-- Todo: make a page for other explanations and annotated bibliography -->
 
-These solutions are for reference only. The value of this book is in solving each exercise by oneself. Please consider only checking solution after being stuck or after having solved the problem comparing your solution.
+These solutions are for reference only. The value of this book is in solving each exercise by oneself. Please consider only checking my solution after being stuck or after having solved the problem yourself.
 
 <!-- todo: explain people how they can start -->
 
-## Table of Content (based on the book)
+## Table of Content (based on second edition of the book)
 
 <!-- todo: Add symbol for detailed solution -->
 <!-- todo: Add for each chapter, what it is about, key takeaway -->
@@ -39,7 +39,6 @@ These solutions are for reference only. The value of this book is in solving eac
 
 📺 [Lecture 1A: Overview and Introduction to Lisp - YouTube](https://www.youtube.com/watch?v=-J_xL4IGhJA&list=PLE18841CABEA24090&index=1) 
 
-<!-- todo: The video and the book don't exactly match in sequence, and maybe content. Focus on book order and connect video to it? Video seems from 1986 and book 1996 (second edition) -->
 
 ##### 1.1.1 Expressions
 
@@ -57,7 +56,7 @@ These solutions are for reference only. The value of this book is in solving eac
 - [Exercise 1.2]({{< ref "/post/sicp-solution-exercise-1-2.md" >}}) ✓
 - [Exercise 1.3]({{< ref "/post/sicp-solution-exercise-1-3.md" >}}) ✓
 - [Exercise 1.4]({{< ref "/post/sicp-solution-exercise-1-4.md" >}}) ✓
-- [Exercise 1.5]({{< ref "/post/sicp-solution-exercise-1-5.md" >}}) ✓
+- [Exercise 1.5]({{< ref "/post/sicp-solution-exercise-1-5.md" >}}) ✓🔬
 
 ##### 1.1.7 Example: Square Roots by Newton's Method
 
@@ -753,6 +752,7 @@ These solutions are for reference only. The value of this book is in solving eac
 
 - [Original website from MIT with HTML version of the book](https://mitpress.mit.edu/sites/default/files/sicp/index.html)
 - [New version in PDF and HTML with updated layout](https://sicpebook.wordpress.com/)
+- The PDF version that I have used: [SICP PDF with Texinfo and LaTeX source](https://github.com/sarabander/sicp-pdf)
 
 ### Videos
 
@@ -774,6 +774,7 @@ These solutions are for reference only. The value of this book is in solving eac
 ### Tools used
 
 - [DrRacket](https://racket-lang.org/): used to develop and run the code.
+  - [SICP Collections](https://docs.racket-lang.org/sicp-manual/index.html): The sicp collection contains a #lang sicp language ideal for studying the book "Structure and Interpretation of Computer Programs" by Gerald Jay Sussman and Hal Abelson.
 - [MathType demo - For Developers](http://www.wiris.com/editor/demo/en/developers#mathml-latex): used to write and check the Latex.
 - [Overleaf, Online LaTeX Editor](https://www.overleaf.com/) 
 

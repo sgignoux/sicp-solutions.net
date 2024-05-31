@@ -7,3 +7,4 @@
 /resources/_gen
 .hugo_build.lock
 /.vscode
+.markdownlint.json

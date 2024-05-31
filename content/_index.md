@@ -56,12 +56,12 @@ These solutions are for reference only. The value of this book is in solving eac
 - [Exercise 1.2]({{< ref "/post/sicp-solution-exercise-1-2.md" >}}) ✓
 - [Exercise 1.3]({{< ref "/post/sicp-solution-exercise-1-3.md" >}}) ✓
 - [Exercise 1.4]({{< ref "/post/sicp-solution-exercise-1-4.md" >}}) ✓
-- [Exercise 1.5]({{< ref "/post/sicp-solution-exercise-1-5.md" >}}) ✓🔬
+- [Exercise 1.5]({{< ref "/post/sicp-solution-exercise-1-5.md" >}}) ✓ 🔬
 
 ##### 1.1.7 Example: Square Roots by Newton's Method
 
 - [Exercise 1.6]({{< ref "/post/sicp-solution-exercise-1-6.md" >}}) ✓
-- [Exercise 1.7]({{< ref "/post/sicp-solution-exercise-1-7.md" >}}) ✓
+- [Exercise 1.7]({{< ref "/post/sicp-solution-exercise-1-7.md" >}}) ✓ 🔬 (The joy of floating-point numbers)
 - [Exercise 1.8]({{< ref "/post/sicp-solution-exercise-1-8.md" >}}) ✓
 
 ##### 1.1.8 Procedures as Black-Box Abstractions

@@ -11,7 +11,7 @@ type: posts
 
 ## Solution
 
-The result of the evaluation is after the `>` bellow:
+The result of evaluating each expression is shown after the `>` below:
 
 ```scheme
 10

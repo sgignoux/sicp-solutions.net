@@ -16,8 +16,8 @@ type: posts
 
 ## Solution
 
-If $b$ is strictly a positive number, the operator expression `(if (> b 0) + -)` will evaluate to `+` the result will be $a+b$.
+If $b$ is strictly a positive number, the operator expression `(if (> b 0) + -)` will evaluate to the primitive procedure `+`, the expression then becomes `(+ a b)` and the result will be $a+b$. 
 
-If all other cases, the result will be $a-b$.
+In all other cases, when $b$ is a negative number, `(if (> b 0) + -)` will evaluate to the primitive procedure `-`, the expression then becomes `(- a b)` and the result will evaluate to $a-b$.
 
-In other words, this function compute $a+\left|b\right|$.
+This function compute $a+\left|b\right|$.

@@ -28,6 +28,9 @@ These solutions are for reference only. The value of this book is in solving eac
 
 ## Table of Content (based on second edition of the book)
 
+- ✓ : Solved
+- 🔬 : somewhat of a detailed explanation
+
 <!-- todo: Add symbol for detailed solution -->
 <!-- todo: Add for each chapter, what it is about, key takeaway -->
 
@@ -72,14 +75,14 @@ These solutions are for reference only. The value of this book is in solving eac
 
 ##### 1.2.1 Linear Recursion and Iteration
 
-- [Exercise 1.9]({{< ref "/post/sicp-solution-exercise-1-9.md" >}}) ✓
+- [Exercise 1.9]({{< ref "/post/sicp-solution-exercise-1-9.md" >}}) ✓ 🔬
 - [Exercise 1.10]({{< ref "/post/sicp-solution-exercise-1-10.md" >}}) ✓
 
 ##### 1.2.2 Tree Recursion
 
 - [Exercise 1.11]({{< ref "/post/sicp-solution-exercise-1-11.md" >}}) ✓
 - [Exercise 1.12]({{< ref "/post/sicp-solution-exercise-1-12.md" >}}) ✓
-- [Exercise 1.13]({{< ref "/post/sicp-solution-exercise-1-13.md" >}}) ✓
+- [Exercise 1.13]({{< ref "/post/sicp-solution-exercise-1-13.md" >}}) ✓ 🔬
 
 ##### 1.2.3 Orders of Growth
 

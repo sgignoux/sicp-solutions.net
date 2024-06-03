@@ -65,12 +65,12 @@ So that:
 
 $$\text{Fib}(n)-\frac{1}{2}<\text{Fib}(n)+\frac{\psi^n}{\sqrt5}<\text{Fib}(n)+\frac{1}{2}$$
 
-Wich means:
+Which means:
 
 $$\text{Fib}(n)-\frac{1}{2}<\frac{\varphi^n}{\sqrt5}<\text{Fib}(n)+\frac{1}{2}$$
 
-This show that $\frac{\varphi^n}{\sqrt5}$ will never be further away from the value of $\text{Fib}(n)$ than 1. Thus proving that that ${\text{Fib}(n)}$ is the closest integer to ${\varphi^n/\sqrt5}$.
+This shows that $\frac{\varphi^n}{\sqrt5}$ will never be further away from the value of $\text{Fib}(n)$ than $\pm\frac12$. Thus proving that that ${\text{Fib}(n)}$ is the closest integer to ${\varphi^n/\sqrt5}$.
 
-#### Update
+### Update
 
 A big thanks to Oliver Tušla for pointing out that since $\psi<0$ the initial proof needed fixing.

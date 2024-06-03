@@ -22,7 +22,7 @@ type: posts
 
 ## Solution
 
-The solution is easier to see if you change slightly the tabulation:
+The solution is easier to understand if you change slightly the tabulation:
 
 ```
  1
@@ -33,7 +33,7 @@ The solution is easier to see if you change slightly the tabulation:
        . . .
 ```
 
-From the definition, the function can be defined recursively:
+From the definition given, the function to compute a single number at a given position can be defined recursively:
 
 ```scheme
 (define (pascal row col)
@@ -43,7 +43,7 @@ From the definition, the function can be defined recursively:
                  (pascal (- row 1) col)))))
 ```
 
-Using this function, it is possible to write a couple more functions to display the triangle:
+Using this function, we write a couple more functions to display the triangle:
 
 ```scheme
 (define (display-pascal-row n)
@@ -63,17 +63,21 @@ Using this function, it is possible to write a couple more functions to display 
   (display-pascal-iter 1))
 ```
 
-To check our solution, we can evaluate `(display-pascal 10)`:
+To check our solution, we can evaluate `(display-pascal 14)`:
 
 ```
-1
-1  1
-1  2  1
-1  3  3  1
-1  4  6  4  1
-1  5  10  10  5  1
-1  6  15  20  15  6  1
-1  7  21  35  35  21  7  1
-1  8  28  56  70  56  28  8  1
-1  9  36  84  126  126  84  36  9  1
+1  
+1  1  
+1  2  1  
+1  3  3  1  
+1  4  6  4  1  
+1  5  10  10  5  1  
+1  6  15  20  15  6  1  
+1  7  21  35  35  21  7  1  
+1  8  28  56  70  56  28  8  1  
+1  9  36  84  126  126  84  36  9  1  
+1  10  45  120  210  252  210  120  45  10  1  
+1  11  55  165  330  462  462  330  165  55  11  1  
+1  12  66  220  495  792  924  792  495  220  66  12  1  
+1  13  78  286  715  1287  1716  1716  1287  715  286  78  13  1  
 ```

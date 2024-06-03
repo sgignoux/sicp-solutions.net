@@ -23,4 +23,4 @@
         (display-pascal-iter (+ i 1))))
   (display-pascal-iter 1))
 
-(display-pascal 10)
+(display-pascal 14)

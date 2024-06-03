@@ -39,6 +39,10 @@ type: posts
 
 ## Solution
 
+> In computability theory, the Ackermann function, named after Wilhelm Ackermann, is one of the simplest and earliest-discovered examples of a total computable function that is not primitive recursive. All primitive recursive functions are total and computable, but the Ackermann function illustrates that not all total computable functions are primitive recursive.
+> 
+> -- [Ackermann function - Wikipedia](https://en.wikipedia.org/wiki/Ackermann_function)
+
 All the following expansion has been painstakingly made by hand.
 
 ### Computing `(A 1 10)`
@@ -261,7 +265,7 @@ And then simplifying:
 
 If `(A 2 n)` is $h(n)$, then `(A 2 (- n 1))` is just $h(n-1)$. Because we know $g(n) = 2^{n}$, we can plug that in the `(A 1 (...))` and get the following recursion:
 
-$$h(n) = 2^{h(n-1)}$$
+$$h(n) = 2^{h(n-1)} = 2^{2^{h(n-2)}} = 2^{2^{2^{{}^{.^{.^{{}_.2}}}}}}$$
 
 This function get big very quickly:
 

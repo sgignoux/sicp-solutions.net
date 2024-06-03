@@ -36,8 +36,6 @@ These solutions are for reference only. The value of this book is in solving eac
 
 ### Chapter 1: Building Abstractions with Procedures
 
-🗒️ [My notes on chapter 1]({{< ref "/post/note-1.md" >}})
-
 #### 1.1 The Elements of Programming
 
 📺 [Lecture 1A: Overview and Introduction to Lisp - YouTube](https://www.youtube.com/watch?v=-J_xL4IGhJA&list=PLE18841CABEA24090&index=1) 
@@ -75,8 +73,8 @@ These solutions are for reference only. The value of this book is in solving eac
 
 ##### 1.2.1 Linear Recursion and Iteration
 
-- [Exercise 1.9]({{< ref "/post/sicp-solution-exercise-1-9.md" >}}) ✓ 🔬
-- [Exercise 1.10]({{< ref "/post/sicp-solution-exercise-1-10.md" >}}) ✓
+- [Exercise 1.9]({{< ref "/post/sicp-solution-exercise-1-9.md" >}}) ✓
+- [Exercise 1.10]({{< ref "/post/sicp-solution-exercise-1-10.md" >}}) ✓ 🔬
 
 ##### 1.2.2 Tree Recursion
 

@@ -1,5 +1,7 @@
 #lang r5rs
 
+; Program to generate the tables used in the solution.
+
 (define (square x) (* x x))
 
 (define (good-enough? guess x)

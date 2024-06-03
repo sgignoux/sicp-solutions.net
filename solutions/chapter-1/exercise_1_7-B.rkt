@@ -1,5 +1,7 @@
 #lang r5rs
 
+; Implementation with improved good-enough?
+
 (define (square x) (* x x))
 
 (define (good-enough? previous-guess guess)

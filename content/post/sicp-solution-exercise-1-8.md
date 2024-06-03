@@ -34,4 +34,19 @@ Using the same improvement for large and small number from exercise 1.7:
 
 (define (cube-root x)
   (cube-root-iter 1.0 x))
+
+; Basic testing
+(define x 12345)
+(define cube-root-x (cube-root x))
+(newline)
+(display "(cube-root ") (display x) (display ") -> ") (display cube-root-x)
+(newline)
+(display "(cube ") (display cube-root-x) (display ") -> ") (display (cube cube-root-x))
+```
+
+Returns:
+
+```
+(cube-root 12345) -> 23.111618749807374
+(cube 23.111618749807374) -> 12345.000000000167
 ```

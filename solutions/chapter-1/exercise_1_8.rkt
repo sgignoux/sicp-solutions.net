@@ -17,10 +17,10 @@
 (define (cube-root x)
   (cube-root-iter 1.0 x))
 
-
+; Basic testing
 (define x 12345)
 (define cube-root-x (cube-root x))
-(newline)=
-(display x) (display " -> ") (display (cube cube-root-x))
 (newline)
-(display cube-root-x)
+(display "(cube-root ") (display x) (display ") -> ") (display cube-root-x)
+(newline)
+(display "(cube ") (display cube-root-x) (display ") -> ") (display (cube cube-root-x))

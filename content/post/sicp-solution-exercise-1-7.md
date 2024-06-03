@@ -11,9 +11,12 @@ type: posts
 
 ## Solution
 
-First, let's experiment with a few cases of very large and very small values:
+First, let's experiment with a few cases of very large values:
 
 ```scheme
+(sqrt 123456789012)
+> 351364.1828815225
+
 (sqrt 1234567890123)
 > 1111111.1061109055
 
@@ -22,7 +25,19 @@ First, let's experiment with a few cases of very large and very small values:
 (sqrt 12345678901234) ; does not finish
 
 (sqrt 123456789012345) ; does not finish
+```
 
+And for very small values:
+
+```scheme
+; First test
+(sqrt 0.000123)
+> 0.03254988507909497
+
+(square (sqrt 0.000123))
+> 0.001059495018662289 ; should be close to 0.000123
+
+; Second test
 (sqrt 0.00000000123)
 > 0.031250013107186406
 
@@ -33,7 +48,7 @@ First, let's experiment with a few cases of very large and very small values:
 From this, we can see two problems:
 
 - for large numbers, there is a threshold, around 13 digits or more, when computations don't finish
-- for small numbers, the result can be very inaccurate, sometime by multiple orders of magnitude
+- for small numbers, the result can be very inaccurate, sometime by multiple orders of magnitude, when numbers are below 0.001.
 
 Let's look at each case separately.
 
@@ -41,7 +56,7 @@ Let's look at each case separately.
 
 This is an interesting exercise because it forces us to look at how computers handle certain kinds of numbers "behind the scenes". More specifically, how real numbers are encoded in computers using "floating-point" format.
 
-The benefit of using floating points format to store numbers is that it can represent a wider range of values, from very small to very large. In DrRacket, that I used to run the test, it uses [a double precision floating-point format](https://en.wikipedia.org/wiki/Double-precision_floating-point_format) that stores the numbers in 64 bits. It allows from 15 to 17 significant decimal digits precision, meaning that it can store and compute on numbers like 999,999,999,999,999.9 and 0.000000000000001. This is a very wide range, but the system comes with a few limitations to keep in mind:
+The benefit of using floating-point format, compared to an integer format, to store numbers is that it can represent a wider range of values compared, from very small to very large. In DrRacket, that I used to run the test, it uses [a double-precision floating-point format](https://en.wikipedia.org/wiki/Double-precision_floating-point_format) that stores the numbers in 64 bits. It allows from 15 to 17 significant decimal digits precision, meaning that it can store and compute on numbers like 999,999,999,999,999.9 and 0.000000000000001. This is a very wide range, but the system comes with a few limitations to keep in mind:
 
 - Because each number is encoded on a finite number of bits (64 bits in our example), the number of floating-point numbers that can be represented in a computer is finite.
 - Most of the time, a floating-point number will be the approximation of a real number. During computation, the results will be rounded to the nearest floating-point number.
@@ -51,7 +66,7 @@ The benefit of using floating points format to store numbers is that it can repr
 >
 > -- [What Every Computer Scientist Should Know About Floating-Point Arithmetic](https://www.itu.dk/~sestoft/bachelor/IEEE754_article.pdf)
 
-If you want to learn more about how these numbers work, you can have a quick look at look at [IEEE Standard 754 Floating Point Numbers - GeeksforGeeks](https://www.geeksforgeeks.org/ieee-standard-754-floating-point-numbers/) or a long look at [What Every Computer Scientist Should Know About Floating-Point Arithmetic](https://www.itu.dk/~sestoft/bachelor/IEEE754_article.pdf). Some of what I write below will only make sense of you have some knowledge of this.
+If you want to learn more about how these number encoding works, you can have a quick look at look at [IEEE Standard 754 Floating Point Numbers - GeeksforGeeks](https://www.geeksforgeeks.org/ieee-standard-754-floating-point-numbers/) or a long look at [What Every Computer Scientist Should Know About Floating-Point Arithmetic](https://www.itu.dk/~sestoft/bachelor/IEEE754_article.pdf). Some of what I write below assume you have some knowledge of how numbers are stored in a computer.
 
 In order to understand what happens, we can trace the program step by step for `(sqrt 12345678901234)`. We notice that after iteration 26 `(improve guess x)` is just returning the same value as `guess` and don't seem to be able to improve the result anymore.
 
@@ -145,16 +160,16 @@ The problem with small numbers is different. Looking at the trace for `(sqrt 0.0
 
 The number of digits of precision is hardcoded to `0.001`. It means that the program will be ok with inaccurate answer when trying to compute a square root of numbers around or smaller than the precision of `0.001`. It is like giving a distance with an uncertainty of "more or less 0.001 kilometers". It is fine if you measure distance between cities, but won't make any sense if you are measuring the size of atoms.
 
-### Alternative strategy
+### Alternative Strategy
 
-The first step is to redefine `good-enough?` based on the idea of looking at the difference between the guess and the improved guess becoming small:
+The first step is to redefine `good-enough?` based on the idea of looking at the difference between the guess and the improved guess becoming small. To do that, the definition of `good-enough?` is updated by computing the difference between the `previous-guess` and `guess` and divided by `guess` to get a relative rate of change that is not dependent on the scale of the numbers.
 
 ```scheme
 (define (good-enough? previous-guess guess)
   (< (abs (/ (- guess previous-guess) guess)) 0.00000000001))
 ```
 
-The number is somewhat arbitrary `0.00000000001` is based on a few trial and error. Then we just need to adapt the function `sqrt-iter` to provide the correct argument:
+The number `0.00000000001` is somewhat arbitrary and based on a few trial and error. Then we just need to adapt the function `sqrt-iter` to provide the correct argument:
 
 ```scheme
 (define (sqrt-iter guess x)
@@ -188,7 +203,7 @@ The complete solution will look like:
   (sqrt-iter 1.0 x))
 ```
 
-It is interesting to note that the new `good-enough?` does not depend on `x` anymore. The computation is iterating until it can't improve the result significantly anymore.
+It is interesting to note that the new `good-enough?` does not depend on `x` anymore. The computation is iterating until it can't improve the result significantly anymore. In the case of large values, where `(improve guess x)` returned the same value as `guess`, `good-enough?` will return #t because `(- guess previous-guess)` becomes 0 and the loop finish immediately.
 
 Now we can try large numbers:
 

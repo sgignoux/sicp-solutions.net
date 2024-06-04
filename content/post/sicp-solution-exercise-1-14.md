@@ -11,7 +11,7 @@ type: posts
 
 ## Solution
 
-By updating the call with `display`, it is possible to generate data in [GrapViz](https://www.graphviz.org/) DOT format and plot it. The call that match `(= amount 0)` are in darker grey.
+By updating the call with `display`, it is possible to generate data in [GrapViz](https://www.graphviz.org/) DOT format and plot it. The calls that match `(= amount 0)` are in darker gray.
 
 ```viz-dot
 digraph G {
@@ -77,19 +77,30 @@ edge [penwidth=.5, arrowsize=0.5];
 }
 ```
 
+### Coins value
+
+Since some of us might not be familiar with the values of US coins, here is a quick reference:
+
+| Kind of Coin | Coin Name     | Coin Value |
+| ------------ | ------------- | ---------- |
+| 1            | 1 penny       | 1 cent     |
+| 2            | 1 nickel      | 5 cents    |
+| 3            | 1 dime        | 10 cents   |
+| 4            | 1 quarter     | 25 cents   |
+| 5            | 1 half-dollar | 50 cents   |
+
+
 ### Orders of growth of space
 
-Since this is a recursive process, the orders of growth of the space will be proportional to the depth of the calls.
+Since this is a recursive process, the orders of growth of the space will be proportional to the depth of the tree.
 
-It is easy to see that the longest series of calls will be when making the change of the amount `n` using only pennies. The order of growth of space for `cc` will be $\mathrm\Theta(n)$
+It is easy to see that the longest series of calls will happen when making the change of the amount `n` using only pennies (1 cent). The order of growth of space for `cc` will be $\mathrm\Theta(n)$
 
 ### Orders of growth of the number of steps
 
-For estimating the orders of growth of number of steps, we will focus on counting the number of call to cc.
+For estimating the orders of growth of the number of steps, we focus on counting the number of calls to `cc`.
 
-The solution presented here is directly insprired from [this blog post](http://www.billthelizard.com/2009/12/sicp-exercise-114-counting-change.html) by Bill the Lizard.
-
-The first step is to get an intuitive understanding of the shape of the growth by exploring low dimension solutions that we can plot. Let's start with graphing the shape of the trees when using only pennies by charting the tree for `(cc 6 1)`.
+The first step is to get an intuitive understanding of the shape of the growth by exploring low dimension solutions that we can plot. Let's start with graphing the shape of the trees when using only pennies for `(cc 6 1)`.
 
 ```viz-dot
 digraph G {
@@ -115,23 +126,23 @@ edge [penwidth=.1, arrowsize=0.5];
 
 Colors in this chart indicate the number of `kinds-of-coins`.
 
-The process here is linear: every node is splitting into two substep, but only the node with `(c x 1)` on the right will recurse deeper. All the `(c x 0)` are leaves of this tree since it indicates that there are no more type of coins to use.
+The process here is linear and every node is splitting into two substeps, but only the node with `(cc x 1)` will recurse deeper. All the `(cc x 0)` are leaves of this tree since it indicates that there is no more type of coins to use.
 
-From this we notice that:
+From this graph we notice that:
 
-- there are 6 blue nodes from `(c 6 1)` to `(c 1 1)`
-- there are 6 grey nodes from `(c 6 0)` to `(c 1 0)`
-- there is one dark grey node `(c 0 1)` with a mount of 0, indicating a solution
+- There are 6 blue nodes from `(cc 6 1)` to `(cc 1 1)`, which will recurse after using the last type of coin.
+- There are 6 gray nodes from `(cc 6 0)` to `(cc 1 0)`, which won't recurse because this is the case where `(= kinds-of-coins 0)`.
+- There is one dark gray node `(cc 0 1)` with a amount of 0, indicating a solution.
 
 If $T(n,m)$ is the number of call to `cc` for amount $n$ and $m$ type of coin, we can see that:
 
 $$T(6,1)=2\times6+1$$
 
-From there, we can generalize to any amount $m$ using only pennies:
+From there, we can generalize to any amount $m$ when using only pennies:
 
 $$T(n,1)=2n+1$$
 
-Let's go one step further by exploring how things work with two kinds of coins. By drawing the tree for `(cc 12 2)` and arranging the nodes a little, we see that we have a neat 2 dimensional array:
+Let's go one step further by exploring how things work with two kinds of coins: pennies (1 cent) and nickels (5 cents). By drawing the tree for `(cc 12 2)`, and arranging the nodes a little, we see that we have a neat 2 dimensional array:
 
 ![Example image](/post/sicp-images/SICP-1_14-__cc_12_2__-_Google_Slides-2.png)
 
@@ -195,13 +206,13 @@ edge [penwidth=.1, arrowsize=0.5];
 
 Let's break it down:
 
-- There are 4 green nodes for `(c x 2)` corresponding to how many time you can subtract a nickel from 12, plus one.
-- Then for each of the green node, there is the option of using only pennies, which is the case that we looked at first.
+- There are 4 green nodes for `(cc x 2)`, corresponding to how many times you can subtract a nickel (5 cents) from 12, plus one.
+- Then for each of the green node, the path below corresponds to the option of using only pennies, which is the case that we looked at first.
 
-For an amount $n$, there is at most $Floor\left(\frac n5\right)+1$ times you can subtract nickels from it before reaching zero or a negative value. By simplifying a little and ignoring the floor that won't impact a lot the result when the number grows larger, we can split the number of calls to `cc` and compute $T(n,2)$:
+For an amount $n$, there is at most $Floor\left(\frac n5\right)+1$ times you can subtract a nickel (5 cents) before reaching zero or a negative value. By simplifying a little, and ignoring the floor that won't impact, the result when the number grows larger, it is possible to estimate the number of calls to `cc` as $T(n,2)$ which are composed of two parts:
 
-- there is $\frac n5+1$ green node
-- for each green node, there is a node for pennies that start from the value $n$
+- There is $\frac n5+1$ green nodes.
+- for each green node, there is a node for pennies that start from the value $n$.
 
 We can rewrite this as an equation and simplify it:
 
@@ -213,13 +224,17 @@ $$T(n,2) =\frac n5+1+\frac{2n^2}5+\frac n5-10 \sum\_{i=0}^{n/5}i$$
 
 $$T(n,2) =\frac n5+1+\frac{2n^2}5+\frac n5-10\frac{{\displaystyle\frac n5}\left({\displaystyle\frac n5}+1\right)}2$$
 
-$$T(n,2) =\frac{2n}5+\frac{2n^2}5-\frac{n^2}5+n+1$$
+$$T(n,2)=\frac n5+1+\frac{2n^2}5+\frac n5-n\left(\frac n5+1\right)$$
+
+$$T(n,2)=\frac n5+1+\frac{2n^2}5+\frac n5-\frac{n^2}5-n$$
+
+$$T(n,2) =\frac{2n}5+\frac{2n^2}5-\frac{n^2}5-n+1$$
 
 Very interestingly, it is possible to define a function that gives the exact number of steps for a given number $n$:
 
-$$T(n,2) =\frac{n^2+7n}5+1$$
+$$T(n,2) =\frac{n^2-3n}5+1$$
 
-Which means that for two type of coins, the orders of growth of number of steps is:
+Which means that for two types of coins, the order of growth of the number of steps is:
 
 $$T(n,2) =\mathrm\Theta(n^2)$$
 
@@ -239,8 +254,8 @@ $$T(n,4) =\frac n{25}+1+ \sum\_{i=0}^{n/25}T(n-25i,3)$$
 
 $$T(n,5) =\frac n{50}+1+ \sum\_{i=0}^{n/50}T(n-50i,4)$$
 
-By doing all the expansion you find that the orders of growth of number of steps is:
+By doing all the expansion, you find that the order of growth of the number of steps is:
 
 $$T(n,5) =\mathrm\Theta(n^5)$$
 
-Overall, this is not only a very slow process, it is also a very inefficient way to implement this computation, because of all the repetitions. You can have a look at the solution for this exercise by Sarabander [here](https://github.com/sarabander/p2pu-sicp/blob/master/1.2/Ex1.14.scm) to see how to implement the solution in only $n^2$.
+Overall, this is not only a very slow process, it is also a very inefficient way to implement this computation, because the same computation is repeated many times. You can have a look at the solution for this exercise by Sarabander [here](https://github.com/sarabander/p2pu-sicp/blob/master/1.2/Ex1.14.scm) to see how to implement the solution in only $n^2$.

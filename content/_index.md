@@ -84,7 +84,7 @@ These solutions are for reference only. The value of this book is in solving eac
 
 ##### 1.2.3 Orders of Growth
 
-- [Exercise 1.14]({{< ref "/post/sicp-solution-exercise-1-14.md" >}}) ✓
+- [Exercise 1.14]({{< ref "/post/sicp-solution-exercise-1-14.md" >}}) ✓ 🔬
 - [Exercise 1.15]({{< ref "/post/sicp-solution-exercise-1-15.md" >}}) ✓
 
 ##### 1.2.4 Exponentiation

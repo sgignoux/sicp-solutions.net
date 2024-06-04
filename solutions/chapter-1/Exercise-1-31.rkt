@@ -10,7 +10,7 @@
   (define (iter a result)
     (if (> a b)
         result
-        (iter (next a) (* a result))))
+        (iter (next a) (* (term a) result))))
   (iter a 1))
 
 (define (identity x) x)
@@ -30,7 +30,8 @@
           (- (* 2 n) 1))
        (/ (* 2 n)
           (+ (* 2 n) 1))))
-  (product term 1.0 inc n))
+  (product-iter term 1.0 inc n))
 
 ; pi
 (display (* 2 (wallis-product 10000))) (newline)
+

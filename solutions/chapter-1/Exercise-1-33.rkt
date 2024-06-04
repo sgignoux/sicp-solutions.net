@@ -82,4 +82,6 @@
     (= (gcd i n) 1))
   (filtered-accumulate relative-prime? * 1 identity 1 inc n))
 
+(trace filtered-accumulate)
+
 (display (product-of-relative-prime 9)) (newline)

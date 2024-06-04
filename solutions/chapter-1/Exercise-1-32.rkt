@@ -32,8 +32,8 @@
   (define h (/ (- b a) n))
   (define (add-2h x) (+ x h h))
   (* (+ (f a)
-        (* 2 (sum f a       add-2h b))
-        (* 4 (sum f (+ a h) add-2h b))
+        (* 2 (sum-iter f (add-2h a) add-2h b))
+        (* 4 (sum-iter f (+ a h) add-2h b))
         (f b))
      (/ h 3)))
 
@@ -42,3 +42,5 @@
 
 (display (integral-simpson cube 0 1.0 100)) (newline)
 (display (integral-simpson cube 0 1.0 1000)) (newline)
+
+

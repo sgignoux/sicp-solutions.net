@@ -102,12 +102,12 @@ These solutions are for reference only. The value of this book is in solving eac
 
 - [Exercise 1.21]({{< ref "/post/sicp-solution-exercise-1-21.md" >}}) ✓
 - [Exercise 1.22]({{< ref "/post/sicp-solution-exercise-1-22.md" >}}) ✓
-- [Exercise 1.23]({{< ref "/post/sicp-solution-exercise-1-23.md" >}}) ✓
-- [Exercise 1.24]({{< ref "/post/sicp-solution-exercise-1-24.md" >}}) ✓
-- [Exercise 1.25]({{< ref "/post/sicp-solution-exercise-1-25.md" >}}) ✓
+- [Exercise 1.23]({{< ref "/post/sicp-solution-exercise-1-23.md" >}}) ✓ 🔬
+- [Exercise 1.24]({{< ref "/post/sicp-solution-exercise-1-24.md" >}}) ✓ 🔬
+- [Exercise 1.25]({{< ref "/post/sicp-solution-exercise-1-25.md" >}}) ✓ 🔬
 - [Exercise 1.26]({{< ref "/post/sicp-solution-exercise-1-26.md" >}}) ✓
 - [Exercise 1.27]({{< ref "/post/sicp-solution-exercise-1-27.md" >}}) ✓
-- [Exercise 1.28]({{< ref "/post/sicp-solution-exercise-1-28.md" >}}) ✓
+- [Exercise 1.28]({{< ref "/post/sicp-solution-exercise-1-28.md" >}}) ✓ 🔬
 
 #### 1.3 Formulating Abstractions with Higher-Order Procedures
 

@@ -35,7 +35,7 @@ type: posts
         (else #f)))
 ```
 
-I choosed to run each test on 100 random numbers, but this is somewhat a guessed value:
+I chose to run each test on 100 random numbers, but this is somewhat a guessed value:
 
 ```
 (define (start-prime-test n start-time)
@@ -44,90 +44,67 @@ I choosed to run each test on 100 random numbers, but this is somewhat a guessed
       "nothing"))
 ```
 
-Here too, in order to increase precision of the execution time measurement, all computation are run 1000 times on each prime number for each of the algorithm.
+Here too, in order to increase the precision of execution times, all computations are run 1000 times on each prime number for each algorithm.
 
-I ran in a few issues with the random number generator for the largest prime in my table. I just removed them as it doesn't change the conclusion.
+I ran into a few issues with the random number generator for the largest prime in my table. I just removed them as it doesn't change the conclusion.
 
 ### DrRacket
 
-| log(prime) | prime         | time prime? (µs) | time fast-prime? (µs) |
-| ---------- | ------------- | ---------------- | --------------------- |
-| 3          | 1,009         | 2.8029           | 175.80                |
-| 3          | 1,013         | 2.3579           | 160.85                |
-| 3          | 1,019         | 2.2888           | 179.21                |
-| 4          | 10,007        | 8.1271           | 218.31                |
-| 4          | 10,009        | 7.7409           | 193.58                |
-| 4          | 10,037        | 7.6669           | 241.30                |
-| 5          | 100,003       | 25.369           | 238.16                |
-| 5          | 100,019       | 24.364           | 279.69                |
-| 5          | 100,043       | 24.239           | 240.71                |
-| 6          | 1,000,003     | 76.642           | 388.47                |
-| 6          | 1,000,033     | 91.104           | 277.81                |
-| 6          | 1,000,037     | 83.062           | 304.60                |
-| 7          | 10,000,019    | 245.59           | 364.91                |
-| 7          | 10,000,079    | 253.24           | 372.02                |
-| 7          | 10,000,103    | 264.88           | 358.31                |
-| 8          | 100,000,007   | 855.93           | 386.96                |
-| 8          | 100,000,037   | 974.68           | 392.14                |
-| 8          | 100,000,039   | 829.26           | 401.62                |
-| 9          | 1,000,000,007 | 2588.9           | 438.92                |
-| 9          | 1,000,000,009 | 2728.9           | 425.29                |
-| 9          | 1,000,000,021 | 2848.4           | 455.42                |
+The raw data from DrRacket, using some variation of the code you can find [here](https://github.com/sgignoux/sicp-solutions.net/blob/master/solutions/chapter-1/Exercise-1-22_23_24.rkt), where the average execution time for `prime?` and `fast-prime?`:
+
+| log(prime) |  prime number | `prime?` (µs) | `fast-prime?` (µs) |
+| ---------- | ------------: | ------------: | -----------------: |
+| 3          |         1,009 |           2.8 |             175.80 |
+| 3          |         1,013 |           2.3 |             160.85 |
+| 3          |         1,019 |           2.2 |             179.21 |
+| 4          |        10,007 |           8.1 |             218.31 |
+| 4          |        10,009 |           7.7 |             193.58 |
+| 4          |        10,037 |           7.6 |             241.30 |
+| 5          |       100,003 |          25.3 |             238.16 |
+| 5          |       100,019 |          24.3 |             279.69 |
+| 5          |       100,043 |          24.2 |             240.71 |
+| 6          |     1,000,003 |          76.6 |             388.47 |
+| 6          |     1,000,033 |          91.1 |             277.81 |
+| 6          |     1,000,037 |          83.0 |             304.60 |
+| 7          |    10,000,019 |         245.5 |             364.91 |
+| 7          |    10,000,079 |         253.2 |             372.02 |
+| 7          |    10,000,103 |         264.8 |             358.31 |
+| 8          |   100,000,007 |         855.9 |             386.96 |
+| 8          |   100,000,037 |         974.6 |             392.14 |
+| 8          |   100,000,039 |         829.2 |             401.62 |
+| 9          | 1,000,000,007 |        2588.9 |             438.92 |
+| 9          | 1,000,000,009 |        2728.9 |             425.29 |
+| 9          | 1,000,000,021 |        2848.4 |             455.42 |
 
 Which can be summarized:
 
-| log(prime) | average time `prime?` (µs) | delta for 10x (µs) | average time `fast-prime?` (µs) | delta for 10x (µs) |
-| ---------- | -------------------------- | ------------------ | ------------------------------- | ------------------ |
-| 3          | 2,4832                     |                    | 171,95                          |                    |
-| 4          | 7,8450                     | 5,3618             | 217,73                          | 45,7               |
-| 5          | 24,658                     | 16,813             | 252,85                          | 35,1               |
-| 6          | 83,603                     | 58,945             | 323,63                          | 70,7               |
-| 7          | 254,57                     | 170,97             | 365,08                          | 41,4               |
-| 8          | 886,62                     | 632,04             | 393,57                          | 28,4               |
-| 9          | 2722,1                     | 1835,5             | 439,88                          | 46,3               |
+| log(prime) | average `prime?` (µs) | `prime?` delta for 10x (µs) | average `fast-prime?` (µs) | `fast-prime?` delta for 10x (µs) |
+| ---------- | --------------------: | --------------------------: | -------------------------: | -------------------------------: |
+| 3          |                   2.4 |                             |                     171.95 |                                  |
+| 4          |                   7.8 |                         5.3 |                     217.73 |                             45.7 |
+| 5          |                  24.6 |                        16.8 |                     252.85 |                             35.1 |
+| 6          |                 83.60 |                        58.9 |                     323.63 |                             70.7 |
+| 7          |                 254.5 |                       170.9 |                     365.08 |                             41.4 |
+| 8          |                 886.6 |                       632.0 |                     393.57 |                             28.4 |
+| 9          |                2722.1 |                      1835.5 |                     439.88 |                             46.3 |
 
-### Chicken Scheme (compiled)
+Where:
 
-| log(prime) | prime         | time prime? (µs) | time fast-prime? (µs) |
-| ---------- | ------------- | ---------------- | --------------------- |
-| 3          | 1,009         | 4.0              | 172.0                 |
-| 3          | 1,013         | 3.0              | 180.0                 |
-| 3          | 1,019         | 4.0              | 193.0                 |
-| 4          | 10,007        | 11.0             | 221.0                 |
-| 4          | 10,009        | 13.0             | 218.0                 |
-| 4          | 10,037        | 10.0             | 224.0                 |
-| 5          | 100,003       | 35.0             | 256.0                 |
-| 5          | 100,019       | 35.0             | 261.0                 |
-| 5          | 100,043       | 38.0             | 276.0                 |
-| 6          | 1,000,003     | 113.0            | 297.0                 |
-| 6          | 1,000,033     | 111.0            | 296.0                 |
-| 6          | 1,000,037     | 114.0            | 311.0                 |
-| 7          | 10,000,019    | 353.0            | 355.0                 |
-| 7          | 10,000,079    | 355.0            | 381.0                 |
-| 7          | 10,000,103    | 362.0            | 384.0                 |
-| 8          | 100,000,007   | 1157.0           | 435.0                 |
-| 8          | 100,000,037   | 1126.0           | 444.0                 |
-| 8          | 100,000,039   | 1126.0           | 450.0                 |
-| 9          | 1,000,000,007 | 3516.0           | 462.0                 |
-| 9          | 1,000,000,009 | 3744.0           | 477.0                 |
-| 9          | 1,000,000,021 | 3641.0           | 499.0                 |
-
-Which can be summarized:
-
-| log(prime) | average time `prime?` (µs) | time multiplication for 10x | average time `fast-prime?` (µs) | time increases for 10x (µs) |
-| ---------- | -------------------------- | --------------------------- | ------------------------------- | -------------------------- |
-| 3          | 3,67                       |                             | 181,67                          |                            |
-| 4          | 11,33                      | 3,09                        | 221                             | 39,3                       |
-| 5          | 36                         | 3,18                        | 264,33                          | 43,3                       |
-| 6          | 112,67                     | 3,13                        | 301,33                          | 37,0                       |
-| 7          | 356,67                     | 3,17                        | 373,33                          | 72,0                       |
-| 8          | 1136,33                    | 3,19                        | 443                             | 69,7                       |
-| 9          | 3633,67                    | 3,20                        | 479,33                          | 36,3                       |
+- log(prime): number of digits in the prime number
+- average `prime?` (µs): average execution time for the 3 prime numbers with log(prime) digits using `prime?`
+- `prime?` delta for 10x (µs): for `prime?`, difference in average execution time between prime numbers with n and n-1 digits. For example, it takes 16.813 µs longer to test prime numbers with 5 digits than prime numbers with 4 digits.
+- average `fast-prime?` (µs) average execution time for the 3 prime numbers with log(prime) digits using `fast-prime?`
+- `fast-prime?` delta for 10x (µs): for `fast-prime?`, difference in average execution time between prime numbers with n and n-1 digits. For example, it takes 35.1 µs longer to test prime numbers with 5 digits than prime numbers with 4 digits.
 
 ### Conclusion
 
-When the size of `prime` is 10 times larger, `prime?` require 3 times more computation.
+Whether looking at the table, we can see that, as the size of the prime numbers increase:
 
-When the size of  `prime` is 10 times larger, `fast-prime?` require a constant increase of 50µs. ${\mathrm\Theta(\log n)}$ growth means that when the prime are ten times larger, the time will increase by a constant amount ${\log(100)-\log(10)=1}$. This is quite clear here.
+- `prime?` delta for 10x (µs) is increasing linearly, with an increase of around a factor 3 between each step.
+- `fast-prime?` delta for 10x (µs) is more or less constant
 
-Although that for smaller number `prime?` is faster, `fast-prime?` become much faster with larger and larger prime.
+When the size of `prime` is 10 times larger, `prime?` requires around 3 times more computation.
+
+When the size of  `prime` is 10 times larger, `fast-prime?` require only a constant increase of time (around 50µs on my computer). ${\mathrm\Theta(\log n)}$ growth means that when the prime are ten times larger, the time will increase by a constant amount ${\log(100)-\log(10)=1}$. This is quite clear here.
+
+Although for smaller number `prime?` is faster, `fast-prime?` become much faster with larger and larger prime.

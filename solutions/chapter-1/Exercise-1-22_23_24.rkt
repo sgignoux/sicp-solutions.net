@@ -2,6 +2,11 @@
 (require racket/trace)
 (define (runtime) (current-inexact-milliseconds)) ; adapting to DrRacket
 
+; This code is on top of the exercice solution in order to run benchmarks and generate tables easily.
+; 1.22: prime?
+; 1.23: prime-improved?
+; 1.24: fast-prime?
+
 ; --- fast-prime? ---
 
 (define (expmod base exp m)
@@ -20,7 +25,7 @@
   (try-it (+ 1 (random (- n 1)))))
 
 (define (fast-prime?100 n)
-  (fast-prime? n 2))
+  (fast-prime? n 100))
 
 (define (fast-prime? n times)
   (cond ((= times 0) #t)
@@ -103,50 +108,45 @@
       (start-prime-test n start-time method (- runs 1))))
 
 (define primes-list '(1009
-                      ;1013
-                      ;1019
-                      ;10007
-                      ;10009
-                      ;10037
-                      ;100003
-                      ;100019
-                      ;100043
-                      ;1000003
-                      ;1000033
-                      ;1000037
-                      ;10000019
-                      ;10000079
-                      ;10000103
-                      ;100000007
-                      ;100000037
-                      ;100000039
-                      ;1000000007
-                      ;1000000009
-                      ;1000000021
-                      ;10000000019
-                      ;10000000033
-                      ;10000000061
+                      1013
+                      1019
+                      10007
+                      10009
+                      10037
+                      100003
+                      100019
+                      100043
+                      1000003
+                      1000033
+                      1000037
+                      10000019
+                      10000079
+                      10000103
+                      100000007
+                      100000037
+                      100000039
+                      1000000007
+                      1000000009
+                      1000000021
+                      10000000019
+                      10000000033
+                      10000000061
                       ))
 
-; 1.22: prime?
-; 1.23: prime-improved?
-; 1.24: fast-prime?
 
-(define runs 1) ; microsecond
+
+(define runs 1000) ; microsecond
 
 (define (measure-time-for-primes l)
-  (display "| ")(display (car l)) (display " | ") (display (timed-prime-test (car l) prime? runs))  (display " | ") (display (timed-prime-test (car l) fast-prime?100 runs)) (display " |")(newline)
+  (display "| ")(display (car l)) (display " | ") (display (timed-prime-test (car l) prime? runs))  (display " | ") (display (timed-prime-test (car l) prime-improved? runs)) (display " |")(newline)
   (cond ((null? (cdr l))
          0)
         (else
          (measure-time-for-primes (cdr l)))))
 
-(trace expmod)
+; (trace expmod)
 
-; (measure-time-for-primes primes-list)
-
-(expmod 941 1008 1009)
-
+(measure-time-for-primes primes-list)
 
 
 

@@ -82,99 +82,103 @@ Since `runtime` is not part of DrRacket, you can use [current-inexact-millisecon
 (search-for-primes 10000000000 10000000090)
 ```
 
-The funcion `current-inexact-milliseconds` provide data in the microseconds scale, but our current hardware are pretty fast and this is not precise enough. I extended the code for computing the averate time of 1000 runs.
+The function `current-inexact-milliseconds` provides data in the microseconds scale, but our current hardware is pretty fast and this is not precise enough. I extended the code for computing the average time of 1000 runs.
 
 ### DrRacket has high variability
 
-The initial test where done with DrRacket:
+The initial test was done with DrRacket, using some variation of the code you can find [here](https://github.com/sgignoux/sicp-solutions.net/blob/master/solutions/chapter-1/Exercise-1-22_23_24.rkt):
 
-| log(prime) | prime          | time (µs) |
-| ---------- | -------------- | --------- |
-| 3          | 1,009          | 2.8010    |
-| 3          | 1,013          | 2.4858    |
-| 3          | 1,019          | 2.3898    |
-| 4          | 10,007         | 7.9331    |
-| 4          | 10,009         | 7.9948    |
-| 4          | 10,037         | 7.8310    |
-| 5          | 100,003        | 44.663    |
-| 5          | 100,019        | 26.879    |
-| 5          | 100,043        | 24.563    |
-| 6          | 1,000,003      | 81.736    |
-| 6          | 1,000,033      | 78.949    |
-| 6          | 1,000,037      | 79.261    |
-| 7          | 10,000,019     | 284.77    |
-| 7          | 10,000,079     | 254.29    |
-| 7          | 10,000,103     | 302.63    |
-| 8          | 100,000,007    | 847.27    |
-| 8          | 100,000,037    | 854.13    |
-| 8          | 100,000,039    | 887.25    |
-| 9          | 1,000,000,007  | 2612.4    |
-| 9          | 1,000,000,009  | 2616.5    |
-| 9          | 1,000,000,021  | 2625.0    |
-| 10         | 10,000,000,019 | 8438.9    |
-| 10         | 10,000,000,033 | 8096.1    |
-| 10         | 10,000,000,061 | 8052.0    |
+| log(prime) |          prime | time (µs) |
+| ---------- | -------------: | --------: |
+| 3          |          1,009 |    2.8010 |
+| 3          |          1,013 |    2.4858 |
+| 3          |          1,019 |    2.3898 |
+| 4          |         10,007 |    7.9331 |
+| 4          |         10,009 |    7.9948 |
+| 4          |         10,037 |    7.8310 |
+| 5          |        100,003 |    44.663 |
+| 5          |        100,019 |    26.879 |
+| 5          |        100,043 |    24.563 |
+| 6          |      1,000,003 |    81.736 |
+| 6          |      1,000,033 |    78.949 |
+| 6          |      1,000,037 |    79.261 |
+| 7          |     10,000,019 |    284.77 |
+| 7          |     10,000,079 |    254.29 |
+| 7          |     10,000,103 |    302.63 |
+| 8          |    100,000,007 |    847.27 |
+| 8          |    100,000,037 |    854.13 |
+| 8          |    100,000,039 |    887.25 |
+| 9          |  1,000,000,007 |    2612.4 |
+| 9          |  1,000,000,009 |    2616.5 |
+| 9          |  1,000,000,021 |    2625.0 |
+| 10         | 10,000,000,019 |    8438.9 |
+| 10         | 10,000,000,033 |    8096.1 |
+| 10         | 10,000,000,061 |    8052.0 |
 
-By averaging the run of the 3 first prime numbers and taking successive ratio, you get:
+By averaging the run of the first 3 prime numbers and taking successive ratio, you get:
 
-| log(prime) | average (µs) | ratio       |
-| ---------- | ------------ | ----------- |
-| 3          | 2,5589       |             |
-| 4          | 7,9196       | 3,09493067  |
-| 5          | 28,702       | 3,624145833 |
-| 6          | 79,982       | 2,786651772 |
-| 7          | 280,56       | 3,507844209 |
-| 8          | 862,88       | 3,075520274 |
-| 9          | 2618,0       | 3,03400981  |
-| 10         | 8195,7       | 3,130518518 |
+| log(prime) | average (µs) |      ratio |
+| ---------- | -----------: | ---------: |
+| 3          |          2.5 |            |
+| 4          |          7.9 | 3.09493067 |
+| 5          |         28.7 | 3.62414583 |
+| 6          |         79.9 | 2.78665172 |
+| 7          |        280.6 | 3.50784409 |
+| 8          |        862.8 | 3.07552274 |
+| 9          |       2618.0 | 3.03400981 |
+| 10         |       8195.7 | 3.13058518 |
 
-The ratio is pretty close to $\sqrt {10} = 3.162$, although this is only average of 3 run.
+The ratio is pretty close to $\sqrt {10} = 3.162$, although this is only an average of 3 run.
 
 
 ### Chicken Scheme, with compiled code, is less variable
 
-I wanted to compare to another implementation and managed to get the program compiled with [Chicken Scheme](https://www.call-cc.org/). The results are somewhat more consistent:
+I wanted to compare to another implementation and managed to get the program compiled with [Chicken Scheme](https://www.call-cc.org/). The results are somewhat more consistent based on the code from [here](https://github.com/sgignoux/sicp-solutions.net/blob/master/solutions/chapter-1/Exercise-1-22_23_24.scm):
 
-| log(prime) | prime          | time (µs) |
-| ---------- | -------------- | --------- |
-| 3          | 1,009          | 4.0       |
-| 3          | 1,013          | 3.0       |
-| 3          | 1,019          | 4.0       |
-| 4          | 10,007         | 11.0      |
-| 4          | 10,009         | 12.0      |
-| 4          | 10,037         | 11.0      |
-| 5          | 100,003        | 35.0      |
-| 5          | 100,019        | 34.0      |
-| 5          | 100,043        | 36.0      |
-| 6          | 1,000,003      | 111.0     |
-| 6          | 1,000,033      | 108.0     |
-| 6          | 1,000,037      | 114.0     |
-| 7          | 10,000,019     | 341.0     |
-| 7          | 10,000,079     | 353.0     |
-| 7          | 10,000,103     | 342.0     |
-| 8          | 100,000,007    | 1105.0    |
-| 8          | 100,000,037    | 1073.0    |
-| 8          | 100,000,039    | 1080.0    |
-| 9          | 1,000,000,007  | 3439.0    |
-| 9          | 1,000,000,009  | 3471.0    |
-| 9          | 1,000,000,021  | 3494.0    |
-| 10         | 10,000,000,019 | 11129.0   |
-| 10         | 10,000,000,033 | 11193.0   |
-| 10         | 10,000,000,061 | 11224.0   |
+| log(prime) |          prime | time (µs) |
+| ---------- | -------------: | --------: |
+| 3          |          1,009 |       4.0 |
+| 3          |          1,013 |       3.0 |
+| 3          |          1,019 |       4.0 |
+| 4          |         10,007 |      11.0 |
+| 4          |         10,009 |      12.0 |
+| 4          |         10,037 |      11.0 |
+| 5          |        100,003 |      35.0 |
+| 5          |        100,019 |      34.0 |
+| 5          |        100,043 |      36.0 |
+| 6          |      1,000,003 |     111.0 |
+| 6          |      1,000,033 |     108.0 |
+| 6          |      1,000,037 |     114.0 |
+| 7          |     10,000,019 |     341.0 |
+| 7          |     10,000,079 |     353.0 |
+| 7          |     10,000,103 |     342.0 |
+| 8          |    100,000,007 |    1105.0 |
+| 8          |    100,000,037 |    1073.0 |
+| 8          |    100,000,039 |    1080.0 |
+| 9          |  1,000,000,007 |    3439.0 |
+| 9          |  1,000,000,009 |    3471.0 |
+| 9          |  1,000,000,021 |    3494.0 |
+| 10         | 10,000,000,019 |   11129.0 |
+| 10         | 10,000,000,033 |   11193.0 |
+| 10         | 10,000,000,061 |   11224.0 |
 
 The table can be summarized as above:
 
 | log(prime) | average (µs) | ratio |
-| ---------- | ------------ | ----- |
-| 3          | 3,6          |       |
-| 4          | 11           | 3,090 |
-| 5          | 35           | 3,088 |
-| 6          | 111          | 3,171 |
-| 7          | 345          | 3,111 |
-| 8          | 1086         | 3,144 |
-| 9          | 3468         | 3,193 |
-| 10         | 11182        | 3,224 |
+| ---------- | -----------: | ----: |
+| 3          |          3.6 |       |
+| 4          |           11 | 3.090 |
+| 5          |           35 | 3.088 |
+| 6          |          111 | 3.171 |
+| 7          |          345 | 3.111 |
+| 8          |         1086 | 3.144 |
+| 9          |         3468 | 3.193 |
+| 10         |        11182 | 3.224 |
 
-The ratio here is also close to $\sqrt {10} = 3.162$, although this is only average of 3 run.
+The ratio here is also close to $\sqrt {10} = 3.162$, although this is only an average of 3 runs.
+
+### Conclusion
+
+The timing data seems to confirm that, for the range of value tested, the speed increase by $\sqrt {10}$ when testing with a number that has one more digit.
 
 The variation in speed might be due to interaction with garbage collection. [This article](https://blog.janestreet.com/core_bench-micro-benchmarking-for-ocaml/) about micro-benchmarks could be a clue.

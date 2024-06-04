@@ -69,7 +69,7 @@ Trying to run a larger case like `(fast-expt 12345678 1000000007)` will yield a 
 
 ### Why should we care about the size of an intermediate result?
 
-We are lucky that DrRacket can work on such large numbers. In many language, operation like multiplication can work only on `fixnum` numbers. To quote DrRacker section on [Numbers](https://docs.racket-lang.org/reference/numbers.html):
+Luckily, DrRacket can handle on such large numbers without too much hassle, but in many languages, operations like multiplication works only on `fixnum` type numbers. To quote DrRacker section on [Numbers](https://docs.racket-lang.org/reference/numbers.html):
 
 > The precision and size of exact numbers is limited only by available memory (and the
 > precision of operations that can produce irrational numbers). In particular, adding,
@@ -90,9 +90,9 @@ These large numbers are called
 > closely related to the available hardware registers: one or two words only and definitely
 > not N words.
 
-While on hardware, operations like multiplication and remainder on `fixnum` can be seen as $O(1)$, on bignum they have a much slower complexity of $O(N \log\left(N\right) \log\left(\log\left(N\right)\right)$, assuming algorithm like [Karatsuba algorithm](https://en.wikipedia.org/wiki/Karatsuba_algorithm) that is implemented in DrRacket.
+Operations like multiplication and remainder on `fixnum` can be seen as $O(1)$, on bignum they have a much higher complexity of $O(N \log\left(N\right) \log\left(\log\left(N\right)\right)$, assuming algorithm like [Karatsuba algorithm](https://en.wikipedia.org/wiki/Karatsuba_algorithm) that is implemented in DrRacket.
 
-By contrast the original algorithm doesn't try to fully compute the `exp` before computing the remainder, but break down the problem intod smaller numbers of roughly the same size:
+By contrast the original algorithm doesn't try to fully compute the `exp` before computing the remainder, but break down the problem into smaller numbers of roughly the same size:
 
 ```scheme
 (define (expmod base exp m)
@@ -107,7 +107,7 @@ By contrast the original algorithm doesn't try to fully compute the `exp` before
           m))))
 ```
 
-This can be checked by tracing it's execution on the same parameters:
+This can be checked by tracing its execution on the same parameters:
 
 ```
 >(expmod 941 1008 1009)
@@ -147,10 +147,10 @@ This can be checked by tracing it's execution on the same parameters:
 
 Alyssa P. Hacker version of `expmod`:
 
-- Gives a much larger intermediate result, which could require more memory than available on the computer
-- This large intermediate result requires the use of special algorithm for multiplications and remainders that are much slower than computation on smaller `fixnum` numbers
+- It gives a much larger intermediate result, which could require more memory than available on the computer.
+- This large intermediate result requires the use of special algorithms for multiplications and remainders that are much slower than computations on smaller `fixnum` numbers.
 
 ### Open questions
 
-- Does DrRacket use automatically fixnum on our optimized verions?
+- Does DrRacket use automatically fixnum on our optimized version?
 - How is remainder computed? What is the complexity?

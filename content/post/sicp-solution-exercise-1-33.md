@@ -51,5 +51,5 @@ But `predicate?` in `filtered-accumulate` has only one argument. We need to spec
 (define (product-of-relative-prime n)
   (define (relative-prime? i)
     (= (gcd i n) 1))
-  (filtered-accumulate relative-prime? * 1 identity 1 inc n))
+  (filtered-accumulate relative-prime? * 1 identity 1 inc (- n 1)))
 ```

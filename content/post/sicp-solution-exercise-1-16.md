@@ -11,7 +11,7 @@ type: posts
 
 ## Solution
 
-When $n$ is even, we can rewrite the equation $ab^n$ as:
+When $n$ is even, the equation $ab^n$ can rewritten as:
 
 $$ab^n=a{(b^{n/2})^2}=a{(b^2)^{n/2}}=a'b'^{n'}$$
 
@@ -19,7 +19,7 @@ $$a'=a$$
 $$b'=b^2$$
 $$n'=n/2$$
 
-When $n$ is odd, we can rewrite the equation $ab^n$ as:
+When $n$ is odd, the equation $ab^n$ can rewritten as:
 
 $$ab^n=abb^{n-1}=(ab)b^{n-1}=a'b'^{n'}$$
 
@@ -39,7 +39,7 @@ This can be implemented directly into:
          (fast-expt-iter (* a b) b (- n 1)))))
 ```
 
-We can check that this is tail recursive by using the [tracing function in DrRacket](https://docs.racket-lang.org/reference/debugging.html#%28mod-path._racket%2Ftrace%29):
+It is easy to check that this is tail recursive by using the [tracing function in DrRacket](https://docs.racket-lang.org/reference/debugging.html#%28mod-path._racket%2Ftrace%29):
 
 ```scheme
 #lang racket/base
@@ -78,7 +78,7 @@ That can be compared to the recursive version:
 (expt-recurs 9 7)
 ```
 
-Which return:
+Which returns:
 
 ```
 >(expt2 9 7)

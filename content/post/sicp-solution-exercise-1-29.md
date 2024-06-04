@@ -17,9 +17,9 @@ type: posts
 
 The sum can be rewritten like this:
 
-$$\frac h3(y_0+4(\underbrace{y_1+y_3+y_5+\cdots+y_n-1}\_{odd terms})+2(\underbrace{y_2+y_4+y_6+\cdots+y\_{n-2}}\_{even terms})+y_n)$$
+$$\frac h3(y_0+4(\underbrace{y_1+y_3+y_5+\cdots+y_{n-1}}\_{odd terms})+2(\underbrace{y_2+y_4+y_6+\cdots+y\_{n-2}}\_{even terms})+y_n)$$
 
-This equation can be implemented in a manner that reuse the `sum` function that was defined previously like this:
+This equation can be implemented in a manner that reuses the `sum` function that was defined previously like this:
 
 ```scheme
 (define (sum term a next b)
@@ -64,4 +64,4 @@ And `integral-simpson` version:
 0.25000000000000083
 ```
 
-The `integral-simpson` gives much more accuracy for the same number of step.
+The `integral-simpson` gives much more accuracy for the same number of steps.

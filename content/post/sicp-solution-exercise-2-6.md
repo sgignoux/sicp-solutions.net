@@ -25,9 +25,29 @@ type: posts
 ```scheme
 (add-1 zero)
 
-(add-1 (lambda (f) (lambda (x) x))
+(add-1 (lambda (f) (lambda (x) x)))
 
-(lambda (f) (lambda (x) (f (((lambda (f) (lambda (x) x) f) x))))
+(lambda (f) (lambda (x) (f (((lambda (f) (lambda (x) x)) f) x))))
+
+(lambda (f) (lambda (x) (f ((lambda (x) x) x))))
+
+(lambda (f) (lambda (x) (f x)))
+```
+
+From this we can define:
+
+```scheme
+(define one (lambda (f) (lambda (x) (f x))))
+```
+
+```scheme
+(add-1 one)
+
+(add-1 (lambda (f) (lambda (x) (f x))))
+
+(lambda (f) (lambda (x) (f (((lambda (f) (lambda (x) (f x))) f) x))))
+
+(lambda (f) (lambda (x) (f (((lambda (x) (f x))) x))))
 
 (lambda (f) (lambda (x) (f (f x))))
 ```
@@ -35,27 +55,7 @@ type: posts
 From this we can define:
 
 ```scheme
-(define one (lambda (f) (lambda (x) (f (f x)))))
-
-```
-
-```scheme
-(add-1 one)
-
-(add-1 (lambda (f) (lambda (x) (f (f x)))))
-
-(lambda (f) (lambda (x) (f (((lambda (f) (lambda (x) (f (f x)))) f) x))))
-
-(lambda (f) (lambda (x) (f (f (f x)))))
-
-```
-
-From this we can define:
-
-```scheme
-
-(define two (lambda (f) (lambda (x) (f (f (f x))))))
-
+(define two (lambda (f) (lambda (x) (f (f x)))))
 ```
 
 The addition will be defined as:

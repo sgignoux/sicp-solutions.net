@@ -29,24 +29,24 @@ type: posts
 
 (lambda (f) (lambda (x) (f (((lambda (f) (lambda (x) x) f) x))))
 
-(lambda (f) (lambda (x) (f (f x))))
+(lambda (f) (lambda (x) (f x)))
 ```
 
 From this we can define:
 
 ```scheme
-(define one (lambda (f) (lambda (x) (f (f x)))))
+(define one (lambda (f) (lambda (x) (f x))))
 
 ```
 
 ```scheme
 (add-1 one)
 
-(add-1 (lambda (f) (lambda (x) (f (f x)))))
+(add-1 (lambda (f) (lambda (x) (f x))))
 
-(lambda (f) (lambda (x) (f (((lambda (f) (lambda (x) (f (f x)))) f) x))))
+(lambda (f) (lambda (x) (f (((lambda (f) (lambda (x) (f x))) f) x))))
 
-(lambda (f) (lambda (x) (f (f (f x)))))
+(lambda (f) (lambda (x) (f (f x))))
 
 ```
 
@@ -54,7 +54,7 @@ From this we can define:
 
 ```scheme
 
-(define two (lambda (f) (lambda (x) (f (f (f x))))))
+(define two (lambda (f) (lambda (x) (f (f x)))))
 
 ```
 

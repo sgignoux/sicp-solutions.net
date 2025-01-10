@@ -45,7 +45,7 @@ $$T\_{pq}\left(T\_{pq}(a,b)\right)=(bpq+aq^2+bq^2+aq^2+aqp+bqp+aqp+ap^2, bp^2+aq
 
 Which can be rewritten as:
 
-$$T\_{pq}\left(T\_{pq}(a,b)\right)=(b(2qp+q^2)+a(q^2+p^2)+a(2qp+q^2), b(p^2+q^2)+a(2qp+q^2))=T\_{p'q'}$$
+$$T\_{pq}\left(T\_{pq}(a,b)\right)=(b(2qp+q^2)+a(2qp+q^2)+a(q^2+p^2), b(p^2+q^2)+a(2qp+q^2))=T\_{p'q'}$$
 
 $$p'=p^2+q^2$$
 

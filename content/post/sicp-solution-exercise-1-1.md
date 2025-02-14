@@ -17,10 +17,10 @@ The result of evaluating each expression is shown after the `>` below:
 10
 > 10
 
-(+ 5 3 4)
+(5+3+4)
 > 12
 
-(- 9 1)
+(9-1)
 > 8
 
 (/ 6 2)
@@ -29,21 +29,21 @@ The result of evaluating each expression is shown after the `>` below:
 (+ (* 2 4) (- 4 6))
 > 6
 
-(define a 3)
->
+(define a = 3)
+> a = 3
 
-(define b (+ a 1))
->
+(define b = (a + 1))
+> b = 4
 
-(+ a b (* a b))
+(a + b (a * b))
 > 19
 
-(= a b)
+(a = b)
 > #f
 
-(if (and (> b a) (< b (* a b)))
-    b
-    a)
+(if ((b > a) and (b < (a * b)))
+   then b
+    else a)
 > 4
 
 (cond ((= a 4) 6)
@@ -54,9 +54,9 @@ The result of evaluating each expression is shown after the `>` below:
 (+ 2 (if (> b a) b a))
 > 6
 
-(* (cond ((> a b) a)
-         ((< a b) b)
+((cond (if(a > b) then a)
+         else ( if (a < b) then b)
          (else -1))
-   (+ a 1))
+    * (a + 1))
 > 16
 ```

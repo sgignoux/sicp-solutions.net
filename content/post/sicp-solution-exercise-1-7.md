@@ -220,3 +220,14 @@ and small numbers:
 In both cases, the error is small _relative_ to the size of the number computed.
 
 When computing with floating-point number, just remember that they are not your friends. Floating-point numbers are here to get you.
+
+### Fixed-Point Termination
+
+A simpler way to address the stopping condition is to observe that the iterative process naturally reaches a point where the improve step can no longer produce a different value due to floating-point precision limits. When this happens, the computation has effectively converged, and further iterations will not change the result. We can therefore stop as soon as two consecutive guesses become exactly equal:
+
+```scheme
+(define (good-enough? previous-guess guess)
+  (= previous-guess guess))
+```
+
+This approach avoids infinite loops caused by absolute error thresholds and relies directly on the floating-point fixed point reached by the iteration.

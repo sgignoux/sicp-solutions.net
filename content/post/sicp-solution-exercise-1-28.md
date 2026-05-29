@@ -24,7 +24,7 @@ Which will be implemented by updating the function `fermat-test` into:
 ```scheme
 (define (miller-rabin-test n)
   (define (try-it a)
-    (= (expmod-checked a (- n 1) n) 1))
+    (not (= (expmod-checked a (- n 1) n) 0)))
   (try-it (+ 1 (random (- n 1)))))
 ```
 
@@ -68,7 +68,7 @@ Putting all that together so that `expmod-checked` works with our new functions:
 
 (define (miller-rabin-test n)
   (define (try-it a)
-    (= (expmod-checked a (- n 1) n) 1))
+    (not (= (expmod-checked a (- n 1) n) 0)))
   (try-it (+ 1 (random (- n 1)))))
 
 
@@ -99,7 +99,3 @@ pass:    4 is not prime
 pass:   99 is not prime
 pass:  561 is not prime
 ```
-
-### Open questions
-
-- Running it without `square-checked` (using normal `square`) didn't change the passing of these specific tests. How can we check that we have a correct implementation?
